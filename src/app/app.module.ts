@@ -10,8 +10,6 @@ import { PodcastsPage } from '../pages/podcasts/podcasts';
 import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
 import { BlogPage } from '../pages/blog/blog';
 import { IonShrinkingHeader } from '../components/ion-shrinking-header';
-import { ScrollHide } from '../components/scroll-hide/scroll-hide';
-
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -51,7 +49,7 @@ export class MyErrorHandler implements ErrorHandler {
     ContactezNousPage,
     BlogPage,
 	IonShrinkingHeader,
-	  ScrollHide
+	  
   ],
   imports: [
     BrowserModule,
