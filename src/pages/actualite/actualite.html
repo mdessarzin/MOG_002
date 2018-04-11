@@ -7,5 +7,11 @@
       Actualite
     </ion-title>
   </ion-navbar>
+    <ion-toolbar color="primary" scroll-hide-translate>
+        <ion-searchbar></ion-searchbar>
+    </ion-toolbar>
 </ion-header>
-<ion-content padding id="page2"></ion-content>
+
+<ion-content padding [scroll-hide]="viewCtrl">
+    <h2>Welcome to Ionic!</h2>
+</ion-content>
