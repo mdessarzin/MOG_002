@@ -1,0 +1,8 @@
+{
+  "name": "MOG002_RadioLac",
+  "app_id": "813edd26",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
