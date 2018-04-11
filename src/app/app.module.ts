@@ -1,16 +1,29 @@
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { AccueilPage } from '../pages/accueil/accueil';
+import { ActualitePage } from '../pages/actualite/actualite';
+import { ProgrammePage } from '../pages/programme/programme';
+import { PodcastsPage } from '../pages/podcasts/podcasts';
+import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
+import { BlogPage } from '../pages/blog/blog';
+import { IonShrinkingHeader } from '../components/ion-shrinking-header';
+
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    AccueilPage,
+    ActualitePage,
+    ProgrammePage,
+    PodcastsPage,
+    ContactezNousPage,
+    BlogPage,
+	IonShrinkingHeader
   ],
   imports: [
     BrowserModule,
@@ -19,7 +32,12 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    AccueilPage,
+    ActualitePage,
+    ProgrammePage,
+    PodcastsPage,
+    ContactezNousPage,
+    BlogPage
   ],
   providers: [
     StatusBar,

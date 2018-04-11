@@ -1,0 +1,39 @@
+page-accueil ion-card-title {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  font-size: 18px !important;
+  font-weight: bold !important; }
+page-accueil .card-md {
+  margin: 0px !important; }
+page-accueil .date {
+  padding-left: 5px !important;
+  padding-right: 10px !important;
+  font-size: 13px !important;
+  font-weight: lighter !important; }
+@keyframes animatedBar {
+  0% {
+    background-position: -406px 0; }
+  100% {
+    background-position: 0 0; } }
+page-accueil .fakeItem h2, page-accueil .fakeItem h3, page-accueil .fakeItem p {
+  background-color: lightgrey;
+  opacity: 0.5;
+  height: 1em;
+  margin-top: 10px;
+  position: relative;
+  background: linear-gradient(to right, #dddddd, #EEEEEE);
+  animation: animatedBar 700ms linear infinite; }
+  page-accueil .fakeItem h2:after, page-accueil .fakeItem h3:after, page-accueil .fakeItem p:after {
+    position: absolute;
+    display: block;
+    content: '';
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: white; }
+page-accueil .fakeItem h2:after {
+  width: 65%; }
+page-accueil .fakeItem h3:after {
+  width: 60%; }
+page-accueil .fakeItem p:after {
+  width: 40%; }
