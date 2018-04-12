@@ -3,7 +3,7 @@ import { NavController, Platform, Content, PopoverController, LoadingController 
 import { ScrollHideConfig } from '../../directives/scroll-hide/scroll-hide';
 import * as $ from "jquery";
 import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
-
+import { MusicControls } from '@ionic-native/music-controls';
 import { Http } from '@angular/http';
 
 import { map } from 'rxjs/operators';
@@ -40,6 +40,7 @@ export class AccueilPage {
 		public _player: AudioStreamProvider,
 		public http: Http, 
 		public loadingCtrl: LoadingController,
+		  private _musicControls: MusicControls,
 		//private iab: InAppBrowser,
 		private _PLATFORM : Platform
 		//private ga: GoogleAnalytics
@@ -78,7 +79,6 @@ export class AccueilPage {
   	
 	}
 
-	      
 startAudio() {      
     
         if(localStorage.player == 'play'){
@@ -89,34 +89,100 @@ startAudio() {
         }
         else
         {
-            /* 
-			setInterval(()=>{   
-                let path = 'https://www.mediaone-digital.ch/cache/onefm.json?hash_id=' + Math.random();
-                let encodedPath = encodeURI(path);
-                let timeoutMS = 10000;
+			
+			$.getJSON('https://www.mediaone-digital.ch/cache/onefm.json', function(data){
+				   $('#songTitle').html(data.live[0].interpret+'<br>'+data.live[0].title);
+				   $('#songCover').attr('src',data.live[0].imageURL);
+			
+			});
+			
+			this._musicControls.destroy(); // it's the same with or without the destroy 
+			this._musicControls.create({
+			track       : 'test',        // optional, default : ''
+			artist      : 'test',                       // optional, default : ''
+			cover       : '',      // optional, default : nothing
+			isPlaying   : true,                         // optional, default : true
+			dismissable : true,                         // optional, default : false
+			hasPrev   : false,      // show previous button, optional, default: true
+			hasNext   : false,      // show next button, optional, default: true
+			hasClose  : false,       // show close button, optional, default: false
+			hasSkipForward : false,  // show skip forward button, optional, default: false
+			hasSkipBackward : false, // show skip backward button, optional, default: false
+			skipForwardInterval: 0, // display number for skip forward, optional, default: 0
+			skipBackwardInterval: 0, // display number for skip backward, optional, default: 0
+			album       : 'Radio Cristy Player',     // optional, default: ''
+			duration : 0, // optional, default: 0
+			elapsed : 0, // optional, default: 0
+			ticker    : 'En ce moment'
+			});
+			 this._musicControls.subscribe().subscribe((action) => {
+			console.log('action', action);
+			const message = JSON.parse(action).message;
+			console.log('message', message);
+			switch(message) {
+			case 'music-controls-next':
+			   // Do something
+			   break;
+			case 'music-controls-previous':
+			   // Do something
+			   break;
+			case 'music-controls-pause':
+			   // Do something
+			   console.log('music pause');
+			   this._player.pauseProvider();
+			   this._musicControls.listen(); 
+			   this._musicControls.updateIsPlaying(false);
+			   break;
+			case 'music-controls-play':
+			   // Do something
+			   console.log('music play');
 
-				 this.http.get('https://reqres.in/api/users')
-				  .pipe(
-					map(res => res.data)
-				  )
-				  .subscribe(res => console.log(res));
-				 
-				 
-                
-            
-             }, 4000);
-			 */
+			   this._player.playProvider();
+			   this._musicControls.listen(); 
+			   this._musicControls.updateIsPlaying(true);
+			   break;
+			case 'music-controls-destroy':
+			   // Do something
+			   break;
+			// External controls (iOS only)
+			case 'music-controls-toggle-play-pause' :
+			  // Do something
+			  break;
+			case 'music-controls-seek-to':
+			  // Do something
+			  break;
+			case 'music-controls-skip-forward':
+			  // Do something
+			  break;
+			case 'music-controls-skip-backward':
+			  // Do something
+			  break;
 
- 
-            
-            
-            localStorage.setItem("player", "play");
-            this.buttonIcon = "ios-pause";
+			  // Headset events (Android only)
+			  // All media button events are listed below
+			case 'music-controls-media-button' :
+				// Do something
+				break;
+			case 'music-controls-headset-unplugged':
+				// Do something
+				break;
+			case 'music-controls-headset-plugged':
+				// Do something
+				break;
+			default:
+				break;
+			}
+			});
+			this._musicControls.listen(); // activates the observable above
+			this._musicControls.updateIsPlaying(true);	
 
-            console.log('Play Button clicked');
-            this._player.playProvider();
+			localStorage.setItem("player", "play");
+			this.buttonIcon = "ios-pause";
 
-		}
+			console.log('Play Button clicked');
+			this._player.playProvider();
+
+			}
 	
 	}
 	
