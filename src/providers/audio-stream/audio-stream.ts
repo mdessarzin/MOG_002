@@ -35,20 +35,21 @@ export class AudioStreamProvider {
 						reject(false);
 						this.loadingPopup.dismiss(); 
 					});
-					return false;
+					//return false;
 			});
 
 			return this.promise;
 
 			});  
-			return false;
+			return Observable.of(false);
 
 		}
 	
 
 		public pauseProvider(): Observable<boolean> {
 			this.stream.pause();
-			return false;
+			//return false;
+			return Observable.of(false);
 		}
 
 }
