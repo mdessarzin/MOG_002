@@ -25,7 +25,7 @@ export class AudioStreamProvider {
 
 			this.loadingPopup.present().then(()=>{
 
-			this.promise = new Promise((resolve,reject,stream) => {
+			this.promise = new Promise((resolve,reject) => {
 					this.stream.play();
 					this.stream.addEventListener('playing', () => {
 					resolve(true);
