@@ -17,12 +17,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { MusicControls } from '@ionic-native/music-controls';
-
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { OneSignal } from '@ionic-native/onesignal';
-
 import {Observable} from 'rxjs/Rx';
 
 localStorage.setItem("player", "stop");
