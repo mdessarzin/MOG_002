@@ -23,6 +23,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { OneSignal } from '@ionic-native/onesignal';
 
+import {Observable} from 'rxjs/Rx';
 
 localStorage.setItem("player", "stop");
 
