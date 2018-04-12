@@ -12,7 +12,6 @@ import { BlogPage } from '../pages/blog/blog';
 import { IonShrinkingHeader } from '../components/ion-shrinking-header';
 import { ScrollHideDirective } from '../directives/scroll-hide/scroll-hide';
 import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
