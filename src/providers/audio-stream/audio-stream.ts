@@ -35,6 +35,7 @@ export class AudioStreamProvider {
 						reject(false);
 						this.loadingPopup.dismiss(); 
 					});
+					return false;
 			});
 
 			return this.promise;
