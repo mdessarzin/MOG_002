@@ -5,7 +5,7 @@ import * as $ from "jquery";
 import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
 import { MusicControls } from '@ionic-native/music-controls';
 import { Http } from '@angular/http';
-
+import { Media, MediaObject } from '@ionic-native/media';
 import { map } from 'rxjs/operators';
 
 //import {Http, Response} from "@angular/http";
@@ -19,9 +19,9 @@ import { map } from 'rxjs/operators';
 })
 export class AccueilPage {
 	private loadingPopup: any;
-    title: string;
-    image: string;
-    text: string;
+    artist: string;
+    cover: string;
+    track: string;
     date: string;
     cat: string;
     live: string;
@@ -59,7 +59,8 @@ export class AccueilPage {
       
 		$.ajaxSetup({ cache: false });
 		$.getJSON('https://www.mediaone-digital.ch/cache/onefm.json', function(data){
-				   $('#songTitle').html(data.live[0].interpret+'<br>'+data.live[0].title);
+				   					   $('#songArtist').html(data.live[0].interpret);
+					   $('#songTitle').html(data.live[0].title);
 				   $('#songCover').attr('src',data.live[0].imageURL);
 		});
 			
@@ -79,12 +80,14 @@ export class AccueilPage {
     ionViewDidLoad() {
 		this.loading();
 	}
-settingMusicControl(){
+settingMusicControl(track,artist,cover){
+	
+	
     this.musicControls.destroy(); // it's the same with or without the destroy 
     this.musicControls.create({
-      track       : 'Test track',        // optional, default : ''
-      artist      : 'test artist',                       // optional, default : ''
-      cover       : '',      // optional, default : nothing
+      track       : track,        // optional, default : ''
+      artist      : artist,                       // optional, default : ''
+      cover       : cover,      // optional, default : nothing
       // cover can be a local path (use fullpath 'file:///storage/emulated/...', or only 'my_image.jpg' if my_image.jpg is in the www folder of your app)
       //           or a remote url ('http://...', 'https://...', 'ftp://...')
       isPlaying   : true,                         // optional, default : true
@@ -121,14 +124,14 @@ settingMusicControl(){
             case 'music-controls-pause':
                // Do something
                console.log('music pause');
-               this.file.pause();
+               this._player.pauseProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(false);
                break;
             case 'music-controls-play':
                // Do something
                console.log('music play');
-               this.file.play();
+               this._player.playProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(true);
                break;
@@ -181,42 +184,78 @@ startAudio() {
         else
         {
 			
-			$.getJSON('https://www.mediaone-digital.ch/cache/onefm.json', function(data){
-				   $('#songTitle').html(data.live[0].interpret+'<br>'+data.live[0].title);
-				   $('#songCover').attr('src',data.live[0].imageURL);
 			
-			});
-			
-	
 
+			
+			
+			   setInterval(() => {      
+          console.log('timer');
+				  
+				   setTimeout(() => {
+			  fetch('https://www.mediaone-digital.ch/cache/onefm.json')
+				.then(response => response.json())
+				.then(data => {
+				  console.log(data);
+				  
+				  
+				  if(this.live == data.live[0].interpret){
+                                //
+                            }
+                            else{
+                                // this.params.data = data;
+                              	this.settingMusicControl($('#songTitle').html(), $('#songArtist').html(), $('#songCover').attr('src'));
+                                this.live = data.live[0].interpret;
+							$('#songArtist').html(data.live[0].interpret);
+							$('#songTitle').html(data.live[0].title);
+							$('#songCover').attr('src',data.live[0].imageURL);								
+                            }
+				  
+				  
+				//  this.posts = data;
+				});
+			}, 0);
+				   
+				   
+				   
+
+							/*
+							$.getJSON('https://www.mediaone-digital.ch/cache/onefm.json', function(data,this){
+
+
+							$('#songArtist').html(data.live[0].interpret);
+							$('#songTitle').html(data.live[0].title);
+							$('#songCover').attr('src',data.live[0].imageURL);
+
+							if(this.live == data.live[0].interpret){
+							//
+							}
+							else{
+							// this.params.data = data;
+
+							this.live = data.live[0].interpret;
+							}
+
+							});
+							//you can call function here
+							this.settingMusicControl($('#songTitle').html(), $('#songArtist').html(), $('#songCover').attr('src'));
+
+			  */
+			   },15000);
+			
+			
+			
+		
+			
+			
+
+			
 			localStorage.setItem("player", "play");
 			this.buttonIcon = "ios-pause";
 
 			console.log('Play Button clicked');
 			this._player.playProvider();
-
-	    this.settingMusicControl();
 			
-			alert('o');
-			
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-
+	    	
 			}
 	
 }
