@@ -179,7 +179,7 @@ startAudio() {
                 this._player.pauseProvider();
                 //this._musicControls.updateIsPlaying(true);
 			    this.musicControls.listen();
-    this.musicControls.updateIsPlaying(false);
+				this.musicControls.updateIsPlaying(false);
 			
                 localStorage.setItem("player", "stop");
                 this.buttonIcon = "ios-play";
@@ -257,7 +257,9 @@ startAudio() {
 
 			console.log('Play Button clicked');
 			this._player.playProvider();
-			
+						    this.musicControls.listen();
+				this.musicControls.updateIsPlaying(true);
+
 	    	
 			}
 	
