@@ -50,13 +50,13 @@ export class AccueilPage {
 			
 		if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
-			$('#btPlayer').html('<i class="ffas fa-pause-circle fa-4x"></i>');
+			$('#btPlayer').html('<i class="ffas fa-pause-circle fa-3x"></i>');
 
         }
         else
         {
             //this.buttonIcon = "ios-play";
-			$('#btPlayer').html('<i class="fas fa-play-circle fa-4x"></i>');
+			$('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
         }
       
 		$.ajaxSetup({ cache: false });
@@ -129,7 +129,7 @@ settingMusicControl(track,artist,cover){
                this._player.pauseProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(false);
-				  $('#btPlayer').html('<i class="fas fa-play-circle fa-4x"></i>');
+				  $('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
                break;
             case 'music-controls-play':
                // Do something
@@ -137,7 +137,7 @@ settingMusicControl(track,artist,cover){
                this._player.playProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(true);
-				  $('#btPlayer').html('<i class="fas fa-pause-circle fa-4x"></i>');
+				  $('#btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
                break;
             case 'music-controls-destroy':
                // Do something
@@ -186,7 +186,7 @@ startAudio() {
 				this.musicControls.updateIsPlaying(false);
 			
                 localStorage.setItem("player", "stop");
-                $('#btPlayer').html('<i class="fas fa-play-circle fa-4x"></i>');
+                $('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
         }
         else
         {
@@ -258,13 +258,21 @@ startAudio() {
 			
 			localStorage.setItem("player", "play");
 			//this.buttonIcon = "ios-pause";
-			$('#btPlayer').html('<i class="fas fa-pause-circle fa-4x"></i>');
+			$('#btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 
 			console.log('Play Button clicked');
 			this._player.playProvider();
 						    this.musicControls.listen();
 				this.musicControls.updateIsPlaying(true);
 
+			      
+			
+					if(localStorage.firstclickonplayer == 'oui'){
+							this.settingMusicControl($('#songTitle').html(), $('#songArtist').html(), $('#songCover').attr('src'));
+							                localStorage.setItem("firstclickonplayer", "non");
+
+						
+					}
 	    	
 			}
 	

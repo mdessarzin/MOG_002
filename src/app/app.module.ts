@@ -22,6 +22,7 @@ import { OneSignal } from '@ionic-native/onesignal';
 import {Observable} from 'rxjs/Rx';
 
 localStorage.setItem("player", "stop");
+localStorage.setItem("firstclickonplayer", "oui");
 
 Pro.init('5a10a7ae', {
   appVersion: '0.0.0.1'
