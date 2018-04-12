@@ -18,6 +18,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { MusicControls } from '@ionic-native/music-controls';
 
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { OneSignal } from '@ionic-native/onesignal';
+
+
+localStorage.setItem("player", "stop");
 
 Pro.init('5a10a7ae', {
   appVersion: '0.0.0.1'
@@ -53,14 +60,16 @@ export class MyErrorHandler implements ErrorHandler {
     PodcastsPage,
     ContactezNousPage,
     BlogPage,
-	IonShrinkingHeader,
 	  ScrollHideDirective
 	  
   ],
   imports: [
-    BrowserModule,
+	  
 	  HttpModule,
-    IonicModule.forRoot(MyApp)
+    BrowserModule,
+    IonicModule.forRoot(MyApp, {
+        preloadModules: true
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
