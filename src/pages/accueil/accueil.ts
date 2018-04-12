@@ -178,6 +178,9 @@ startAudio() {
         if(localStorage.player == 'play'){
                 this._player.pauseProvider();
                 //this._musicControls.updateIsPlaying(true);
+			    this.musicControls.listen();
+    this.musicControls.updateIsPlaying(false);
+			
                 localStorage.setItem("player", "stop");
                 this.buttonIcon = "ios-play";
         }
