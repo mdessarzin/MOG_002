@@ -127,7 +127,7 @@ settingMusicControl(track,artist,cover){
                this._player.pauseProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(false);
-				  $('#songArtist').html('sssssss');
+				  $('#btPlayer').html('<ion-icon name="alarm"></ion-icon>');
                break;
             case 'music-controls-play':
                // Do something
