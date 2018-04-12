@@ -10,4 +10,5 @@ export class ActualitePage {
   constructor(public navCtrl: NavController) {
   }
   
+		
 }

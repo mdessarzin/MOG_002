@@ -10,9 +10,14 @@ import { PodcastsPage } from '../pages/podcasts/podcasts';
 import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
 import { BlogPage } from '../pages/blog/blog';
 import { IonShrinkingHeader } from '../components/ion-shrinking-header';
+import { ScrollHideDirective } from '../directives/scroll-hide/scroll-hide';
+import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http';
+import { MusicControls } from '@ionic-native/music-controls';
+
 
 Pro.init('5a10a7ae', {
   appVersion: '0.0.0.1'
@@ -49,10 +54,12 @@ export class MyErrorHandler implements ErrorHandler {
     ContactezNousPage,
     BlogPage,
 	IonShrinkingHeader,
+	  ScrollHideDirective
 	  
   ],
   imports: [
     BrowserModule,
+	  HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -69,6 +76,8 @@ export class MyErrorHandler implements ErrorHandler {
     StatusBar,
     SplashScreen,
 	   IonicErrorHandler,
+	  AudioStreamProvider,
+	  MusicControls,
     {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
