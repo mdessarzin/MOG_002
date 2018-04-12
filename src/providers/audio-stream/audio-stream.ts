@@ -40,12 +40,14 @@ export class AudioStreamProvider {
 			return this.promise;
 
 			});  
+			return false;
 
 		}
 	
 
 		public pauseProvider(): Observable<any> {
 			this.stream.pause();
+			return false;
 		}
 
 }
