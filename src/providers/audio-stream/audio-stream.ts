@@ -15,7 +15,7 @@ export class AudioStreamProvider {
 			this.stream = new Audio(this.url);
 	  	}
 
-		public playProvider(): Observable<any> {
+		public playProvider(): Observable<boolean> {
 
 			this.loadingPopup = this._loadingCtrl.create({     // Crea el cargando
 					spinner: 'dots',
@@ -46,7 +46,7 @@ export class AudioStreamProvider {
 		}
 	
 
-		public pauseProvider(): Observable<any> {
+		public pauseProvider(): Observable<boolean> {
 			this.stream.pause();
 			return false;
 		}
