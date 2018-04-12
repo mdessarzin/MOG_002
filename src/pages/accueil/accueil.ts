@@ -49,12 +49,14 @@ export class AccueilPage {
 
 			
 		if(localStorage.player == 'play'){
-            this.buttonIcon = "ios-pause";
+           // this.buttonIcon = "ios-pause";
+			$('#btPlayer').html('<i class="fas fa-pause"></i>');
 
         }
         else
         {
-            this.buttonIcon = "ios-play";
+            //this.buttonIcon = "ios-play";
+			$('#btPlayer').html('<i class="fas fa-play"></i>');
         }
       
 		$.ajaxSetup({ cache: false });
@@ -127,7 +129,7 @@ settingMusicControl(track,artist,cover){
                this._player.pauseProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(false);
-				  $('#btPlayer').attr('name',"ios-play");
+				  $('#btPlayer').html('<i class="fas fa-play"></i>');
                break;
             case 'music-controls-play':
                // Do something
@@ -135,7 +137,7 @@ settingMusicControl(track,artist,cover){
                this._player.playProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(true);
-				  $('#songArtist').html('fffff');
+				  $('#btPlayer').html('<i class="fas fa-pause"></i>');
                break;
             case 'music-controls-destroy':
                // Do something
@@ -184,7 +186,7 @@ startAudio() {
 				this.musicControls.updateIsPlaying(false);
 			
                 localStorage.setItem("player", "stop");
-                this.buttonIcon = "ios-play";
+                $('#btPlayer').html('<i class="fas fa-play"></i>');
         }
         else
         {
@@ -255,7 +257,8 @@ startAudio() {
 
 			
 			localStorage.setItem("player", "play");
-			this.buttonIcon = "ios-pause";
+			//this.buttonIcon = "ios-pause";
+			$('#btPlayer').html('<i class="fas fa-pause"></i>');
 
 			console.log('Play Button clicked');
 			this._player.playProvider();
