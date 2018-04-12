@@ -127,6 +127,7 @@ settingMusicControl(track,artist,cover){
                this._player.pauseProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(false);
+				  this.buttonIcon = "ios-play";
                break;
             case 'music-controls-play':
                // Do something
@@ -134,6 +135,7 @@ settingMusicControl(track,artist,cover){
                this._player.playProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(true);
+				  this.buttonIcon = "ios-pause";
                break;
             case 'music-controls-destroy':
                // Do something
