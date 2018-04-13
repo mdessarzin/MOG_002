@@ -17,6 +17,7 @@ import { map } from 'rxjs/operators';
   selector: 'page-accueil',
   templateUrl: 'accueil.html'
 })
+
 export class AccueilPage {
 	private loadingPopup: any;
     artist: string;
@@ -42,7 +43,7 @@ export class AccueilPage {
 		public loadingCtrl: LoadingController,
 		public musicControls: MusicControls,
 		//private iab: InAppBrowser,
-		 public plt: Platform
+		 public plt: Platform,
 		//private ga: GoogleAnalytics
 	){
 			
@@ -278,5 +279,6 @@ startAudio() {
 	
 }
 // }
+	  
 	}
 	

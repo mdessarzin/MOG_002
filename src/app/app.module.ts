@@ -58,11 +58,9 @@ export class MyErrorHandler implements ErrorHandler {
     PodcastsPage,
     ContactezNousPage,
     BlogPage,
-	  ScrollHideDirective
-	  
+	ScrollHideDirective
   ],
   imports: [
-	  
 	  HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp, {
