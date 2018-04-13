@@ -1,3 +1,4 @@
+<ion-split-pane when="md">
 <ion-menu [content]="mainContent">
   <ion-header>
     <ion-toolbar>
@@ -8,10 +9,12 @@
   </ion-header>
   <ion-content id="side-menu21">
     <ion-list id="menu-list1">
+		
+		
       <ion-item color="none" menuClose="" on-click="goToAccueil()" id="menu-list-item1">
         Accueil
       </ion-item>
-      <ion-item color="none" menuClose="" on-click="goToActualite()" id="menu-list-item2">
+      <ion-item color="none" menuClose="" on-click="goToActualite()" id="menu-list-item2" >
         Actualité
       </ion-item>
       <ion-item color="none" menuClose="" on-click="goToProgramme()" id="menu-list-item3">
@@ -29,5 +32,5 @@
     </ion-list>
   </ion-content>
 </ion-menu>
-
-<ion-nav #mainContent [root]="rootPage"></ion-nav>
+<ion-nav #mainContent main swipeBackEnabled="false" [root]="rootPage"></ion-nav>
+</ion-split-pane>

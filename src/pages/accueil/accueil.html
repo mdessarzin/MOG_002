@@ -1,6 +1,6 @@
 <ion-header [scrollHide]="headerScrollConfig" [scrollContent]="pageContent">
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button ion-button menuToggle class="ripple">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
@@ -12,11 +12,11 @@
  <ion-grid *ngIf='posts' no-padding>
         <ion-row no-padding> 
 		 <ion-col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 no-padding *ngFor="let post of posts" >
-			 <ion-card no-padding style="margin-bottom:40px; border-bottom: 6px solid #f1f1f1;">
+			 <ion-card  no-padding style="margin-bottom:40px; border-bottom: 6px solid #f1f1f1;">
 			<ion-card-content no-padding>
 				<div style="position: relative;">	
 					<span class="card_categorie">{{post.pure_taxonomies.categories[0].name}}</span>
-					<img [src]="post.better_featured_image.source_url" />
+					<img  src="assets/images/{{mode}}.svg" (load)="img=true" [hidden]="!img" #imgModeElem [src]="post.better_featured_image.card" />
 				</div>
 				<ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
 			</ion-card-content>
