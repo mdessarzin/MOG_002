@@ -268,12 +268,12 @@ startAudio() {
 
 			      
 			
-					if(localStorage.firstclickonplayer == 'oui'){
+				//	if(localStorage.firstclickonplayer == 'oui'){
 							this.settingMusicControl($('#songTitle').html(), $('#songArtist').html(), $('#songCover').attr('src'));
-							                localStorage.setItem("firstclickonplayer", "non");
+				//			                localStorage.setItem("firstclickonplayer", "non");
 
 						
-					}
+				//	}
 	    	
 			}
 	

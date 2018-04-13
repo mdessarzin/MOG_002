@@ -1,5 +1,5 @@
 import { Pro } from '@ionic/pro';
-import { NgModule, ErrorHandler, Injectable, Injector, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule, ErrorHandler, Injectable, Injector} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -67,7 +67,6 @@ export class MyErrorHandler implements ErrorHandler {
         preloadModules: true
     })
   ],
-schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
