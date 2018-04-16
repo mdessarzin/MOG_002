@@ -5,6 +5,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AccueilPage } from '../pages/accueil/accueil';
 import { ActualitePage } from '../pages/actualite/actualite';
+import { DetailsPage } from '../pages/details/details';
+
 import { ProgrammePage } from '../pages/programme/programme';
 import { PodcastsPage } from '../pages/podcasts/podcasts';
 import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
@@ -21,6 +23,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { OneSignal } from '@ionic-native/onesignal';
 import {Observable} from 'rxjs/Rx';
 import { SuperTabsModule } from '../ionic2-super-tabs/src';
+
 
 localStorage.setItem("player", "stop");
 localStorage.setItem("firstclickonplayer", "oui");
@@ -59,6 +62,7 @@ export class MyErrorHandler implements ErrorHandler {
     PodcastsPage,
     ContactezNousPage,
     BlogPage,
+	DetailsPage,
 	ScrollHideDirective
   ],
   imports: [
@@ -77,13 +81,15 @@ export class MyErrorHandler implements ErrorHandler {
     ProgrammePage,
     PodcastsPage,
     ContactezNousPage,
-    BlogPage
+    BlogPage,
+	DetailsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
 	   IonicErrorHandler,
 	  AudioStreamProvider,
+	  SocialSharing,
 	  MusicControls,
     {provide: ErrorHandler, useClass: MyErrorHandler}
   ]

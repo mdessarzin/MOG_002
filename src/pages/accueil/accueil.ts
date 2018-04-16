@@ -7,6 +7,9 @@ import { MusicControls } from '@ionic-native/music-controls';
 import { Http } from '@angular/http';
 import { Media, MediaObject } from '@ionic-native/media';
 import { map } from 'rxjs/operators';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { DetailsPage } from '../details/details';
+
 
 //import {Http, Response} from "@angular/http";
 //import {Observable} from 'rxjs/Rx';
@@ -32,9 +35,12 @@ export class AccueilPage {
     pushPage: any;
     buttonIcon: string = 'ios-play';
  	posts: any;
-  	fakeUsers: Array<any> = new Array(7);
+  	fakeUsers: Array<any> = new Array(3);
 	footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
   	headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
+	link: string;
+    title: string;
+    image: string;
 
   constructor(
 		public navCtrl: NavController,
@@ -42,6 +48,7 @@ export class AccueilPage {
 		public http: Http, 
 		public loadingCtrl: LoadingController,
 		public musicControls: MusicControls,
+		 private socialSharing: SocialSharing,
 		//private iab: InAppBrowser,
 		 public plt: Platform,
 		//private ga: GoogleAnalytics
@@ -178,11 +185,10 @@ settingMusicControl(track,artist,cover){
 
 	
 startAudio() {      
-   // if (this.plt.is('cordova')) {
+  // if (this.plt.is('cordova')) {
      
         if(localStorage.player == 'play'){
                 this._player.pauseProvider();
-                //this._musicControls.updateIsPlaying(true);
 			    this.musicControls.listen();
 				this.musicControls.updateIsPlaying(false);
 			
@@ -204,50 +210,20 @@ startAudio() {
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
-				  
-				  
 				  if(this.live == data.live[0].interpret){
                                 //
                             }
                             else{
-                                // this.params.data = data;
                               	this.settingMusicControl($('#songTitle').html(), $('#songArtist').html(), $('#songCover').attr('src'));
                                 this.live = data.live[0].interpret;
-							$('#songArtist').html(data.live[0].interpret);
-							$('#songTitle').html(data.live[0].title);
-							$('#songCover').attr('src',data.live[0].imageURL);								
+								$('#songArtist').html(data.live[0].interpret);
+								$('#songTitle').html(data.live[0].title);
+								$('#songCover').attr('src',data.live[0].imageURL);								
                             }
-				  
-				  
-				//  this.posts = data;
+
 				});
 			}, 0);
-				   
-				   
-				   
 
-							/*
-							$.getJSON('https://www.mediaone-digital.ch/cache/onefm.json', function(data,this){
-
-
-							$('#songArtist').html(data.live[0].interpret);
-							$('#songTitle').html(data.live[0].title);
-							$('#songCover').attr('src',data.live[0].imageURL);
-
-							if(this.live == data.live[0].interpret){
-							//
-							}
-							else{
-							// this.params.data = data;
-
-							this.live = data.live[0].interpret;
-							}
-
-							});
-							//you can call function here
-							this.settingMusicControl($('#songTitle').html(), $('#songArtist').html(), $('#songCover').attr('src'));
-
-			  */
 			   },15000);
 			
 			
@@ -277,8 +253,54 @@ startAudio() {
 	    	
 			}
 	
+//}
+ 	
 }
-// }
-	  
-	}
+
+	private whatsappShare(title, image, link){
+    this.socialSharing.shareViaWhatsApp(title, image, link)
+      .then(()=>{
+//
+    },
+      ()=>{
+         //
+      })
+  }
+
+
+private facebookShare(title, image, link){
+    this.socialSharing.shareViaFacebook(title, null, link)
+      .then(()=>{
+       //
+      },
+      ()=>{
+         //
+      })
+  }
+
+private twitterShare(message, title, image, link){
+    this.socialSharing.shareViaTwitter(title, image, link)
+      .then(()=>{
+       //
+      },
+      ()=>{
+         //
+      })
+  }
+	
+private showDetails(title,image, text, date, link){
+        //console.log(this.login);
+       
+    
+    this.navCtrl.push(DetailsPage,{
+            title: title,
+            text: text,
+            image: image,
+            date: date,
+            link: link,
+            cat: 'Actualité'
+        });
+    }
+	
+}
 	

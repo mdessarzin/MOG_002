@@ -15,9 +15,9 @@ import { AccueilPage } from '../../pages/accueil/accueil';
   templateUrl: 'actualite.html'
 })
 export class ActualitePage {
-	  page1: any = ProgrammePage;
+	  page1: any = AccueilPage;
   page2: any = ContactezNousPage;
-  page3: any = AccueilPage;
+  page3: any = ContactezNousPage;
 	
 	  @ViewChild(SuperTabs) superTabs: SuperTabs;
 
