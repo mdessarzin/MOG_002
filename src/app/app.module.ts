@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 import { AccueilPage } from '../pages/accueil/accueil';
 import { ActualitePage } from '../pages/actualite/actualite';
 import { DetailsPage } from '../pages/details/details';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';// npm install --save @angular/animations
+import { MultilevelMenuComponent } from '../components/multilevel-menu/multilevel-menu';
 
 import { ProgrammePage } from '../pages/programme/programme';
 import { PodcastsPage } from '../pages/podcasts/podcasts';
@@ -63,12 +65,14 @@ export class MyErrorHandler implements ErrorHandler {
     ContactezNousPage,
     BlogPage,
 	DetailsPage,
-	ScrollHideDirective
+	ScrollHideDirective,
+	  MultilevelMenuComponent
   ],
   imports: [
 	  HttpModule,
     BrowserModule,
 	     SuperTabsModule.forRoot(),
+	  BrowserAnimationsModule,
     IonicModule.forRoot(MyApp, {
         preloadModules: true
     })
