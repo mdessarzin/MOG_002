@@ -58,7 +58,7 @@ header: string;
 				  console.log(data);
 				  this.posts = data;
 				});
-			},0);
+			},100);
 
 			
   }
@@ -99,7 +99,7 @@ private showDetails(title,image, text, date, link){
         //console.log(this.login);
        
     
-    this.navCtrl.pop(DetailsPage,{
+    this.navCtrl.push(DetailsPage,{
             title: title,
             text: text,
             image: image,

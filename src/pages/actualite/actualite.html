@@ -12,7 +12,7 @@
 
 <ion-content no-bounce id="page5">
 
-	<super-tabs id="mainTabs" [config]="{ sideMenu: 'left', transitionDuration:'100', transitionEase: 'cubic-bezier(.05,1.55,.05,1)'}" enableTabsSwipe="true" scrollTabs toolbarColor="dark" toolbarBackground="light" indicatorColor="yellow" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
+	<super-tabs id="mainTabs" [config]="{ sideMenu:'left'}" enableTabsSwipe="true" scrollTabs toolbarColor="dark" toolbarBackground="light" indicatorColor="yellow" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
     <super-tab [swipeBackEnabled]="false" [root]="page1" [rootParams]="{'id':'39'}" title="Politique" id="page1"></super-tab>
     <super-tab [root]="page1" [rootParams]="{'id':'23', 'header':'no'}" title="Culture & Société" id="page2"></super-tab>
     <super-tab [root]="page1" [rootParams]="{'id':'40', 'header':'no'}" title="Economie" id="page3"></super-tab>
