@@ -43,9 +43,9 @@ export class MyApp {
     this.navCtrl.setRoot(PodcastsPage);
   }goToContactezNous(params){
     if (!params) params = {};
-    this.navCtrl.setRoot(ContactezNousPage);
+    this.navCtrl.setRoot(ContactezNousPage, {'id' : 'salut'});
   }goToBlog(params){
     if (!params) params = {};
-    this.navCtrl.setRoot(BlogPage);
+    this.navCtrl.setRoot(BlogPage, {'id' : '34'});
   }
 }

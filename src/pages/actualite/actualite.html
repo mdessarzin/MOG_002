@@ -4,7 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Test
+     Actualité
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -12,14 +12,12 @@
 
 <ion-content no-bounce id="page5">
 
-	<super-tabs id="mainTabs" [config]="{ sideMenu: 'left' }" enableTabsSwipe="true" scrollTabs toolbarColor="light" toolbarBackground="dark" indicatorColor="yellow" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
-    <super-tab [swipeBackEnabled]="false" [root]="page1" [title]="showTitles? 'Home' : ''" [icon]="showIcons? 'home': ''" id="page1"></super-tab>
-    <super-tab [root]="page2" badge="5" [title]="showTitles? 'Trending' : ''" [icon]="showIcons? 'trending-up' : ''" id="page2"></super-tab>
-    <super-tab [root]="page2" badge="5" [title]="showTitles? 'Trending' : ''" [icon]="showIcons? 'trending-up' : ''" id="page2"></super-tab>
-    <super-tab [root]="page2" badge="5" [title]="showTitles? 'Trending' : ''" [icon]="showIcons? 'trending-up' : ''" id="page2"></super-tab>
-    <super-tab [root]="page2" badge="5" [title]="showTitles? 'Trending' : ''" [icon]="showIcons? 'trending-up' : ''" id="page2"></super-tab>
+	<super-tabs id="mainTabs" [config]="{ sideMenu: 'left', transitionDuration:'100', transitionEase: 'cubic-bezier(.05,1.55,.05,1)'}" enableTabsSwipe="true" scrollTabs toolbarColor="dark" toolbarBackground="light" indicatorColor="yellow" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
+    <super-tab [swipeBackEnabled]="false" [root]="page1" [rootParams]="{'id':'39'}" title="Politique" id="page1"></super-tab>
+    <super-tab [root]="page1" [rootParams]="{'id':'23', 'header':'no'}" title="Culture & Société" id="page2"></super-tab>
+    <super-tab [root]="page1" [rootParams]="{'id':'40', 'header':'no'}" title="Economie" id="page3"></super-tab>
+    <super-tab [root]="page1" [rootParams]="{'id':'19', 'header':'no'}" title="Sport" id="page4"></super-tab>
 
-		<super-tab [root]="page3" [title]="showTitles? 'Favorites' : ''" [icon]="showIcons? 'heart' : ''" id="page3"></super-tab>
     
   </super-tabs>
 

@@ -4,24 +4,18 @@ import { IonicPage, IonicPageModule, NavController, NavParams } from 'ionic-angu
 import { SuperTabsController } from '../../ionic2-super-tabs/src';
 import {SuperTabs} from "../../ionic2-super-tabs/src/components/super-tabs";
 
-import { ProgrammePage } from '../../pages/programme/programme';
-import { ContactezNousPage } from '../../pages/contactez-nous/contactez-nous';
-import { AccueilPage } from '../../pages/accueil/accueil';
-
-
+import { BlogPage } from '../../pages/blog/blog';
 
 @Component({
   selector: 'page-actualite',
   templateUrl: 'actualite.html'
 })
 export class ActualitePage {
-	  page1: any = AccueilPage;
-  page2: any = ContactezNousPage;
-  page3: any = ContactezNousPage;
+	  page1: any = BlogPage;
 	
 	  @ViewChild(SuperTabs) superTabs: SuperTabs;
 
-   showIcons: boolean = true;
+   showIcons: boolean = false;
   showTitles: boolean = true;
   pageTitle: string = 'Full Height';
 	
