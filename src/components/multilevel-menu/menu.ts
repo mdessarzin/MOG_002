@@ -17,6 +17,7 @@ export class MenuService {
     return [
       {
         name: "Electronics",
+		icon: 'bowtie',
         id: 4,
         items: [// Required: array, even empty
           {
@@ -26,7 +27,7 @@ export class MenuService {
               {
                 name: "Samsung",
                 id: 400,
-                url: 'app/category/400'
+                url: 'app/category/401'
               },
               {
                 name: "LG",
@@ -122,6 +123,7 @@ export class MenuService {
     let categories = [
       {
         name: "Electronics",
+		  icon: 'bowtie',
         id: "4"
       },
       {
@@ -131,7 +133,7 @@ export class MenuService {
       {
         name: "Samsung",
         id: "400",
-        url: 'app/category/400'
+        url: 'app/contactez-nous/contactez-nous'
       },
       {
         name: "LG",

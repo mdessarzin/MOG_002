@@ -2,7 +2,7 @@
   <!-- Level 1 -->
   <div *ngFor="let cat of categories">
     <button ion-item detail-none class="category-lvl-1" (click)="toggleCat(cat)" [ngClass]="{'active': isActive(cat)}">
-      {{cat.name}}
+		{{cat.name}}
       <ion-note *ngIf="cat.items.length" item-right>
         <ion-icon name="{{isCatShown(cat) ? 'ios-arrow-down' : 'ios-arrow-forward'}}"></ion-icon>
       </ion-note>

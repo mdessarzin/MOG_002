@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AccueilPage } from '../pages/accueil/accueil';
 import { MenuService } from '../components/multilevel-menu/menu';
+import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
+
 
 @Component({
   templateUrl: 'app.html',
@@ -36,8 +38,10 @@ export class MyApp {
 
   onMenuSelect(cat) {
     console.info('In app.components: selected category', cat);
+	 console.info(cat.url);
     this.selectedCategory = cat;
-    this.nav.setRoot(AccueilPage, {
+	  
+    this.nav.setRoot(cat.url, {
       selectedCategory: cat
     })
   }
