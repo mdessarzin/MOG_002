@@ -87,7 +87,7 @@ export class MyApp {
 		// Load simple menu options
 		// ------------------------------------------
 		this.options.push({
-			iconName: 'home',
+			iconName: 'ios-home-outline',
 			displayName: 'Accueil',
 			component: AccueilPage,
 
@@ -97,7 +97,7 @@ export class MyApp {
 
 
 		this.options.push({
-			iconName: 'bowtie',
+			iconName: 'ios-timer-outline',
 			displayName: 'Programme',
 			//badge: ArrayObservable.of('NEW'),
 			component: AccueilPage
