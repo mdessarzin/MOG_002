@@ -186,10 +186,10 @@ export class MyApp {
 				window.open(url, '_blank');
 			} else {
 				if (option.key) {
-					this.navCtrl.setRoot(option.component || DetailsPage, { 'title': option.displayName, 'key': option.key });
+					this.navCtrl.setRoot(option.component, { 'title': option.displayName, 'key': option.key });
 				}
 				else {
-					this.navCtrl.setRoot(option.component || DetailsPage, { 'title': option.displayName });
+					this.navCtrl.setRoot(option.component, { 'title': option.displayName });
 				}
 			}
 		});
