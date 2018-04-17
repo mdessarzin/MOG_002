@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 export class ContactezNousPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-	  alert(navParams.get('id'));
+	  alert(navParams.get('key'));
   }
   
 }

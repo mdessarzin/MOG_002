@@ -1,48 +1,211 @@
+// Angular
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+
+// RxJS
+import { ReplaySubject } from "rxjs/ReplaySubject";
+import { ArrayObservable } from "rxjs/observable/ArrayObservable";
+
+// Ionic
+import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
+
+// Ionic Native
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { AccueilPage } from '../pages/accueil/accueil';
-import { MenuService } from '../components/multilevel-menu/menu';
+
+
+import { ActualitePage } from '../pages/actualite/actualite';
+import { ProgrammePage } from '../pages/programme/programme';
+import { PodcastsPage } from '../pages/podcasts/podcasts';
 import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
+import { BlogPage } from '../pages/blog/blog';
+
+
+import { AccueilPage } from '../pages/accueil/accueil';
+
+// Side Menu Component
+import { SideMenuContentComponent } from './../shared/side-menu-content/side-menu-content.component';
+import { SideMenuSettings } from './../shared/side-menu-content/models/side-menu-settings';
+import { MenuOptionModel } from './../shared/side-menu-content/models/menu-option-model';
 
 
 @Component({
-  templateUrl: 'app.html',
-  providers: [MenuService]
+	templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+	@ViewChild(Nav) navCtrl: Nav;
 
-  rootPage: any = AccueilPage;
+	// Get the instance to call the public methods
+	@ViewChild(SideMenuContentComponent) sideMenu: SideMenuContentComponent;
 
-  categories: any;
-  selectedCategory: any;
+	public rootPage: any = AccueilPage;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public MenuService: MenuService) {
-    this.initializeApp();
+	// Options to show in the SideMenuComponent
+	public options: Array<MenuOptionModel>;
 
-    this.categories = MenuService.getAll();
-    this.selectedCategory = null;
-  }
+	// Settings for the SideMenuComponent
+	public sideMenuSettings: SideMenuSettings = {
+		accordionMode: true,
+		showSelectedOption: true,
+		selectedOptionClass: 'active-side-menu-option',
+		subOptionIndentation: {
+			md: '56px',
+			ios: '64px',
+			wp: '56px'
+		}
+	};
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
+	private unreadCountObservable: any = new ReplaySubject<number>(0);
 
-  onMenuSelect(cat) {
-    console.info('In app.components: selected category', cat);
-	 console.info(cat.url);
-    this.selectedCategory = cat;
-	  
-    this.nav.setRoot(cat.url, {
-      selectedCategory: cat
-    })
-  }
+	constructor(private platform: Platform,
+				private statusBar: StatusBar,
+				private splashScreen: SplashScreen,
+				private alertCtrl: AlertController,
+				private menuCtrl: MenuController) {
+		this.initializeApp();
+	}
+
+	initializeApp() {
+		this.platform.ready().then(() => {
+			this.statusBar.styleLightContent();
+			this.splashScreen.hide();
+
+			// Initialize some options
+			this.initializeOptions();
+		});
+
+		// Change the value for the batch every 5 seconds
+		setInterval(() => {
+			this.unreadCountObservable.next(Math.floor(Math.random() * 10));
+		}, 5000);
+
+	}
+
+	private initializeOptions(): void {
+		this.options = new Array<MenuOptionModel>();
+
+		// Load simple menu options
+		// ------------------------------------------
+		this.options.push({
+			iconName: 'home',
+			displayName: 'Accueil',
+			component: AccueilPage,
+
+			// This option is already selected
+			selected: true
+		});
+
+
+		this.options.push({
+			iconName: 'bowtie',
+			displayName: 'Programme',
+			//badge: ArrayObservable.of('NEW'),
+			component: AccueilPage
+		});
+
+		// Load options with nested items (with icons)
+		// -----------------------------------------------
+		this.options.push({
+			displayName: 'Podcasts',
+			subItems: [
+				{
+					iconName: '',
+					displayName: 'Radio Lac Matin',
+					component: AccueilPage
+				},
+				{
+					iconName: '',
+					displayName: 'Les matinées Radio Lac',
+					//badge: this.unreadCountObservable,
+					component: AccueilPage
+				},
+				{
+					iconName: '',
+					displayName: 'Les après-midi Radio Lac',
+					component: AccueilPage
+				},
+				{
+					iconName: '',
+					displayName: "L'actu en continue",
+					component: AccueilPage
+				},
+				{
+					iconName: '',
+					displayName: 'Le Club Radio Lac',
+					component: AccueilPage
+				},
+				{
+					iconName: '',
+					displayName: 'Le Sport',
+					component: AccueilPage
+				}
+			]
+		});
+
+		
+
+		// Load special options
+		// -----------------------------------------------
+		this.options.push({
+			displayName: 'Special options',
+			subItems: [
+				{
+					iconName: 'log-in',
+					displayName: 'Login',
+					custom: {
+						isLogin: true
+					}
+				},
+				{
+					iconName: 'log-out',
+					displayName: 'Logout',
+					custom: {
+						isLogout: true
+					}
+				},
+				{
+					iconName: 'globe',
+					displayName: 'Open Google',
+					custom: {
+						isExternalLink: true,
+						externalUrl: 'http://www.google.com'
+					}
+				}
+			]
+		});
+	}
+
+	public selectOption(option: MenuOptionModel): void {
+		this.menuCtrl.close().then(() => {
+			if (option.custom && option.custom.isLogin) {
+				this.presentAlert('You\'ve clicked the login option!');
+			} else if (option.custom && option.custom.isLogout) {
+				this.presentAlert('You\'ve clicked the logout option!');
+			} else if (option.custom && option.custom.isExternalLink) {
+				let url = option.custom.externalUrl;
+				window.open(url, '_blank');
+			} else {
+				if (option.key) {
+					this.navCtrl.setRoot(option.component || DetailsPage, { 'title': option.displayName, 'key': option.key });
+				}
+				else {
+					this.navCtrl.setRoot(option.component || DetailsPage, { 'title': option.displayName });
+				}
+			}
+		});
+	}
+
+	public collapseMenuOptions(): void {
+		this.sideMenu.collapseAllOptions();
+	}
+
+	public presentAlert(message: string): void {
+		let alert = this.alertCtrl.create({
+			title: 'Information',
+			message: message,
+			buttons: ['Ok']
+		});
+		alert.present();
+	}
+
 }

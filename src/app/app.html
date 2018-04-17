@@ -1,24 +1,16 @@
 <ion-split-pane when="md">
+<ion-menu [content]="mainContent" persistent="true" [content]="content" (ionClose)="collapseMenuOptions()">
+  <ion-header>
+		<ion-toolbar color="primary">
+			<ion-title>Menu</ion-title>
+		</ion-toolbar>
+	</ion-header>
+<ion-content>
 
-	<ion-menu [content]="content">
-	  <ion-content>
-		<div class="side-header">
-		  <div class="overlay">
-			<img src="assets/img/ben.png" class="avatar" alt="" ui-sref="app.home" menu-close>
-			<div class="side-caption">
-			  <b>Hieu Pham</b>
-			  <br>
-			  mr_hie@yahoo.com
-			</div>
-		  </div>
-		</div>
+		<!-- Side Menu -->
+		<side-menu-content [settings]="sideMenuSettings" [options]="options" (selectOption)="selectOption($event)"></side-menu-content>
 
-		<!-- WHERE MAGIC BEGIN -->
-		<multilevel-menu [categories]="categories" (onSelect)="onMenuSelect($event)" [selectedCategory]="selectedCategory"></multilevel-menu>
-	  </ion-content>
-
-	</ion-menu>
-
-	<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-	<ion-nav [root]="rootPage" main #content #mainContent mainswipeBackEnabled="false"></ion-nav>
+	</ion-content>
+</ion-menu>
+<ion-nav #mainContent #content main swipeBackEnabled="false" [root]="rootPage"></ion-nav>
 </ion-split-pane>
