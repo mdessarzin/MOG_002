@@ -95,6 +95,7 @@ export class MyErrorHandler implements ErrorHandler {
 	  AudioStreamProvider,
 	  SocialSharing,
 	  MusicControls,
+	  OneSignal,
     {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
