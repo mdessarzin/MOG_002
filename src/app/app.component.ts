@@ -245,5 +245,4 @@ export class MyApp {
           });
           this.oneSignal.endInit();
     }
-
 }
