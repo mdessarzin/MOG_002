@@ -47,12 +47,12 @@ header: string;
 	){
 			
 			
- 	if(navParams.get('header')=='yes'){
+ 	if(navParams.get('header')==true){
 		this.header = 'yes';
 	}
 			
-					 setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?_embed&categories='+this.navParams.get('id'))
+		setTimeout(() => {
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?_embed&categories='+this.navParams.get('key'))
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);

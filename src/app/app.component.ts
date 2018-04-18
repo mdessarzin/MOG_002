@@ -87,22 +87,58 @@ export class MyApp {
 		// Load simple menu options
 		// ------------------------------------------
 		this.options.push({
-			iconName: 'ios-home-outline',
+			iconName: '',
 			displayName: 'Accueil',
 			component: AccueilPage,
 
 			// This option is already selected
-			selected: true
+			selected: true,
+			key: '',
+			header: true
 		});
 
 
 		this.options.push({
-			iconName: 'ios-timer-outline',
+			iconName: '',
 			displayName: 'Programme',
 			//badge: ArrayObservable.of('NEW'),
-			component: AccueilPage
+			component: BlogPage,
+			key: '34',
+			header: true
 		});
-
+		this.options.push({
+			iconName: '',
+			displayName: 'Politique',
+			//badge: ArrayObservable.of('NEW'),
+			component: BlogPage,
+			key: '39',
+			header: true
+		});
+		this.options.push({
+			iconName: '',
+			displayName: 'Economie',
+			//badge: ArrayObservable.of('NEW'),
+			component: BlogPage,
+			key: '40',
+			header: true
+		});
+		this.options.push({
+			iconName: '',
+			displayName: 'Culture et Société',
+			//badge: ArrayObservable.of('NEW'),
+			component: BlogPage,
+			key: '23',
+			header: true
+		});
+		this.options.push({
+			iconName: '',
+			displayName: 'Sport',
+			//badge: ArrayObservable.of('NEW'),
+			component: BlogPage,
+			key: '19',
+			header: true
+		});
+		
 		// Load options with nested items (with icons)
 		// -----------------------------------------------
 		this.options.push({
@@ -111,33 +147,45 @@ export class MyApp {
 				{
 					iconName: '',
 					displayName: 'Radio Lac Matin',
-					component: AccueilPage
+					component: AccueilPage,
+					key: '',
+					header: true
 				},
 				{
 					iconName: '',
 					displayName: 'Les matinées Radio Lac',
 					//badge: this.unreadCountObservable,
-					component: AccueilPage
+					component: AccueilPage,
+					key: '',
+					header: true
 				},
 				{
 					iconName: '',
 					displayName: 'Les après-midi Radio Lac',
-					component: AccueilPage
+					component: AccueilPage,
+					key: '',
+					header: true
 				},
 				{
 					iconName: '',
 					displayName: "L'actu en continue",
-					component: AccueilPage
+					component: AccueilPage,
+					key: '',
+					header: true
 				},
 				{
 					iconName: '',
 					displayName: 'Le Club Radio Lac',
-					component: AccueilPage
+					component: AccueilPage,
+					key: '',
+					header: true
 				},
 				{
 					iconName: '',
 					displayName: 'Le Sport',
-					component: AccueilPage
+					component: AccueilPage,
+					key: '',
+					header: true
 				}
 			]
 		});
@@ -185,12 +233,14 @@ export class MyApp {
 				let url = option.custom.externalUrl;
 				window.open(url, '_blank');
 			} else {
+				/*
 				if (option.key) {
-					this.navCtrl.setRoot(option.component, { 'title': option.displayName, 'key': option.key });
+					this.navCtrl.setRoot(option.component, { 'title': option.displayName, 'key': option.key, 'header': option.header });
 				}
 				else {
-					this.navCtrl.setRoot(option.component, { 'title': option.displayName });
-				}
+				*/
+					this.navCtrl.setRoot(option.component, { 'title': option.displayName, 'key': option.key, 'header': option.header});
+				//}
 			}
 		});
 	}

@@ -27,4 +27,6 @@ export interface MenuOptionModel {
     subItems?: Array<MenuOptionModel>;
 	
 	key?: any;
+	
+	header?:any;
 }
