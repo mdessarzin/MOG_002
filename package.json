@@ -25,6 +25,7 @@
     "@ionic-native/file": "^4.7.0",
     "@ionic-native/google-analytics": "^4.7.0",
     "@ionic-native/in-app-browser": "^4.7.0",
+    "@ionic-native/keyboard": "^4.7.0",
     "@ionic-native/media": "^4.7.0",
     "@ionic-native/music-controls": "^4.7.0",
     "@ionic-native/onesignal": "^4.7.0",
