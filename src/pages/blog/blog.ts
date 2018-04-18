@@ -64,7 +64,7 @@ header: string;
   }
 
 
-	private whatsappShare(title, image, link){
+private whatsappShare(title, image, link){
     this.socialSharing.shareViaWhatsApp(title, image, link)
       .then(()=>{
 //
@@ -75,18 +75,9 @@ header: string;
   }
 
 
-private facebookShare(title, image, link){
-    this.socialSharing.shareViaFacebook(title, null, link)
-      .then(()=>{
-       //
-      },
-      ()=>{
-         //
-      })
-  }
 
-private twitterShare(message, title, image, link){
-    this.socialSharing.shareViaTwitter(title, image, link)
+private share(message, title, image, link){
+    this.socialSharing.share(title, image, image, link)
       .then(()=>{
        //
       },

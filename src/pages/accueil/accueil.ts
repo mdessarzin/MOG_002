@@ -74,6 +74,7 @@ export class AccueilPage {
 				   $('#songCover').attr('src',data.live[0].imageURL);
 		});
 			
+			
   }
 	//Prépation de la fonction de chargement
 	private loading(){
@@ -268,18 +269,9 @@ startAudio() {
   }
 
 
-private facebookShare(title, image, link){
-    this.socialSharing.shareViaFacebook(title, null, link)
-      .then(()=>{
-       //
-      },
-      ()=>{
-         //
-      })
-  }
 
-private twitterShare(message, title, image, link){
-    this.socialSharing.shareViaTwitter(title, image, link)
+private share(message, title, image, link){
+    this.socialSharing.share(title, image, image, link)
       .then(()=>{
        //
       },
