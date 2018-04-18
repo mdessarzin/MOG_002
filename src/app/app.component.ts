@@ -190,37 +190,7 @@ export class MyApp {
 			]
 		});
 
-		
-
-		// Load special options
-		// -----------------------------------------------
-		this.options.push({
-			displayName: 'Special options',
-			subItems: [
-				{
-					iconName: 'log-in',
-					displayName: 'Login',
-					custom: {
-						isLogin: true
-					}
-				},
-				{
-					iconName: 'log-out',
-					displayName: 'Logout',
-					custom: {
-						isLogout: true
-					}
-				},
-				{
-					iconName: 'globe',
-					displayName: 'Open Google',
-					custom: {
-						isExternalLink: true,
-						externalUrl: 'http://www.google.com'
-					}
-				}
-			]
-		});
+	
 	}
 
 	public selectOption(option: MenuOptionModel): void {
