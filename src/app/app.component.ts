@@ -27,6 +27,7 @@ import { AccueilPage } from '../pages/accueil/accueil';
 import { SideMenuContentComponent } from './../shared/side-menu-content/side-menu-content.component';
 import { SideMenuSettings } from './../shared/side-menu-content/models/side-menu-settings';
 import { MenuOptionModel } from './../shared/side-menu-content/models/menu-option-model';
+import { OneSignal } from '@ionic-native/onesignal';
 
 
 @Component({
@@ -61,7 +62,8 @@ export class MyApp {
 				private statusBar: StatusBar,
 				private splashScreen: SplashScreen,
 				private alertCtrl: AlertController,
-				private menuCtrl: MenuController) {
+				private menuCtrl: MenuController,
+				private oneSignal: OneSignal) {
 		this.initializeApp();
 	}
 
@@ -72,6 +74,7 @@ export class MyApp {
 
 			// Initialize some options
 			this.initializeOptions();
+			this.handlerNotifications();
 		});
 
 		// Change the value for the batch every 5 seconds
@@ -227,5 +230,20 @@ export class MyApp {
 		});
 		alert.present();
 	}
+    private handlerNotifications(){
+          this.oneSignal.startInit('2bb64197-f783-46fd-9551-24de82fc9f89', '776643205654');
+          this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
+          this.oneSignal.handleNotificationOpened()
+          .subscribe(jsonData => {
+            let alert = this.alertCtrl.create({
+              title: jsonData.notification.payload.title,
+              subTitle: jsonData.notification.payload.body,
+              buttons: ['OK']
+            });
+            alert.present();
+            console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+          });
+          this.oneSignal.endInit();
+    }
 
 }

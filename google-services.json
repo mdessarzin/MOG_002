@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "776643205654",
+    "firebase_url": "https://radio-lac.firebaseio.com",
+    "project_id": "radio-lac",
+    "storage_bucket": "radio-lac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776643205654:android:5a7db11a38004950",
+        "android_client_info": {
+          "package_name": "ch.mediaone.radiolac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776643205654-m9o0707rt7fqcln2rcvmmcnqjumn1o7o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXsa0wTtsNYCJsVMtnx7BDWn63PQZUQM4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
