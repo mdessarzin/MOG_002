@@ -84,7 +84,7 @@
       "cordova-plugin-ionic": {
         "APP_ID": "813edd26",
         "CHANNEL_NAME": "Production",
-        "UPDATE_METHOD": "auto"
+        "UPDATE_METHOD": "background"
       },
       "cordova-plugin-ionic-keyboard": {}
     },

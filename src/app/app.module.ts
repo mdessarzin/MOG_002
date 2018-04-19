@@ -30,7 +30,7 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
 localStorage.setItem("player", "stop");
 localStorage.setItem("firstclickonplayer", "oui");
 
-Pro.init('5a10a7ae', {
+Pro.init('813edd26', {
   appVersion: '0.0.0.1'
 })
 
@@ -95,6 +95,7 @@ export class MyErrorHandler implements ErrorHandler {
 	  AudioStreamProvider,
 	  SocialSharing,
 	  MusicControls,
+	  OneSignal,
     {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
