@@ -39,17 +39,10 @@
                 </ion-col>
 </ion-row>
     </ion-grid>  <!--
-  -->
-    <ion-grid *ngIf='!posts'>
-		
-        <ion-row > 
-		 <ion-col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 *ngFor='let fake of fakeUsers' class='fakeItem'>
-			 <ion-card style="padding-left:10px; padding-right:10px; padding-bottom:30px;padding-top:30px;">
-				<h2></h2>
-				<h3></h3>
-				<p></p>
-			</ion-card>
-          </ion-col>
-</ion-row>
-    </ion-grid>
+  -->   
+	<ion-slides *ngIf='!posts'>
+        <ion-slide>
+            <ion-spinner name="crescent"></ion-spinner>
+        </ion-slide>
+    </ion-slides>
 </ion-content>
