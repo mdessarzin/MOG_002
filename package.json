@@ -82,12 +82,9 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-x-socialsharing": {},
       "cordova-plugin-ionic": {
-        "APP_ID": "d159a702",
+        "APP_ID": "813edd26",
         "CHANNEL_NAME": "Production",
-        "UPDATE_METHOD": "auto",
-        "WARN_DEBUG": "true",
-        "UPDATE_API": "https://api.ionicjs.com",
-        "MAX_STORE": "2"
+        "UPDATE_METHOD": "auto"
       },
       "cordova-plugin-ionic-keyboard": {}
     },
