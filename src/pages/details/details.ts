@@ -10,6 +10,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
  * Ionic pages and navigation.
  */
 
+
 @IonicPage()
 @Component({
   selector: 'page-details',
