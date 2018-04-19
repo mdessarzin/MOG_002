@@ -1,111 +1,33 @@
-page-accueil {
-  /*.icon-circle i, .icon-circle-small i, .icon-circle-large i { vertical-align: middle; }*/
-  /*icon-circle-bg and icon-circle and circle-bg*/
-  /*http://davidwalsh.name/css-circles*/
-  /*
-      letter-spacing: 1px;
-    overflow: hidden;
-    
-    
-      perspective-origin: 40px 40px;
-      transform-origin: 40px 40px;
-      background: rgb(0, 161, 225) none repeat scroll 0% 0% / auto padding-box border-box;
-  */ }
-  page-accueil ion-card-title {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    font-size: 18px !important;
-    font-weight: bold !important; }
-  page-accueil .card-md {
-    margin: 0px !important; }
-  page-accueil .date {
-    padding-left: 5px !important;
-    padding-right: 10px !important;
-    font-size: 13px !important;
-    font-weight: lighter !important; }
-  page-accueil ion-footer {
-    border-top: 3px solid #29B7C2;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/xQAAukB5vvocQUAAAAASUVORK5CYII=); }
-  page-accueil .icon-circle, page-accueil .icon-circle-large, page-accueil .icon-circle-small {
-    position: relative;
-    display: inline-block;
-    margin: -1px;
-    width: 45px;
-    /* 60*/
-    height: 45px;
-    font-size: 26px;
-    line-height: 45px;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    border: 0px solid #ebebeb;
-    background-color: #29B7C2;
-    /*#ececec;ebebeb*/
-    color: #fff;
-    text-align: center;
-    /*vertical-align: middle;*/ }
-  page-accueil .icon-circle-large {
-    width: 100px;
-    height: 100px;
-    font-size: 64px;
-    /* 64, originally 60 */
-    padding: 16px; }
-  page-accueil .icon-circle-small {
-    width: 24px;
-    height: 24px;
-    font-size: 20px; }
-  page-accueil .icon-circle-outline {
-    border: 1px solid #00a1e1;
-    background: transparent;
-    color: #00a1e1;
-    /*color: #8a6de9;*/ }
-  page-accueil .item-icon-circle {
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    /* width and height can be anything, as long as they're equal */
-    text-align: center;
-    color: white;
-    /* font size here wont work */ }
-  page-accueil .item-icon-circle i {
-    /*text-align:center;
-    color:white;*/
-   /*margin: 0px auto;
-  padding: 0px;
-  display:block;*/
-    font-size: 60px; }
-  page-accueil .bg-circle-alt {
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px; }
+page-accueil #songCover {
+  		/*
+  		-webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 3px 12px px rgba(0,0,0,0.75);
+  box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.75);
+  	*/ }
 @keyframes animatedBar {
   0% {
     background-position: -406px 0; }
   100% {
     background-position: 0 0; } }
-  page-accueil .fakeItem h2, page-accueil .fakeItem h3, page-accueil .fakeItem p {
-    background-color: lightgrey;
-    opacity: 0.5;
-    height: 1em;
-    margin-top: 10px;
-    position: relative;
-    background: linear-gradient(to right, #dddddd, #EEEEEE);
-    animation: animatedBar 700ms linear infinite; }
-    page-accueil .fakeItem h2:after, page-accueil .fakeItem h3:after, page-accueil .fakeItem p:after {
-      position: absolute;
-      display: block;
-      content: '';
-      right: 0;
-      bottom: 0;
-      top: 0;
-      background-color: white; }
-  page-accueil .fakeItem h2:after {
-    width: 65%; }
-  page-accueil .fakeItem h3:after {
-    width: 60%; }
-  page-accueil .fakeItem p:after {
-    width: 40%; }
+page-accueil .fakeItem h2, page-accueil .fakeItem h3, page-accueil .fakeItem p {
+  background-color: lightgrey;
+  opacity: 0.5;
+  height: 1em;
+  margin-top: 10px;
+  position: relative;
+  background: linear-gradient(to right, #dddddd, #EEEEEE);
+  animation: animatedBar 700ms linear infinite; }
+  page-accueil .fakeItem h2:after, page-accueil .fakeItem h3:after, page-accueil .fakeItem p:after {
+    position: absolute;
+    display: block;
+    content: '';
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: white; }
+page-accueil .fakeItem h2:after {
+  width: 65%; }
+page-accueil .fakeItem h3:after {
+  width: 60%; }
+page-accueil .fakeItem p:after {
+  width: 40%; }
