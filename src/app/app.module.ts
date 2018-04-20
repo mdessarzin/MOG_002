@@ -26,7 +26,6 @@ import {Observable} from 'rxjs/Rx';
 import { SuperTabsModule } from '../ionic2-super-tabs/src';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 
-
 localStorage.setItem("player", "stop");
 localStorage.setItem("firstclickonplayer", "oui");
 
