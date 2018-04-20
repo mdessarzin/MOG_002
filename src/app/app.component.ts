@@ -63,13 +63,15 @@ export class MyApp {
 				private splashScreen: SplashScreen,
 				private alertCtrl: AlertController,
 				private menuCtrl: MenuController,
-				      private oneSignal: OneSignal
+				      private oneSignal: OneSignal,
 				) {
 		this.initializeApp();
 	}
 
 	initializeApp() {
 		this.platform.ready().then(() => {
+			
+			
 			this.statusBar.styleLightContent();
 			this.splashScreen.hide();
 
@@ -263,6 +265,22 @@ export class MyApp {
 	}
 	
 	private handlerNotifications(){
+		alert('test');
+		this.oneSignal.startInit('2bb64197-f783-46fd-9551-24de82fc9f89', '776643205654');
+
+this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+
+this.oneSignal.handleNotificationReceived().subscribe(() => {
+ // do something when notification is received
+});
+
+this.oneSignal.handleNotificationOpened().subscribe(() => {
+  // do something when a notification is opened
+});
+
+this.oneSignal.endInit();
+		
+		
           this.oneSignal.startInit('2bb64197-f783-46fd-9551-24de82fc9f89', '776643205654');
           this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
           this.oneSignal.handleNotificationOpened()
