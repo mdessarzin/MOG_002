@@ -29,6 +29,7 @@ export class AccueilPage {
     date: string;
     cat: string;
     live: string;
+	onplaying: string;
     animateClass: any;
     params: any = {};
     data: any = {};
@@ -59,12 +60,14 @@ export class AccueilPage {
 		if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
 			$('#btPlayer').html('<i class="ffas fa-pause-circle fa-3x"></i>');
+			this.onplaying = '1';
 
         }
         else
         {
             //this.buttonIcon = "ios-play";
 			$('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			this.onplaying = '0';
         }
       
 		$.ajaxSetup({ cache: false });
@@ -139,6 +142,7 @@ settingMusicControl(track,artist,cover){
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(false);
 				  $('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+				  this.onplaying = '0';
                break;
             case 'music-controls-play':
                // Do something
@@ -147,6 +151,7 @@ settingMusicControl(track,artist,cover){
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(true);
 				  $('#btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+				  this.onplaying = '1';
                break;
             case 'music-controls-destroy':
                // Do something
@@ -192,7 +197,7 @@ startAudio() {
                 this._player.pauseProvider();
 			    this.musicControls.listen();
 				this.musicControls.updateIsPlaying(false);
-			
+			this.onplaying = '0';
                 localStorage.setItem("player", "stop");
                 $('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
         }
@@ -237,7 +242,7 @@ startAudio() {
 			localStorage.setItem("player", "play");
 			//this.buttonIcon = "ios-pause";
 			$('#btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-
+			this.onplaying = '1';
 			console.log('Play Button clicked');
 			this._player.playProvider();
 						    this.musicControls.listen();
