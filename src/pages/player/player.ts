@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the PlayerPage page.
@@ -15,9 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PlayerPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController) {
   }
 
+  private dismiss() {
+    this.viewCtrl.dismiss();
+  }
+	
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlayerPage');
   }
