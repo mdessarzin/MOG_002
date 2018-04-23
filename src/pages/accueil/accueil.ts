@@ -61,11 +61,11 @@ export class AccueilPage {
 			
   }
 	//Prépation de la fonction de chargement
-	private loading(){
-		
-	if(localStorage.player == 'play'){
+ionViewDidLoad() {
+
+		if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
-			$('#btPlayer').html('<i class="ffas fa-pause-circle fa-3x"></i>');
+			$('#btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 			this.onplaying = '1';
 
         }
@@ -93,10 +93,10 @@ export class AccueilPage {
 				  this.posts = data;
 				});
 			}, 0);
-	}
+	
 	//Chargement du flux JSON
-    ionViewDidLoad() {
-		this.loading();
+    
+		
 	}
 settingMusicControl(track,artist,cover){
 	
