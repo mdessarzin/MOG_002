@@ -1,11 +1,14 @@
-<ion-header [scrollHide]="headerScrollConfig" [scrollContent]="pageContent" *ngIf='header'>
+<ion-header>
   <ion-navbar>
     <button ion-button menuToggle class="ripple">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
       <img alt="logo" height="35" src="./assets/imgs/logo_radio.png" >
+		
+			
     </ion-title>
+
 	  <ion-buttons end >
 		  	 <button ion-button icon-only *ngIf='onplaying == 0'>
       				<ion-icon name="md-radio"></ion-icon>
@@ -20,6 +23,7 @@
 					  </g>
 					</svg>
 			</ion-buttons>
+  </ion-navbar>
 
 <ion-content no-padding id="page6" #pageContent fullscreen>
  <ion-grid *ngIf='posts' no-padding>
