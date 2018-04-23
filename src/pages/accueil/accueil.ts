@@ -57,7 +57,13 @@ export class AccueilPage {
 			
 
 			
-		if(localStorage.player == 'play'){
+			
+			
+  }
+	//Prépation de la fonction de chargement
+	private loading(){
+		
+	if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
 			$('#btPlayer').html('<i class="ffas fa-pause-circle fa-3x"></i>');
 			this.onplaying = '1';
@@ -76,11 +82,9 @@ export class AccueilPage {
 					   $('#songTitle').html(data.live[0].title);
 				   $('#songCover').attr('src',data.live[0].imageURL);
 		});
-			
-			
-  }
-	//Prépation de la fonction de chargement
-	private loading(){
+
+		
+		
 		 setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?_embed')
 				.then(response => response.json())
@@ -96,6 +100,7 @@ export class AccueilPage {
 	}
 settingMusicControl(track,artist,cover){
 	
+	if (this.plt.is('cordova')) {
 	
     this.musicControls.destroy(); // it's the same with or without the destroy 
     this.musicControls.create({
@@ -116,13 +121,13 @@ settingMusicControl(track,artist,cover){
       skipForwardInterval: 15, // display number for skip forward, optional, default: 0
       skipBackwardInterval: 15, // display number for skip backward, optional, default: 0
     // iOS only, optional
-      album       : 'test album',     // optional, default: ''
+      album       : '',     // optional, default: ''
       duration : 0, // optional, default: 0
       elapsed : 0, // optional, default: 0
     
       // Android only, optional
       // text displayed in the status bar when the notific\ation (and the ticker) are updated
-      ticker    : 'Now playing test'
+      ticker    : 'Now playing'
      });
      this.musicControls.subscribe().subscribe((action) => {
       console.log('action', action);
@@ -187,6 +192,7 @@ settingMusicControl(track,artist,cover){
     });
     this.musicControls.listen(); // activates the observable above
     this.musicControls.updateIsPlaying(true);
+	}
   }
 
 	
@@ -197,7 +203,7 @@ startAudio() {
                 this._player.pauseProvider();
 			    this.musicControls.listen();
 				this.musicControls.updateIsPlaying(false);
-			this.onplaying = '0';
+				this.onplaying = '0';
                 localStorage.setItem("player", "stop");
                 $('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
         }
