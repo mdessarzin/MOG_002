@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 
 // RxJS
 import { ReplaySubject } from "rxjs/ReplaySubject";
-import { ArrayObservable } from "rxjs/observable/ArrayObservable";
+//import { ArrayObservable } from "rxjs/observable/ArrayObservable";
 
 // Ionic
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
@@ -14,10 +14,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 
-import { ActualitePage } from '../pages/actualite/actualite';
-import { ProgrammePage } from '../pages/programme/programme';
-import { PodcastsPage } from '../pages/podcasts/podcasts';
-import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
+//import { ActualitePage } from '../pages/actualite/actualite';
+//import { ProgrammePage } from '../pages/programme/programme';
+//import { PodcastsPage } from '../pages/podcasts/podcasts';
+//import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
 import { BlogPage } from '../pages/blog/blog';
 
 
@@ -265,10 +265,10 @@ export class MyApp {
 	}
 	
 	private handlerNotifications(){
-		alert('test');
 		
           this.oneSignal.startInit('2bb64197-f783-46fd-9551-24de82fc9f89', '776643205654');
           this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
+		this.oneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
           this.oneSignal.handleNotificationOpened()
           .subscribe(jsonData => {
             let alert = this.alertCtrl.create({
