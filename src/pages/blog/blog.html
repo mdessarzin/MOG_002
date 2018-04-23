@@ -4,10 +4,23 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <img alt="logo" height="37" src="./assets/imgs/logo_radio.png" >
+      <img alt="logo" height="35" src="./assets/imgs/logo_radio.png" >
     </ion-title>
-  </ion-navbar>
-</ion-header>
+	  <ion-buttons end >
+		  	 <button ion-button icon-only *ngIf='onplaying == 0'>
+      				<ion-icon name="md-radio"></ion-icon>
+    		</button>
+					<svg xmlns="http://www.w3.org/2000/svg" class="equilizer" viewBox="0 0 128 128" *ngIf='onplaying == 1'>
+					  <g>
+						<title>Audio Equilizer</title>
+						<rect class="bar" transform="translate(0,0)" y="15"></rect>
+						<rect class="bar" transform="translate(25,0)" y="15"></rect>
+						<rect class="bar" transform="translate(50,0)" y="15"></rect>
+						<rect class="bar" transform="translate(75,0)" y="15"></rect>
+					  </g>
+					</svg>
+			</ion-buttons>
+
 <ion-content no-padding id="page6" #pageContent fullscreen>
  <ion-grid *ngIf='posts' no-padding>
         <ion-row no-padding> 

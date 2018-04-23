@@ -22,6 +22,7 @@ export class BlogPage {
     date: string;
     cat: string;
     live: string;
+	onplaying: string;
     animateClass: any;
     params: any = {};
     data: any = {};
@@ -50,6 +51,19 @@ header: string;
  	if(navParams.get('header')==true){
 		this.header = 'yes';
 	}
+			
+				if(localStorage.player == 'play'){
+           // this.buttonIcon = "ios-pause";
+			$('#btPlayer').html('<i class="ffas fa-pause-circle fa-3x"></i>');
+			this.onplaying = '1';
+
+        }
+        else
+        {
+            //this.buttonIcon = "ios-play";
+			$('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			this.onplaying = '0';
+        }
 			
 		setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?_embed&categories='+this.navParams.get('key'))
