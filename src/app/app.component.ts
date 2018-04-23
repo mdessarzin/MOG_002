@@ -268,7 +268,7 @@ export class MyApp {
 		
           this.oneSignal.startInit('2bb64197-f783-46fd-9551-24de82fc9f89', '776643205654');
           this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
-		this.oneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+		//this.oneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
           this.oneSignal.handleNotificationOpened()
           .subscribe(jsonData => {
             let alert = this.alertCtrl.create({

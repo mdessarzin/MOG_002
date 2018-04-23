@@ -1,12 +1,26 @@
-<ion-header [scrollHide]="headerScrollConfig" [scrollContent]="pageContent">
+<ion-header>
   <ion-navbar>
     <button ion-button menuToggle class="ripple">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <img alt="logo" height="37" src="./assets/imgs/logo_radio.png" >
+      <img alt="logo" height="40" src="./assets/imgs/logo_radio.png" >
+		
+			
     </ion-title>
+	  <ion-buttons end>
+					<svg xmlns="http://www.w3.org/2000/svg" class="equilizer" viewBox="0 0 128 128">
+					  <g>
+						<title>Audio Equilizer</title>
+						<rect class="bar" transform="translate(0,0)" y="15"></rect>
+						<rect class="bar" transform="translate(25,0)" y="15"></rect>
+						<rect class="bar" transform="translate(50,0)" y="15"></rect>
+						<rect class="bar" transform="translate(75,0)" y="15"></rect>
+					  </g>
+					</svg>
+			</ion-buttons>
   </ion-navbar>
+	
 </ion-header>
 <ion-content no-padding id="page6" #pageContent fullscreen>
  <ion-grid no-padding *ngIf='posts'>
