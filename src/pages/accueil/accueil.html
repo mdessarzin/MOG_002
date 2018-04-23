@@ -10,10 +10,12 @@
     </ion-title>
 
 	  <ion-buttons end >
-		  	 <button ion-button icon-only *ngIf='onplaying == 0'>
+		  	 <button ion-button icon-only *ngIf='onplaying == 0'  (tap)='openPlayer()'>
       				<ion-icon name="md-radio"></ion-icon>
     		</button>
+		  <div (tap)='openPlayer()'>
 					<svg xmlns="http://www.w3.org/2000/svg" class="equilizer" viewBox="0 0 128 128" *ngIf='onplaying == 1'>
+						
 					  <g>
 						<title>Audio Equilizer</title>
 						<rect class="bar" transform="translate(0,0)" y="15"></rect>
@@ -21,7 +23,8 @@
 						<rect class="bar" transform="translate(50,0)" y="15"></rect>
 						<rect class="bar" transform="translate(75,0)" y="15"></rect>
 					  </g>
-					</svg>
+							
+					</svg></div>
 			</ion-buttons>
   </ion-navbar>
 	

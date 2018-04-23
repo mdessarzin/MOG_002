@@ -7,6 +7,7 @@ import { AccueilPage } from '../pages/accueil/accueil';
 import { ActualitePage } from '../pages/actualite/actualite';
 import { DetailsPage } from '../pages/details/details';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';// npm install --save @angular/animations
+import { PlayerPage } from '../pages/player/player';
 
 import { ProgrammePage } from '../pages/programme/programme';
 import { PodcastsPage } from '../pages/podcasts/podcasts';
@@ -22,7 +23,7 @@ import { MusicControls } from '@ionic-native/music-controls';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { OneSignal } from '@ionic-native/onesignal';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import { SuperTabsModule } from '../ionic2-super-tabs/src';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 
@@ -64,6 +65,7 @@ export class MyErrorHandler implements ErrorHandler {
     ContactezNousPage,
     BlogPage,
 	DetailsPage,
+	  PlayerPage,
 	ScrollHideDirective,
 	  SideMenuContentComponent
   ],
@@ -85,7 +87,8 @@ export class MyErrorHandler implements ErrorHandler {
     PodcastsPage,
     ContactezNousPage,
     BlogPage,
-	DetailsPage
+	DetailsPage,
+	  PlayerPage
   ],
   providers: [
     StatusBar,

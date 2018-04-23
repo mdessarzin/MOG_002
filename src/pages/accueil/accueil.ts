@@ -9,6 +9,7 @@ import { Media, MediaObject } from '@ionic-native/media';
 import { map } from 'rxjs/operators';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
+import { PlayerPage } from '../player/player';
 
 
 //import {Http, Response} from "@angular/http";
@@ -304,6 +305,16 @@ private showDetails(title,image, text, date, link){
             date: date,
             link: link,
             cat: 'Actualité'
+        });
+}
+	
+
+private openPlayer(){
+        //console.log(this.login);
+       
+    
+    this.navCtrl.push(PlayerPage,{
+          
         });
     }
 	
