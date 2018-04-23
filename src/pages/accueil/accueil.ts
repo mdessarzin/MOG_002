@@ -248,6 +248,8 @@ startAudio() {
 			localStorage.setItem("player", "play");
 			//this.buttonIcon = "ios-pause";
 			$('#btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+			//$('#btPlayer').html('<ion-spinner name="crescent"></ion-spinner>');
+			
 			this.onplaying = '1';
 			console.log('Play Button clicked');
 			this._player.playProvider();

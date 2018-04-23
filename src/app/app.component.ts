@@ -77,7 +77,9 @@ export class MyApp {
 
 			// Initialize some options
 			this.initializeOptions();
-			this.handlerNotifications();
+			if (this.platform.is('cordova')) {
+				this.handlerNotifications();
+			}
 		});
 
 		// Change the value for the batch every 5 seconds
