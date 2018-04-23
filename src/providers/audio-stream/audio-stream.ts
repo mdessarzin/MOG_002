@@ -11,7 +11,7 @@ export class AudioStreamProvider {
 
 	  	constructor(private _loadingCtrl: LoadingController){
 
-			this.url = "https://onefm.ice.infomaniak.ch/onefm-high.mp3";
+			this.url = "https://onefm.ice.infomaniak.ch/onefm-high.mp3"; //https://radiolac.ice.infomaniak.ch/radiolac-high.mp3
 			this.stream = new Audio(this.url);
 	  	}
 
