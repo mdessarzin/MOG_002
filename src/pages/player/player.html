@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Player
+      Direct
     </ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
@@ -13,6 +13,13 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-bounce id="page5">
+
+	<super-tabs id="mainTabs" enableTabsSwipe="true" scrollTabs toolbarColor="dark" toolbarBackground="light" indicatorColor="yellow" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
+    <super-tab [swipeBackEnabled]="false" [root]="page1" [rootParams]="{'header':'true'}" title="DIRECT AUDIO" id="page1"></super-tab>
+    <super-tab [root]="page2" [rootParams]="{'id':'23', 'header':'no'}" title="DIRECT VIDEO" id="page2"></super-tab>
+	<super-tab [root]="page3" [rootParams]="{'id':'23', 'header':'no'}" title="PLAYLIST" id="page3"></super-tab>
+    
+  </super-tabs>
 
 </ion-content>

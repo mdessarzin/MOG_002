@@ -8,7 +8,9 @@ import { ActualitePage } from '../pages/actualite/actualite';
 import { DetailsPage } from '../pages/details/details';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';// npm install --save @angular/animations
 import { PlayerPage } from '../pages/player/player';
-
+import { PlayerAudioPage } from '../pages/player-audio/player-audio';
+import { PlayerVideoPage } from '../pages/player-video/player-video';
+import { PlayerPlaylistPage } from '../pages/player-playlist/player-playlist';
 import { ProgrammePage } from '../pages/programme/programme';
 import { PodcastsPage } from '../pages/podcasts/podcasts';
 import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
@@ -66,6 +68,9 @@ export class MyErrorHandler implements ErrorHandler {
     BlogPage,
 	DetailsPage,
 	  PlayerPage,
+	  PlayerAudioPage,
+PlayerVideoPage,
+PlayerPlaylistPage,
 	ScrollHideDirective,
 	  SideMenuContentComponent
   ],
@@ -88,7 +93,10 @@ export class MyErrorHandler implements ErrorHandler {
     ContactezNousPage,
     BlogPage,
 	DetailsPage,
-	  PlayerPage
+	  PlayerPage,
+	  PlayerAudioPage,
+PlayerVideoPage,
+PlayerPlaylistPage
   ],
   providers: [
     StatusBar,
