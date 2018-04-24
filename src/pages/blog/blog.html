@@ -32,13 +32,12 @@
 			<ion-card-content no-padding>
 				<div style="background-color: #f1f1f1; position: relative;" (tap)="showDetails(post.title.rendered, post.better_featured_image.card, post.content.rendered, post.date, post.link )">	
 					<span class="card_categorie">{{post.pure_taxonomies.categories[0].name}}</span>
-					<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8+B8AAucB8kTMRj8AAAAASUVORK5CYII=" data-src="{{post.better_featured_image.card}}" />
+					<img-loader spinner="true" src="https://static.pexels.com/photos/194730/pexels-photo-194730-large.jpeg" useImg></img-loader>
 				</div>
 				<ion-card-title (tap)="showDetails(post.title.rendered, post.better_featured_image.card, post.content.rendered, post.date, post.link )" [innerHTML]="post.title.rendered"></ion-card-title>
 			</ion-card-content>
 
 			<ion-row>
-
 			   <ion-col align-self-start>
 				   <p class="date"><i class="fas fa-dot-circle point"></i> {{post.date | date:'dd.MM.y'}}</p>
 			   </ion-col>

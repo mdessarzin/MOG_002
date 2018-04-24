@@ -28,6 +28,7 @@ import { SideMenuContentComponent } from './../shared/side-menu-content/side-men
 import { SideMenuSettings } from './../shared/side-menu-content/models/side-menu-settings';
 import { MenuOptionModel } from './../shared/side-menu-content/models/menu-option-model';
 import { OneSignal } from '@ionic-native/onesignal';
+import { ImageLoaderConfig } from 'ionic-image-loader';
 
 
 @Component({
@@ -64,8 +65,18 @@ export class MyApp {
 				private alertCtrl: AlertController,
 				private menuCtrl: MenuController,
 				      private oneSignal: OneSignal,
+				 private imageLoaderConfig: ImageLoaderConfig
 				) {
 		this.initializeApp();
+		// enable debug mode to get console logs and stuff
+
+		// disable spinners by default, you can add [spinner]="true" to a specific component instance later on to override this
+    this.imageLoaderConfig.enableSpinner(true);
+    
+    // set the maximum concurrent connections to 10
+    this.imageLoaderConfig.setConcurrency(10);
+		this.imageLoaderConfig.enableDebugMode();
+		
 	}
 
 	initializeApp() {

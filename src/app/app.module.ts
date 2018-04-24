@@ -26,6 +26,7 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { Observable } from 'rxjs/Rx';
 import { SuperTabsModule } from '../ionic2-super-tabs/src';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+import { IonicImageLoader } from 'ionic-image-loader';
 
 localStorage.setItem("player", "stop");
 localStorage.setItem("firstclickonplayer", "oui");
@@ -74,6 +75,7 @@ export class MyErrorHandler implements ErrorHandler {
     BrowserModule,
 	     SuperTabsModule.forRoot(),
 	  BrowserAnimationsModule,
+	  IonicImageLoader.forRoot(),
     IonicModule.forRoot(MyApp, {
         preloadModules: true
     })
