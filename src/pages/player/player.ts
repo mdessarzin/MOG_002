@@ -6,7 +6,6 @@ import {SuperTabs} from "../../ionic2-super-tabs/src/components/super-tabs";
 
 import { PlayerAudioPage } from '../player-audio/player-audio';
 import { PlayerVideoPage } from '../player-video/player-video';
-import { PlayerPlaylistPage } from '../player-playlist/player-playlist';
 
 /**
  * Generated class for the PlayerPage page.
@@ -24,7 +23,6 @@ export class PlayerPage {
 
 	page1: any = PlayerAudioPage;
 	page2: any = PlayerVideoPage;
-	page3: any = PlayerPlaylistPage;
 	
 	  @ViewChild(SuperTabs) superTabs: SuperTabs;
 
