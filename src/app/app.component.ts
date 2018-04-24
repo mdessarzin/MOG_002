@@ -74,7 +74,7 @@ export class MyApp {
     this.imageLoaderConfig.enableSpinner(true);
     
     // set the maximum concurrent connections to 10
-    this.imageLoaderConfig.setConcurrency(10);
+    //this.imageLoaderConfig.setConcurrency(10);
 	//this.imageLoaderConfig.enableDebugMode();
 		
 	}
