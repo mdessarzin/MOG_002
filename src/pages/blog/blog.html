@@ -32,7 +32,7 @@
 			<ion-card-content no-padding>
 				<div style="background-color: #f1f1f1; position: relative;" (tap)="showDetails(post.title.rendered, post.better_featured_image.card, post.content.rendered, post.date, post.link )">	
 					<span class="card_categorie">{{post.pure_taxonomies.categories[0].name}}</span>
-					<img-loader src="{{post.better_featured_image.card}}"></img-loader>
+					<img-loader src="{{post.better_featured_image.card}}" useImg='true'></img-loader>
 				</div>
 				<ion-card-title (tap)="showDetails(post.title.rendered, post.better_featured_image.card, post.content.rendered, post.date, post.link )" [innerHTML]="post.title.rendered"></ion-card-title>
 			</ion-card-content>
