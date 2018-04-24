@@ -1,5 +1,5 @@
 import { Component, ViewChild, Injectable } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController} from 'ionic-angular';
 import { ScrollHideConfig } from '../../directives/scroll-hide/scroll-hide';
 import * as $ from "jquery";
 import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
@@ -9,6 +9,7 @@ import { Media, MediaObject } from '@ionic-native/media';
 import { map } from 'rxjs/operators';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
+import { PlayerPage } from '../player/player';
 
 @Component({
   selector: 'page-blog',
@@ -44,6 +45,8 @@ header: string;
 		 private socialSharing: SocialSharing,
 		 public navParams: NavParams,
 		 public plt: Platform,
+		 		 public modalCtrl: ModalController,
+
 		//private ga: GoogleAnalytics
 	){
 			
@@ -103,7 +106,7 @@ private share(message, title, image, link){
       })
   }
 	
-private showDetails(title,image, text, date, link){
+	private showDetails(title,image, text, date, link){
         //console.log(this.login);
        
     
@@ -116,6 +119,16 @@ private showDetails(title,image, text, date, link){
             cat: 'Actualité'
         });
     }
+	
+	private openPlayer(){
+        //console.log(this.login);
+       let modal = this.modalCtrl.create(PlayerPage);
+    modal.present();
+    
+    
+    }
+	
+	
 	
 }
 	

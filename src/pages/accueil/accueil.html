@@ -13,18 +13,18 @@
 		  	 <button ion-button icon-only *ngIf='onplaying == 0'  (tap)='openPlayer()'>
       				<ion-icon name="md-radio"></ion-icon>
     		</button>
-		  <div (tap)='openPlayer()'>
-					<svg xmlns="http://www.w3.org/2000/svg" class="equilizer" viewBox="0 0 128 128" *ngIf='onplaying == 1'>
+		  <button ion-button icon-only (tap)='openPlayer()'  *ngIf='onplaying == 1'>
+		  <div >
+					<svg xmlns="http://www.w3.org/2000/svg" class="equilizer" viewBox="0 0 128 128">
 						
 					  <g>
-						<title>Audio Equilizer</title>
 						<rect class="bar" transform="translate(0,0)" y="15"></rect>
 						<rect class="bar" transform="translate(25,0)" y="15"></rect>
 						<rect class="bar" transform="translate(50,0)" y="15"></rect>
 						<rect class="bar" transform="translate(75,0)" y="15"></rect>
 					  </g>
 							
-					</svg></div>
+					</svg></div></button>
 			</ion-buttons>
   </ion-navbar>
 	
@@ -37,7 +37,7 @@
 			<ion-card-content no-padding class="bounce">
 				<div style="background-color: #f1f1f1; position: relative;" (tap)="showDetails(post.title.rendered, post.better_featured_image.card, post.content.rendered, post.date, post.link )">	
 					<span class="card_categorie">{{post.pure_taxonomies.categories[0].name}}</span>				
-					<img class="fadeIn" data-src="{{post.better_featured_image.card}}" />
+					<img data-src="{{post.better_featured_image.card}}" />
 				</div>
 				<ion-card-title (tap)="showDetails(post.title.rendered, post.better_featured_image.card, post.content.rendered, post.date, post.link )" [innerHTML]="post.title.rendered"></ion-card-title>
 			</ion-card-content>
