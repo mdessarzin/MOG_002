@@ -66,6 +66,7 @@ export class MyApp {
 				private menuCtrl: MenuController,
 				      private oneSignal: OneSignal,
 				) {
+		this.statusBar.backgroundColorByHexString("#29b7c2");
 		this.initializeApp();
 		
 		
