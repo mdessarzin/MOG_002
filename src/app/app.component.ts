@@ -75,7 +75,7 @@ export class MyApp {
     
     // set the maximum concurrent connections to 10
     this.imageLoaderConfig.setConcurrency(10);
-		this.imageLoaderConfig.enableDebugMode();
+	//this.imageLoaderConfig.enableDebugMode();
 		
 	}
 
