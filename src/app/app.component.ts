@@ -65,17 +65,9 @@ export class MyApp {
 				private alertCtrl: AlertController,
 				private menuCtrl: MenuController,
 				      private oneSignal: OneSignal,
-				 private imageLoaderConfig: ImageLoaderConfig
 				) {
 		this.initializeApp();
-		// enable debug mode to get console logs and stuff
-
-		// disable spinners by default, you can add [spinner]="true" to a specific component instance later on to override this
-    this.imageLoaderConfig.enableSpinner(true);
-    
-    // set the maximum concurrent connections to 10
-    //this.imageLoaderConfig.setConcurrency(10);
-	//this.imageLoaderConfig.enableDebugMode();
+		
 		
 	}
 
