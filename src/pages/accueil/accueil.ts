@@ -58,6 +58,14 @@ export class AccueilPage {
 	){
 			
 
+			setTimeout(() => {
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?_embed')
+				.then(response => response.json())
+				.then(data => {
+				  console.log(data);
+				  this.posts = data;
+				});
+			}, 100);
 			
 			
 			
@@ -87,14 +95,7 @@ ionViewDidLoad() {
 
 		
 		
-		 setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?_embed')
-				.then(response => response.json())
-				.then(data => {
-				  console.log(data);
-				  this.posts = data;
-				});
-			}, 0);
+		 
 	
 	//Chargement du flux JSON
     
