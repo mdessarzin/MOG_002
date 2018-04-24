@@ -64,6 +64,8 @@ header: string;
 				  this.posts = data;
 				});
 			},100);
+			
+			
 
 			
   }
