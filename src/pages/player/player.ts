@@ -21,7 +21,7 @@ export class PlayerPage {
 
 
   constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController,private streamingMedia: StreamingMedia) {
-   
+   this.typeplayer = 'audio';
   }
 
   ngAfterViewInit() {
@@ -36,7 +36,7 @@ export class PlayerPage {
   }
 
   	startVideo() {
-		this.testing = 'audio';
+		this.typeplayer = 'audio';
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Finished Video') },
       errorCallback: (e) => { console.log('Error: ', e) },
