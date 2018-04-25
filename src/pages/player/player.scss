@@ -1,8 +1,47 @@
 page-player {
 	ion-segment {
-		background-color: #fff;
 	}
 	.noize{
 	background-color: #000;
-		}
+		background-image: url(http://www.vactualpapers.com/web/images/April%2003%202016%20Mobile/Blurred%20Background%20HD%20Mobile%20Wallpaper14.png);
+		
+		background-size: cover;
+
+	
+	
+	}
+	
+	.profile-image{
+    img{
+        height: 200px;
+        width: 200px;
+        border-radius:50%;
+        border: 1px solid #010101;
+        -webkit-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+    }
+	
+}
+	h3 {
+		color: #8D8D8D; 
+		font-size: 14px;
+		margin-bottom:  40px;
+	}
+		h1 {
+		color: #D4D4D4; 
+		font-size: 22px;
+	}
+		h2 {
+		color: #8D8D8D; 
+		font-size: 14px;
+		margin-bottom:  40px;
+	}
+.scroll-content {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
 }
