@@ -26,8 +26,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { OneSignal } from '@ionic-native/onesignal';
 import { Observable } from 'rxjs/Rx';
-import { SuperTabsModule } from '../ionic2-super-tabs/src';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+import { StreamingMedia } from '@ionic-native/streaming-media';
 
 localStorage.setItem("player", "stop");
 localStorage.setItem("firstclickonplayer", "oui");
@@ -77,7 +77,6 @@ PlayerPlaylistPage,
   imports: [
 	  HttpModule,
     BrowserModule,
-	     SuperTabsModule.forRoot(),
 	  BrowserAnimationsModule,
     IonicModule.forRoot(MyApp, {
         preloadModules: true
@@ -106,6 +105,7 @@ PlayerPlaylistPage
 	  SocialSharing,
 	  MusicControls,
 	  OneSignal,
+	  StreamingMedia,
     {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })

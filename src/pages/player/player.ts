@@ -4,6 +4,7 @@ import { IonicPage, IonicPageModule, NavController, NavParams, ViewController, M
 
 import { PlayerAudioPage } from '../player-audio/player-audio';
 import { PlayerVideoPage } from '../player-video/player-video';
+import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media';
 
 /**
  * Generated class for the PlayerPage page.
@@ -23,7 +24,7 @@ export class PlayerPage {
 
 
 
-  constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController,private streamingMedia: StreamingMedia) {
    
   }
 
@@ -38,7 +39,15 @@ export class PlayerPage {
     // }, 2000);
   }
 
-  	
+  	startVideo() {
+    let options: StreamingVideoOptions = {
+      successCallback: () => { console.log('Finished Video') },
+      errorCallback: (e) => { console.log('Error: ', e) },
+      orientation: 'portrait'
+    }; 
+    // http://www.sample-videos.com/
+    this.streamingMedia.playVideo('https://livevideo.infomaniak.com/streaming/livecast/lfmmd/playlist.m3u8', options);
+  }
 	
   private dismiss() {
     this.viewCtrl.dismiss();

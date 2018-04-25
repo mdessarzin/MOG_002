@@ -1,20 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Direct
+      Radio Lac en Direct
     </ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
-        <span ion-text color="primary" showWhen="ios">Cancel</span>
-        <ion-icon name="md-close" showWhen="android,windows,ios"></ion-icon>
+        <span ion-text color="primary" showWhen="ios">Fermer</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
       </button>
     </ion-buttons>
+	  
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content no-bounce id="page5">
-
+ <ion-segment [(ngModel)]="relationship" color="primary">
+    <ion-segment-button value="friends" (tap)="startVideo()">
+      Audio
+    </ion-segment-button>
+    <ion-segment-button value="enemies" (tap)="startVideo()">
+      Vidéo
+    </ion-segment-button>
+  </ion-segment>
 	
 	
 	
