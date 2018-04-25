@@ -36,9 +36,9 @@ typeplayer: any;
   }
 
   	startVideo() {
-		this.typeplayer = 'audio';
+		
     let options: StreamingVideoOptions = {
-      successCallback: () => { console.log('Finished Video') },
+      successCallback: () => { this.typeplayer = 'audio'; },
       errorCallback: (e) => { console.log('Error: ', e) },
       orientation: 'portrait'
     }; 
