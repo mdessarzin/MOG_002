@@ -6,7 +6,7 @@
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
         <span ion-text color="primary" showWhen="ios">Cancel</span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+        <ion-icon name="md-close" showWhen="android,windows,ios"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -15,10 +15,7 @@
 
 <ion-content no-bounce id="page5">
 
-	<super-tabs id="mainTabs" enableTabsSwipe="true" scrollTabs toolbarColor="dark" toolbarBackground="light" indicatorColor="yellow" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
-    <super-tab [swipeBackEnabled]="false" [root]="page1" [rootParams]="{'header':'true'}" title="DIRECT AUDIO" id="page1"></super-tab>
-    <super-tab [root]="page2" [rootParams]="{'id':'23', 'header':'no'}" title="DIRECT VIDEO" id="page2"></super-tab>
-    
-  </super-tabs>
-
+	
+	
+	
 </ion-content>

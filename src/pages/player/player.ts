@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, IonicPageModule, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
-import { SuperTabsController } from '../../ionic2-super-tabs/src';
-import {SuperTabs} from "../../ionic2-super-tabs/src/components/super-tabs";
 
 
 import { PlayerAudioPage } from '../player-audio/player-audio';
@@ -14,6 +12,8 @@ import { PlayerVideoPage } from '../player-video/player-video';
  * Ionic pages and navigation.
  */
 
+
+
 @IonicPage()
 @Component({
   selector: 'page-player',
@@ -21,29 +21,10 @@ import { PlayerVideoPage } from '../player-video/player-video';
 })
 export class PlayerPage {
 
-	page1: any = PlayerAudioPage;
-	page2: any = PlayerVideoPage;
-	
-	  @ViewChild(SuperTabs) superTabs: SuperTabs;
 
-  showIcons: boolean = false;
-  showTitles: boolean = true;
-  pageTitle: string = 'Full Height';
-  selectedTab = 0;	
-	
-  constructor(public navCtrl: NavController, private navParams: NavParams, private superTabsCtrl: SuperTabsController, public viewCtrl: ViewController) {
-    const type = navParams.get('type');
-    switch (type) {
-      case 'icons-only':
-        this.showTitles = false;
-        this.pageTitle += ' - Icons only';
-        break;
 
-      case 'titles-only':
-        this.showIcons = false;
-        this.pageTitle += ' - Titles only';
-        break;
-    }
+  constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController) {
+   
   }
 
   ngAfterViewInit() {
@@ -57,11 +38,7 @@ export class PlayerPage {
     // }, 2000);
   }
 
-  onTabSelect(tab: { index: number; id: string; }) {
-    console.log(`Selected tab: `, tab);
-  }
-
-	
+  	
 	
   private dismiss() {
     this.viewCtrl.dismiss();
