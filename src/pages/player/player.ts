@@ -17,7 +17,7 @@ import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@i
   templateUrl: 'player.html',
 })
 export class PlayerPage {
-
+typeplayer: any;
 
 
   constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController,private streamingMedia: StreamingMedia) {
