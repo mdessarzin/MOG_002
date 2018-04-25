@@ -1,9 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, IonicPageModule, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
-
-
-import { PlayerAudioPage } from '../player-audio/player-audio';
-import { PlayerVideoPage } from '../player-video/player-video';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media';
 
 /**
@@ -40,6 +36,7 @@ export class PlayerPage {
   }
 
   	startVideo() {
+		this.testing = 'audio';
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Finished Video') },
       errorCallback: (e) => { console.log('Error: ', e) },
