@@ -65,8 +65,8 @@ private loadingPopup: any;
 		
     let options: StreamingVideoOptions = {
       successCallback: () => { this.typeplayer = 'audio'; },
-      errorCallback: (e) => { console.log('Error: ', e) },
-      orientation: 'landscape'
+      errorCallback: (e) => { console.log('Error: ', e) }
+     // orientation: 'landscape'
     }; 
     // http://www.sample-videos.com/
     this.streamingMedia.playVideo('https://livevideo.infomaniak.com/streaming/livecast/lfmmd/playlist.m3u8', options);
