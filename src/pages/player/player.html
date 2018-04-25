@@ -1,7 +1,7 @@
 <ion-header color="primary">
   <ion-toolbar>
     <ion-title>
-      Radio Lac en Direct
+      Player
     </ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
@@ -33,13 +33,21 @@
 	
 	<h1>Radio Lac Matin</h1>
 	<h2>Avec Marc Martin</h2>
-  <div>
-    <button ion-button round outline (click)="chooseimage()">Choose an image</button>
-  </div>
-  <div [hidden]="!moveon">
-    <button ion-button round outline (click)="proceed()">Skip this step</button>
-  </div>
-  <div [hidden]="moveon">
-    <button ion-button round outline (click)="updateproceed()">Upload & proceed</button>
-  </div>
+
 </ion-content>
+<ion-footer>
+   <ion-grid style="max-height: 110px;">
+      <ion-row align-items-center>
+        <ion-col col-2 style="max-width: 80px; text-align: center;" justify-content-center> 
+                <span (click)="startAudio()" class="btPlayer" style="color:#29B7C2;"><i class="fas fa-play-circle fa-3x"></i></span>
+        </ion-col>                 
+        <ion-col col-7>
+            <span style="color:#000;font-family: 'Days One', sans-serif; font-size: 13px; font-weight: bolder;" class="songTitle">&nbsp;</span><br>
+			<span style="color:#000;font-family: 'Days One', sans-serif; font-size: 12px;" class="songArtist">&nbsp;</span>
+          </ion-col>
+        <ion-col col-3  style="text-align: right;">
+          <img class="songCover" src="https://www.onefm.ch/wp-content/themes/mog-child/webradios/0.jpg" style=" max-height: 55px;" />
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+</ion-footer>

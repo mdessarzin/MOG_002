@@ -76,22 +76,22 @@ ionViewDidLoad() {
 
 		if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
-			$('#btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 			this.onplaying = '1';
 
         }
         else
         {
             //this.buttonIcon = "ios-play";
-			$('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 			this.onplaying = '0';
         }
       
 		$.ajaxSetup({ cache: false });
 		$.getJSON('https://www.mediaone-digital.ch/cache/onefm.json', function(data){
-				   					   $('#songArtist').html(data.live[0].interpret);
-					   $('#songTitle').html(data.live[0].title);
-				   $('#songCover').attr('src',data.live[0].imageURL);
+				   					   $('.songArtist').html(data.live[0].interpret);
+					   $('.songTitle').html(data.live[0].title);
+				   $('.songCover').attr('src',data.live[0].imageURL);
 		});
 
 		
@@ -150,7 +150,7 @@ settingMusicControl(track,artist,cover){
                this._player.pauseProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(false);
-				  $('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+				  $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 				  this.onplaying = '0';
                break;
             case 'music-controls-play':
@@ -159,7 +159,7 @@ settingMusicControl(track,artist,cover){
                this._player.playProvider();
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(true);
-				  $('#btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+				  $('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 				  this.onplaying = '1';
                break;
             case 'music-controls-destroy':
@@ -209,7 +209,7 @@ startAudio() {
 				this.musicControls.updateIsPlaying(false);
 				this.onplaying = '0';
                 localStorage.setItem("player", "stop");
-                $('#btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+                $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
         }
         else
         {
@@ -230,11 +230,11 @@ startAudio() {
                                 //
                             }
                             else{
-                              	this.settingMusicControl($('#songTitle').html(), $('#songArtist').html(), $('#songCover').attr('src'));
+                              	this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
                                 this.live = data.live[0].interpret;
-								$('#songArtist').html(data.live[0].interpret);
-								$('#songTitle').html(data.live[0].title);
-								$('#songCover').attr('src',data.live[0].imageURL);								
+								$('.songArtist').html(data.live[0].interpret);
+								$('.songTitle').html(data.live[0].title);
+								$('.songCover').attr('src',data.live[0].imageURL);								
                             }
 
 				});
@@ -251,8 +251,8 @@ startAudio() {
 			
 			localStorage.setItem("player", "play");
 			//this.buttonIcon = "ios-pause";
-			$('#btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-			//$('#btPlayer').html('<ion-spinner name="crescent"></ion-spinner>');
+			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+			//$('.btPlayer').html('<ion-spinner name="crescent"></ion-spinner>');
 			
 			this.onplaying = '1';
 			console.log('Play Button clicked');
@@ -263,7 +263,7 @@ startAudio() {
 			      
 			
 				//	if(localStorage.firstclickonplayer == 'oui'){
-							this.settingMusicControl($('#songTitle').html(), $('#songArtist').html(), $('#songCover').attr('src'));
+							this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
 				//			                localStorage.setItem("firstclickonplayer", "non");
 
 						
