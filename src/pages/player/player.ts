@@ -24,6 +24,9 @@ import { map } from 'rxjs/operators';
 export class PlayerPage {
 typeplayer: any;
 
+	onplaying: string;
+    
+
 private loadingPopup: any;
     artist: string;
     cover: string;
