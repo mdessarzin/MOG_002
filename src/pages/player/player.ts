@@ -77,7 +77,7 @@ private loadingPopup: any;
   }
 	
   ionViewDidLoad() {
-	  if(localStorage.player == 'play'){
+	 if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
 			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 			this.onplaying = '1';
@@ -89,6 +89,13 @@ private loadingPopup: any;
 			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 			this.onplaying = '0';
         }
+      
+		$.ajaxSetup({ cache: false });
+		$.getJSON('https://www.mediaone-digital.ch/cache/onefm.json', function(data){
+				   					   $('.songArtist').html(data.live[0].interpret);
+					   $('.songTitle').html(data.live[0].title);
+				   $('.songCover').attr('src',data.live[0].imageURL);
+		});
     console.log('ionViewDidLoad PlayerPage');
   }
 	
