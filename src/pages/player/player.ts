@@ -24,16 +24,14 @@ import { map } from 'rxjs/operators';
 export class PlayerPage {
 typeplayer: any;
 
-	onplaying: string;
-    
-
-private loadingPopup: any;
+	private loadingPopup: any;
     artist: string;
     cover: string;
     track: string;
     date: string;
     cat: string;
     live: string;
+
   constructor(
 		public navCtrl: NavController,
 	 	private navParams: NavParams,
