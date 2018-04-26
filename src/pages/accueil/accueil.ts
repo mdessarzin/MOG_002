@@ -1,5 +1,5 @@
 import { Component, ViewChild, Injectable } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController, ViewController} from 'ionic-angular';
 import { ScrollHideConfig } from '../../directives/scroll-hide/scroll-hide';
 import * as $ from "jquery";
 import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
@@ -53,6 +53,7 @@ export class AccueilPage {
 		 private socialSharing: SocialSharing,
 		 public modalCtrl: ModalController,
 		//private iab: InAppBrowser,
+		 public viewCtrl: ViewController,
 		 public plt: Platform,
 		//private ga: GoogleAnalytics
 	){

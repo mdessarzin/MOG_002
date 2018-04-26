@@ -13,7 +13,6 @@ import { ProgrammePage } from '../pages/programme/programme';
 import { PodcastsPage } from '../pages/podcasts/podcasts';
 import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
 import { BlogPage } from '../pages/blog/blog';
-import { IonShrinkingHeader } from '../components/ion-shrinking-header';
 import { ScrollHideDirective } from '../directives/scroll-hide/scroll-hide';
 import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
 import { StatusBar } from '@ionic-native/status-bar';

@@ -63,7 +63,15 @@ private loadingPopup: any;
 
   	startVideo() {
 		
+		 this._player.pauseProvider();
+			    this.musicControls.listen();
+				this.musicControls.updateIsPlaying(false);
+				this.onplaying = '0';
+                localStorage.setItem("player", "stop");
+                $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+		
     let options: StreamingVideoOptions = {
+		
       successCallback: () => { this.typeplayer = 'audio'; },
       errorCallback: (e) => { console.log('Error: ', e) }
      // orientation: 'landscape'
