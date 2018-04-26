@@ -60,7 +60,7 @@ export class AudioStreamProvider {
 					//return false;
 			});
 
-			return this.promise;
+			//return this.promise;
 
 			//});  
 			return Observable.of(false);
