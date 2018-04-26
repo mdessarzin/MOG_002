@@ -31,7 +31,8 @@ typeplayer: any;
     date: string;
     cat: string;
     live: string;
-
+onplaying: string;
+	
   constructor(
 		public navCtrl: NavController,
 	 	private navParams: NavParams,
