@@ -33,14 +33,6 @@ box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.75);
 	*/
 	}
 	
-	ion-card-content img {
-	opacity: 1;
-	transition: opacity 1s;
-}
-
-ion-card-content img[data-src] {
-	opacity: 0;
-}
 	
 .fakeItem {
 

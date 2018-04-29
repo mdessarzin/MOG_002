@@ -74,6 +74,18 @@
   fill: #29B7C2;
 }
 
+ion-card-content img{
+  opacity: 1;
+  animation: fadeIn 1s ease;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 
 $max: 35px;
 

@@ -22,11 +22,6 @@ page-blog #songCover {
   -moz-box-shadow: -1px 3px 12px px rgba(0,0,0,0.75);
   box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.75);
   	*/ }
-page-blog ion-card-content img {
-  opacity: 1;
-  transition: opacity 1s; }
-page-blog ion-card-content img[data-src] {
-  opacity: 0; }
 @keyframes animatedBar {
   0% {
     background-position: -406px 0; }

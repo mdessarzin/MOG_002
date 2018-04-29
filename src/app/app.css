@@ -18,6 +18,121 @@
   background-color: #29B7C2;
   font-weight: lighter; }
 
-.active-side-menu-option ion-label{	
-	color: #29B7C2 !important;
-}
+ion-card-title {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  font-size: 18px !important;
+  font-weight: bold !important; }
+
+.card-md {
+  margin: 0px !important; }
+
+.date {
+  padding-left: 5px !important;
+  padding-right: 10px !important;
+  font-size: 13px !important;
+  font-weight: lighter !important;
+  color: #A9A9A9; }
+
+.point {
+  color: #29B7C2; }
+
+ion-footer {
+  border-top: 3px solid #29B7C2;
+  	/*
+  	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/xQAAukB5vvocQUAAAAASUVORK5CYII=);
+  */
+  background-color: #ffffff; }
+
+ion-spinner {
+  width: 60px;
+  height: 60px;
+  fill: #29B7C2; }
+
+ion-card-content img {
+  opacity: 1;
+  animation: fadeIn 1s ease; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.equilizer {
+  height: 35px;
+  width: 35px;
+  transform: rotate(180deg); }
+
+.bar {
+  fill: #fff;
+  width: 12px;
+  animation: equalize 1.25s steps(25, end) 0s infinite; }
+
+.bar:nth-child(1) {
+  animation-duration: 1.9s; }
+
+.bar:nth-child(2) {
+  animation-duration: 2s; }
+
+.bar:nth-child(3) {
+  animation-duration: 2.3s; }
+
+.bar:nth-child(4) {
+  animation-duration: 2.4s; }
+
+.bar:nth-child(5) {
+  animation-duration: 2.1s; }
+
+@keyframes equalize {
+  0% {
+    height: 60px; }
+  4% {
+    height: 50px; }
+  8% {
+    height: 40px; }
+  12% {
+    height: 30px; }
+  16% {
+    height: 20px; }
+  20% {
+    height: 30px; }
+  24% {
+    height: 40px; }
+  28% {
+    height: 10px; }
+  32% {
+    height: 40px; }
+  36% {
+    height: 60px; }
+  40% {
+    height: 20px; }
+  44% {
+    height: 40px; }
+  48% {
+    height: 70px; }
+  52% {
+    height: 30px; }
+  56% {
+    height: 10px; }
+  60% {
+    height: 30px; }
+  64% {
+    height: 50px; }
+  68% {
+    height: 60px; }
+  72% {
+    height: 70px; }
+  76% {
+    height: 80px; }
+  80% {
+    height: 70px; }
+  84% {
+    height: 60px; }
+  88% {
+    height: 50px; }
+  92% {
+    height: 60px; }
+  96% {
+    height: 70px; }
+  100% {
+    height: 80px; } }
