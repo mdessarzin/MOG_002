@@ -10,6 +10,14 @@ page-accueil {
   animation-duration:0;
 }
 
+	img {
+	opacity: 1;
+	transition: opacity 1s;
+}
+
+img[data-src] {
+	opacity: 0;
+}
 	
 	
 }

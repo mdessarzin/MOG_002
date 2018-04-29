@@ -11,7 +11,22 @@ page-blog .date {
   font-size: 13px !important;
   font-weight: lighter !important; }
 page-blog ion-footer {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAAyCAQAAABl5zm7AAAAtklEQVR42u3VMQ0AAAgDsM2/NURxIYKkNdFmAgA8V6EDgNABAKEDAEIHAIQOAEIHAIQOAAgdABA6AAgdABA6ACB0AEDoACB0AEDoAIDQAQChA4DQAQChAwBCBwCEDgBCBwCEDgAIHQAQOgAIHQAQOgAgdABA6AAgdABA6ACA0AEAoQOA0AEAoQMAQgcAhA4AQgcAhA4ACB0AEDoACB0AEDoAIHQAQOgAgNABQOgAgNABAKEDAGcBkBIoC8O8RXAAAAAASUVORK5CYII=); }
+  border-top: 3px solid #29B7C2;
+  	/*
+  	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/xQAAukB5vvocQUAAAAASUVORK5CYII=);
+  */
+  background-color: #ffffff; }
+page-blog #songCover {
+  		/*
+  		-webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 3px 12px px rgba(0,0,0,0.75);
+  box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.75);
+  	*/ }
+page-blog ion-card-content img {
+  opacity: 1;
+  transition: opacity 1s; }
+page-blog ion-card-content img[data-src] {
+  opacity: 0; }
 @keyframes animatedBar {
   0% {
     background-position: -406px 0; }

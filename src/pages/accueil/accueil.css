@@ -4,3 +4,8 @@ page-accueil ion-card.ng-enter-stagger {
   /* override to make sure it's not inherited from other styles */
   -webkit-animation-duration: 0;
   animation-duration: 0; }
+page-accueil img {
+  opacity: 1;
+  transition: opacity 1s; }
+page-accueil img[data-src] {
+  opacity: 0; }
