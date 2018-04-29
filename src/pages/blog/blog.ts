@@ -75,12 +75,20 @@ header: string;
 ionViewDidLoad() {
 
 		if(localStorage.player == 'play'){
-			this.onplaying = '1';
+           // this.buttonIcon = "ios-pause";
+			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+			$('.playerEtat_2').hide();
+			$('.playerEtat_0').hide();
+			$('.playerEtat_1').show();
+
         }
         else
         {
-			this.onplaying = '0';
-			
+            //this.buttonIcon = "ios-play";
+			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			$('.playerEtat_2').hide();
+			$('.playerEtat_1').hide();
+			$('.playerEtat_0').show();
         }
 }
 

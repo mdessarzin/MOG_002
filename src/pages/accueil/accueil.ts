@@ -78,14 +78,18 @@ ionViewDidLoad() {
 		if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
 			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-			this.onplaying = '1';
+			$('.playerEtat_2').hide();
+			$('.playerEtat_0').hide();
+			$('.playerEtat_1').show();
 
         }
         else
         {
             //this.buttonIcon = "ios-play";
 			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-			this.onplaying = '0';
+			$('.playerEtat_2').hide();
+			$('.playerEtat_1').hide();
+			$('.playerEtat_0').show();
         }
       
 		$.ajaxSetup({ cache: false });

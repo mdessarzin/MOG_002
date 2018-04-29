@@ -7,12 +7,12 @@
       {{title}}
     </ion-title>
 
-<ion-buttons end >
-		  	 <button ion-button icon-only *ngIf='onplaying == 0'  (tap)='openPlayer()'>
+	  <ion-buttons end >
+		  	 <button ion-button icon-only (tap)='openPlayer()' class="playerEtat_0">
       				<ion-icon name="md-radio"></ion-icon>
     		</button>
-		  <button ion-button icon-only (tap)='openPlayer()'  *ngIf='onplaying == 1'>
-		  <div >
+		  <button ion-button icon-only (tap)='openPlayer()' class="playerEtat_1"  style="display:none;">
+		  	<div >
 					<svg xmlns="http://www.w3.org/2000/svg" class="equilizer" viewBox="0 0 128 128">
 						
 					  <g>
@@ -22,8 +22,23 @@
 						<rect class="bar" transform="translate(75,0)" y="15"></rect>
 					  </g>
 							
-					</svg></div></button>
-			</ion-buttons>
+					</svg>
+			  </div>
+		 	</button>
+		  <button ion-button icon-only (tap)='openPlayer()' class="playerEtat_2" style="display:none;">
+		  	<div >
+					<svg xmlns="http://www.w3.org/2000/svg" class="equilizer" viewBox="0 0 128 128">
+					  <g>
+						<rect class="bar_off" transform="translate(0,0)" y="15"></rect>
+						<rect class="bar_off" transform="translate(25,0)" y="15"></rect>
+						<rect class="bar_off" transform="translate(50,0)" y="15"></rect>
+						<rect class="bar_off" transform="translate(75,0)" y="15"></rect>
+					  </g>
+					</svg>
+			  </div>
+		 	</button>
+	</ion-buttons>
+
   </ion-navbar>
 	
 </ion-header>
