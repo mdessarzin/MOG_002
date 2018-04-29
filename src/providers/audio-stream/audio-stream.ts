@@ -50,7 +50,7 @@ export class AudioStreamProvider {
 						$('.playerEtat_2').hide();
 						$('.playerEtat_0').hide();
 						$('.playerEtat_1').show();
-						
+				  		$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 						/*
 						if(this.loadingPopup){
 							this.loadingPopup.dismiss();
@@ -64,6 +64,7 @@ export class AudioStreamProvider {
 						$('.playerEtat_2').hide();
 						$('.playerEtat_1').hide();
 						$('.playerEtat_0').show();
+						$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 						//this.loadingPopup.dismiss(); 
 					});
 					//return false;
@@ -82,6 +83,7 @@ export class AudioStreamProvider {
 			$('.playerEtat_2').hide();
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();
+			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 			return Observable.of(false);
 		}
 
