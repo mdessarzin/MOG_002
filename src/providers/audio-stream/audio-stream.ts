@@ -30,7 +30,9 @@ export class AudioStreamProvider {
 
 			$('.btPlayer').hide();
 			$('.loadingPlayer').show();
-
+			$('.playerEtat_0').hide();
+			$('.playerEtat_1').hide();
+			$('.playerEtat_2').show();
 			/*
 			this.loadingPopup = this._loadingCtrl.create({     // Crea el cargando
 					spinner: 'dots',
@@ -45,6 +47,10 @@ export class AudioStreamProvider {
 						resolve(true);
 						$('.loadingPlayer').hide();
 						$('.btPlayer').show();
+						$('.playerEtat_2').hide();
+						$('.playerEtat_0').hide();
+						$('.playerEtat_1').show();
+						
 						/*
 						if(this.loadingPopup){
 							this.loadingPopup.dismiss();
@@ -55,6 +61,9 @@ export class AudioStreamProvider {
 					});
 					this.stream.addEventListener('error', () => {
 						reject(false);
+						$('.playerEtat_2').hide();
+						$('.playerEtat_1').hide();
+						$('.playerEtat_0').show();
 						//this.loadingPopup.dismiss(); 
 					});
 					//return false;
@@ -70,6 +79,9 @@ export class AudioStreamProvider {
 		public pauseProvider(): Observable<boolean> {
 			this.stream.pause();
 			//return false;
+			$('.playerEtat_2').hide();
+			$('.playerEtat_1').hide();
+			$('.playerEtat_0').show();
 			return Observable.of(false);
 		}
 

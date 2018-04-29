@@ -152,7 +152,7 @@ settingMusicControl(track,artist,cover){
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(false);
 				  $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-				  this.onplaying = '0';
+				  //this.onplaying = '0';
                break;
             case 'music-controls-play':
                // Do something
@@ -161,7 +161,7 @@ settingMusicControl(track,artist,cover){
                this.musicControls.listen(); 
                this.musicControls.updateIsPlaying(true);
 				  $('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-				  this.onplaying = '1';
+				  //this.onplaying = '1';
                break;
             case 'music-controls-destroy':
                // Do something
@@ -208,7 +208,7 @@ startAudio() {
                 this._player.pauseProvider();
 			    this.musicControls.listen();
 				this.musicControls.updateIsPlaying(false);
-				this.onplaying = '0';
+				//this.onplaying = '0';
                 localStorage.setItem("player", "stop");
                 $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
         }
@@ -255,7 +255,7 @@ startAudio() {
 			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 			//$('.btPlayer').html('<ion-spinner name="crescent"></ion-spinner>');
 			
-			this.onplaying = '1';
+			//this.onplaying = '1';
 			console.log('Play Button clicked');
 			this._player.playProvider();
 						    this.musicControls.listen();

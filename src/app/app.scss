@@ -95,6 +95,12 @@ $max: 35px;
   transform: rotate(180deg);
 }
 
+.bar_off {
+  fill: #fff;
+  width: 12px;
+	height: 3px !important;
+}
+
 .bar {
   fill: #fff;
   width: 12px;
