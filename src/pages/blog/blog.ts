@@ -66,7 +66,7 @@ header: string;
 				  console.log(data);
 				  this.posts = data;
 				});
-			},100);
+			},20);
 			
 			
 

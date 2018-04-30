@@ -66,7 +66,7 @@ export class AccueilPage {
 				  console.log(data);
 				  this.posts = data;
 				});
-			}, 100);
+			}, 10);
 			
 
 			
