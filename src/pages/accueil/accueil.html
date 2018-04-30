@@ -50,11 +50,11 @@
 		 <ion-col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 no-padding *ngFor="let post of posts" >
 			 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;">
 			<ion-card-content no-padding class="fadeintransition">
-				<div style="background-color: #f1f1f1; position: relative;" (tap)="showDetails(post.title.rendered, post.better_featured_image.card, post.content.rendered, post.date, post.link )">	
+				<div style="background-color: #f1f1f1; position: relative;" (tap)="showDetails(post.title.rendered, post.card, post.content.rendered, post.date, post.link )">	
 					<span class="card_categorie">{{post.pure_taxonomies.categories[0].name}}</span>				
 					<img data-src="{{post.card}}" />
 				</div>
-				<ion-card-title (tap)="showDetails(post.title.rendered, post.better_featured_image.card, post.content.rendered, post.date, post.link )" [innerHTML]="post.title.rendered"></ion-card-title>
+				<ion-card-title (tap)="showDetails(post.title.rendered, post.card, post.content.rendered, post.date, post.link )" [innerHTML]="post.title.rendered"></ion-card-title>
 			</ion-card-content>
 
 			<ion-row>
@@ -63,10 +63,10 @@
 				   <p class="date"><i class="fas fa-dot-circle point"></i> {{post.date | date:'dd.MM.y'}}</p>
 			   </ion-col>
 			   <ion-col text-right align-self-start>
-				    <button ion-button icon-only clear mode="md" (tap)="share(post.title.rendered, post.better_featured_image.card, post.link )">
+				    <button ion-button icon-only clear mode="md" (tap)="share(post.title.rendered, post.card, post.link )">
      					<ion-icon name="md-share" style="color:#A9A9A9;"></ion-icon>
 					</button>
-				   <button ion-button clear icon-only mode="md" style="border-left:1px solid #f1f1f1;" (tap)="whatsappShare(post.title.rendered, post.better_featured_image.card, post.link )">
+				   <button ion-button clear icon-only mode="md" style="border-left:1px solid #f1f1f1;" (tap)="whatsappShare(post.title.rendered, postß.card, post.link )">
      					<ion-icon name="logo-whatsapp" style="color:#A9A9A9;"></ion-icon>
 					</button>					
 			  </ion-col>
