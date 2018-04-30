@@ -31,7 +31,6 @@ export class PodcastsPage {
     pushPage: any;
     buttonIcon: string = 'ios-play';
  	posts: any;
-  	fakeUsers: Array<any> = new Array(3);
 	footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
   	headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
 	link: string;
@@ -80,9 +79,9 @@ header: string;
 	
   	startVideo(url) {
 		
-		 this._player.pauseProvider();
-			    this.musicControls.listen();
-				this.musicControls.updateIsPlaying(false);
+		 		this._player.pauseProvider();
+			    //this.musicControls.listen();
+				//this.musicControls.updateIsPlaying(false);
 				this.onplaying = '0';
                 localStorage.setItem("player", "stop");
                 $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
