@@ -61,6 +61,23 @@
 	background-color: #29B7C2;
 	font-weight: lighter;
 }
+.card_icon {
+	color: #fff;
+    display: inline-block;
+    font-size: 25px;
+    letter-spacing: .05rem;
+    line-height: 1;
+    padding: 5px 20px;
+    text-transform: uppercase;
+	font-weight: lighter;	
+	position:absolute;
+	text-align: center;
+	width: 100%;
+	opacity: 0.8;
+    top: calc(50% - 40px); /* 50% - 3/4 of icon height */
+}
+
+
 
 	ion-card-title {
 		padding-left:10px !important;
