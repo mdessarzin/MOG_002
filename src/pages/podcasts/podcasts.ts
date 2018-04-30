@@ -89,7 +89,7 @@ header: string;
 		
     let options: StreamingVideoOptions = {
 		
-      successCallback: () => { this.typeplayer = 'audio'; },
+      successCallback: () => {  },
       errorCallback: (e) => { console.log('Error: ', e) }
      // orientation: 'landscape'
     }; 
