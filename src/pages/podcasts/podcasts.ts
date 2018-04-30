@@ -3,7 +3,6 @@ import { Component, ViewChild, Injectable } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController} from 'ionic-angular';
 import { ScrollHideConfig } from '../../directives/scroll-hide/scroll-hide';
 import * as $ from "jquery";
-import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
 import { MusicControls } from '@ionic-native/music-controls';
 import { Http } from '@angular/http';
 import { Media, MediaObject } from '@ionic-native/media';
