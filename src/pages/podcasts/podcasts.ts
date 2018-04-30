@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
+import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
 
 @Component({
   selector: 'page-podcasts',
@@ -47,7 +48,9 @@ header: string;
 		 public navParams: NavParams,
 		 public plt: Platform,
 		 		 public modalCtrl: ModalController,
-		 		private streamingMedia: StreamingMedia
+		 		private streamingMedia: StreamingMedia,
+		 		public _player: AudioStreamProvider,
+
 		//private ga: GoogleAnalytics
 	){
 			
