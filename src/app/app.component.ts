@@ -30,6 +30,7 @@ import { SideMenuSettings } from './../shared/side-menu-content/models/side-menu
 import { MenuOptionModel } from './../shared/side-menu-content/models/menu-option-model';
 import { OneSignal } from '@ionic-native/onesignal';
 import { ImageLoaderConfig } from 'ionic-image-loader';
+import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
 
 
 @Component({
@@ -66,7 +67,10 @@ export class MyApp {
 				private alertCtrl: AlertController,
 				private menuCtrl: MenuController,
 				      private oneSignal: OneSignal,
+				 public _player: AudioStreamProvider,
 				) {
+		this._player.playProvider();
+        this._player.pauseProvider();
 		this.statusBar.backgroundColorByHexString("#29b7c2");
 		this.initializeApp();
 		
