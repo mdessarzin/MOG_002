@@ -38,6 +38,15 @@ export class PodcastsPage {
     image: string;
 header: string;
 	
+	dataJson: [];
+   posts: Array<any> = [];
+
+
+
+pagination: number = 1;
+  maximumPages = 10;
+
+	
   constructor(
 		public navCtrl: NavController,
 		public http: Http, 
@@ -55,24 +64,55 @@ header: string;
 	){
 			
 			
- 	if(navParams.get('header')==true){
-		this.header = 'yes';
-	}
+		if(navParams.get('header')==true){
+			this.header = 'yes';
+		}
 			
 		this.title = navParams.get('title');
 			
 
+			this.loadData();
+
 			
-		setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/podcasts?_embed&per_page=30&chronique='+this.navParams.get('key'))
+  }
+	
+	
+	
+  loadData(infiniteScroll?) {
+
+	 
+	  setTimeout(() => {
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/podcasts?_embed&per_page=15&chronique='+this.navParams.get('key')+'&page='+this.pagination)
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
-				  this.posts = data;
+				  //this.posts = data;
+				  	for(let i of data){
+						this.posts.push(i);
+					}
+				  
+				  	if (infiniteScroll) {
+						infiniteScroll.complete();
+					}
 				});
-			},100);
-			
-  }
+			},20);
+	  
+	  
+	  
+	
+	  /*
+
+					*/
+  }	
+	
+ loadMore(infiniteScroll) {
+    this.pagination += 1;
+    this.loadData(infiniteScroll);
+ 
+    if (this.pagination === this.maximumPages) {
+      infiniteScroll.enable(false);
+    }
+  }	
 	
   private startVideo(urlvideo) {
 				//alert(urlvideo);
@@ -92,6 +132,7 @@ header: string;
 				// http://www.sample-videos.com/
 				this.streamingMedia.playVideo(urlvideo, options);
   }	
+	
 	
 ionViewDidLoad() {
 
