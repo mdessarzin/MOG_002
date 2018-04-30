@@ -30,7 +30,6 @@ export class PodcastsPage {
     data: any = {};
     pushPage: any;
     buttonIcon: string = 'ios-play';
- 	posts: any;
 	footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
   	headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
 	link: string;
@@ -38,7 +37,6 @@ export class PodcastsPage {
     image: string;
 header: string;
 	
-	dataJson: [];
    posts: Array<any> = [];
 
 
@@ -82,7 +80,7 @@ pagination: number = 1;
 
 	 
 	  setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/podcasts?_embed&per_page=15&chronique='+this.navParams.get('key')+'&page='+this.pagination)
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/podcasts?_embed&per_page=12&chronique='+this.navParams.get('key')+'&page='+this.pagination)
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
