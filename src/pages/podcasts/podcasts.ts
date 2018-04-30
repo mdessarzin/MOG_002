@@ -1,3 +1,4 @@
+import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media';
 import { Component, ViewChild, Injectable } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController} from 'ionic-angular';
 import { ScrollHideConfig } from '../../directives/scroll-hide/scroll-hide';
@@ -46,7 +47,7 @@ header: string;
 		 public navParams: NavParams,
 		 public plt: Platform,
 		 		 public modalCtrl: ModalController,
-
+		 		private streamingMedia: StreamingMedia
 		//private ga: GoogleAnalytics
 	){
 			
@@ -72,6 +73,26 @@ header: string;
 
 			
   }
+	
+  	startVideo(url) {
+		
+		 this._player.pauseProvider();
+			    this.musicControls.listen();
+				this.musicControls.updateIsPlaying(false);
+				this.onplaying = '0';
+                localStorage.setItem("player", "stop");
+                $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+		
+    let options: StreamingVideoOptions = {
+		
+      successCallback: () => { this.typeplayer = 'audio'; },
+      errorCallback: (e) => { console.log('Error: ', e) }
+     // orientation: 'landscape'
+    }; 
+    // http://www.sample-videos.com/
+    this.streamingMedia.playVideo(url, options);
+  }	
+	
 ionViewDidLoad() {
 
 		if(localStorage.player == 'play'){
