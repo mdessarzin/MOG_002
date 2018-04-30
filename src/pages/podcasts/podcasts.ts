@@ -77,12 +77,12 @@ header: string;
 			
   }
 	
-  	startVideo(url) {
+  private startVideo(urlvideo) {
 		
 		 		this._player.pauseProvider();
 			    //this.musicControls.listen();
 				//this.musicControls.updateIsPlaying(false);
-				this.onplaying = '0';
+				//this.onplaying = '0';
                 localStorage.setItem("player", "stop");
                 $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 		
@@ -93,7 +93,7 @@ header: string;
      // orientation: 'landscape'
     }; 
     // http://www.sample-videos.com/
-    this.streamingMedia.playVideo(url, options);
+    this.streamingMedia.playVideo(urlvideo, options);
   }	
 	
 ionViewDidLoad() {
