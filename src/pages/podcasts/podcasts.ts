@@ -64,16 +64,13 @@ header: string;
 
 			
 		setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/podcasts?_embed&chronique='+this.navParams.get('key'))
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/podcasts?_embed&per_page=30&chronique='+this.navParams.get('key'))
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
 				  this.posts = data;
 				});
 			},100);
-			
-			
-
 			
   }
 	
