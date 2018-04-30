@@ -32,7 +32,7 @@ link: string;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
-	      this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
+	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 
   }
 	private share(){
