@@ -38,9 +38,7 @@ export class PodcastsPage {
 header: string;
 	
    posts: Array<any> = [];
-
-
-
+postsLoading: any;
 pagination: number = 1;
   maximumPages = 10;
 
@@ -88,7 +86,7 @@ pagination: number = 1;
 				  	for(let i of data){
 						this.posts.push(i);
 					}
-				  
+				  this.postsLoading = '1';
 				  	if (infiniteScroll) {
 						infiniteScroll.complete();
 					}
