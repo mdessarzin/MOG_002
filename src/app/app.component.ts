@@ -19,6 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //import { PodcastsPage } from '../pages/podcasts/podcasts';
 //import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
 import { BlogPage } from '../pages/blog/blog';
+import { PodcastsPage } from '../pages/podcasts/podcasts';
 
 
 import { AccueilPage } from '../pages/accueil/accueil';
@@ -159,8 +160,8 @@ export class MyApp {
 				{
 					iconName: '',
 					displayName: 'Radio Lac Matin',
-					component: AccueilPage,
-					key: '',
+					component: PodcastsPage,
+					key: '66',
 					header: true
 				},
 				{
