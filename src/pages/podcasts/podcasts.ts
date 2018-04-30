@@ -78,7 +78,7 @@ header: string;
   }
 	
   private startVideo(urlvideo) {
-		
+				alert(urlvideo);
 		 		this._player.pauseProvider();
 			    //this.musicControls.listen();
 				//this.musicControls.updateIsPlaying(false);
