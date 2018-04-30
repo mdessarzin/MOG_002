@@ -60,7 +60,7 @@ header: string;
 
 			
 		setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?_embed&categories='+this.navParams.get('key'))
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?categories='+this.navParams.get('key'))
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);

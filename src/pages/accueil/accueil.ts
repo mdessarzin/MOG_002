@@ -60,7 +60,7 @@ export class AccueilPage {
 			
 
 			setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?_embed')
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts')
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
