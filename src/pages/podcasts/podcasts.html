@@ -52,14 +52,14 @@
 			 
 	
 			 
-			 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;" *ngIf='post._url_podcast_video;else podcasts'>
+			 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;" *ngIf='post._url_podcast_video;else podcasts' (tap)="startVideo(post._url_podcast_video)">
 						<ion-card-content no-padding class="fadeintransition">
-							<div style="background-color: #f1f1f1; position: relative;" (tap)="startVideo(post._url_podcast_video)">	
+							<div style="background-color: #f1f1f1; position: relative;">	
 								<span class="card_categorie">{{post.pure_taxonomies.chronique[0].name}}</span>
-								<span class="card_icon" (tap)="startVideo(post._url_podcast_video)"><i class="fas fa-play-circle fa-3x"></i></span>
+								<span class="card_icon"><i class="fas fa-play-circle fa-3x"></i></span>
 								<img *ngIf='post.card' data-src="{{post.card}}" />
 							</div>
-							<ion-card-title (tap)="startVideo(post._url_podcast_video)" [innerHTML]="post.title.rendered"></ion-card-title>
+							<ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
 						</ion-card-content>
 
 						<ion-row>
