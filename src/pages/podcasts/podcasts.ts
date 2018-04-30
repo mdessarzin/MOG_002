@@ -83,17 +83,17 @@ header: string;
 			    //this.musicControls.listen();
 				//this.musicControls.updateIsPlaying(false);
 				//this.onplaying = '0';
-                localStorage.setItem("player", "stop");
-                $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+                //localStorage.setItem("player", "stop");
+                //$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 		
-    let options: StreamingVideoOptions = {
-		
-      successCallback: () => {  },
-      errorCallback: (e) => { console.log('Error: ', e) }
-     // orientation: 'landscape'
-    }; 
-    // http://www.sample-videos.com/
-    this.streamingMedia.playVideo(urlvideo, options);
+				let options: StreamingVideoOptions = {
+
+				  successCallback: () => {  },
+				  errorCallback: (e) => { console.log('Error: ', e) }
+				 // orientation: 'landscape'
+				}; 
+				// http://www.sample-videos.com/
+				this.streamingMedia.playVideo(urlvideo, options);
   }	
 	
 ionViewDidLoad() {
