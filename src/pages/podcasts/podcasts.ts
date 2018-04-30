@@ -49,6 +49,8 @@ header: string;
 		 		 public modalCtrl: ModalController,
 		 		private streamingMedia: StreamingMedia,
 		 		public _player: AudioStreamProvider,
+		 		public musicControls: MusicControls,
+
 
 		//private ga: GoogleAnalytics
 	){
