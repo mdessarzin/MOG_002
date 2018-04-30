@@ -78,7 +78,7 @@ pagination: number = 1;
 
 	 
 	  setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/podcasts?_embed&per_page=12&chronique='+this.navParams.get('key')+'&page='+this.pagination)
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/podcasts?_embed&per_page=15&chronique='+this.navParams.get('key')+'&page='+this.pagination)
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
