@@ -165,7 +165,7 @@ export class MyApp {
 					iconName: '',
 					displayName: 'Radio Lac Matin',
 					component: PodcastsPage,
-					key: '66',
+					key: '51',
 					header: true
 				},
 				{
@@ -179,8 +179,8 @@ export class MyApp {
 				{
 					iconName: '',
 					displayName: 'Les après-midi Radio Lac',
-					component: AccueilPage,
-					key: '',
+					component: PodcastsPage,
+					key: '54',
 					header: true
 				},
 				{
