@@ -82,13 +82,9 @@ update(refresher) {
 				.then(data => {
 				  console.log(data);
 				  this.posts = data;
+				  refresher.complete();
 				});
 			}, 10);
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      refresher.complete();
-    }, 2000);
   }
 	
 	
