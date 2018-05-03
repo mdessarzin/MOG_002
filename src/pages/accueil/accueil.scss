@@ -10,6 +10,18 @@ page-accueil {
   animation-duration:0;
 }
 
+	
+	ion-card .item-inner {
+		padding: 0px !important;
+	}
+	
+	ion-card .item-inner .ion-label,
+	ion-card .item-inner .label-md {
+		 		padding: 0px !important;
+			margin: 0px !important;
+		    white-space: normal !important;
+
+	}
 
 	
 }

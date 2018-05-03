@@ -38,11 +38,17 @@
 			  </div>
 		 	</button>
 	</ion-buttons>
-
   </ion-navbar>
+	
+	 <ion-toolbar color="primary">
+		<ion-searchbar (input)="search($event)"></ion-searchbar>
+	 </ion-toolbar>
+
 	<div class="subtitle">
 		{{title}}
 	</div>
+	
+
 </ion-header>
 
 <ion-content no-padding id="page6" #pageContent fullscreen>
