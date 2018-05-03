@@ -127,9 +127,15 @@
 			background-color: #ffffff;
 	}
 
-	ion-spinner {
+ion-spinner {
   width: 60px;
   height: 60px;
+  fill: #29B7C2;
+}
+
+ion-refresher ion-spinner {
+  width: 40px;
+  height: 40px;
   fill: #29B7C2;
 }
 

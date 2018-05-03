@@ -4,11 +4,5 @@ page-accueil ion-card.ng-enter-stagger {
   /* override to make sure it's not inherited from other styles */
   -webkit-animation-duration: 0;
   animation-duration: 0; }
-page-accueil ion-card-content img {
-  opacity: 1;
-  animation: fadeIn 2s ease; }
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+page-accueil .scroll-content {
+  margin-bottom: 0px !important; }

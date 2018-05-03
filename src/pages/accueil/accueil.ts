@@ -72,8 +72,9 @@ export class AccueilPage {
 			
 			
   }
+
 	
-	update(refresher) {
+update(refresher) {
     console.log('Begin async operation', refresher);
 			setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts')

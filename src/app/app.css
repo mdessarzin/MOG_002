@@ -4,6 +4,24 @@
   margin: 0px !important;
   width: 100%; }
 
+.fadeintransition {
+  opacity: 1;
+  animation: fadeIn 1s ease; }
+
+.subtitle {
+  line-height: 25px !important;
+  font-size: 13px;
+  background-color: #202020;
+  padding-left: 20px;
+  font-weight: lighter;
+  color: #C1C1C1;
+  text-transform: uppercase; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 .card_categorie {
   color: #fff;
   display: inline-block;
@@ -17,6 +35,41 @@
   bottom: 20px;
   background-color: #29B7C2;
   font-weight: lighter; }
+
+.card_icon {
+  color: #fff;
+  display: inline-block;
+  font-size: 25px;
+  letter-spacing: .05rem;
+  line-height: 1;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  opacity: 0.8;
+  top: calc(50% - 40px);
+  /* 50% - 3/4 of icon height */ }
+
+.card_categorie_podcast {
+  color: #29B7C2;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .05rem;
+  line-height: 1;
+  padding: 4px 0px;
+  text-transform: uppercase;
+  background-color: #fff;
+  font-weight: bold; }
+
+.date_podcast {
+  padding-left: 0px !important;
+  padding-right: 5px !important;
+  padding-top: 5px;
+  font-size: 11px !important;
+  font-weight: lighter !important;
+  color: #A9A9A9; }
 
 ion-card-title {
   padding-left: 10px !important;
@@ -49,15 +102,11 @@ ion-spinner {
   height: 60px;
   fill: #29B7C2; }
 
-ion-card-content img {
-  opacity: 1;
-  animation: fadeIn 1s ease; }
+ion-refresher ion-spinner {
+  width: 40px;
+  height: 40px;
+  fill: #29B7C2; }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
 .equilizer {
   height: 35px;
   width: 35px;
@@ -66,7 +115,7 @@ ion-card-content img {
 .bar_off {
   fill: #fff;
   width: 12px;
-  height: 3px; }
+  height: 3px !important; }
 
 .bar {
   fill: #fff;
@@ -141,3 +190,11 @@ ion-card-content img {
     height: 70px; }
   100% {
     height: 80px; } }
+ion-card .item-inner {
+  padding: 0px !important; }
+
+ion-card .item-inner .ion-label,
+ion-card .item-inner .label-md {
+  padding: 0px !important;
+  margin: 0px !important;
+  white-space: normal !important; }
