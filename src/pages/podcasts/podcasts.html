@@ -93,11 +93,11 @@
 						<ion-card-content no-padding class="fadeintransition">
 							  <ion-item (tap)="showDetails(post.title, '', '', post.date, post.link )" style="padding-left: 5px; border-bottom: 0px solid #fff;">
 									<ion-thumbnail item-start>
-									  <img src="./assets/imgs/podcasts.jpg">
+									  <img src="./assets/imgs/podcasts_.jpg">
 									</ion-thumbnail>
-									<h2>{{post.title}}</h2>
-									<strong>{{post.chronique[0]}}</strong>
-									<p class="date"><i class="fas fa-dot-circle point"></i> {{post.date | date:'dd.MM.y'}}</p>
+									<span class="card_categorie_podcast">{{post.chronique[0]}}</span>
+									<h2 style="font-size:13px;">{{post.title}}</h2>
+									<p class="date_podcast"><i class="fas fa-dot-circle point"></i> {{post.date | date:'dd.MM.y'}}</p>
 							  </ion-item>
 						</ion-card-content>		
 					</ion-card>
