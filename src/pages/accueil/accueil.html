@@ -44,7 +44,14 @@
 	</div>
 </ion-header>
 <ion-content no-padding id="page6" #pageContent fullscreen>
-	
+	<ion-refresher (ionRefresh)="update($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
  <ion-grid no-padding *ngIf='posts'>
         <ion-row no-padding> 
 		 <ion-col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 no-padding *ngFor="let post of posts" >

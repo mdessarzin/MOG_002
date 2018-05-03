@@ -72,6 +72,25 @@ export class AccueilPage {
 			
 			
   }
+	
+	update(refresher) {
+    console.log('Begin async operation', refresher);
+			setTimeout(() => {
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts')
+				.then(response => response.json())
+				.then(data => {
+				  console.log(data);
+				  this.posts = data;
+				});
+			}, 10);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
+	
+	
 	//Prépation de la fonction de chargement
 ionViewDidLoad() {
 
