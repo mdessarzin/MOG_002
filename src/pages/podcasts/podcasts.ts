@@ -103,12 +103,12 @@ pagination: number = 1;
     }
   }	
 
-	  private configPlayer(title,image, text, date, link) {
+  private configPlayer(title,image, text, date, link) {
 
-		 this._player.pauseProvider();
-		 this._player.playerconfigProvider();
-    	 this.startAudio(title,image, text, date, link);
-	  }
+	 this._player.pauseProvider();
+	 this._player.playerconfigProvider(link);
+	 this.startAudio(title,image, text, date, link);
+  }
   
 		
 	
