@@ -104,6 +104,7 @@ pagination: number = 1;
   }	
 
   private configPlayer(title,image, text, date, link) {
+                localStorage.setItem("player", "stop");
 
 	 this._player.pauseProvider();
 	 this._player.playerconfigProvider(link);
