@@ -192,9 +192,9 @@ private share(message, title, image, link){
     }
 	
 	
-	private openPlayerVideo(url){
+	private openPlayerVideo(url,img){
         //console.log(this.login);
-       let modal = this.modalCtrl.create(PlayerpopupPage,{url:url});
+       let modal = this.modalCtrl.create(PlayerpopupPage,{url:url, img:img});
     	modal.present();   
     }
 	

@@ -15,9 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PlayerpopupPage {
   url: string;
+  img: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-	  	  this.url = navParams.get('url');
+	  	this.url = navParams.get('url');
+	  	this.img = navParams.get('img');
 
   }
 
