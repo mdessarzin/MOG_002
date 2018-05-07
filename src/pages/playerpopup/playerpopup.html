@@ -17,6 +17,8 @@
 </ion-header>
 
 
-<ion-content overflow-scroll="true">
-	    <iframe width="100%" style="position: absolute; height: 100%; border: none" [src]="trustedPostUrl" frameborder="0" allowfullscreen></iframe>
+<ion-content padding>
+<div class="modal transparent fullscreen-player" ng-click="dismiss()">
+    <video src="{{url}}" class="centerme" poster="{{poster}}" controls="controls" autoplay></video>
+</div>
 </ion-content>
