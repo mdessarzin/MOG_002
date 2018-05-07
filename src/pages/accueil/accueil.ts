@@ -77,7 +77,7 @@ update(refresher) {
 	  }
 
 	  setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?per_page=10&page='+this.pagination)
+			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?type=post&taxonomy=category&per_page=10&page='+this.pagination)
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
