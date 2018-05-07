@@ -44,6 +44,11 @@
 	</div>
 </ion-header>
 <ion-content no-padding id="page6" #pageContent>
+	<ion-slides *ngIf='!postsLoading'>
+        <ion-slide>
+            <ion-spinner name="crescent"></ion-spinner>
+        </ion-slide>
+    </ion-slides>
 	<ion-refresher (ionRefresh)="update($event)">
 			<ion-refresher-content
 			  pullingIcon="ios-arrow-down-outline"
@@ -51,7 +56,7 @@
 			  refreshingSpinner="crescent">
 			</ion-refresher-content>
 	</ion-refresher>
-	<ion-grid no-padding *ngIf='posts'>
+ <ion-grid *ngIf='posts' no-padding>
 				<ion-row no-padding> 
 				 <ion-col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 no-padding *ngFor="let post of posts" >
 					 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;">
@@ -84,13 +89,12 @@
 				  </ion-card>
 						</ion-col>
 			</ion-row>
-		</ion-grid>  <!--
-		  -->
-			<ion-slides *ngIf='!posts'>
-				<ion-slide>
-					<ion-spinner name="crescent"></ion-spinner>
-				</ion-slide>
-			</ion-slides>
+		</ion-grid>  
+		  
+		<ion-infinite-scroll (ionInfinite)="loadMore($event)" threshold="50%" loadingSpinner="bubbles" loadingText="Chargement...">
+    		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+  		</ion-infinite-scroll>
+	
 		</ion-content>
 		<ion-footer [scrollHide]="footerScrollConfig" [scrollContent]="pageContent"  style="">
 		   <ion-grid style="max-height: 110px;">
@@ -112,4 +116,5 @@
 				</ion-col>
 			  </ion-row>
 			</ion-grid> 
+			
 </ion-footer>

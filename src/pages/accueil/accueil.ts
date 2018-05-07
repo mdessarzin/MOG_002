@@ -36,13 +36,16 @@ export class AccueilPage {
     data: any = {};
     pushPage: any;
     buttonIcon: string = 'ios-play';
- 	posts: any;
   	fakeUsers: Array<any> = new Array(3);
 	footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
   	headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
 	link: string;
     title: string;
     image: string;
+	postsLoading: any;
+	pagination: number = 1;
+	maximumPages = 10;
+	posts: Array<any> = [];
 
   constructor(
 		public navCtrl: NavController,
@@ -57,35 +60,48 @@ export class AccueilPage {
 		 public plt: Platform,
 		//private ga: GoogleAnalytics
 	){
-			
-
-			setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts')
-				.then(response => response.json())
-				.then(data => {
-				  console.log(data);
-				  this.posts = data;
-				});
-			}, 10);
-			
-
-			
-			
+		this.loadData();			
   }
 
 	
 update(refresher) {
     console.log('Begin async operation', refresher);
-			setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts')
+	this.posts = [];
+	this.loadData(false,refresher);		
+  }
+	
+  loadData(infiniteScroll?,refresher?) {
+
+	 
+	  setTimeout(() => {
+			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?per_page=10&page='+this.pagination)
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
-				  this.posts = data;
-				  refresher.complete();
+				  //this.posts = data;
+				  	for(let i of data){
+						this.posts.push(i);
+					}
+				  this.postsLoading = '1';
+				  	if (infiniteScroll) {
+						infiniteScroll.complete();
+					}
+				  if (refresher) {
+						refresher.complete();
+					}
 				});
-			}, 10);
-  }
+			},20);
+
+  }	
+	
+ loadMore(infiniteScroll) {
+    this.pagination += 1;
+    this.loadData(infiniteScroll);
+ 
+    if (this.pagination === this.maximumPages) {
+      infiniteScroll.enable(false);
+    }
+  }	
 	
 	
 	//Prépation de la fonction de chargement
@@ -123,6 +139,10 @@ ionViewDidLoad() {
     
 		
 	}
+	
+	
+	
+	
 settingMusicControl(track,artist,cover){
 	
 	if (this.plt.is('cordova')) {
