@@ -4,7 +4,9 @@ page-playerpopup {
     width: 100%;
     height:100%;
 }
- 
+	ion-header{
+		background-color: #000 !important;
+	}
 .fullscreen-player {
     max-width: 100%;
     max-height: 100%;
