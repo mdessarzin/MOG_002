@@ -108,6 +108,10 @@ pagination: number = 1;
 	 this._player.pauseProvider();
 	 this._player.playerconfigProvider(link);
 	 this.startAudio(title,image, text, date, link);
+	  
+	$('.songArtist').html(text);
+	$('.songTitle').html(title);
+	$('.songCover').attr('src',image);								
   }
   
 		
@@ -165,28 +169,7 @@ private share(message, title, image, link){
         }
         else
         {
-		   setInterval(() => {      
-				   setTimeout(() => {
-					  fetch('https://www.mediaone-digital.ch/cache/onefm.json')
-						.then(response => response.json())
-						.then(data => {
-						  console.log(data);
-						  if(this.live == data.live[0].interpret){
-										//
-									}
-									else{
-										//this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
-										this.live = data.live[0].interpret;
-										$('.songArtist').html(data.live[0].interpret);
-										$('.songTitle').html(data.live[0].title);
-										$('.songCover').attr('src',data.live[0].imageURL);								
-									}
-
-						});
-					}, 0);
-
-			   },15000);
-			
+		  
 			localStorage.setItem("player", "play");
 			console.log('Play Button clicked');
 			this._player.playProvider();
