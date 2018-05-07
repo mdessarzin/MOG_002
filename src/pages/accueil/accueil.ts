@@ -66,7 +66,7 @@ export class AccueilPage {
 	
 update(refresher) {
     console.log('Begin async operation', refresher);
-	this.posts = [];
+	
 	this.loadData(false,refresher);		
   }
 	
@@ -79,15 +79,17 @@ update(refresher) {
 				.then(data => {
 				  console.log(data);
 				  //this.posts = data;
+				  if (refresher) {
+					  this.posts = [];
+						refresher.complete();
+					}
+				  
 				  	for(let i of data){
 						this.posts.push(i);
 					}
 				  this.postsLoading = '1';
 				  	if (infiniteScroll) {
 						infiniteScroll.complete();
-					}
-				  if (refresher) {
-						refresher.complete();
 					}
 				});
 			},20);
