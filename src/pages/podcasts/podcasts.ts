@@ -189,7 +189,7 @@ private share(message, title, image, link){
 			
 			localStorage.setItem("player", "play");
 			console.log('Play Button clicked');
-			this._player.playProvider(link);
+			this._player.playProvider();
 			//this.musicControls.listen();
 			//this.musicControls.updateIsPlaying(true);
 			//this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));	    	
