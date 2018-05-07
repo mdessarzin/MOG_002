@@ -63,7 +63,7 @@
 			 
 	
 			 
-			 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;" *ngIf='post._url_podcast_video;else podcasts' (tap)="startVideo(post._url_podcast_video)">
+			 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;" *ngIf='post._url_podcast_video;else podcasts' (tap)="openPlayerVideo(post._url_podcast_video)">
 						<ion-card-content no-padding class="fadeintransition">
 							<div style="background-color: #f1f1f1; position: relative;">	
 								<span class="card_categorie">{{post.chronique[0]}}</span>

@@ -11,6 +11,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
+import { PlayerpopupPage } from '../playerpopup/playerpopup';
 
 @Component({
   selector: 'page-podcasts',
@@ -187,9 +188,14 @@ private share(message, title, image, link){
 	private openPlayer(){
         //console.log(this.login);
        let modal = this.modalCtrl.create(PlayerPage);
-    modal.present();
-    
-    
+    	modal.present();   
+    }
+	
+	
+	private openPlayerVideo(url){
+        //console.log(this.login);
+       let modal = this.modalCtrl.create(PlayerpopupPage,{url:url});
+    	modal.present();   
     }
 	
 	
