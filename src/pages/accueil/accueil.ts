@@ -72,7 +72,10 @@ update(refresher) {
 	
   loadData(infiniteScroll?,refresher?) {
 
-	 
+	  if (refresher) {
+    	this.pagination = 1;
+	  }
+
 	  setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?per_page=10&page='+this.pagination)
 				.then(response => response.json())

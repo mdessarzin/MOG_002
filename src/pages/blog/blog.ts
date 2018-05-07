@@ -68,7 +68,9 @@ update(refresher) {
   }
 	
   loadData(infiniteScroll?,refresher?) {
-
+	  if (refresher) {
+    	this.pagination = 1;
+	  }
 	  setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/wp/v2/posts?categories='+this.navParams.get('key')+'&per_page=10&page='+this.pagination)
 				.then(response => response.json())
@@ -291,7 +293,6 @@ startAudio() {
 			//this.buttonIcon = "ios-pause";
 			//$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 			//$('.btPlayer').html('<ion-spinner name="crescent"></ion-spinner>');
-			
 			//this.onplaying = '1';
 			console.log('Play Button clicked');
 			this._player.playProvider();
