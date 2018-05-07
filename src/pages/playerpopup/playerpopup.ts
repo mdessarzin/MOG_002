@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'playerpopup.html',
 })
 export class PlayerpopupPage {
+  url: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 	  	  this.url = navParams.get('url');
