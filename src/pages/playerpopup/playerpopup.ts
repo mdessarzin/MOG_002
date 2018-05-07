@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 /**
  * Generated class for the PlayerpopupPage page.
@@ -16,10 +17,12 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 export class PlayerpopupPage {
   url: string;
   poster: string;
+	trustedPostUrl: SafeResourceUrl;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private sanitizer: DomSanitizer) {
 	  	this.url = navParams.get('url');
 	  	this.poster = navParams.get('poster');
+		this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.mediaone-digital.ch/apps/player/index.php?url='+this.url);
 
   }
 
