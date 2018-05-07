@@ -69,6 +69,7 @@ export class MyApp {
 				      private oneSignal: OneSignal,
 				 public _player: AudioStreamProvider,
 				) {
+		this._player.playerconfigProvider();
 		this._player.playProvider();
         this._player.pauseProvider();
 		this.statusBar.backgroundColorByHexString("#29b7c2");

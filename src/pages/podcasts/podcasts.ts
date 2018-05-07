@@ -74,9 +74,7 @@ pagination: number = 1;
   }
 	
 	
-	
   loadData(infiniteScroll?) {
-
 	 
 	  setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?type=podcasts&taxonomy=chronique&per_page=15&term_id='+this.navParams.get('key')+'&page='+this.pagination)
@@ -93,13 +91,7 @@ pagination: number = 1;
 					}
 				});
 			},20);
-	  
-	  
-	  
-	
-	  /*
 
-					*/
   }	
 	
  loadMore(infiniteScroll) {
@@ -110,29 +102,21 @@ pagination: number = 1;
       infiniteScroll.enable(false);
     }
   }	
-	
-  private startVideo(urlvideo) {
-				//alert(urlvideo);
-		 		this._player.pauseProvider();
-			    //this.musicControls.listen();
-				//this.musicControls.updateIsPlaying(false);
-				//this.onplaying = '0';
-                localStorage.setItem("player", "stop");
-                $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-		
-				let options: StreamingVideoOptions = {
 
-				  successCallback: () => {  },
-				  errorCallback: (e) => { console.log('Error: ', e) }
-				 // orientation: 'landscape'
-				}; 
-				// http://www.sample-videos.com/
-				this.streamingMedia.playVideo(urlvideo, options);
-  }	
+	  private configPlayer(title,image, text, date, link) {
+
+		 this._player.pauseProvider();
+		 this._player.playerconfigProvider(link);
+    	 this.startAudio(title,image, text, date, link);
+	  }
+  
+		
+	
 	
 	
 ionViewDidLoad() {
 
+	
 		if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
 			$('.playerEtat_2').hide();
@@ -171,19 +155,46 @@ private share(message, title, image, link){
       })
   }
 	
-	private showDetails(title,image, text, date, link){
-        //console.log(this.login);
-       
-    
-    this.navCtrl.push(DetailsPage,{
-            title: title,
-            text: text,
-            image: image,
-            date: date,
-            link: link,
-            cat: 'Actualité'
-        });
-    }
+	private startAudio(title,image, text, date, link){
+
+		if(localStorage.player == 'play'){
+                this._player.pauseProvider();
+			    //this.musicControls.listen();
+				//this.musicControls.updateIsPlaying(false);
+                localStorage.setItem("player", "stop");
+        }
+        else
+        {
+		   setInterval(() => {      
+				   setTimeout(() => {
+					  fetch('https://www.mediaone-digital.ch/cache/onefm.json')
+						.then(response => response.json())
+						.then(data => {
+						  console.log(data);
+						  if(this.live == data.live[0].interpret){
+										//
+									}
+									else{
+										//this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+										this.live = data.live[0].interpret;
+										$('.songArtist').html(data.live[0].interpret);
+										$('.songTitle').html(data.live[0].title);
+										$('.songCover').attr('src',data.live[0].imageURL);								
+									}
+
+						});
+					}, 0);
+
+			   },15000);
+			
+			localStorage.setItem("player", "play");
+			console.log('Play Button clicked');
+			this._player.playProvider(link);
+			//this.musicControls.listen();
+			//this.musicControls.updateIsPlaying(true);
+			//this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));	    	
+			}
+}
 	
 	private openPlayer(){
         //console.log(this.login);

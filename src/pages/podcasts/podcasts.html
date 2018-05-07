@@ -91,7 +91,7 @@
 			 <ng-template #podcasts>
 				 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1; ">
 						<ion-card-content no-padding class="fadeintransition">
-							  <ion-item (tap)="showDetails(post.title, '', '', post.date, post.link )" style="padding-left: 5px; border-bottom: 0px solid #fff;">
+							  <ion-item (tap)="configPlayer(post.title, post.chronique[0], '', post.date, post._url_podcast )" style="padding-left: 5px; border-bottom: 0px solid #fff;">
 									<ion-thumbnail item-start>
 									  <img src="./assets/imgs/podcasts_.jpg">
 									</ion-thumbnail>
@@ -111,3 +111,25 @@
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
+
+<ion-footer style="">
+   <ion-grid style="max-height: 110px;">
+	  <ion-row align-items-center>
+		<ion-col col-2 style="max-width: 80px; text-align: center;" justify-content-center> 
+				<ion-spinner class="loadingPlayer" style="display:none;height:40px;width:40x;" name="crescent"></ion-spinner>
+				<span (click)="startAudio()" class="btPlayer" style="color:#29B7C2;"><i class="fas fa-play-circle fa-3x"></i></span>
+		</ion-col>                 
+		<ion-col col-7>
+			<div (tap)='openPlayer()'>
+			<span style="color:#000;font-family: 'Days One', sans-serif; font-size: 13px; font-weight: bolder;" class="songTitle">&nbsp;</span><br>
+			<span style="color:#000;font-family: 'Days One', sans-serif; font-size: 12px;" class="songArtist">&nbsp;</span>
+			</div>
+		  </ion-col>
+		<ion-col col-3  style="text-align: right;">
+			<div (tap)='openPlayer()'>
+				<img class="songCover" src="https://www.onefm.ch/wp-content/themes/mog-child/webradios/0.jpg" style=" max-height: 55px;" />
+			</div>
+		</ion-col>
+	  </ion-row>
+	</ion-grid> 
+</ion-footer>

@@ -20,19 +20,33 @@ export class AudioStreamProvider {
 	  	}
 	
 	 
+		public playerconfigProvider(urlMedia?): Observable<boolean> {
 
+			
+			if(urlMedia)
+				this.url = urlMedia;
+			else
+				this.url = "https://onefm.ice.infomaniak.ch/onefm-high.mp3"; //https://radiolac.ice.infomaniak.ch/radiolac-high.mp3
+
+			this.stream = new Audio(this.url);
+
+			return Observable.of(false);
+		
+		}
 	
 
 		public playProvider(): Observable<boolean> {
+		
 			
-			this.url = "https://onefm.ice.infomaniak.ch/onefm-high.mp3"; //https://radiolac.ice.infomaniak.ch/radiolac-high.mp3
-			this.stream = new Audio(this.url);
 
 			$('.btPlayer').hide();
 			$('.loadingPlayer').show();
 			$('.playerEtat_0').hide();
 			$('.playerEtat_1').hide();
 			$('.playerEtat_2').show();
+			
+			
+			
 			/*
 			this.loadingPopup = this._loadingCtrl.create({     // Crea el cargando
 					spinner: 'dots',

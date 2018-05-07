@@ -260,6 +260,7 @@ startAudio() {
 			
 			this.onplaying = '1';
 			console.log('Play Button clicked');
+			this._player.playerconfigProvider();
 			this._player.playProvider();
 						    this.musicControls.listen();
 				this.musicControls.updateIsPlaying(true);
