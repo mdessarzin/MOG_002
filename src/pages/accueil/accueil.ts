@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
-
+import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
 
 //import {Http, Response} from "@angular/http";
 //import {Observable} from 'rxjs/Rx';
@@ -359,7 +359,7 @@ private showDetails(title,image, text, date, link){
 
 private openPlayer(){
         //console.log(this.login);
-       let modal = this.modalCtrl.create(PlayerPage);
+       let modal = this.modalCtrl.create(PlayerPage); //PlayerPage
     modal.present();
     
     

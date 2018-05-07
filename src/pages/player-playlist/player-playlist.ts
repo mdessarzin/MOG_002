@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Slides} from 'ionic-angular';
 
 /**
  * Generated class for the PlayerPlaylistPage page.
@@ -15,16 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PlayerPlaylistPage {
 
-  header: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-	  
-	  if(navParams.get('header')==true){
-		this.header = 'yes';
-		}
-  }
+  selectedSegment: string;
+  slides: any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PlayerPlaylistPage');
-  }
+  constructor(public navCtrl: NavController) {
 
+}
 }
