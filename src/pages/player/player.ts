@@ -31,11 +31,10 @@ typeplayer: any;
     date: string;
     cat: string;
     live: string;
-onplaying: string;
-	
-	  duration: any = -1;
+	onplaying: string;
+	durations: any = -1;
   duration_string: string;
-  position: any = 0;
+  positions: any = 0;
 	
   constructor(
 		public navCtrl: NavController,
@@ -51,68 +50,26 @@ onplaying: string;
    		
 			this.typeplayer = 'audio';
 			
-			
-				
-			
-			var audioplayer = document.getElementById("player");
-			
-		    let self = this;
-
-			audioplayer.addEventListener("timeupdate", function() {
-				
-				self.duration = this.duration;
-				self.position = this.currentTime;
-				
-				
-
-}, false);
-			
-	  
-			
-		
-			
-			
-			
   }
 
-slideStart(range: Range) {
-				var audioplayer = document.getElementById("player");
-	 audioplayer.pause();
-	
-    console.log(`Start: ${range.ratio}, value: ${range.value}`);
-}
-	
-slideEnd(range: Range) {
-				var audioplayer = document.getElementById("player");
-	  audioplayer.currentTime = range.value;
-
-	audioplayer.play();
-    console.log(`End: ${range.ratio}, value: ${range.value}`);
-}
-	
   ngAfterViewInit() {
 
+	 /* 
+	  	let self = this;
 	  
-	  		
+	  this.durations = this._player.stream.duration;
 	  
-
+	  	this._player.stream.ontimeupdate = function() {
+    		console.log('the time was updated to: ' + this.currentTime);
+			
+			self.positions = this.currentTime;
+			
+	}
+	  */
 	  
 	  
 	  
   }
-	
-
-
-calculateCurrentValue(currentTime) {
-  var current_hour = parseInt(currentTime / 3600) % 24,
-    current_minute = parseInt(currentTime / 60) % 60,
-    current_seconds_long = currentTime % 60,
-    current_seconds = current_seconds_long.toFixed(),
-    current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
-
-  return current_time;
-}
-
 
   	startVideo() {
 		
@@ -136,6 +93,20 @@ calculateCurrentValue(currentTime) {
   private dismiss() {
     this.viewCtrl.dismiss();
   }
+	
+slideStart() {
+	//this._player.stream.pause();
+    console.log(`Start`);
+}
+	
+slideEnd() {
+		//this._player.stream.position = 30;
+
+	
+	//this._player.stream.play();
+    console.log("End: value: "+this.positions);
+}
+	
 	
   ionViewDidLoad() {
 	 if(localStorage.player == 'play'){
