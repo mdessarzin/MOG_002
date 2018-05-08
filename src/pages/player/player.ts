@@ -95,7 +95,7 @@ typeplayer: any;
   }
 	
 slideStart() {
-	//this._player.stream.pause();
+	this._player.stream.pause();
     console.log(`Start`);
 }
 	
@@ -103,7 +103,7 @@ slideEnd() {
 		//this._player.stream.position = 30;
 
 	
-	//this._player.stream.play();
+	this._player.stream.play();
     console.log("End: value: "+this.positions);
 }
 	
