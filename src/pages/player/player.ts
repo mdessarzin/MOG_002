@@ -100,7 +100,7 @@ slideStart() {
 }
 	
 slideEnd() {
-	this._player.stream.position = 30;
+	this._player.stream.currentTime = this.positions;
 
 	
 	this._player.stream.play();
