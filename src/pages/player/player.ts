@@ -100,7 +100,7 @@ slideStart() {
 }
 	
 slideEnd() {
-		//this._player.stream.position = 30;
+	this._player.stream.position = 30;
 
 	
 	this._player.stream.play();
