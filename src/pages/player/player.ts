@@ -54,7 +54,7 @@ typeplayer: any;
 
   ngAfterViewInit() {
 
-	 /* 
+	 
 	  	let self = this;
 	  
 	  this.durations = this._player.stream.duration;
@@ -65,7 +65,7 @@ typeplayer: any;
 			self.positions = this.currentTime;
 			
 	}
-	  */
+	  
 	  
 	  
 	  
