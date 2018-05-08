@@ -33,6 +33,10 @@ typeplayer: any;
     live: string;
 onplaying: string;
 	
+	  duration: any = -1;
+  duration_string: string;
+  position: any = 0;
+	
   constructor(
 		public navCtrl: NavController,
 	 	private navParams: NavParams,
@@ -47,18 +51,68 @@ onplaying: string;
    		
 			this.typeplayer = 'audio';
 			
+			
+				
+			
+			var audioplayer = document.getElementById("player");
+			
+		    let self = this;
+
+			audioplayer.addEventListener("timeupdate", function() {
+				
+				self.duration = audioplayer.duration;
+				self.position = audioplayer.currentTime;
+				
+				
+
+}, false);
+			
+	  
+			
+		
+			
+			
+			
   }
 
+slideStart(range: Range) {
+				var audioplayer = document.getElementById("player");
+	 audioplayer.pause();
+	
+    console.log(`Start: ${range.ratio}, value: ${range.value}`);
+}
+	
+slideEnd(range: Range) {
+				var audioplayer = document.getElementById("player");
+	  audioplayer.currentTime = range.value;
+
+	audioplayer.play();
+    console.log(`End: ${range.ratio}, value: ${range.value}`);
+}
+	
   ngAfterViewInit() {
 
 	  
 	  		
 	  
-	  
+
 	  
 	  
 	  
   }
+	
+
+
+calculateCurrentValue(currentTime) {
+  var current_hour = parseInt(currentTime / 3600) % 24,
+    current_minute = parseInt(currentTime / 60) % 60,
+    current_seconds_long = currentTime % 60,
+    current_seconds = current_seconds_long.toFixed(),
+    current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
+
+  return current_time;
+}
+
 
   	startVideo() {
 		

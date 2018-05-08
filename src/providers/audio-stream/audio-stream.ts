@@ -21,6 +21,8 @@ export class AudioStreamProvider {
 	
 	 
 		public playerconfigProvider(urlMedia?): Observable<boolean> {
+			
+			var audioplayer = document.getElementById("player");
 
 			
 			if(urlMedia)
@@ -28,7 +30,9 @@ export class AudioStreamProvider {
 			else
 				this.url = "https://onefm.ice.infomaniak.ch/onefm-high.mp3"; //https://radiolac.ice.infomaniak.ch/radiolac-high.mp3
 
-			this.stream = new Audio(this.url);
+			audioplayer.src = this.url;
+			
+			
 
 			return Observable.of(false);
 		
@@ -45,7 +49,11 @@ export class AudioStreamProvider {
 			$('.playerEtat_1').hide();
 			$('.playerEtat_2').show();
 			
+			var audioplayer = document.getElementById("player");
+			audioplayer.play();
 			
+
+
 			
 			/*
 			this.loadingPopup = this._loadingCtrl.create({     // Crea el cargando
@@ -56,32 +64,16 @@ export class AudioStreamProvider {
 			//this.loadingPopup.present().then(()=>{
 
 			this.promise = new Promise((resolve,reject) => {
-					this.stream.play();
-					this.stream.addEventListener('playing', () => {
-						resolve(true);
+					//this.stream.play();
+					audioplayer.oncanplay = function() {
 						$('.loadingPlayer').hide();
 						$('.btPlayer').show();
 						$('.playerEtat_2').hide();
 						$('.playerEtat_0').hide();
 						$('.playerEtat_1').show();
 				  		$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-						/*
-						if(this.loadingPopup){
-							this.loadingPopup.dismiss();
-							this.loadingPopup = null;
-							
-						}
-						*/
-					});
-					this.stream.addEventListener('error', () => {
-						reject(false);
-						$('.playerEtat_2').hide();
-						$('.playerEtat_1').hide();
-						$('.playerEtat_0').show();
-						$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-						//this.loadingPopup.dismiss(); 
-					});
-					//return false;
+					};
+
 			});
 
 			//return this.promise;
@@ -92,7 +84,10 @@ export class AudioStreamProvider {
 		}
 
 		public pauseProvider(): Observable<boolean> {
-			this.stream.pause();
+						var audioplayer = document.getElementById("player");
+			audioplayer.pause();
+
+			//this.stream.pause();
 			//return false;
 			$('.playerEtat_2').hide();
 			$('.playerEtat_1').hide();
