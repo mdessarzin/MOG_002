@@ -64,7 +64,11 @@ export class AudioStreamProvider {
 					this.stream.play();
 
 									console.log('play');
+
+				
+			//		this.stream.ontimeupdate = function() {
     			//			console.log('the time was updated to: ' + this.currentTime);
+			
 			this.stream.onplaying = function() {
 						//resolve(true);
 															console.log('play2');
