@@ -60,8 +60,8 @@ onplaying: string;
 
 			audioplayer.addEventListener("timeupdate", function() {
 				
-				self.duration = audioplayer.duration;
-				self.position = audioplayer.currentTime;
+				self.duration = this.duration;
+				self.position = this.currentTime;
 				
 				
 
