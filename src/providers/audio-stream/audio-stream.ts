@@ -25,10 +25,15 @@ export class AudioStreamProvider {
 
 			
 			if(urlMedia)
+			{
 				this.url = urlMedia;
+				 localStorage.setItem("type_player", "replay");
+			}
 			else
+			{
 				this.url = "https://onefm.ice.infomaniak.ch/onefm-high.mp3"; //https://radiolac.ice.infomaniak.ch/radiolac-high.mp3
-;
+				localStorage.setItem("type_player", "live");
+			}
 			
 						this.stream = new Audio(this.url);
 

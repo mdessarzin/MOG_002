@@ -74,6 +74,7 @@ export class MyApp {
         //this._player.pauseProvider();
 		this.statusBar.backgroundColorByHexString("#29b7c2");
 		this.initializeApp();	
+		localStorage.setItem("type_player", "live");
 		
 	}
 

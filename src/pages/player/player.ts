@@ -48,13 +48,24 @@ typeplayer: any;
 		public plt: Platform
 		){
    		
+			
+	  if(localStorage.type_player == 'live'){
 			this.typeplayer = 'audio';
+        }
+        else
+        {
+			this.typeplayer = 'replay';
+        }
+
+			
 			
   }
 
   ngAfterViewInit() {
 
 	 
+	  
+	  
 	  	let self = this;
 	  
 	  this.durations = this._player.stream.duration;
