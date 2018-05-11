@@ -112,6 +112,16 @@ update(refresher) {
 	//Prépation de la fonction de chargement
 ionViewDidLoad() {
 
+	  if(localStorage.type_player == 'live'){
+        }
+        else
+        {
+			$('.songArtist').html(localStorage.podcast_title);
+			$('.songTitle').html(localStorage.podcast_category);
+			$('.songCover').attr('src',localStorage.podcast_cover);
+        }
+
+	
 		if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
 			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
@@ -131,9 +141,17 @@ ionViewDidLoad() {
       
 		$.ajaxSetup({ cache: false });
 		$.getJSON('https://www.mediaone-digital.ch/cache/onefm.json', function(data){
-				   					   $('.songArtist').html(data.live[0].interpret);
-					   $('.songTitle').html(data.live[0].title);
-				   $('.songCover').attr('src',data.live[0].imageURL);
+			
+				   	if(localStorage.type_player == 'live'){
+						$('.songArtist').html(data.live[0].interpret);
+						$('.songTitle').html(data.live[0].title);
+						$('.songCover').attr('src',data.live[0].imageURL);
+					}
+					else
+					{
+						//
+					}
+
 		});
 
 		
@@ -276,10 +294,16 @@ startAudio() {
                             else{
                               	this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
                                 this.live = data.live[0].interpret;
-								$('.songArtist').html(data.live[0].interpret);
-								$('.songTitle').html(data.live[0].title);
-								$('.songCover').attr('src',data.live[0].imageURL);								
-                            }
+								if(localStorage.type_player == 'live'){
+									$('.songArtist').html(data.live[0].interpret);
+									$('.songTitle').html(data.live[0].title);
+									$('.songCover').attr('src',data.live[0].imageURL);
+								}
+								else
+								{
+									//
+								}
+							}
 
 				});
 			}, 0);
