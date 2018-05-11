@@ -29,7 +29,7 @@ typeplayer: any;
     cover: string;
     track: string;
     date: string;
-    cat: string;
+    titreplayer: string;
     live: string;
 	onplaying: string;
 	durations: any = -1;
@@ -49,21 +49,21 @@ typeplayer: any;
 		){
    		
 			
-	  if(localStorage.type_player == 'live'){
-			this.typeplayer = 'audio';
-        }
-        else
-        {
-			this.typeplayer = 'replay';
-        }
-
+	 this.typeplayer = 'audio';
 			
 			
   }
 
   ngAfterViewInit() {
 
-	 
+	  if(localStorage.type_player == 'live'){
+			this.titreplayer = 'Direct';
+        }
+        else
+        {
+			this.titreplayer = 'Podcast';
+        }
+
 	  
 	  
 	  	let self = this;
