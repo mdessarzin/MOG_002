@@ -162,6 +162,10 @@ private share(message, title, image, link){
 	
 	private startAudio(title,image, text, date, link){
 
+		localStorage.setItem("podcast_title", title);
+		localStorage.setItem("podcast_category", text);
+		localStorage.setItem("podcast_cover", image);
+		
 		if(localStorage.player == 'play'){
                 this._player.pauseProvider();
 			    //this.musicControls.listen();
