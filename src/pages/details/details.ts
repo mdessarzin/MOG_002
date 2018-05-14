@@ -40,7 +40,7 @@ link: string;
 	
 	private loadclose(){
 		setTimeout( () => { this.postsLoading = '1';
- }, 3000 );
+ }, 1000 );
 	}
 	
 	private share(){
