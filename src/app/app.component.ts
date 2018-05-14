@@ -171,14 +171,6 @@ export class MyApp {
 				},
 				{
 					iconName: '',
-					displayName: 'Les matinées Radio Lac',
-					//badge: this.unreadCountObservable,
-					component: AccueilPage,
-					key: '',
-					header: true
-				},
-				{
-					iconName: '',
 					displayName: 'Les après-midi Radio Lac',
 					component: PodcastsPage,
 					key: '54',
