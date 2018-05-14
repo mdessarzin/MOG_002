@@ -178,23 +178,23 @@ export class MyApp {
 				},
 				{
 					iconName: '',
-					displayName: "L'actu en continue",
-					component: AccueilPage,
-					key: '',
+					displayName: 'Le Club Radio Lac',
+					component: PodcastsPage,
+					key: '293',
 					header: true
 				},
 				{
 					iconName: '',
-					displayName: 'Le Club Radio Lac',
-					component: AccueilPage,
-					key: '',
+					displayName: "L'actu en continue",
+					component: PodcastsPage,
+					key: '81',
 					header: true
 				},
 				{
 					iconName: '',
 					displayName: 'Le Sport',
-					component: AccueilPage,
-					key: '',
+					component: PodcastsPage,
+					key: '59',
 					header: true
 				}
 			]
@@ -204,6 +204,7 @@ export class MyApp {
 
 		// Load special options
 		// -----------------------------------------------
+		/*
 		this.options.push({
 			displayName: 'Special options',
 			subItems: [
@@ -231,6 +232,7 @@ export class MyApp {
 				}
 			]
 		});
+		*/
 	}
 
 	public selectOption(option: MenuOptionModel): void {
