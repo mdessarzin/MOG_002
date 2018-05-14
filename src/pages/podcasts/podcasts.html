@@ -76,7 +76,7 @@
 						<ion-row>
 
 						   <ion-col align-self-start>
-							   <p class="date"><i class="fas fa-dot-circle point"></i> {{post.date | date:'dd.MM.y'}}</p>
+							   <p class="date"><i class="fas fa-dot-circle point"></i> {{post.date}}</p>
 						   </ion-col>
 						   <ion-col text-right align-self-start>
 								<button ion-button clear icon-only mode="md" (tap)="share(post.title, post.card, post.link )">
@@ -98,7 +98,7 @@
 									</ion-thumbnail>
 									<span class="card_categorie_podcast">{{post.chronique[0]}}</span>
 									<h2 style="font-size:13px;">{{post.title}}</h2>
-									<p class="date_podcast"><i class="fas fa-dot-circle point"></i> {{post.date | date:'dd.MM.y'}}</p>
+									<p class="date_podcast"><i class="fas fa-dot-circle point"></i> {{post.date}}</p>
 							  </ion-item>
 						</ion-card-content>		
 					</ion-card>
@@ -116,7 +116,7 @@
 						<ion-row>
 
 						   <ion-col align-self-start>
-							   <p class="date"><i class="fas fa-dot-circle point"></i> {{post.date | date:'dd.MM.y'}}</p>
+							   <p class="date"><i class="fas fa-dot-circle point"></i> {{post.date}}</p>
 						   </ion-col>
 						   <ion-col text-right align-self-start>
 								<button ion-button clear icon-only mode="md" (tap)="share(post.title, post.card, post.link )">
