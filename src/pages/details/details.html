@@ -11,10 +11,13 @@
 </ion-header>
 
 <ion-content overflow-scroll="true">
+		    <iframe width="100%" style="position: absolute; height: 100%; border: none" [src]="trustedPostUrl" (load)="loadclose()" frameborder="0" allowfullscreen></iframe>
+
 			<ion-slides *ngIf='!postsLoading'>
         <ion-slide>
             <ion-spinner name="crescent"></ion-spinner>
         </ion-slide>
     </ion-slides>
-	    <iframe width="100%" style="position: absolute; height: 100%; border: none" [src]="trustedPostUrl" (load)="loadclose()" frameborder="0" allowfullscreen></iframe>
+
+
 </ion-content>
