@@ -39,7 +39,8 @@ link: string;
   }
 	
 	private loadclose(){
-		this.postsLoading = '1';
+		setTimeout( () => { this.postsLoading = '1';
+ }, 3000 );
 	}
 	
 	private share(){
