@@ -137,7 +137,7 @@ slideEnd() {
         }
       
 		$.ajaxSetup({ cache: false });
-		$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
+		$.getJSON('https://www.mediaone-digital.ch/cache/onefm.json', function(data){
 			
 				  if(localStorage.type_player == 'live'){
 						$('.songArtist').html(data.live[0].interpret);
@@ -273,7 +273,7 @@ startAudio() {
           console.log('timer');
 				  
 				   setTimeout(() => {
-			  fetch('https://www.mediaone-digital.ch/cache/radiolac.json')
+			  fetch('https://www.mediaone-digital.ch/cache/onefm.json')
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);

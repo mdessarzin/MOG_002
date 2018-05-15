@@ -171,6 +171,14 @@ export class MyApp {
 				},
 				{
 					iconName: '',
+					displayName: 'Les matinées Radio Lac',
+					//badge: this.unreadCountObservable,
+					component: AccueilPage,
+					key: '',
+					header: true
+				},
+				{
+					iconName: '',
 					displayName: 'Les après-midi Radio Lac',
 					component: PodcastsPage,
 					key: '54',
@@ -178,24 +186,56 @@ export class MyApp {
 				},
 				{
 					iconName: '',
-					displayName: 'Le Club Radio Lac',
-					component: PodcastsPage,
-					key: '293',
+					displayName: "L'actu en continue",
+					component: AccueilPage,
+					key: '',
 					header: true
 				},
 				{
 					iconName: '',
-					displayName: "L'actu en continue",
-					component: PodcastsPage,
-					key: '81',
+					displayName: 'Le Club Radio Lac',
+					component: AccueilPage,
+					key: '',
 					header: true
 				},
 				{
 					iconName: '',
 					displayName: 'Le Sport',
-					component: PodcastsPage,
-					key: '59',
+					component: AccueilPage,
+					key: '',
 					header: true
+				}
+			]
+		});
+
+		
+
+		// Load special options
+		// -----------------------------------------------
+		this.options.push({
+			displayName: 'Special options',
+			subItems: [
+				{
+					iconName: 'log-in',
+					displayName: 'Login',
+					custom: {
+						isLogin: true
+					}
+				},
+				{
+					iconName: 'log-out',
+					displayName: 'Logout',
+					custom: {
+						isLogout: true
+					}
+				},
+				{
+					iconName: 'globe',
+					displayName: 'Open Google',
+					custom: {
+						isExternalLink: true,
+						externalUrl: 'http://www.google.com'
+					}
 				}
 			]
 		});
