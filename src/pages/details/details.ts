@@ -11,7 +11,6 @@ import { SocialSharing } from '@ionic-native/social-sharing';
  */
 
 
-@IonicPage()
 @Component({
   selector: 'page-details',
   templateUrl: 'details.html',
