@@ -16,6 +16,7 @@ import { map } from 'rxjs/operators';
 
 
 
+@IonicPage()
 @Component({
   selector: 'page-player',
   templateUrl: 'player.html',
