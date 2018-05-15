@@ -1,4 +1,3 @@
-import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media';
 import { Component, ViewChild, Injectable } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController} from 'ionic-angular';
 import { ScrollHideConfig } from '../../directives/scroll-hide/scroll-hide';
@@ -52,7 +51,6 @@ pagination: number = 1;
 		 public navParams: NavParams,
 		 public plt: Platform,
 		 		 public modalCtrl: ModalController,
-		 		private streamingMedia: StreamingMedia,
 		 		public _player: AudioStreamProvider,
 		 		public musicControls: MusicControls,
 

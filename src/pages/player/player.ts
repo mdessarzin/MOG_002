@@ -1,4 +1,3 @@
-import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media';
 import { Component, ViewChild, Injectable } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ViewController, ModalController } from 'ionic-angular';
 import * as $ from "jquery";
@@ -40,7 +39,6 @@ typeplayer: any;
 		public navCtrl: NavController,
 	 	private navParams: NavParams,
 		public viewCtrl: ViewController,
-		private streamingMedia: StreamingMedia,	  
 		public _player: AudioStreamProvider,
 		public http: Http, 
 		public loadingCtrl: LoadingController,
@@ -94,14 +92,8 @@ typeplayer: any;
                 localStorage.setItem("player", "stop");
                 $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 		
-    let options: StreamingVideoOptions = {
-		
-      successCallback: () => { this.typeplayer = 'audio'; },
-      errorCallback: (e) => { console.log('Error: ', e) }
-     // orientation: 'landscape'
-    }; 
-    // http://www.sample-videos.com/
-    this.streamingMedia.playVideo('https://livevideo.infomaniak.com/streaming/livecast/lfmmd/playlist.m3u8', options);
+    
+    //this.streamingMedia.playVideo('https://livevideo.infomaniak.com/streaming/livecast/lfmmd/playlist.m3u8', options);
   }
 	
   private dismiss() {
