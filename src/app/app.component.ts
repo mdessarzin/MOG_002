@@ -116,14 +116,7 @@ export class MyApp {
 		});
 
 
-		this.options.push({
-			iconName: '',
-			displayName: 'Programme',
-			//badge: ArrayObservable.of('NEW'),
-			component: BlogPage,
-			key: '34',
-			header: true
-		});
+		
 		this.options.push({
 			iconName: '',
 			displayName: 'Politique',
@@ -171,15 +164,14 @@ export class MyApp {
 				},
 				{
 					iconName: '',
-					displayName: 'Les matinées Radio Lac',
-					//badge: this.unreadCountObservable,
-					component: AccueilPage,
-					key: '',
+					displayName: 'Les après-midi Radio Lac',
+					component: PodcastsPage,
+					key: '293',
 					header: true
 				},
 				{
 					iconName: '',
-					displayName: 'Les après-midi Radio Lac',
+					displayName: 'Radio Lac Soir',
 					component: PodcastsPage,
 					key: '54',
 					header: true
@@ -187,58 +179,21 @@ export class MyApp {
 				{
 					iconName: '',
 					displayName: "L'actu en continue",
-					component: AccueilPage,
-					key: '',
-					header: true
-				},
-				{
-					iconName: '',
-					displayName: 'Le Club Radio Lac',
-					component: AccueilPage,
-					key: '',
+					component: PodcastsPage,
+					key: '81',
 					header: true
 				},
 				{
 					iconName: '',
 					displayName: 'Le Sport',
-					component: AccueilPage,
-					key: '',
+					component: PodcastsPage,
+					key: '59',
 					header: true
 				}
 			]
 		});
 
 		
-
-		// Load special options
-		// -----------------------------------------------
-		this.options.push({
-			displayName: 'Special options',
-			subItems: [
-				{
-					iconName: 'log-in',
-					displayName: 'Login',
-					custom: {
-						isLogin: true
-					}
-				},
-				{
-					iconName: 'log-out',
-					displayName: 'Logout',
-					custom: {
-						isLogout: true
-					}
-				},
-				{
-					iconName: 'globe',
-					displayName: 'Open Google',
-					custom: {
-						isExternalLink: true,
-						externalUrl: 'http://www.google.com'
-					}
-				}
-			]
-		});
 	}
 
 	public selectOption(option: MenuOptionModel): void {
