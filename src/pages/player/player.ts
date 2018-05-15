@@ -6,6 +6,8 @@ import { MusicControls } from '@ionic-native/music-controls';
 import { Http } from '@angular/http';
 import { Media, MediaObject } from '@ionic-native/media';
 import { map } from 'rxjs/operators';
+import { PlayerpopupPage } from '../playerpopup/playerpopup';
+
 /**
  * Generated class for the PlayerPage page.
  *
@@ -43,7 +45,8 @@ typeplayer: any;
 		public http: Http, 
 		public loadingCtrl: LoadingController,
 		public musicControls: MusicControls,
-		public plt: Platform
+		public plt: Platform,
+		 		 		 public modalCtrl: ModalController
 		){
    		
 			
@@ -92,6 +95,8 @@ typeplayer: any;
                 localStorage.setItem("player", "stop");
                 $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 		
+		let modal = this.modalCtrl.create(PlayerpopupPage,{url:'https://livevideo.infomaniak.com/streaming/livecast/lfmmd/playlist.m3u8', poster:''});
+    	modal.present();   
     
     //this.streamingMedia.playVideo('https://livevideo.infomaniak.com/streaming/livecast/lfmmd/playlist.m3u8', options);
   }
