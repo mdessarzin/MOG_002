@@ -83,7 +83,8 @@ PlayerPlaylistPage,
       modalLeave: 'modal-slide-out',
     	mode: 'md',
 		activator: 'ripple',
-		menuType: "push"
+		menuType: "push",
+		backButtonIcon: "ios-arrow-back"
 	})
   ],
   bootstrap: [IonicApp],

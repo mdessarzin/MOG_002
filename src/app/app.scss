@@ -83,6 +83,19 @@ ion-item.item-wp {
         }
     }
 }
+
+.split-pane-ios.split-pane-visible >.split-pane-side {
+border-right: 0px solid $list-wp-border-color;}
+
+.split-pane-md.split-pane-visible >.split-pane-side {
+border-right: 0px solid $list-wp-border-color;}
+
+.split-pane-wp.split-pane-visible >.split-pane-side {
+border-right: 0px solid $list-wp-border-color;
+}
+
+
+
 .card-md,
 .card-ios {
 	margin:  0px !important;
