@@ -16,6 +16,8 @@ import { BlogPage } from '../pages/blog/blog';
 import { PlayerpopupPage } from '../pages/playerpopup/playerpopup';
 
 import { ScrollHideDirective } from '../directives/scroll-hide/scroll-hide';
+import { IframeAutoHeightDirective } from '../directives/iframeautoheight/iframeautoheight';
+
 import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -69,7 +71,8 @@ export class MyErrorHandler implements ErrorHandler {
 PlayerPlaylistPage,
 	  PlayerpopupPage,
 	ScrollHideDirective,
-	  SideMenuContentComponent
+	  SideMenuContentComponent,
+	   IframeAutoHeightDirective
   ],
   imports: [
 	  HttpModule,

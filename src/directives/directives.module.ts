@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { ScrollHideDirective } from './scroll-hide/scroll-hide';
+import { IframeAutoHeightDirective } from './iframeautoheight/iframeautoheight';
+
 @NgModule({
-	declarations: [ScrollHideDirective],
+	declarations: [ScrollHideDirective,IframeAutoHeightDirective],
 	imports: [],
-	exports: [ScrollHideDirective]
+	exports: [ScrollHideDirective,IframeAutoHeightDirective]
 })
 export class DirectivesModule {}

@@ -79,7 +79,7 @@ update(refresher) {
 	  }
 
 	  setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?type=post&taxonomy=category&per_page=10&page='+this.pagination)
+			  fetch('remotedata/wp-json/mog/v1/get_data?type=post&taxonomy=category&per_page=10&page='+this.pagination)
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
