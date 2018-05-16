@@ -76,8 +76,15 @@ PlayerPlaylistPage,
     BrowserModule,
 	  BrowserAnimationsModule,
     IonicModule.forRoot(MyApp, {
-        preloadModules: true
-    })
+        preloadModules: true,
+		backButtonText: 'Retour',
+      iconMode: 'ios',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+    	mode: 'md',
+		activator: 'ripple',
+		menuType: "push"
+	})
   ],
   bootstrap: [IonicApp],
   entryComponents: [

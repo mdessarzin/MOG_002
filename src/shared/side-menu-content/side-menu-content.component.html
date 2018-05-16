@@ -12,7 +12,7 @@
         <!-- It has nested options -->
         <ng-template [ngIf]="option.subItemsCount">
 
-            <ion-list no-margin class="accordion-menu">
+            <ion-list no-margin class="accordion-menu"  no-lines>
 
                 <!-- Header -->
                 <ion-item class="header" [ngClass]="menuSettings?.showSelectedOption && option.selected ? menuSettings.selectedOptionClass : null" (tap)="toggleItemOptions(option)" tappable >

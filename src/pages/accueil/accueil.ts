@@ -66,8 +66,10 @@ export class AccueilPage {
 	
 update(refresher) {
     console.log('Begin async operation', refresher);
-	
-	this.loadData(false,refresher);		
+		  setTimeout(() => {
+
+	this.loadData(false,refresher);	
+			  },200);
   }
 	
   loadData(infiniteScroll?,refresher?) {

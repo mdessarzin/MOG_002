@@ -39,6 +39,8 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #000000,
+  menulight:  #333333,
+  menudark:   #252525,
 );
 
 $toolbar-ios-background: #29b7c2;
@@ -61,23 +63,13 @@ $infinite-scroll-loading-margin-top: 20px;
 
 $refresher-icon-color: #29B7C2;
 
-// Single option
-    // ------------------
+//MENU
+$active-color: map-get($colors, primary);
+$font-color: #fff;
+$background-light-color: map-get($colors, menulight);
+$background-dark-color: map-get($colors, menudark);
 
-    ion-item.item.item-block.option {
 
-        &.active-side-menu-option {
-            color: $active-color;
-            font-weight: 700;
-        }
-    }
-// Sub option
-    // ------------------
-    ion-item.item.item-block.sub-option {
-        &.active-side-menu-option {
-            color: $active-color;
-        }
-    }
 
 // App Material Design Variables
 // --------------------------------------------------
