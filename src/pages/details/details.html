@@ -10,11 +10,11 @@
 	
 </ion-header>
 
-<ion-content overflow-scroll="true">
+<ion-content overflow-scroll="true" class="iframe-issue">
 			<ion-slides *ngIf='!postsLoading'>
         <ion-slide>
             <ion-spinner name="crescent"></ion-spinner>
         </ion-slide>
     </ion-slides>
-	<iframe width="100%" style="overflow:scroll !important;-webkit-overflow-scrolling:touch !important; height:100%;" iframeAutoHeight [src]="trustedPostUrl" (load)="loadclose()" frameborder="0" allowfullscreen></iframe>
+	<iframe width="100%" style="" iframeAutoHeight [src]="trustedPostUrl" (load)="loadclose()" frameborder="0" allowfullscreen></iframe>
 </ion-content>
