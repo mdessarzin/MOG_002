@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, Platform,LoadingController} from '
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import * as $ from "jquery";
-import { IframeAutoHeightDirective } from '../directives/iframeautoheight/iframeautoheight';
+import { IframeAutoHeightDirective } from '../../directives/iframeautoheight/iframeautoheight';
 
 /**
  * Generated class for the DetailsPage page.
