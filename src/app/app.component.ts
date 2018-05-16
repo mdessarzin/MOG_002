@@ -105,7 +105,7 @@ export class MyApp {
 		// Load simple menu options
 		// ------------------------------------------
 		this.options.push({
-			iconName: '',
+			iconName: 'ios-apps',
 			displayName: 'Accueil',
 			component: AccueilPage,
 
@@ -118,7 +118,7 @@ export class MyApp {
 
 		
 		this.options.push({
-			iconName: '',
+			iconName: 'ios-contacts',
 			displayName: 'Politique',
 			//badge: ArrayObservable.of('NEW'),
 			component: BlogPage,
@@ -126,7 +126,7 @@ export class MyApp {
 			header: true
 		});
 		this.options.push({
-			iconName: '',
+			iconName: 'ios-stats',
 			displayName: 'Economie',
 			//badge: ArrayObservable.of('NEW'),
 			component: BlogPage,
@@ -134,7 +134,7 @@ export class MyApp {
 			header: true
 		});
 		this.options.push({
-			iconName: '',
+			iconName: 'ios-people',
 			displayName: 'Culture et Société',
 			//badge: ArrayObservable.of('NEW'),
 			component: BlogPage,
@@ -142,7 +142,7 @@ export class MyApp {
 			header: true
 		});
 		this.options.push({
-			iconName: '',
+			iconName: 'ios-bicycle',
 			displayName: 'Sport',
 			//badge: ArrayObservable.of('NEW'),
 			component: BlogPage,
