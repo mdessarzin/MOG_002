@@ -11,12 +11,7 @@
 </ion-header>
 
 <ion-content scroll="true" overflow-scroll="true" class="">
-			<ion-slides *ngIf='!postsLoading'>
-        <ion-slide>
-            <ion-spinner name="crescent"></ion-spinner>
-        </ion-slide>
-    </ion-slides>
-	<div style="overflow:auto;-webkit-overflow-scrolling:touch;">
-	<iframe style="width:100%;height:100%" data-tap-disabled="true" [src]="trustedPostUrl" (load)="loadclose()" frameborder="0"></iframe>
+	<div class="div">
+	<iframe class="iframe" data-tap-disabled="true" [src]="trustedPostUrl" (load)="loadclose()" frameborder="0"></iframe>
 	</div>
 </ion-content><!-- iframeAutoHeight -->
