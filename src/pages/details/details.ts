@@ -38,7 +38,8 @@ link: string;
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
 	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
-	  
+	  $('#test').load('/remotedata/actualite/quel-avenir-pour-les-centres-commerciaux-en-suisse/?clean=true');
+
   }
 	
 	private loadclose(){
