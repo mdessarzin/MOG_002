@@ -14,6 +14,7 @@ import { PodcastsPage } from '../pages/podcasts/podcasts';
 import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
 import { BlogPage } from '../pages/blog/blog';
 import { PlayerpopupPage } from '../pages/playerpopup/playerpopup';
+import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@ionic-native/themeable-browser';
 
 import { ScrollHideDirective } from '../directives/scroll-hide/scroll-hide';
 import { IframeAutoHeightDirective } from '../directives/iframeautoheight/iframeautoheight';
@@ -112,6 +113,7 @@ PlayerPlaylistPage
 	  SocialSharing,
 	  MusicControls,
 	  OneSignal,
+	  ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject,
     {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
