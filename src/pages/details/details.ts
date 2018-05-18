@@ -102,7 +102,7 @@ label: 'Test!'
 backButtonCanClose: true
 };
 
-this.browser = this.themeableBrowser.create('https://search.stream.cr', '_self', options);
+const browser = this.themeableBrowser.create('https://search.stream.cr', '_self', options);
 }	  	
 
   ionViewDidLoad() {
