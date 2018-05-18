@@ -30,20 +30,7 @@ link: string;
 	postsLoading: any;
 	setHeight: any;
 
-	
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController,private themeableBrowser: ThemeableBrowser
-) {
-	  this.link = navParams.get('link');
-	  this.title = navParams.get('title');
-	  
-	  	const browser: ThemeableBrowserObject = this.themeableBrowser.create(this.link+'?clean=true', '_blank', this.optionsBrowser);
-
-
-	  
-	 
-  }
-	
-	  	private optionsBrowser: ThemeableBrowserOptions = {
+	private optionsBrowser: ThemeableBrowserOptions = {
 							 statusbar: {
 								 color: '#ffffffff'
 							 },
@@ -100,6 +87,21 @@ link: string;
 							 },
 							 backButtonCanClose: true
 						};
+	
+	
+  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController,private themeableBrowser: ThemeableBrowser
+) {
+	  this.link = navParams.get('link');
+	  this.title = navParams.get('title');
+	  
+	  	const browser: ThemeableBrowserObject = this.themeableBrowser.create(this.link+'?clean=true', '_blank', this.optionsBrowser);
+
+
+	  
+	 
+  }
+	
+	  	
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
