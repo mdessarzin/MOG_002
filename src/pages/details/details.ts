@@ -35,75 +35,45 @@ link: string;
 ) {
 	  this.link = navParams.get('link');
 	  this.title = navParams.get('title');
-	  
-openBrowser();
-
-	  
+	  this.openBrowser();
 	 
   }
 	
-openBrowser() {
-const options: ThemeableBrowserOptions = {
-statusbar: {
-color: '#488affff'
-},
-toolbar: {
-height: 44,
-color: '#488affff'
-},
-toolbarposition: 'bottom',
-title: {
-color: '#ffffffff',
-showPageTitle: true
-},
-backButton: {
-image: 'back',
-imagePressed: 'back_pressed',
-align: 'left',
-event: 'backPressed'
-},
-forwardButton: {
-image: 'forward',
-imagePressed: 'forward_pressed',
-align: 'left',
-event: 'forwardPressed'
-},
-closeButton: {
-image: 'close',
-imagePressed: 'close_pressed',
-align: 'left',
-event: 'closePressed'
-},
-customButtons: [
-{
-image: 'share',
-imagePressed: 'share_pressed',
-align: 'right',
-event: 'sharePressed'
-}
-],
-menu: {
-image: 'menu',
-imagePressed: 'menu_pressed',
-title: 'Test',
-cancel: 'Cancel',
-align: 'right',
-items: [
-{
-event: 'helloPressed',
-label: 'Hello World!'
-},
-{
-event: 'testPressed',
-label: 'Test!'
-}
-]
-},
-backButtonCanClose: true
-};
-
-const browser = this.themeableBrowser.create('https://search.stream.cr', '_self', options);
-}	  	
+  openBrowser() {
+    // https://ionicframework.com/docs/native/themeable-browser/
+    const options: ThemeableBrowserOptions = {
+      toolbar: {
+        height: 44,
+        color: '#3573bbff'
+      },
+      title: {
+        color: '#ffffffff',
+        showPageTitle: true,
+        staticText: 'Academy Browser'
+      },
+      backButton: {
+        wwwImage: 'assets/img/back.png',
+        align: 'left',
+        event: 'backPressed'
+      },
+      forwardButton: {
+        wwwImage: 'assets/img/forward.png',
+        align: 'left',
+        event: 'forwardPressed'
+      },
+      closeButton: {
+        wwwImage: 'assets/img/close.png',
+        align: 'left',
+        event: 'closePressed'
+      },
+    };
+ 
+    const browser: ThemeableBrowserObject = this.themeableBrowser.create('https://ionicacademy.com', '_blank', options);
+ 
+    browser.on('closePressed').subscribe(data => {
+      browser.close();
+    })
+  }	  	
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
