@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, Platform,LoadingController} from '
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import * as $ from "jquery";
+import { Http } from '@angular/http';
 
 /**
  * Generated class for the DetailsPage page.
@@ -27,20 +28,27 @@ link: string;
 	trustedPostUrl: SafeResourceUrl;
 	postsLoading: any;
 	setHeight: any;
+	posts: Array<any> = [];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController
 ) {
-	  this.link = navParams.get('link');
 	  
 	   this.title = navParams.get('title');
-     // this.image = sanitizer.bypassSecurityTrustStyle('url('+ navParams.get('image') + ')');
-	  this.image = navParams.get('image');
-      
-      this.text = sanitizer.bypassSecurityTrustHtml(navParams.get('text'));
-      this.date = navParams.get('date');
-     // this.cat = navParams.get('cat');
 
+	  
+	  setTimeout(() => {
+			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?post_id='+navParams.get('id'))
+				.then(response => response.json())
+				.then(data => {
+				  console.log(data);
+				  for(let i of data){
+						this.posts.push(i);
+					}
+
+
+				});
+			},20);
 	  
 	  
 	  
