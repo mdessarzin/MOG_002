@@ -30,13 +30,14 @@ link: string;
 	postsLoading: any;
 	setHeight: any;
 
+	
   constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController,private themeableBrowser: ThemeableBrowser
 ) {
 	  this.link = navParams.get('link');
 	  this.title = navParams.get('title');
-  }
-	
-	const options: ThemeableBrowserOptions = {
+	  
+	  
+	  	const options: ThemeableBrowserOptions = {
      statusbar: {
          color: '#ffffffff'
      },
@@ -76,6 +77,7 @@ link: string;
      ],
      menu: {
          image: 'menu',
+		 fullscreen: 'yes',
          imagePressed: 'menu_pressed',
          title: 'Test',
          cancel: 'Cancel',
@@ -93,11 +95,16 @@ link: string;
      },
      backButtonCanClose: true
 };
+	  
+	 
+  }
+	
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
 	//this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
-	const browser: ThemeableBrowserObject = this.themeableBrowser.create(this.link+'?clean=true', '_blank', options);
+	const browser: ThemeableBrowserObject = this.themeableBrowser.create(this.link+'?clean=true', '_blank', this.options);
 
 
   }
