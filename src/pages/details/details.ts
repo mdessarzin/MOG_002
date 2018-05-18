@@ -43,7 +43,10 @@ link: string;
 				.then(data => {
 				  console.log(data);
 				  for(let i of data){
-						this.posts.push(i);
+						//this.posts(i);
+					  this.title = i.title;
+					  this.image = i.card;
+					  this.text = sanitizer.bypassSecurityTrustHtml(i.content);
 					}
 
 

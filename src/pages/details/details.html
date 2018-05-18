@@ -13,20 +13,20 @@
 <ion-content>
 
 	
- <ion-grid *ngFor="let post of posts" no-padding>
+ <ion-grid>
   <ion-row>
 		<ion-col>
-			 <h1>{{post.title}}</h1>
+			 <h1>{{title}}</h1>
 		</ion-col>
   </ion-row>
   <ion-row>
 		<ion-col>
-		  	<img data-src="{{post.card}}" style="background-color: #BCBBBB;" />
+		  	<img data-src="{{image}}" style="background-color: #BCBBBB;" />
 		</ion-col>
   </ion-row>
 	  <ion-row>
 		<ion-col>
-		  	          <div [innerHTML]="post.content"></div>
+		  	          <div [innerHTML]="text"></div>
 		</ion-col>
   </ion-row>
 </ion-grid>
