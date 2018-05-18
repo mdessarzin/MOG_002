@@ -38,7 +38,7 @@ link: string;
 
 	  
 	  setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?post_id='+navParams.get('id'))
+			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?clean=true&post_id='+navParams.get('id'))
 				.then(response => response.json())
 				.then(data => {
 				  console.log(data);
