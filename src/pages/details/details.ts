@@ -55,7 +55,6 @@ link: string;
 								 color: '#003264ff',
 								 showPageTitle: true
 							 },
-							 fullscreen: 'yes',
 							 backButton: {
 								 image: 'back',
 								 imagePressed: 'back_pressed',
