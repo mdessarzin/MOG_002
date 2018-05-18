@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams, Platform,LoadingController} from '
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import * as $ from "jquery";
-import { IframeAutoHeightDirective } from '../../directives/iframeautoheight/iframeautoheight';
-import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@ionic-native/themeable-browser';
 
 /**
  * Generated class for the DetailsPage page.
@@ -31,49 +29,25 @@ link: string;
 	setHeight: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController,private themeableBrowser: ThemeableBrowser
+  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController
 ) {
 	  this.link = navParams.get('link');
-	  this.title = navParams.get('title');
-	  this.openBrowser();
-	 
+	  
+	   this.title = navParams.get('title');
+     // this.image = sanitizer.bypassSecurityTrustStyle('url('+ navParams.get('image') + ')');
+	  this.image = navParams.get('image');
+      
+      this.text = sanitizer.bypassSecurityTrustHtml(navParams.get('text'));
+      this.date = navParams.get('date');
+     // this.cat = navParams.get('cat');
+
+	  
+	  
+	  
+	  
   }
 	
-  openBrowser() {
-    // https://ionicframework.com/docs/native/themeable-browser/
-    const options: ThemeableBrowserOptions = {
-      toolbar: {
-        height: 44,
-        color: '#3573bbff'
-      },
-      title: {
-        color: '#ffffffff',
-        showPageTitle: true,
-        staticText: 'Academy Browser'
-      },
-      backButton: {
-        wwwImage: 'assets/img/back.png',
-        align: 'left',
-        event: 'backPressed'
-      },
-      forwardButton: {
-        wwwImage: 'assets/img/forward.png',
-        align: 'left',
-        event: 'forwardPressed'
-      },
-      closeButton: {
-        wwwImage: 'assets/img/close.png',
-        align: 'left',
-        event: 'closePressed'
-      },
-    };
  
-    const browser: ThemeableBrowserObject = this.themeableBrowser.create('https://ionicacademy.com', '_blank', options);
- 
-    browser.on('closePressed').subscribe(data => {
-      browser.close();
-    })
-  }	  	
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');

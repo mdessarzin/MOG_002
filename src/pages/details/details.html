@@ -10,7 +10,29 @@
 	
 </ion-header>
 
-<ion-content scroll="true" overflow-scroll="true" class="">
-	<div id="test">
-	</div>
-</ion-content><!-- iframeAutoHeight -->
+<ion-content>
+
+	
+<ion-grid>
+  <ion-row>
+		<ion-col>
+			 <h1>{{title}}</h1>
+		</ion-col>
+  </ion-row>
+  <ion-row>
+		<ion-col>
+		  	<img data-src="{{image}}" style="background-color: #BCBBBB;" />
+		</ion-col>
+  </ion-row>
+	  <ion-row>
+		<ion-col>
+		  	          <div [innerHTML]="text"></div>
+		</ion-col>
+  </ion-row>
+</ion-grid>
+	
+	
+	
+	
+	
+</ion-content>
