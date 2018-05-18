@@ -36,75 +36,75 @@ link: string;
 	  this.link = navParams.get('link');
 	  this.title = navParams.get('title');
 	  
-	  
-	  	const options: ThemeableBrowserOptions = {
-     statusbar: {
-         color: '#ffffffff'
-     },
-     toolbar: {
-         height: 44,
-         color: '#f0f0f0ff'
-     },
-     title: {
-         color: '#003264ff',
-         showPageTitle: true
-     },
-     backButton: {
-         image: 'back',
-         imagePressed: 'back_pressed',
-         align: 'left',
-         event: 'backPressed'
-     },
-     forwardButton: {
-         image: 'forward',
-         imagePressed: 'forward_pressed',
-         align: 'left',
-         event: 'forwardPressed'
-     },
-     closeButton: {
-         image: 'close',
-         imagePressed: 'close_pressed',
-         align: 'left',
-         event: 'closePressed'
-     },
-     customButtons: [
-         {
-             image: 'share',
-             imagePressed: 'share_pressed',
-             align: 'right',
-             event: 'sharePressed'
-         }
-     ],
-     menu: {
-         image: 'menu',
-		 fullscreen: 'yes',
-         imagePressed: 'menu_pressed',
-         title: 'Test',
-         cancel: 'Cancel',
-         align: 'right',
-         items: [
-             {
-                 event: 'helloPressed',
-                 label: 'Hello World!'
-             },
-             {
-                 event: 'testPressed',
-                 label: 'Test!'
-             }
-         ]
-     },
-     backButtonCanClose: true
-};
+	  	const browser: ThemeableBrowserObject = this.themeableBrowser.create(this.link+'?clean=true', '_blank', this.optionsBrowser);
+
+
 	  
 	 
   }
 	
-
+	  	private optionsBrowser: ThemeableBrowserOptions = {
+							 statusbar: {
+								 color: '#ffffffff'
+							 },
+							 toolbar: {
+								 height: 44,
+								 color: '#f0f0f0ff'
+							 },
+							 title: {
+								 color: '#003264ff',
+								 showPageTitle: true
+							 },
+							 fullscreen: 'yes',
+							 backButton: {
+								 image: 'back',
+								 imagePressed: 'back_pressed',
+								 align: 'left',
+								 event: 'backPressed'
+							 },
+							 forwardButton: {
+								 image: 'forward',
+								 imagePressed: 'forward_pressed',
+								 align: 'left',
+								 event: 'forwardPressed'
+							 },
+							 closeButton: {
+								 image: 'close',
+								 imagePressed: 'close_pressed',
+								 align: 'left',
+								 event: 'closePressed'
+							 },
+							 customButtons: [
+								 {
+									 image: 'share',
+									 imagePressed: 'share_pressed',
+									 align: 'right',
+									 event: 'sharePressed'
+								 }
+							 ],
+							 menu: {
+								 image: 'menu',
+								 imagePressed: 'menu_pressed',
+								 title: 'Test',
+								 cancel: 'Cancel',
+								 align: 'right',
+								 items: [
+									 {
+										 event: 'helloPressed',
+										 label: 'Hello World!'
+									 },
+									 {
+										 event: 'testPressed',
+										 label: 'Test!'
+									 }
+								 ]
+							 },
+							 backButtonCanClose: true
+						};
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
 	//this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
-	const browser: ThemeableBrowserObject = this.themeableBrowser.create(this.link+'?clean=true', '_blank', this.options);
 
 
   }

@@ -76,6 +76,8 @@ export class MyApp {
 		this.initializeApp();	
 		localStorage.setItem("type_player", "live");
 		
+		
+		
 	}
 
 	initializeApp() {
@@ -90,6 +92,11 @@ export class MyApp {
 			if (this.platform.is('cordova')) {
 				this.handlerNotifications();
 			}
+			
+			
+			
+			
+			
 		});
 
 		// Change the value for the batch every 5 seconds
