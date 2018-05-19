@@ -336,17 +336,14 @@ private share(message, title, image, link){
       })
   }
 	
-private showDetails(title,image, text, date, link){
+private showDetails(id,title){
         //console.log(this.login);
        
     
     this.navCtrl.push(DetailsPage,{
             title: title,
-            text: text,
-            image: image,
-            date: date,
-            link: link,
-            cat: 'Actualité'
+            id: id
+           
         });
 }
 	
