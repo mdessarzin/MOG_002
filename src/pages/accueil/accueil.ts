@@ -279,8 +279,6 @@ startAudio() {
         {
 			
 			
-
-			
 			
 			   setInterval(() => {      
           console.log('timer');
