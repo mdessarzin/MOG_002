@@ -200,7 +200,7 @@ export class AudioStreamProvider {
 				console.log(JSON.stringify(status));
 		 
 		 
-				if (status.toString()=="1") { //player start
+				if (status.toString()=="2") { //player start
 						$('.loadingPlayer').hide();
 						$('.btPlayer').show();
 						$('.playerEtat_2').hide();
