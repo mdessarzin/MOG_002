@@ -50,6 +50,7 @@
     "cordova-plugin-ionic-webview": "^1.2.1",
     "cordova-plugin-media": "^5.0.2",
     "cordova-plugin-music-controls": "^2.1.4",
+    "cordova-plugin-playlist": "^0.5.8",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-themeablebrowser": "^0.2.17",
@@ -100,7 +101,8 @@
       "cordova-sqlite-storage": {},
       "cordova-plugin-file": {},
       "cordova-plugin-file-transfer": {},
-      "cordova-plugin-themeablebrowser": {}
+      "cordova-plugin-themeablebrowser": {},
+      "cordova-plugin-playlist": {}
     },
     "platforms": [
       "browser",
