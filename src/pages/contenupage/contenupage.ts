@@ -4,7 +4,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
 import { SocialSharing } from '@ionic-native/social-sharing';
 import * as $ from "jquery";
 import { Http } from '@angular/http';
-
+import { PlayerPage } from '../player/player';
 /**
  * Generated class for the ContenupagePage page.
  *
