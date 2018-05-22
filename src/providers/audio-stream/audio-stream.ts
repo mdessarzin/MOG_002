@@ -15,7 +15,6 @@ export class AudioStreamProvider {
 		promise:any;
 	    onloading: string;
 mediaTimer: any;
-	mediaTimer: any;
     live: string;
 
 	  	constructor(private _loadingCtrl: LoadingController, public musicControls: MusicControls, public media: Media){
