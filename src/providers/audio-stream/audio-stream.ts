@@ -36,12 +36,8 @@ artist: string;
 			  track       : title,        // optional, default : ''
 			  artist      : artist,                       // optional, default : ''
 			  cover       : cover,      // optional, default : nothing
-			  // cover can be a local path (use fullpath 'file:///storage/emulated/...', or only 'my_image.jpg' if my_image.jpg is in the www folder of your app)
-			  //           or a remote url ('http://...', 'https://...', 'ftp://...')
 			  isPlaying   : true,                         // optional, default : true
 			  dismissable : true,                         // optional, default : false
-
-			  // hide previous/next/close buttons:
 			  hasPrev   : false,      // show previous button, optional, default: true
 			  hasNext   : false,      // show next button, optional, default: true
 			  hasClose  : true,       // show close button, optional, default: false
@@ -49,14 +45,12 @@ artist: string;
 			  hasSkipBackward : false, // show skip backward button, optional, default: false
 			  skipForwardInterval: 15, // display number for skip forward, optional, default: 0
 			  skipBackwardInterval: 15, // display number for skip backward, optional, default: 0
-			// iOS only, optional
+			  // iOS only, optional
 			  album       : '',     // optional, default: ''
 			  duration : 0, // optional, default: 0
 			  elapsed : 0, // optional, default: 0
-
-			  // Android only, optional
-			  // text displayed in the status bar when the notific\ation (and the ticker) are updated
-			  ticker    : 'Now playing test'
+			  //Android
+			  ticker    : ''
 			 });
 			 this.musicControls.subscribe().subscribe((action) => {
 			  console.log('action', action);
@@ -248,6 +242,7 @@ artist: string;
 			this.musicControls.updateIsPlaying(false);
 			//this.stream.pause();
 			//return false;
+			localStorage.setItem("player", "stop");
 			$('.playerEtat_2').hide();
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();

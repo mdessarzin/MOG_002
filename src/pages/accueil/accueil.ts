@@ -161,7 +161,7 @@ startAudio() {
 			  //  this.musicControls.listen();
 				//this.musicControls.updateIsPlaying(false);
 				//this.onplaying = '0';
-                localStorage.setItem("player", "stop");
+                
                 //$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
         }
         else
