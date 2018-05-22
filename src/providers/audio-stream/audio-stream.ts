@@ -70,6 +70,11 @@ artist: string;
 					   this.stream.pause();
 					   this.musicControls.listen(); 
 					   this.musicControls.updateIsPlaying(false);
+						  			$('.playerEtat_2').hide();
+			$('.playerEtat_1').hide();
+			$('.playerEtat_0').show();
+			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+
 					   break;
 					case 'music-controls-play':
 					   // Do something
