@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams, IonicPage, LoadingController, ModalController} from 'ionic-angular';
 import * as $ from "jquery";
+import { PlayerPage } from '../player/player';
 
 @Component({
   selector: 'page-programme',
