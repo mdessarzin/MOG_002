@@ -14,6 +14,7 @@ import { PodcastsPage } from '../pages/podcasts/podcasts';
 import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
 import { BlogPage } from '../pages/blog/blog';
 import { PlayerpopupPage } from '../pages/playerpopup/playerpopup';
+import { ContenupagePage } from '../pages/contenupage/contenupage';
 import { ThemeableBrowser } from '@ionic-native/themeable-browser';
 
 import { ScrollHideDirective } from '../directives/scroll-hide/scroll-hide';
@@ -29,6 +30,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { OneSignal } from '@ionic-native/onesignal';
 import { Observable } from 'rxjs/Rx';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+import { Media, MediaObject } from '@ionic-native/media';
 
 localStorage.setItem("player", "stop");
 localStorage.setItem("firstclickonplayer", "oui");
@@ -70,6 +72,7 @@ export class MyErrorHandler implements ErrorHandler {
 	DetailsPage,
 	  PlayerPage,
 PlayerPlaylistPage,
+	  ContenupagePage,
 	  PlayerpopupPage,
 	ScrollHideDirective,
 	  SideMenuContentComponent,
@@ -103,7 +106,8 @@ PlayerPlaylistPage,
 	DetailsPage,
 	  PlayerPage,
 	  PlayerpopupPage,
-PlayerPlaylistPage
+PlayerPlaylistPage,
+	ContenupagePage
   ],
   providers: [
     StatusBar,
@@ -113,6 +117,7 @@ PlayerPlaylistPage
 	  SocialSharing,
 	  MusicControls,
 	  OneSignal,
+	      Media,
 	      ThemeableBrowser,
     {provide: ErrorHandler, useClass: MyErrorHandler}
   ]

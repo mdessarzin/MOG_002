@@ -16,6 +16,8 @@ page-blog ion-footer {
   	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/xQAAukB5vvocQUAAAAASUVORK5CYII=);
   */
   background-color: #ffffff; }
+page-blog .scroll-content {
+  margin-bottom: 0px !important; }
 page-blog #songCover {
   		/*
   		-webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.75);

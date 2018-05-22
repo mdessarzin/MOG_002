@@ -31,6 +31,7 @@ import { MenuOptionModel } from './../shared/side-menu-content/models/menu-optio
 import { OneSignal } from '@ionic-native/onesignal';
 import { ImageLoaderConfig } from 'ionic-image-loader';
 import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
+import { ContenupagePage } from '../pages/contenupage/contenupage';
 
 
 @Component({
@@ -199,8 +200,22 @@ export class MyApp {
 				}
 			]
 		});
-
-		
+		this.options.push({
+			iconName: 'ios-time-outline',
+			displayName: 'Programme',
+			//badge: ArrayObservable.of('NEW'),
+			component: ContenupagePage,
+			key: '1683',
+			header: true
+		});
+		this.options.push({
+			iconName: 'ios-mail-outline',
+			displayName: 'Contact',
+			//badge: ArrayObservable.of('NEW'),
+			component: ContenupagePage,
+			key: '1683',
+			header: true
+		});
 	}
 
 	public selectOption(option: MenuOptionModel): void {
