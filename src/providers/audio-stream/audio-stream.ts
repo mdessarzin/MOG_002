@@ -83,7 +83,13 @@ artist: string;
 					   this.stream.play();
 					   this.musicControls.listen(); 
 					   this.musicControls.updateIsPlaying(true);
-					   break;
+						$('.loadingPlayer').hide();
+						$('.btPlayer').show();
+						$('.playerEtat_2').hide();
+						$('.playerEtat_0').hide();
+						$('.playerEtat_1').show();
+						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+					break;
 					case 'music-controls-destroy':
 					   // Do something
 					   break;
