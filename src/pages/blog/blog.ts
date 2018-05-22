@@ -283,11 +283,7 @@ startAudio() {
 			   },15000);
 			
 			
-			
 		
-			
-			
-
 			
 			localStorage.setItem("player", "play");
 			//this.buttonIcon = "ios-pause";
