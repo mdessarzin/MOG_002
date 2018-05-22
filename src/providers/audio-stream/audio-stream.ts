@@ -66,6 +66,7 @@ artist: string;
 					case 'music-controls-pause':
 					   // Do something
 					   console.log('music pause');
+					   localStorage.setItem("player", "stop");
 					   this.stream.pause();
 					   this.musicControls.listen(); 
 					   this.musicControls.updateIsPlaying(false);
@@ -73,6 +74,7 @@ artist: string;
 					case 'music-controls-play':
 					   // Do something
 					   console.log('music play');
+						  localStorage.setItem("player", "play");
 					   this.stream.play();
 					   this.musicControls.listen(); 
 					   this.musicControls.updateIsPlaying(true);
