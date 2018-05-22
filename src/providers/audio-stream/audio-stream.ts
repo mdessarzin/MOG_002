@@ -11,24 +11,19 @@ export class AudioStreamProvider {
 	
 		loadingPopup: any;
 		url:string;
-//		stream:any;
-	stream: MediaObject = null; //consider changing this to musicfile and all further instances to avoid conflict in the future
-
+		stream: MediaObject = null; //consider changing this to musicfile and all further instances to avoid conflict in the future
 		promise:any;
-	    onloading: string;
-mediaTimer: any;
-    live: string;
-artist: string;
-    cover: string;
-	title: string;
-	
+		onloading: string;
+		mediaTimer: any;
+		live: string;
+		artist: string;
+		cover: string;
+		title: string;
+
 	  	constructor(private _loadingCtrl: LoadingController, public musicControls: MusicControls, public media: Media){
 
-//			el.nativeElement.style.backgroundColor = 'yellow';
 	  	}
 	
-	
-
 
 		public settingMusicControl(title,artist,cover){
 			this.musicControls.destroy(); // it's the same with or without the destroy 
@@ -62,7 +57,7 @@ artist: string;
 					   break;
 					case 'music-controls-previous':
 					   // Do something
-					   break;
+				   break;
 					case 'music-controls-pause':
 					   // Do something
 					   console.log('music pause');
@@ -70,12 +65,12 @@ artist: string;
 					   this.stream.pause();
 					   this.musicControls.listen(); 
 					   this.musicControls.updateIsPlaying(false);
-						  			$('.playerEtat_2').hide();
-			$('.playerEtat_1').hide();
-			$('.playerEtat_0').show();
-			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+						$('.playerEtat_2').hide();
+						$('.playerEtat_1').hide();
+						$('.playerEtat_0').show();
+						$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 
-					   break;
+				   break;
 					case 'music-controls-play':
 					   // Do something
 					   console.log('music play');

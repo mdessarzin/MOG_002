@@ -102,8 +102,8 @@ pagination: number = 1;
   }	
 
   private configPlayer(title,image, text, date, link) {
-                localStorage.setItem("player", "stop");
 
+	  localStorage.setItem("player", "stop");
 	 this._player.pauseProvider();
 	 this._player.playerconfigProvider(link);
 	 this.startAudio(title,image, text, date, link);
@@ -119,17 +119,14 @@ pagination: number = 1;
 	
 ionViewDidLoad() {
 
-	
 		if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
 			$('.playerEtat_2').hide();
 			$('.playerEtat_0').hide();
 			$('.playerEtat_1').show();
-
         }
         else
         {
-            //this.buttonIcon = "ios-play";
 			$('.playerEtat_2').hide();
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();
@@ -165,25 +162,18 @@ private share(message, title, image, link){
 		localStorage.setItem("podcast_cover", image);
 		
 		if(localStorage.player == 'play'){
-                this._player.pauseProvider();
-			    //this.musicControls.listen();
-				//this.musicControls.updateIsPlaying(false);
-                localStorage.setItem("player", "stop");
+			this._player.pauseProvider();
+			localStorage.setItem("player", "stop");
         }
         else
         {
-		  
 			localStorage.setItem("player", "play");
 			console.log('Play Button clicked');
 			this._player.playProvider();
-			//this.musicControls.listen();
-			//this.musicControls.updateIsPlaying(true);
-			//this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));	    	
-			}
+		}
 }
 	
 	private openPlayer(){
-        //console.log(this.login);
        let modal = this.modalCtrl.create(PlayerPage);
     	modal.present();   
     }
