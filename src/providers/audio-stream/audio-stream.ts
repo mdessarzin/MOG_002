@@ -33,9 +33,9 @@ artist: string;
 		public settingMusicControl(title,artist,cover){
 			this.musicControls.destroy(); // it's the same with or without the destroy 
 			this.musicControls.create({
-			  track       : 'Test track',        // optional, default : ''
-			  artist      : 'test artist',                       // optional, default : ''
-			  cover       : '',      // optional, default : nothing
+			  track       : title,        // optional, default : ''
+			  artist      : artist,                       // optional, default : ''
+			  cover       : cover,      // optional, default : nothing
 			  // cover can be a local path (use fullpath 'file:///storage/emulated/...', or only 'my_image.jpg' if my_image.jpg is in the www folder of your app)
 			  //           or a remote url ('http://...', 'https://...', 'ftp://...')
 			  isPlaying   : true,                         // optional, default : true
@@ -50,7 +50,7 @@ artist: string;
 			  skipForwardInterval: 15, // display number for skip forward, optional, default: 0
 			  skipBackwardInterval: 15, // display number for skip backward, optional, default: 0
 			// iOS only, optional
-			  album       : 'test album',     // optional, default: ''
+			  album       : '',     // optional, default: ''
 			  duration : 0, // optional, default: 0
 			  elapsed : 0, // optional, default: 0
 
