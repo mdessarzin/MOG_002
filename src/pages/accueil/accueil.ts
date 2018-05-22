@@ -167,8 +167,6 @@ startAudio() {
         else
         {
 			
-			localStorage.setItem("player", "play");
-			console.log('Play Button clicked');
 			this._player.playerconfigProvider();
 			this._player.playProvider();
 		}

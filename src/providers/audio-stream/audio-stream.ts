@@ -11,12 +11,17 @@ export class AudioStreamProvider {
 	
 		loadingPopup: any;
 		url:string;
-		stream:any;
+//		stream:any;
+	stream: MediaObject = null; //consider changing this to musicfile and all further instances to avoid conflict in the future
+
 		promise:any;
 	    onloading: string;
 mediaTimer: any;
     live: string;
-
+artist: string;
+    cover: string;
+	title: string;
+	
 	  	constructor(private _loadingCtrl: LoadingController, public musicControls: MusicControls, public media: Media){
 
 //			el.nativeElement.style.backgroundColor = 'yellow';
@@ -25,7 +30,7 @@ mediaTimer: any;
 	
 
 
-		public settingMusicControl(){
+		public settingMusicControl(title,artist,cover){
 			this.musicControls.destroy(); // it's the same with or without the destroy 
 			this.musicControls.create({
 			  track       : 'Test track',        // optional, default : ''
@@ -137,9 +142,6 @@ mediaTimer: any;
 			}
 			
 			this.stream = this.media.create(this.url);
-			this.stream.onStatusUpdate.subscribe(status => console.log(JSON.stringify(status))); // fires when file status changes
-			this.stream.onSuccess.subscribe(() => console.log('Action is successful'));
-			this.stream.onError.subscribe(error => console.log('Error!', error));
 			
 			return Observable.of(false);
 		
@@ -150,32 +152,32 @@ mediaTimer: any;
 		
 			setInterval(() => {      
 				  
-		  setTimeout(() => {
-			  fetch('https://www.mediaone-digital.ch/cache/radiolac.json')
-				.then(response => response.json())
-				.then(data => {
-				  console.log('playlist:'+data);
-				  if(this.live == data.live[0].interpret){
-                                //
-                            }
-                            else{
-                              	this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
-                                this.live = data.live[0].interpret;
-								if(localStorage.type_player == 'live'){
-									$('.songArtist').html(data.live[0].interpret);
-									$('.songTitle').html(data.live[0].title);
-									$('.songCover').attr('src',data.live[0].imageURL);
-								}
-								else
-								{
-									//
-								}
-							}
+					  setTimeout(() => {
+						  fetch('https://www.mediaone-digital.ch/cache/radiolac.json')
+							.then(response => response.json())
+							.then(data => {
+							  console.log('playlist:'+data);
+							  if(this.live == data.live[0].interpret){
+											//
+										}
+										else{
+											this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+											this.live = data.live[0].interpret;
+											if(localStorage.type_player == 'live'){
+												$('.songArtist').html(data.live[0].interpret);
+												$('.songTitle').html(data.live[0].title);
+												$('.songCover').attr('src',data.live[0].imageURL);
+											}
+											else
+											{
+												//
+											}
+										}
 
-				});
-			}, 0);
+							});
+						}, 0);
 
-},15000);
+			},15000);
 
 			
 
@@ -184,56 +186,37 @@ mediaTimer: any;
 			$('.playerEtat_0').hide();
 			$('.playerEtat_1').hide();
 			$('.playerEtat_2').show();
-			
-			//this.stream.play();
-			
 
+			this.stream.play();
+			this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+			console.log('play');
+			localStorage.setItem("player", "play");
 
-			
-			/*
-			this.loadingPopup = this._loadingCtrl.create({     // Crea el cargando
-					spinner: 'dots',
-					content: ''
-				});
-				*/
-			//this.loadingPopup.present().then(()=>{
-					this.stream.play();
-					this.settingMusicControl();
-					console.log('play');
+			this.stream.onStatusUpdate.subscribe(status => 
+			{
 
-				
-			//		this.stream.ontimeupdate = function() {
-    			//			console.log('the time was updated to: ' + this.currentTime);
-			
-			
-			
-		this.stream.onStatusUpdate.subscribe(status => 
-        {
-
+				console.log(JSON.stringify(status));
 		 
 		 
-		 console.log(JSON.stringify(status));
-		 
-		 
-        if (status.toString()=="2") { //player start
-				$('.loadingPlayer').hide();
-				$('.btPlayer').show();
-				$('.playerEtat_2').hide();
-				$('.playerEtat_0').hide();
-				$('.playerEtat_1').show();
-				$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-	  	}
-
-        if (status.toString()=="4") { // player end running
+				if (status.toString()=="2") { //player start
+						$('.loadingPlayer').hide();
+						$('.btPlayer').show();
 						$('.playerEtat_2').hide();
-						$('.playerEtat_1').hide();
-						$('.playerEtat_0').show();
-						$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-            if (this.mediaTimer !=null) {
-                //clearInterval(this.mediaTimer);    // (*) don t do clearInterval here, or your ionic will not work, see below
-                //TODO here : handle html, remove "playing" message
-            }
-        }
+						$('.playerEtat_0').hide();
+						$('.playerEtat_1').show();
+						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+				}
+
+				if (status.toString()=="4") { // player end running
+								$('.playerEtat_2').hide();
+								$('.playerEtat_1').hide();
+								$('.playerEtat_0').show();
+								$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+					if (this.mediaTimer !=null) {
+						//clearInterval(this.mediaTimer);    // (*) don t do clearInterval here, or your ionic will not work, see below
+						//TODO here : handle html, remove "playing" message
+					}
+				}
 
     }); 
 

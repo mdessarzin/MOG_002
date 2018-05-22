@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform,LoadingController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform,LoadingController, ModalController} from 'ionic-angular';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import * as $ from "jquery";
@@ -30,11 +30,11 @@ link: string;
 	posts: Array<any> = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController
-) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController, public modalCtrl: ModalController) {
 	  
 	   this.title = navParams.get('title');
 
+	  
 	  
 	  setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?clean=true&page_id='+navParams.get('key'))
@@ -56,14 +56,28 @@ link: string;
 	  
   }
 	
- 
+ ionViewDidLoad() {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailsPage');
+	
+		if(localStorage.player == 'play'){
+           // this.buttonIcon = "ios-pause";
+			$('.playerEtat_2').hide();
+			$('.playerEtat_0').hide();
+			$('.playerEtat_1').show();
+
+        }
+        else
+        {
+            //this.buttonIcon = "ios-play";
+			$('.playerEtat_2').hide();
+			$('.playerEtat_1').hide();
+			$('.playerEtat_0').show();
+        }
 	//this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 
+ 
+ }
 
-  }
 	
 	private loadclose(){
 		this.postsLoading = '1';
@@ -80,5 +94,13 @@ link: string;
          //
       })
   }
+	
+	private openPlayer(){
+        //console.log(this.login);
+       let modal = this.modalCtrl.create(PlayerPage);
+    modal.present();
+    
+    
+    }
 	
 }
