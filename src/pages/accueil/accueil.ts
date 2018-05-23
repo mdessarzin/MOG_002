@@ -56,14 +56,9 @@ export class AccueilPage {
 		 public modalCtrl: ModalController,
 		 public viewCtrl: ViewController,
 		 public plt: Platform,
-		 private cdvAudioPlayer: CordovaAudioPlayerService,	
 		//private ga: GoogleAnalytics
 	){
-		this.loadData();		
-			
-			
-	
-	
+		this.loadData();			
   }
 
 	
@@ -163,24 +158,8 @@ ionViewDidLoad() {
 startAudio() {      
   // if (this.plt.is('cordova')) {
      
-	
-		 this.cdvAudioPlayer.setOptions({ verbose: true, resetStreamOnPause: true })	
-     .then(() => {	
-       this.cdvAudioPlayer.setPlaylistItems([	
-         { trackId: '12345', assetUrl: 'http://vod.infomaniak.com/redirect/mediaonecontactsa_2_vod/folder-40843/mp3-476/les-informations_18-05-22-17-00-00_aodradiolac.mp3', albumArt: 'https://marketplace.canva.com/MAB6qiO-UQ8/1/0/thumbnail_large/canva-abstract-music-album-cover-MAB6qiO-UQ8.jpg', artist: 'Awesome', album: 'Test Files', title: 'Test 1' },	
-         { trackId: '678900', assetUrl: 'http://vod.infomaniak.com/redirect/mediaonecontactsa_2_vod/folder-40730/mp3-476/allo-radio-lac_18-05-22-16-24-00_aodradiolac.mp3', albumArt: 'https://marketplace.canva.com/MAB6qiO-UQ8/1/0/thumbnail_large/canva-abstract-music-album-cover-MAB6qiO-UQ8.jpg', artist: 'Awesome', album: 'Test Files', title: 'Test 2' },	
-         { trackId: 'a1b2c3d4', assetUrl: 'http://vod.infomaniak.com/redirect/mediaonecontactsa_2_vod/folder-40843/mp3-476/les-informations_18-05-22-17-00-00_aodradiolac.mp3', albumArt: 'https://marketplace.canva.com/MAB6qiO-UQ8/1/0/thumbnail_large/canva-abstract-music-album-cover-MAB6qiO-UQ8.jpg', artist: 'Awesome', album: 'Test Files', title: 'Test 3' },	
-         { trackId: 'a1bSTREAM', assetUrl: 'http://vod.infomaniak.com/redirect/mediaonecontactsa_2_vod/folder-40730/mp3-476/allo-radio-lac_18-05-22-16-36-00_aodradiolac.mp3', albumArt: 'https://marketplace.canva.com/MAB6qiO-UQ8/1/0/thumbnail_large/canva-abstract-music-album-cover-MAB6qiO-UQ8.jpg', artist: 'Awesome', album: 'Streams', title: 'The Stream', isStream: true },	
-       ])	
-       .then(() => {	
-         this.cdvAudioPlayer.play();	
-       }).catch((err) => console.log('YourService, cdvAudioPlayer setPlaylistItems error: ', err));	
-     }).catch((err) => console.log('YourService, cdvAudioPlayer init error: ', err));	
-
-	
-	
         if(localStorage.player == 'play'){
-              //  this._player.pauseProvider();
+                this._player.pauseProvider();
 			  //  this.musicControls.listen();
 				//this.musicControls.updateIsPlaying(false);
 				//this.onplaying = '0';
@@ -190,8 +169,8 @@ startAudio() {
         else
         {
 			
-			//this._player.playerconfigProvider();
-			//this._player.playProvider();
+			this._player.playerconfigProvider();
+			this._player.playProvider();
 		}
 
 }

@@ -31,7 +31,6 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { Observable } from 'rxjs/Rx';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { Media, MediaObject } from '@ionic-native/media';
-import { CordovaAudioPlayerService } from '../providers/streaming/streaming';
 
 
 localStorage.setItem("player", "stop");
@@ -122,7 +121,7 @@ PlayerPlaylistPage,
 	      Media,
 	      ThemeableBrowser,
     {provide: ErrorHandler, useClass: MyErrorHandler},
-    CordovaAudioPlayerService
+    StreamingProvider
   ]
 })
 export class AppModule {}
