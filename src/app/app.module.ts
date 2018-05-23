@@ -120,8 +120,7 @@ PlayerPlaylistPage,
 	  OneSignal,
 	      Media,
 	      ThemeableBrowser,
-    {provide: ErrorHandler, useClass: MyErrorHandler},
-    StreamingProvider
+    {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
 export class AppModule {}
