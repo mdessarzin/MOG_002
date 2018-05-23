@@ -202,20 +202,15 @@ export class AudioStreamProvider {
 		 
 				if (status.toString()=="2") { //player start
 					
-					            let self=this;
-            setInterval(function(){  //here the set interval function to refresh status 
-               // let duration=self.memoMedia.getDuration();
-                //self.message=self.message+" > duration="+duration;
-                    						$('.loadingPlayer').hide();
+					 setTimeout(() => {
+						$('.loadingPlayer').hide();
 						$('.btPlayer').show();
 						$('.playerEtat_2').hide();
 						$('.playerEtat_0').hide();
 						$('.playerEtat_1').show();
 						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-        
-            }, 500);
-					
-					
+						}, 2000);
+
 				}
 
 				if (status.toString()=="4") { // player end running
