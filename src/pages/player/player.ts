@@ -67,11 +67,8 @@ typeplayer: any;
 			$('.songCover').attr('src',localStorage.podcast_cover);
         }
 
-	  
-	  
-	  	let self = this;
-	  
-	//  this.durations = this._player.stream.duration;
+	  	  	let self = this;
+	  	this.durations = this._player.stream.getDuration();  
 	  
 //	  	this._player.stream.ontimeupdate = function() {
 //    		console.log('the time was updated to: ' + this.currentTime);
@@ -79,6 +76,20 @@ typeplayer: any;
 //			self.positions = this.currentTime;
 			
 //	}
+	  
+//	  if (mediaTimer == null) {
+			setInterval(() => {      
+					
+					
+					this._player.stream.getCurrentPosition().then((curpos) => {
+						console.log(curpos);
+						this.positions = curpos;
+  // do whatever with curpos
+});
+					
+				
+                }, 1000);
+ //           }
 	  
 	  
 	  
@@ -105,12 +116,12 @@ typeplayer: any;
 	
 slideStart() {
 	this._player.stream.pause();
-    console.log(`Start`);
 }
 	
 slideEnd() {
 	//this._player.stream.currentTime = this.positions;
-
+	 var number = Number.parseInt(this.positions) * 1000;
+	this._player.stream.seekTo(number);
 	
 	this._player.stream.play();
     console.log("End: value: "+this.positions);
