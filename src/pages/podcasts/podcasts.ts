@@ -107,7 +107,7 @@ pagination: number = 1;
 	 this._player.pauseProvider();
 	 this._player.playerconfigProvider(link);
 	 this.startAudio(title,image, text, date, link);
-	  
+	 $('ion-footer').css('margin-bottom','0px'); 
 	$('.songArtist').html(text);
 	$('.songTitle').html(title);
 	$('.songCover').attr('src',image);								
