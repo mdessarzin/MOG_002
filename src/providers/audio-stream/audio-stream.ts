@@ -209,7 +209,7 @@ export class AudioStreamProvider {
 						$('.playerEtat_0').hide();
 						$('.playerEtat_1').show();
 						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-						}, 2000);
+						}, 200);
 
 				}
 
