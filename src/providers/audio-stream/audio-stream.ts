@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Rx';
 import * as $ from "jquery";
 import { Media, MediaObject } from '@ionic-native/media';
 import { MusicControls } from '@ionic-native/music-controls';
-
+import { Subscription } from "rxjs/Subscription";
 @Injectable()
 
 export class AudioStreamProvider {
@@ -20,10 +20,15 @@ export class AudioStreamProvider {
 		cover: string;
 		title: string;
   public positions: any = 0;
+	public timingseek: any;
+public observableVar: Subscription;
 
 	  	constructor(private _loadingCtrl: LoadingController, public musicControls: MusicControls, public media: Media){
-
 	  	}
+	
+		ngOnInit() {
+		
+	}
 		public settingMusicControl(title,artist,cover){
 			this.musicControls.destroy(); // it's the same with or without the destroy 
 			this.musicControls.create({
@@ -150,19 +155,23 @@ export class AudioStreamProvider {
 	
 
 		public playProvider(): Observable<boolean> {
-		
-						setInterval(() => {      
-					
-					
+		/*
+			this.observableVar = Observable.interval(1000).subscribe(()=>{
+				this.stream.getCurrentPosition().then((curpos) => {
+					console.log(curpos);
+					this.positions = curpos;
+					// do whatever with curpos
+				});
+			});
+*/
+
+			this.timingseek = setInterval(() => {      
 				this.stream.getCurrentPosition().then((curpos) => {
 						console.log(curpos);
 						this.positions = curpos;
-  						// do whatever with curpos
-					});
-					
-				
+					});					
                 }, 1000);
-			
+
 			setInterval(() => {      
 				  
 					  setTimeout(() => {
@@ -258,8 +267,18 @@ export class AudioStreamProvider {
 			return Observable.of(false);
 
 		}
-
+ngOnDestroy() {
+  if (this.timingseek) {
+    clearInterval(this.timingseek);
+  }
+}
 	public pauseProvider(): Observable<boolean> {
+			//clearInterval(progressbar);
+  if (this.timingseek) {
+    clearInterval(this.timingseek);
+  }
+
+		
 			this.stream.pause();
 			this.musicControls.listen();
 			this.musicControls.updateIsPlaying(false);

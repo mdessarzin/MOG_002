@@ -52,6 +52,7 @@ typeplayer: any;
 			
 			
   }
+	
 
   ngAfterViewInit() {
 
@@ -72,7 +73,7 @@ typeplayer: any;
 //	  	this._player.stream.ontimeupdate = function() {
 //    		console.log('the time was updated to: ' + this.currentTime);
 			
-//			self.positions = this.currentTime;
+//			self.inits = this.currentTime;
 			
 //	}
 	    
@@ -98,18 +99,20 @@ typeplayer: any;
   }
 	
 slideStart() {
-	this._player.stream.pause();
+	clearInterval(this._player.timingseek);
+	this._player.pauseProvider();
+	console.log('pause');
 }
 	
 slideEnd() {
 	//this._player.stream.currentTime = this.positions;
-	 var number = Number.parseInt(this._player.positions) * 1000;
+	var number = Number.parseInt(this._player.positions) * 1000;
 	this._player.stream.seekTo(number);
 	
-	this._player.stream.play();
+	this._player.playProvider();
     console.log("End: value: "+this._player.positions);
 }
-	
+
 	
   ionViewDidLoad() {
 	 if(localStorage.player == 'play'){
