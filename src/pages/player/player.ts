@@ -105,11 +105,11 @@ slideStart() {
 	
 slideEnd() {
 	//this._player.stream.currentTime = this.positions;
-	var number = Number.parseInt(this.positions) * 1000;
+	var number = Number.parseInt(this._player.positions) * 1000;
 	this._player.stream.seekTo(number);
 	
 	this._player.playProvider();
-    console.log("End: value: "+this.positions);
+    console.log("End: value: "+this._player.positions);
 }
 
   ionViewDidLoad() {
@@ -166,7 +166,7 @@ startAudio() {
 				this._player.playerconfigProvider();
 			}
 			else {
-				this.durations = this._player.stream.getDuration();  
+				//this.durations = this._player.stream.getDuration();  
 			}
 			this._player.playProvider();
 
