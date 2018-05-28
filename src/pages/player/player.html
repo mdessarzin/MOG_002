@@ -39,7 +39,7 @@
 <ion-footer>
 
    <ion-range *ngIf="titreplayer == 'Podcast'" min="0" id="seek" max="{{durations}}" [(ngModel)]="_player.positions" (ionBlur)="slideEnd($event)" (ionFocus)="slideStart($event)"> <!--  [disabled]="is_in_play && is_playing"  -->
-        <ion-label range-left>{{ positions*1000 | date:'mm:ss' }}</ion-label>
+        <ion-label range-left>{{ _player.positions*1000 | date:'mm:ss' }}</ion-label>
         <ion-label range-right *ngIf="durations == -1" >--:--</ion-label>
         <ion-label range-right *ngIf="durations != -1">{{ durations*1000 | date:'mm:ss' }}</ion-label>
       </ion-range>
