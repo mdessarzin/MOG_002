@@ -164,13 +164,14 @@ public observableVar: Subscription;
 				});
 			});
 */
-
-			this.timingseek = setInterval(() => {      
-				this.stream.getCurrentPosition().then((curpos) => {
-						console.log(curpos);
-						this.positions = curpos;
-					});					
-                }, 1000);
+			if(localStorage.type_player == 'live'){
+						this.timingseek = setInterval(() => {      
+							this.stream.getCurrentPosition().then((curpos) => {
+								console.log(curpos);
+								this.positions = curpos;
+							});					
+						}, 1000);
+			}
 
 			setInterval(() => {      
 				  
@@ -274,9 +275,9 @@ ngOnDestroy() {
 }
 	public pauseProvider(): Observable<boolean> {
 			//clearInterval(progressbar);
-  if (this.timingseek) {
-    clearInterval(this.timingseek);
-  }
+			  if (this.timingseek) {
+				clearInterval(this.timingseek);
+			  }
 
 		
 			this.stream.pause();
