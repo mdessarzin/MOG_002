@@ -155,16 +155,8 @@ public observableVar: Subscription;
 	
 
 		public playProvider(): Observable<boolean> {
-		/*
-			this.observableVar = Observable.interval(1000).subscribe(()=>{
-				this.stream.getCurrentPosition().then((curpos) => {
-					console.log(curpos);
-					this.positions = curpos;
-					// do whatever with curpos
-				});
-			});
-*/
-			if(localStorage.type_player == 'live'){
+
+			if(localStorage.type_player == 'replay'){
 						this.timingseek = setInterval(() => {      
 							this.stream.getCurrentPosition().then((curpos) => {
 								console.log(curpos);
@@ -269,16 +261,13 @@ public observableVar: Subscription;
 
 		}
 ngOnDestroy() {
-  if (this.timingseek) {
-    clearInterval(this.timingseek);
-  }
+ 
 }
 	public pauseProvider(): Observable<boolean> {
 			//clearInterval(progressbar);
 			  if (this.timingseek) {
 				clearInterval(this.timingseek);
 			  }
-
 		
 			this.stream.pause();
 			this.musicControls.listen();

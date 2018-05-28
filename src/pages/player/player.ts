@@ -99,7 +99,6 @@ typeplayer: any;
   }
 	
 slideStart() {
-	clearInterval(this._player.timingseek);
 	this._player.pauseProvider();
 	console.log('pause');
 }
