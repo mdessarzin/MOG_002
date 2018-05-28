@@ -165,7 +165,9 @@ startAudio() {
 			if(localStorage.type_player == 'live'){
 				this._player.playerconfigProvider();
 			}
-
+			else {
+				this.durations = this._player.stream.getDuration();  
+			}
 			this._player.playProvider();
 
 			}
