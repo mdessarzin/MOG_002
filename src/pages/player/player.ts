@@ -113,7 +113,6 @@ slideEnd() {
     console.log("End: value: "+this._player.positions);
 }
 
-	
   ionViewDidLoad() {
 	 if(localStorage.player == 'play'){
            // this.buttonIcon = "ios-pause";
