@@ -22,7 +22,7 @@ export class AudioStreamProvider {
   public positions: any = 0;
 	public timingseek: any;
 public observableVar: Subscription;
-
+public durations: any = -1;
 	  	constructor(private _loadingCtrl: LoadingController, public musicControls: MusicControls, public media: Media){
 	  	}
 	
@@ -156,13 +156,17 @@ public observableVar: Subscription;
 
 		public playProvider(): Observable<boolean> {
 
+			
+			
 			if(localStorage.type_player == 'replay'){
+				
 						this.timingseek = setInterval(() => {      
 							this.stream.getCurrentPosition().then((curpos) => {
 								console.log(curpos);
 								this.positions = curpos;
 							});					
 						}, 1000);
+				this.durations = this.stream.getDuration();  
 			}
 
 			setInterval(() => {      

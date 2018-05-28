@@ -33,7 +33,6 @@ typeplayer: any;
     titreplayer: string;
     live: string;
 	onplaying: string;
-	durations: any = -1;
   duration_string: string;
 	
   constructor(
@@ -68,7 +67,6 @@ typeplayer: any;
         }
 
 	  	  	let self = this;
-	  		this.durations = this._player.stream.getDuration();  
 	  
 //	  	this._player.stream.ontimeupdate = function() {
 //    		console.log('the time was updated to: ' + this.currentTime);
@@ -105,11 +103,11 @@ slideStart() {
 	
 slideEnd() {
 	//this._player.stream.currentTime = this.positions;
-	var number = Number.parseInt(this._player.positions) * 1000;
+	var number = Number.parseInt(this.positions) * 1000;
 	this._player.stream.seekTo(number);
 	
 	this._player.playProvider();
-    console.log("End: value: "+this._player.positions);
+    console.log("End: value: "+this.positions);
 }
 
   ionViewDidLoad() {
