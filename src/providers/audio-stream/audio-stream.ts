@@ -19,12 +19,11 @@ export class AudioStreamProvider {
 		artist: string;
 		cover: string;
 		title: string;
+  public positions: any = 0;
 
 	  	constructor(private _loadingCtrl: LoadingController, public musicControls: MusicControls, public media: Media){
 
 	  	}
-	
-
 		public settingMusicControl(title,artist,cover){
 			this.musicControls.destroy(); // it's the same with or without the destroy 
 			this.musicControls.create({
@@ -152,6 +151,18 @@ export class AudioStreamProvider {
 
 		public playProvider(): Observable<boolean> {
 		
+						setInterval(() => {      
+					
+					
+				this.stream.getCurrentPosition().then((curpos) => {
+						console.log(curpos);
+						this.positions = curpos;
+  						// do whatever with curpos
+					});
+					
+				
+                }, 1000);
+			
 			setInterval(() => {      
 				  
 					  setTimeout(() => {

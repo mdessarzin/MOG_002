@@ -35,7 +35,6 @@ typeplayer: any;
 	onplaying: string;
 	durations: any = -1;
   duration_string: string;
-  positions: any = 0;
 	
   constructor(
 		public navCtrl: NavController,
@@ -68,7 +67,7 @@ typeplayer: any;
         }
 
 	  	  	let self = this;
-	  	this.durations = this._player.stream.getDuration();  
+	  		this.durations = this._player.stream.getDuration();  
 	  
 //	  	this._player.stream.ontimeupdate = function() {
 //    		console.log('the time was updated to: ' + this.currentTime);
@@ -76,23 +75,7 @@ typeplayer: any;
 //			self.positions = this.currentTime;
 			
 //	}
-	  
-//	  if (mediaTimer == null) {
-			setInterval(() => {      
-					
-					
-					this._player.stream.getCurrentPosition().then((curpos) => {
-						console.log(curpos);
-						this.positions = curpos;
-  // do whatever with curpos
-});
-					
-				
-                }, 1000);
- //           }
-	  
-	  
-	  
+	    
 	  
   }
 
@@ -120,11 +103,11 @@ slideStart() {
 	
 slideEnd() {
 	//this._player.stream.currentTime = this.positions;
-	 var number = Number.parseInt(this.positions) * 1000;
+	 var number = Number.parseInt(this._player.positions) * 1000;
 	this._player.stream.seekTo(number);
 	
 	this._player.stream.play();
-    console.log("End: value: "+this.positions);
+    console.log("End: value: "+this._player.positions);
 }
 	
 	
