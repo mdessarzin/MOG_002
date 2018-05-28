@@ -101,6 +101,8 @@ slideStart() {
 	console.log('pause');
 }
 	
+	
+	
 slideEnd() {
 	//this._player.stream.currentTime = this.positions;
 	var number = Number.parseInt(this.positions) * 1000;
