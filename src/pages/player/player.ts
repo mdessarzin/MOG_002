@@ -162,7 +162,10 @@ startAudio() {
 			
 			this.onplaying = '1';
 			console.log('Play Button clicked');
-			this._player.playerconfigProvider();
+			if(localStorage.type_player == 'live'){
+				this._player.playerconfigProvider();
+			}
+
 			this._player.playProvider();
 
 			}
