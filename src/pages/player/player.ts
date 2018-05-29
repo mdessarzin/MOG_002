@@ -232,6 +232,8 @@ console.log('ionViewDidLoad PlayerPage');
 			localStorage.setItem("type_player", "live");
 			this.titreplayer = 'Direct';
 			this._player.playProvider();
+			this.onplaying = '0';
+				
 		}
 
 }
