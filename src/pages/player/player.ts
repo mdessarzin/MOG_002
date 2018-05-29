@@ -133,6 +133,7 @@ typeplayer: any;
 	}
 
 	seekTo(type) {
+		
 		this._player.stream.getCurrentPosition().then((position) => {
 			var number = Number.parseInt(position) * 1000;
 			switch(type){
@@ -144,6 +145,10 @@ typeplayer: any;
 					break;
 			}
 		});
+					this._player.stream.getCurrentPosition().then((curpos) => {
+				console.log(curpos);
+				this.positions = curpos;
+			});	
 	}
 	
 	startAudio() {      
@@ -221,5 +226,12 @@ typeplayer: any;
 console.log('ionViewDidLoad PlayerPage');
 }
 
+		goLive() { 
+			this._player.pauseProvider();
+			this._player.playerconfigProvider();
+			localStorage.setItem("type_player", "live");
+			this.titreplayer = 'Direct';
+			this._player.playProvider();
+		}
 
 }

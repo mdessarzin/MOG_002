@@ -38,7 +38,7 @@
 </ion-content>
 <ion-footer *ngIf="titreplayer == 'Podcast'">
 	   <ion-grid style="">
-      <ion-row style="height:70px;" align-items-center>
+      <ion-row style="height:60px;" align-items-center>
  <ion-col>
    <ion-range min="0" id="seek" max="{{durations}}" [(ngModel)]="positions" (ionBlur)="slideEnd($event)" (ionFocus)="slideStart($event)"> <!--  [disabled]="is_in_play && is_playing"  -->
         <ion-label range-left>{{ positions*1000 | date:'mm:ss' }}</ion-label>
@@ -47,7 +47,7 @@
       </ion-range>
 	 </ion-col>
 	</ion-row>
-      <ion-row align-items-center style="height:50px;">
+      <ion-row align-items-center style="height:60px;">
         <ion-col  style="text-align: center;">
 			<button ion-button icon-only clear round style="height:50px;width:50px;">
 				<span style="color:#29B7C2;" (click)="seekTo('back')">-15 <i class="fas fa-undo"></i></span>
@@ -64,7 +64,13 @@
         </ion-col>
 		  
       </ion-row>
+
     </ion-grid> 
+	<ion-toolbar color="menulight"  no-border style="text-align:center;">
+			 <button ion-button clear (click)="goLive()">
+				Retourner au direct
+			</button>
+  </ion-toolbar>	
 </ion-footer>
 <ion-footer *ngIf="titreplayer != 'Podcast'">
    <ion-grid style="max-height: 110px;">
