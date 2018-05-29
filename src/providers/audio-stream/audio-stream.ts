@@ -215,6 +215,7 @@ export class AudioStreamProvider {
 				});					
 			}, 100);
 
+
 			this.stream.onStatusUpdate.subscribe(status => 
 			{
 
@@ -265,7 +266,10 @@ ngOnDestroy() {
 }
 	public pauseProvider(): Observable<boolean> {
 			//clearInterval(progressbar);
-		
+			if (this.timingloading) {
+				clearInterval(this.timingloading);
+			}
+
 			this.stream.pause();
 			this.musicControls.listen();
 			this.musicControls.updateIsPlaying(false);

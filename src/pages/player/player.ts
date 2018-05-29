@@ -40,7 +40,6 @@ typeplayer: any;
   public positions: any = 0;
 	durations: any = -1;
 	public timingseek: any;
-public observableVar: Subscription;
 	
   constructor(
 		public navCtrl: NavController,
@@ -67,6 +66,13 @@ public observableVar: Subscription;
         }
         else
         {
+			
+			
+			this._player.stream.getCurrentPosition().then((curpos) => {
+				console.log(curpos);
+				this.positions = curpos;
+			});					
+			
 			this.timingseek = setInterval(() => {      
 				this._player.stream.getCurrentPosition().then((curpos) => {
 					console.log(curpos);
@@ -126,6 +132,19 @@ public observableVar: Subscription;
 		}, 1000);
 	}
 
+	seekTo(type) {
+		this._player.stream.getCurrentPosition().then((position) => {
+			var number = Number.parseInt(position) * 1000;
+			switch(type){
+				case 'back':
+					this._player.stream.seekTo(number - 15000);
+					break;
+				case 'forward':
+					this._player.stream.seekTo(number + 15000);
+					break;
+			}
+		});
+	}
 	
 	startAudio() {      
         if(localStorage.player == 'play'){

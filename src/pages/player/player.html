@@ -49,14 +49,18 @@
 	</ion-row>
       <ion-row align-items-center style="height:50px;">
         <ion-col  style="text-align: center;">
-			<span  style="color:#29B7C2;"><i class="fas fa-undo"></i></span>
+			<button ion-button icon-only clear round style="height:50px;width:50px;">
+				<span style="color:#29B7C2;" (click)="seekTo('back')">-15 <i class="fas fa-undo"></i></span>
+			</button>
         </ion-col>
 		  <ion-col style="max-width: 80px; text-align: center;" justify-content-center> 
-				<ion-spinner class="loadingPlayer" style="display:none;height:40px;width:40x;" name="crescent"></ion-spinner>
+				<ion-spinner class="loadingPlayer" style="display:none;height:80px;width:80x;" name="crescent"></ion-spinner>
                 <span (click)="startAudio()" class="btPlayer" style="color:#29B7C2;"><i class="fas fa-play-circle fa-3x"></i></span>
         </ion-col>                 
         <ion-col style="text-align: center;">
-			<span style="color:#29B7C2;"><i class="fas fa-redo"></i></span>
+			<button ion-button icon-only clear round style="height:50px;width:50px;">
+				<span style="color:#29B7C2;" (click)="seekTo('forward')"><i class="fas fa-redo"></i> +15</span>
+			</button>
         </ion-col>
 		  
       </ion-row>
