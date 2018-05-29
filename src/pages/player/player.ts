@@ -33,6 +33,9 @@ typeplayer: any;
     titreplayer: string;
     live: string;
 	onplaying: string;
+	titre: string;
+	soustitre: string;
+	detail: string;
   duration_string: string;
   public positions: any = 0;
 	durations: any = -1;
@@ -72,9 +75,14 @@ public observableVar: Subscription;
 			}, 1000);
 
 			this.titreplayer = 'Podcast';
-			$('.songArtist').html(localStorage.podcast_title);
-			$('.songTitle').html(localStorage.podcast_category);
+			this.soustitre = localStorage.podcast_title;
+			this.titre = '';
+			this.detail = localStorage.podcast_category;
+
+			//$('.songArtist').html(localStorage.podcast_title);
+			//$('.songTitle').html(localStorage.podcast_category);
 			$('.songCover').attr('src',localStorage.podcast_cover);
+			$('#coverPlayer').attr('src',localStorage.podcast_cover);
         }
 
 	  	  	let self = this;

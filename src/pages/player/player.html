@@ -25,25 +25,44 @@
 <ion-content no-bounce id="page5" class="noize">
 
 
-	<h3>17H00 - 17H30</h3>
+	<h3>{{detail}}</h3>
   <div class="profile-image">
-    <img src="http://i0.wp.com/www.radiolac.ch/wp-content/uploads/2017/11/le-grand-journal.jpg?resize=300,300&quality=100">
+    <img id="coverPlayer" src="http://i0.wp.com/www.radiolac.ch/wp-content/uploads/2017/11/le-grand-journal.jpg?resize=300,300&quality=100">
   </div>
 	
-	<h1>L'Actu en Continu</h1>
-	<h2>Avec Gufran Bron</h2>
+	<h1>{{titre}}</h1>
+	<h2>{{soustitre}}</h2>
 
 	 
 
 </ion-content>
-<ion-footer>
-
-   <ion-range *ngIf="titreplayer == 'Podcast'" min="0" pin="true" id="seek" max="{{durations}}" [(ngModel)]="positions" (ionBlur)="slideEnd($event)" (ionFocus)="slideStart($event)"> <!--  [disabled]="is_in_play && is_playing"  -->
+<ion-footer *ngIf="titreplayer == 'Podcast'">
+	   <ion-grid style="">
+      <ion-row style="height:70px;" align-items-center>
+ <ion-col>
+   <ion-range min="0" id="seek" max="{{durations}}" [(ngModel)]="positions" (ionBlur)="slideEnd($event)" (ionFocus)="slideStart($event)"> <!--  [disabled]="is_in_play && is_playing"  -->
         <ion-label range-left>{{ positions*1000 | date:'mm:ss' }}</ion-label>
         <ion-label range-right *ngIf="durations == -1" >--:--</ion-label>
         <ion-label range-right *ngIf="durations != -1">{{durations*1000 | date:'mm:ss' }}</ion-label>
       </ion-range>
-	
+	 </ion-col>
+	</ion-row>
+      <ion-row align-items-center style="height:50px;">
+        <ion-col  style="text-align: center;">
+			<span  style="color:#29B7C2;"><i class="fas fa-undo"></i></span>
+        </ion-col>
+		  <ion-col style="max-width: 80px; text-align: center;" justify-content-center> 
+				<ion-spinner class="loadingPlayer" style="display:none;height:40px;width:40x;" name="crescent"></ion-spinner>
+                <span (click)="startAudio()" class="btPlayer" style="color:#29B7C2;"><i class="fas fa-play-circle fa-3x"></i></span>
+        </ion-col>                 
+        <ion-col style="text-align: center;">
+			<span style="color:#29B7C2;"><i class="fas fa-redo"></i></span>
+        </ion-col>
+		  
+      </ion-row>
+    </ion-grid> 
+</ion-footer>
+<ion-footer *ngIf="titreplayer != 'Podcast'">
    <ion-grid style="max-height: 110px;">
       <ion-row align-items-center>
         <ion-col col-2 style="max-width: 80px; text-align: center;" justify-content-center> 
