@@ -34,6 +34,10 @@ typeplayer: any;
     live: string;
 	onplaying: string;
   duration_string: string;
+  public positions: any = 0;
+	durations: any = -1;
+	public timingseek: any;
+public observableVar: Subscription;
 	
   constructor(
 		public navCtrl: NavController,
@@ -43,8 +47,8 @@ typeplayer: any;
 		public http: Http, 
 		public loadingCtrl: LoadingController,
 		public plt: Platform,
-		 		 		 public modalCtrl: ModalController
-		){
+		public modalCtrl: ModalController
+	){
    		
 			
 	 this.typeplayer = 'audio';
@@ -53,13 +57,20 @@ typeplayer: any;
   }
 	
 
-  ngAfterViewInit() {
-
+  ngAfterViewInit() {	  
+	  
 	  if(localStorage.type_player == 'live'){
 			this.titreplayer = 'Direct';
         }
         else
         {
+			this.timingseek = setInterval(() => {      
+				this._player.stream.getCurrentPosition().then((curpos) => {
+					console.log(curpos);
+					this.positions = curpos;
+				});					
+			}, 1000);
+
 			this.titreplayer = 'Podcast';
 			$('.songArtist').html(localStorage.podcast_title);
 			$('.songTitle').html(localStorage.podcast_category);
@@ -67,87 +78,54 @@ typeplayer: any;
         }
 
 	  	  	let self = this;
-	  
-//	  	this._player.stream.ontimeupdate = function() {
-//    		console.log('the time was updated to: ' + this.currentTime);
-			
-//			self.inits = this.currentTime;
-			
-//	}
+	  		this.durations = this._player.stream.getDuration();  
+
 	    
 	  
   }
 
-  	startVideo() {
-		
-		 this._player.pauseProvider();
-
-				this.onplaying = '0';
-                localStorage.setItem("player", "stop");
-                $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-		
+	startVideo() {
+		this._player.pauseProvider();
+		this.onplaying = '0';
+		localStorage.setItem("player", "stop");
+		$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 		let modal = this.modalCtrl.create(PlayerpopupPage,{url:'https://livevideo.infomaniak.com/streaming/livecast/lfmmd/playlist.m3u8', poster:''});
-    	modal.present();   
-    
-    //this.streamingMedia.playVideo('https://livevideo.infomaniak.com/streaming/livecast/lfmmd/playlist.m3u8', options);
-  }
+		modal.present();   
+	}
 	
-  private dismiss() {
-    this.viewCtrl.dismiss();
-  }
+	private dismiss() {
+		this.viewCtrl.dismiss();
+	}
 	
-slideStart() {
-	this._player.pauseProvider();
-	console.log('pause');
-}
-	
-	
-	
-slideEnd() {
-	//this._player.stream.currentTime = this.positions;
-	var number = Number.parseInt(this._player.positions) * 1000;
-	this._player.stream.seekTo(number);
-	
-	this._player.playProvider();
-    console.log("End: value: "+this._player.positions);
-}
+	slideStart() {
+		if (this.timingseek) {
+			clearInterval(this.timingseek);
+		}
+		this._player.pauseProvider();
+		console.log('pause');
+	}
 
-  ionViewDidLoad() {
-	 if(localStorage.player == 'play'){
-           // this.buttonIcon = "ios-pause";
-			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-			this.onplaying = '1';
+	slideEnd() {
+		var number = Number.parseInt(this.positions) * 1000;
+		this._player.stream.seekTo(number);
+		this._player.playProvider();
+		console.log("End: value: "+this.positions);
+		this.timingseek = setInterval(() => {      
+			this._player.stream.getCurrentPosition().then((curpos) => {
+				console.log(curpos);
+				this.positions = curpos;
+			});					
+		}, 1000);
+	}
 
-        }
-        else
-        {
-            //this.buttonIcon = "ios-play";
-			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-			this.onplaying = '0';
-        }
-      
-		$.ajaxSetup({ cache: false });
-		$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
-			
-				  if(localStorage.type_player == 'live'){
-						$('.songArtist').html(data.live[0].interpret);
-						$('.songTitle').html(data.live[0].title);
-						$('.songCover').attr('src',data.live[0].imageURL);
-					}
-					else
-					{
-						//
-					}
-
-		});
-    console.log('ionViewDidLoad PlayerPage');
-  }
 	
-startAudio() {      
-  // if (this.plt.is('cordova')) {
-     
+	startAudio() {      
         if(localStorage.player == 'play'){
-                this._player.pauseProvider();
+				this._player.pauseProvider();
+				if (this.timingseek) {
+					clearInterval(this.timingseek);
+				}
+
 			   // this.musicControls.listen();
 				//this.musicControls.updateIsPlaying(false);
 				this.onplaying = '0';
@@ -156,23 +134,65 @@ startAudio() {
         }
         else
         {
-			//this.buttonIcon = "ios-pause";
-			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-			//$('.btPlayer').html('<ion-spinner name="crescent"></ion-spinner>');
 			
-			this.onplaying = '1';
-			console.log('Play Button clicked');
-			if(localStorage.type_player == 'live'){
-				this._player.playerconfigProvider();
-			}
-			else {
-				//this.durations = this._player.stream.getDuration();  
-			}
-			this._player.playProvider();
+			if(localStorage.type_player == 'replay'){
 
-			}
+					this.timingseek = setInterval(() => {      
+						this._player.stream.getCurrentPosition().then((curpos) => {
+							console.log(curpos);
+							this.positions = curpos;
+						});					
+					}, 1000);
+					this.durations = this._player.stream.getDuration();  
+		}
+			
+		$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+		//$('.btPlayer').html('<ion-spinner name="crescent"></ion-spinner>');
 
- 	
+		this.onplaying = '1';
+		console.log('Play Button clicked');
+		if(localStorage.type_player == 'live'){
+			this._player.playerconfigProvider();
+		}
+		else {
+			//this.durations = this._player.stream.getDuration();  
+		}
+		this._player.playProvider();
+
+		}
+	}
+	
+	
+	ionViewDidLoad() {
+ if(localStorage.player == 'play'){
+	   // this.buttonIcon = "ios-pause";
+		$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+		this.onplaying = '1';
+
+	}
+	else
+	{
+		//this.buttonIcon = "ios-play";
+		$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+		this.onplaying = '0';
+	}
+
+	$.ajaxSetup({ cache: false });
+	$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
+
+			  if(localStorage.type_player == 'live'){
+					$('.songArtist').html(data.live[0].interpret);
+					$('.songTitle').html(data.live[0].title);
+					$('.songCover').attr('src',data.live[0].imageURL);
+				}
+				else
+				{
+					//
+				}
+
+	});
+console.log('ionViewDidLoad PlayerPage');
 }
+
 
 }

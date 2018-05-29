@@ -19,15 +19,13 @@ export class AudioStreamProvider {
 		artist: string;
 		cover: string;
 		title: string;
-  public positions: any = 0;
-	public timingseek: any;
-public observableVar: Subscription;
-public durations: any = -1;
+		timingloading: any;
+
 	  	constructor(private _loadingCtrl: LoadingController, public musicControls: MusicControls, public media: Media){
 	  	}
 	
 		ngOnInit() {
-		
+
 	}
 		public settingMusicControl(title,artist,cover){
 			this.musicControls.destroy(); // it's the same with or without the destroy 
@@ -156,18 +154,8 @@ public durations: any = -1;
 
 		public playProvider(): Observable<boolean> {
 
+
 			
-			
-			if(localStorage.type_player == 'replay'){
-				
-						this.timingseek = setInterval(() => {      
-							this.stream.getCurrentPosition().then((curpos) => {
-								console.log(curpos);
-								this.positions = curpos;
-							});					
-						}, 1000);
-				this.durations = this.stream.getDuration();  
-			}
 
 			setInterval(() => {      
 				  
@@ -211,6 +199,22 @@ public durations: any = -1;
 			console.log('play');
 			localStorage.setItem("player", "play");
 
+			
+			this.timingloading = setInterval(() => {      
+				this.stream.getCurrentPosition().then((curpos) => {
+					console.log('chargement');
+					if(curpos>0){
+							$('.loadingPlayer').hide();
+							$('.btPlayer').show();
+							$('.playerEtat_2').hide();
+							$('.playerEtat_0').hide();
+							$('.playerEtat_1').show();
+							$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+							clearInterval(this.timingloading);
+					}
+				});					
+			}, 100);
+
 			this.stream.onStatusUpdate.subscribe(status => 
 			{
 
@@ -219,14 +223,6 @@ public durations: any = -1;
 		 
 				if (status.toString()=="2") { //player start
 					
-					 setTimeout(() => {
-						$('.loadingPlayer').hide();
-						$('.btPlayer').show();
-						$('.playerEtat_2').hide();
-						$('.playerEtat_0').hide();
-						$('.playerEtat_1').show();
-						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-						}, 200);
 
 				}
 
@@ -269,9 +265,6 @@ ngOnDestroy() {
 }
 	public pauseProvider(): Observable<boolean> {
 			//clearInterval(progressbar);
-			  if (this.timingseek) {
-				clearInterval(this.timingseek);
-			  }
 		
 			this.stream.pause();
 			this.musicControls.listen();
