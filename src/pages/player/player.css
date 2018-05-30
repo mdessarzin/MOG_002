@@ -21,7 +21,9 @@ page-player h1 {
 page-player h2 {
   color: #000;
   font-size: 17px;
-  font-weight: lighter; }
+  font-weight: lighter;
+  padding-left: 10px;
+  padding-right: 10px; }
 page-player h3 {
   color: #000;
   font-size: 14px;
