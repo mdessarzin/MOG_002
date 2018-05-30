@@ -320,7 +320,7 @@ ngOnDestroy() {
 									$('.titre').html(data.title);
 									$('.soustitre').html(data.with);
 									$('#coverPlayer').attr('src',data.cover);
-						
+									$('.playerinfos').fadeIn();
 				});
 			}, 0);
 

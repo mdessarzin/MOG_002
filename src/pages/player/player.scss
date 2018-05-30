@@ -26,7 +26,7 @@ page-player {
     img{
         height: 200px;
         width: 200px;
-        border-radius:50%;
+        border-radius:3%;
         border: 0px solid #010101;
     }
 	
@@ -34,7 +34,7 @@ page-player {
 	
 		h1 {
 	color:  #29b7c2;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: lighter;
 	}
 		h2 {
@@ -45,7 +45,7 @@ page-player {
 	h3 {
 		color: #000; 
 		font-size: 14px;
-		margin-bottom:  40px;
+		margin-bottom:  0px;
 	}
 .scroll-content {
     align-content: center;
