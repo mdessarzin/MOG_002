@@ -196,16 +196,30 @@ typeplayer: any;
 	
 	
 	ionViewDidLoad() {
+		
+		this._player.stream.getCurrentPosition().then((curpos) => {
+					console.log('chargement');
+					if(curpos>0){
+							$('.loadingPlayer').hide();
+							$('.btPlayer').show();
+							$('.playerEtat_2').hide();
+							$('.playerEtat_0').hide();
+							$('.playerEtat_1').show();
+							$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+					}
+				});
+		
+		
  if(localStorage.player == 'play'){
 	   // this.buttonIcon = "ios-pause";
-		$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+		//$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 		this.onplaying = '1';
 
 	}
 	else
 	{
 		//this.buttonIcon = "ios-play";
-		$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+		//$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 		this.onplaying = '0';
 	}
 
@@ -227,12 +241,15 @@ console.log('ionViewDidLoad PlayerPage');
 }
 
 		goLive() { 
-			this._player.pauseProvider();
-			this._player.playerconfigProvider();
 			localStorage.setItem("type_player", "live");
 			this.titreplayer = 'Direct';
+			$('.btPlayer').hide();
+			$('.loadingPlayer').show();
+			this._player.pauseProvider();
+			this._player.playerconfigProvider();
+			//this.onplaying = '1';
+			this._player.loadtitlelive();
 			this._player.playProvider();
-			this.onplaying = '0';
 				
 		}
 

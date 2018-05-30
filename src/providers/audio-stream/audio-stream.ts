@@ -282,6 +282,34 @@ ngOnDestroy() {
 			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 			return Observable.of(false);
 		}
+	
+	
+	public loadtitlelive(){
+		  setTimeout(() => {
+			  fetch('https://www.mediaone-digital.ch/cache/radiolac.json')
+				.then(response => response.json())
+				.then(data => {
+				  console.log('playlist:'+data);
+				  if(this.live == data.live[0].interpret){
+								//
+							}
+							else{
+								this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+								this.live = data.live[0].interpret;
+								if(localStorage.type_player == 'live'){
+									$('.songArtist').html(data.live[0].interpret);
+									$('.songTitle').html(data.live[0].title);
+									$('.songCover').attr('src',data.live[0].imageURL);
+								}
+								else
+								{
+									//
+								}
+							}
+
+				});
+			}, 0);
+	}
 
 }
 
