@@ -1,5 +1,5 @@
 import { Component, ViewChild, Injectable } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ViewController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ViewController, ModalController, AlertController} from 'ionic-angular';
 import * as $ from "jquery";
 import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
 import { MusicControls } from '@ionic-native/music-controls';
@@ -40,6 +40,8 @@ typeplayer: any;
   public positions: any = 0;
 	durations: any = -1;
 	public timingseek: any;
+	checklive: any;
+	checklivestate: any;
 	
   constructor(
 		public navCtrl: NavController,
@@ -49,8 +51,9 @@ typeplayer: any;
 		public http: Http, 
 		public loadingCtrl: LoadingController,
 		public plt: Platform,
-		public modalCtrl: ModalController
-	){
+		public modalCtrl: ModalController,
+	public alertCtrl: AlertController
+		){
    		
 			
 	 this.typeplayer = 'audio';
@@ -60,6 +63,33 @@ typeplayer: any;
 	
 
   ngAfterViewInit() {	  
+	  
+	  
+	  
+			this.checklive = setInterval(() => {      
+				  
+					  setTimeout(() => {
+						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
+							.then(response => response.json())
+							.then(data => {
+							  console.log('Live:'+data);
+							  	if(data=='0'){
+									$('.rond').css('display','none');
+									this.checklivestate = 0;
+								}
+							  else {
+									$('.rond').css('display','block');
+								    this.checklivestate = 1;
+							  }
+
+							});
+						}, 0);
+
+			},5000);
+	  
+	  
+	  
+	  
 	  
 	  if(localStorage.type_player == 'live'){
 			this.titreplayer = 'Direct';
@@ -101,15 +131,29 @@ typeplayer: any;
   }
 
 	startVideo() {
-		this._player.pauseProvider();
-		this.onplaying = '0';
-		localStorage.setItem("player", "stop");
-		$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-		let modal = this.modalCtrl.create(PlayerpopupPage,{url:'https://livevideo.infomaniak.com/streaming/livecast/lfmmd/playlist.m3u8', poster:''});
-		modal.present();   
+		if(this.checklivestate==1){
+			this._player.pauseProvider();
+			this.onplaying = '0';
+			localStorage.setItem("player", "stop");
+			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			let modal = this.modalCtrl.create(PlayerpopupPage,{url:'https://livevideo.infomaniak.com/streaming/livecast/radiolacmd/playlist.m3u8', poster:''});
+			modal.present();  
+		}
+		else {
+			let alert = this.alertCtrl.create({
+			  title: 'Aucun live vidéo',
+			  subTitle: "Un point rouge situé à droite du bouton Webcam vous informe lorsqu'un live vidéo est diffusé.",
+			  buttons: ['Fermer']
+			});
+			alert.present();
+		}
 	}
 	
 	private dismiss() {
+			  if (this.checklive) {
+			clearInterval(this.checklive);
+		}
+
 		this.viewCtrl.dismiss();
 	}
 	
