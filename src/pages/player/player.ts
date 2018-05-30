@@ -245,6 +245,7 @@ console.log('ionViewDidLoad PlayerPage');
 		goLive() { 
 			localStorage.setItem("type_player", "live");
 			this.titreplayer = 'Direct';
+			$('.player .scroll-content').css('margin-bottom','80px');
 			$('.btPlayer').hide();
 			$('.loadingPlayer').show();
 			this._player.pauseProvider();
