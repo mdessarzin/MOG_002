@@ -85,7 +85,7 @@ typeplayer: any;
 							});
 						}, 0);
 
-			},5000);
+			},20000);
 	  
 	  
 	  
@@ -94,7 +94,7 @@ typeplayer: any;
 	  if(localStorage.type_player == 'live'){
 			this.titreplayer = 'Direct';
 		  this._player.loadtitlelive();
-		  this._player.playProvider();
+		 // this._player.playProvider();
         }
         else
         {
