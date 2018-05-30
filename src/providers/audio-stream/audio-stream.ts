@@ -309,6 +309,23 @@ ngOnDestroy() {
 
 				});
 			}, 0);
+		  
+		setTimeout(() => {
+			  fetch('https://www.mediaone-digital.ch/cache/radiolac_live.json')
+				.then(response => response.json())
+				.then(data => {
+	
+								this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+									$('.detail').html(data.start+'-'+data.end);
+									$('.titre').html(data.title);
+									$('.soustitre').html(data.with);
+									$('#coverPlayer').attr('src',data.cover);
+						
+				});
+			}, 0);
+
+		
+		
 	}
 
 }
