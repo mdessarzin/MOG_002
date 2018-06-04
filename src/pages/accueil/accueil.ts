@@ -86,7 +86,9 @@ this.http.get('https://www.radiolac.ch/wp-json/mog/v1/get_data?type=post&taxonom
 				  
 				  	for(let i of data){
 						this.posts.push(i);
+						
 					}
+	alert('ok');
 				  
 				  this.postsLoading = '1';
 				  	if (infiniteScroll) {
