@@ -72,15 +72,14 @@ update(refresher) {
 	
   loadData(infiniteScroll?,refresher?) {
 
-	  if (refresher) {
+	  	  if (refresher) {
     	this.pagination = 1;
 	  }
-
-	  setTimeout(() => {
-			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?type=post&taxonomy=category&per_page=10&page='+this.pagination)
-				.then(response => response.json())
-				.then(data => {
-				  if (refresher) {
+	  
+this.http.get('https://www.radiolac.ch/wp-json/mog/v1/get_data?type=post&taxonomy=category&per_page=10&page='+this.pagination).map(res => res.json()).subscribe(data => {
+  //  this.posts = data;
+    console.log(this.posts);
+	if (refresher) {
 					  this.posts = [];
 						refresher.complete();
 					}
@@ -93,8 +92,10 @@ update(refresher) {
 				  	if (infiniteScroll) {
 						infiniteScroll.complete();
 					}
-				});
-			},20);
+});
+	  
+	  
+	
   }	
 	
  loadMore(infiniteScroll) {
