@@ -196,13 +196,14 @@ private share(message, title, image, link){
       })
   }
 	
-private showDetails(id,title){
+private showDetails(id,title,link){
         //console.log(this.login);
        
     
     this.navCtrl.push(DetailsPage,{
             title: title,
-            key: id
+            key: id,
+		link:link
            
         });
 }

@@ -33,7 +33,6 @@ link: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController
 ) {
-	  
 	   this.title = navParams.get('title');
 
 	  
@@ -55,13 +54,13 @@ link: string;
 
 				});
 			},20);
-	  
-	  
-	  
+	  	//  this.link = navParams.get('link');
+
+//	  	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
+
 	  
   }
-	
- 
+	 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
