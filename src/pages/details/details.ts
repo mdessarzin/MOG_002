@@ -60,7 +60,7 @@ link: string;
 
 	  	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 
-	  $('#remotedata').load(function () {
+	  $('#remotedata').on('load', function() {
 	var iframe = $(this);
 		  alert('0o');
 	$(window).resize(function() {
