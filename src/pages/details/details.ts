@@ -60,6 +60,14 @@ link: string;
 
 	  	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 
+	  jQuery('#remotedata').load(function () {
+	var iframe = jQuery(this);
+		  alert('0o');
+	jQuery(window).resize(function() {
+		iframe.height(iframe[0].contentWindow.document.body.scrollHeight + 40);
+	});
+	jQuery(window).trigger('resize');
+});
 	  
   }
 	 
