@@ -65,7 +65,7 @@ link: string;
 	 
 private resize(){
 	var iframe = $('#remotedata');
-		  alert('0o');
+		  alert(iframe[0].contentWindow.document.body.scrollHeight);
 	$(window).resize(function() {
 		iframe.height(iframe[0].contentWindow.document.body.scrollHeight + 40);
 	});
