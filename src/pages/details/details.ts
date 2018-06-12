@@ -65,12 +65,8 @@ link: string;
 	 
 private resize(){
 	var iframe = $('#remotedata');
-		  alert(iframe[0].contentWindow.document.body.scrollHeight);
-	$(window).resize(function() {
+	alert(iframe[0].contentWindow.document.body.scrollHeight);
 		iframe.height(iframe[0].contentWindow.document.body.scrollHeight + 40);
-	});
-	$(window).trigger('resize');
-	
 }	
 
   ionViewDidLoad() {
