@@ -338,8 +338,8 @@ private showDetails(id,title){
     
     this.navCtrl.push(DetailsPage,{
             title: title,
-            key: id
-           
+            key: id,
+			link:link           
         });
 }
 	
