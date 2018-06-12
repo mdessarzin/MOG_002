@@ -60,7 +60,6 @@ link: string;
 
 	  	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 
-});
 	  
   }
 	 
