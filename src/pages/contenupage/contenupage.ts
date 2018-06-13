@@ -34,8 +34,9 @@ link: string;
 	  
 	   this.title = navParams.get('title');
 
-	  
-	  
+	this.link = navParams.get('key');
+	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
+	  /*
 	  setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?clean=true&page_id='+navParams.get('key'))
 				.then(response => response.json())
@@ -50,12 +51,18 @@ link: string;
 
 				});
 			},20);
-	  
+	  */
 	  
 	  
 	  
   }
 	
+private resize(){
+	var iframe = $('#remotedata');
+	$('#remotedata').height(iframe[0].contentWindow.document.body.scrollHeight + 40);
+	//alert('ok');
+}	
+
  ionViewDidLoad() {
 
 	

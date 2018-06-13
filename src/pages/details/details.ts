@@ -56,11 +56,9 @@ link: string;
 				});
 			},20);
 	  */
-	  	  this.link = navParams.get('link');
+	this.link = navParams.get('link');
+	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 
-	  	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
-
-	  
   }
 	 
 private resize(){

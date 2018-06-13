@@ -205,7 +205,7 @@ export class MyApp {
 			displayName: 'Programme',
 			//badge: ArrayObservable.of('NEW'),
 			component: ContenupagePage,
-			key: '1683',
+			key: 'https://www.radiolac.ch/emissions-et-programme/?clean=true',
 			header: true
 		});
 		this.options.push({
@@ -213,7 +213,7 @@ export class MyApp {
 			displayName: 'Contact',
 			//badge: ArrayObservable.of('NEW'),
 			component: ContenupagePage,
-			key: '1683',
+			key: 'https://www.radiolac.ch/contactez-nous/?clean=true',
 			header: true
 		});
 	}
