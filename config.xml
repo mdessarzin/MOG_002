@@ -12,6 +12,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-intent href="whatsapp:*" />
     <allow-navigation href="*" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="DisallowOverscroll" value="true" />

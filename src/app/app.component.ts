@@ -32,7 +32,7 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { ImageLoaderConfig } from 'ionic-image-loader';
 import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
 import { ContenupagePage } from '../pages/contenupage/contenupage';
-
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @Component({
 	templateUrl: 'app.html'
@@ -67,8 +67,9 @@ export class MyApp {
 				private splashScreen: SplashScreen,
 				private alertCtrl: AlertController,
 				private menuCtrl: MenuController,
-				      private oneSignal: OneSignal,
-				 public _player: AudioStreamProvider,
+				private oneSignal: OneSignal,
+				public _player: AudioStreamProvider,
+				private socialSharing: SocialSharing
 				) {
 		this._player.playerconfigProvider();
 		//this._player.playProvider();
@@ -254,7 +255,9 @@ export class MyApp {
 	}
 	
 	public whatsapp(){
-		window.open("whatsapp://send?phone=41799183000&text=Bonjour",'_system', 'location=yes');
+		
+		
+		window.open("whatsapp://send?text=Hello&phone=+31611111111&abid=+31611111111",'_system', 'location=yes');
 	}
 	
 	private handlerNotifications(){
