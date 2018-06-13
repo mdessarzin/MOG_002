@@ -257,7 +257,7 @@ export class MyApp {
 	public whatsapp(){
 		
 		
-		window.open("whatsapp://send?text=Hello&phone=+31611111111&abid=+31611111111",'_system', 'location=yes');
+		window.open("whatsapp://send?text=Bonjour&phone=+41799183000&abid=+41799183000",'_system', 'location=yes');
 	}
 	
 	private handlerNotifications(){
