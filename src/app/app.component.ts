@@ -253,6 +253,10 @@ export class MyApp {
 		alert.present();
 	}
 	
+	public whatsapp(){
+		window.open("whatsapp://send?phone=41799183000&text=Bonjour",'_system', 'location=yes');
+	}
+	
 	private handlerNotifications(){
 		
           this.oneSignal.startInit('2bb64197-f783-46fd-9551-24de82fc9f89', '776643205654');
