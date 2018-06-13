@@ -59,8 +59,7 @@ link: string;
 	  	  this.link = navParams.get('link');
 
 	  	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
-var iframe = $('#remotedata').contents();
-iframe.find("body").click(function(){
+var iframe = $('#remotedata').click(function(){
    alert("test");
 });
 
