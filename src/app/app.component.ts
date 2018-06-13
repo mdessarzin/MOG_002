@@ -213,7 +213,7 @@ export class MyApp {
 			displayName: 'Contact',
 			//badge: ArrayObservable.of('NEW'),
 			component: ContenupagePage,
-			key: 'https://www.radiolac.ch/contactez-nous/?clean=true',
+			key: 'https://applications.mediaonegroup.ch/contactez-nous-radio-lac/',
 			header: true
 		});
 	}
