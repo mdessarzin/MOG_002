@@ -59,16 +59,13 @@ link: string;
 	  	  this.link = navParams.get('link');
 
 	  	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
-var iframe = $('#remotedata').contents().click(function(){
-   alert("test");
-});
 
 	  
   }
 	 
 private resize(){
 	var iframe = $('#remotedata');
-		$('#remotedata').height(iframe[0].contentWindow.document.body.scrollHeight + 500);
+		$('#remotedata').height(iframe[0].contentWindow.document.body.scrollHeight + 40);
 	alert('ok');
 }	
 
