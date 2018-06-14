@@ -46,15 +46,12 @@ pagination: number = 1;
 		public navCtrl: NavController,
 		public http: Http, 
 		public loadingCtrl: LoadingController,
-		 private socialSharing: SocialSharing,
-		 public navParams: NavParams,
-		 public plt: Platform,
-		 		 public modalCtrl: ModalController,
-		 		public _player: AudioStreamProvider,
-		 		public musicControls: MusicControls,
-
-
-		//private ga: GoogleAnalytics
+		private socialSharing: SocialSharing,
+		public navParams: NavParams,
+		public plt: Platform,
+		public modalCtrl: ModalController,
+		public _player: AudioStreamProvider,
+		public musicControls: MusicControls,
 	){
 			
 			
@@ -122,8 +119,28 @@ update(refresher) {
 	 this._player.pauseProvider();
 	 this._player.playerconfigProvider(link);
 	// this._player.playProvider();
-	 this.startAudio(title,image, text, date, link);
-	 $('ion-footer').animate({'margin-bottom': '0px' }, 200);
+	// this.startAudio(title,image, text, date, link);
+	
+	  
+		localStorage.setItem("podcast_title", title);
+		localStorage.setItem("podcast_category", text);
+		localStorage.setItem("podcast_cover", image);
+		
+		if(localStorage.player == 'play'){
+			this._player.pauseProvider();
+			localStorage.setItem("player", "stop");
+        }
+        else
+        {
+			localStorage.setItem("player", "play");
+			console.log('Play Button clicked');
+			this._player.playProvider();
+		}
+	  
+	  
+	  
+	 
+	$('ion-footer').animate({'margin-bottom': '0px' }, 200);
 	$('.songArtist').html(text);
 	$('.songTitle').html(title);
 	$('.songCover').attr('src',image);								
