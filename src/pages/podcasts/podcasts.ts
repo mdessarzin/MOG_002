@@ -118,7 +118,7 @@ update(refresher) {
 
   private configPlayer(title,image, text, date, link) {
 
-	  localStorage.setItem("player", "stop");
+	 localStorage.setItem("player", "stop");
 	 this._player.pauseProvider();
 	 this._player.playerconfigProvider(link);
 	 //this.startAudio(title,image, text, date, link);

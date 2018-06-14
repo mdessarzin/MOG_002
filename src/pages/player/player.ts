@@ -109,13 +109,12 @@ typeplayer: any;
 	  
 	  if(localStorage.type_player == 'live'){
 			this.titreplayer = 'Direct';
-		  this._player.loadtitlelive();
-		 // this._player.playProvider();
+		  	this._player.loadtitlelive();
+		 	//this._player.playProvider();
         }
         else
         {
-			
-			
+			this._player.playProvider();
 			this._player.stream.getCurrentPosition().then((curpos) => {
 				console.log(curpos);
 				this.positions = curpos;
@@ -141,8 +140,6 @@ typeplayer: any;
 
 	  	  	let self = this;
 	  		this.durations = this._player.stream.getDuration();  
-
-	    
 	  
   }
 
