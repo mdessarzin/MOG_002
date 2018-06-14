@@ -65,6 +65,22 @@ typeplayer: any;
   ngAfterViewInit() {	  
 	  
 	  
+	  setTimeout(() => {
+						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
+							.then(response => response.json())
+							.then(data => {
+							  console.log('Live:'+data);
+							  	if(data=='0'){
+									$('.rond').css('display','none');
+									this.checklivestate = 0;
+								}
+							  else {
+									$('.rond').css('display','block');
+								    this.checklivestate = 1;
+							  }
+
+							});
+						}, 0);
 	  
 			this.checklive = setInterval(() => {      
 				  
