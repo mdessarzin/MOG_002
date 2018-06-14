@@ -118,15 +118,16 @@ typeplayer: any;
 			this._player.stream.getCurrentPosition().then((curpos) => {
 				console.log(curpos);
 				this.positions = curpos;
-				if(this._player.stream.getDuration()=='-1'){
-					this.durations = this._player.stream.getDuration();  
-				}
+
 			});					
 			
 			this.timingseek = setInterval(() => {      
 				this._player.stream.getCurrentPosition().then((curpos) => {
 					console.log(curpos);
 					this.positions = curpos;
+									if(this._player.stream.getDuration()=='-1'){
+					this.durations = this._player.stream.getDuration();  
+				}
 				});					
 			}, 1000);
 
