@@ -40,10 +40,10 @@
 	   <ion-grid style="">
       <ion-row style="height:60px;" align-items-center>
  <ion-col>
-   <ion-range min="0" id="seek" max="{{durations}}" [(ngModel)]="positions" (ionBlur)="slideEnd($event)" (ionFocus)="slideStart($event)"> <!--  [disabled]="is_in_play && is_playing"  -->
+   <ion-range min="0" id="seek" max="{{this._player.stream.getDuration()}}" [(ngModel)]="positions" (ionBlur)="slideEnd($event)" (ionFocus)="slideStart($event)"> <!--  [disabled]="is_in_play && is_playing"  -->
         <ion-label range-left>{{ positions*1000 | date:'mm:ss' }}</ion-label>
-        <ion-label range-right *ngIf="durations == -1" >--:--</ion-label>
-        <ion-label range-right *ngIf="durations != -1">{{durations*1000 | date:'mm:ss' }}</ion-label>
+        <ion-label range-right *ngIf="this._player.stream.getDuration() == -1" >--:--</ion-label>
+        <ion-label range-right *ngIf="this._player.stream.getDuration() != -1">{{this._player.stream.getDuration()*1000 | date:'mm:ss' }}</ion-label>
       </ion-range>
 	 </ion-col>
 	</ion-row>
