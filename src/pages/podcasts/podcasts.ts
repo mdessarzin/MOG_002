@@ -121,8 +121,8 @@ update(refresher) {
 	 localStorage.setItem("player", "stop");
 	 this._player.pauseProvider();
 	 this._player.playerconfigProvider(link);
-	 this._player.playProvider();
-	 //this.startAudio(title,image, text, date, link);
+	// this._player.playProvider();
+	 this.startAudio(title,image, text, date, link);
 	 $('ion-footer').animate({'margin-bottom': '0px' }, 200);
 	$('.songArtist').html(text);
 	$('.songTitle').html(title);
