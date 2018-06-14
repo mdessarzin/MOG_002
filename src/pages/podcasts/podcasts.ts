@@ -126,6 +126,7 @@ update(refresher) {
 	$('.songArtist').html(text);
 	$('.songTitle').html(title);
 	$('.songCover').attr('src',image);								
+  	this.openPlayer();
   }
   
 		
