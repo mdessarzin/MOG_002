@@ -140,7 +140,7 @@ typeplayer: any;
 
 	  	  	let self = this;
 	  		this.durations = this._player.stream.getDuration();  
-	  
+	  		alert(this.durations);
   }
 
 	startVideo() {
