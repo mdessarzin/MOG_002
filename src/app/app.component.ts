@@ -77,7 +77,9 @@ export class MyApp {
 		this.statusBar.backgroundColorByHexString("#29b7c2");
 		this.initializeApp();	
 		localStorage.setItem("type_player", "live");
-		
+		localStorage.setItem("podcast_url", '');
+		localStorage.setItem("player", "stop");
+
 		
 		
 	}

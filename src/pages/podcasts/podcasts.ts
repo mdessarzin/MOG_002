@@ -115,36 +115,29 @@ update(refresher) {
 
   private configPlayer(title,image, text, date, link) {
 
-	 localStorage.setItem("player", "stop");
-	 this._player.pauseProvider();
-	 this._player.playerconfigProvider(link);
-	// this._player.playProvider();
-	// this.startAudio(title,image, text, date, link);
-	
-	  
-		localStorage.setItem("podcast_title", title);
-		localStorage.setItem("podcast_category", text);
-		localStorage.setItem("podcast_cover", image);
-		
-		if(localStorage.player == 'play'){
+
+	  if(localStorage.podcast_url == link){
+
+	  }
+	  else {
+		    console.log('nouveau son');
+			localStorage.setItem("podcast_url", link);
 			this._player.pauseProvider();
-			localStorage.setItem("player", "stop");
-        }
-        else
-        {
-			localStorage.setItem("player", "play");
-			console.log('Play Button clicked');
-			this._player.playProvider();
-		}
+			this._player.playerconfigProvider(link);
+			localStorage.setItem("podcast_title", title);
+			localStorage.setItem("podcast_category", text);
+			localStorage.setItem("podcast_cover", image);
+			localStorage.setItem("podcast_nouveau", 'oui');
+			$('.songArtist').html(text);
+			$('.songTitle').html(title);
+			$('.songCover').attr('src',image);
+			localStorage.setItem("player", 'stop');
+		  //localStorage.setItem("player", "play");
+	  }
+
+		
 	  
-	  
-	  
-	 
-	$('ion-footer').animate({'margin-bottom': '0px' }, 200);
-	$('.songArtist').html(text);
-	$('.songTitle').html(title);
-	$('.songCover').attr('src',image);								
-  	this.openPlayer();
+  		this.openPlayer();
   }
   
 		

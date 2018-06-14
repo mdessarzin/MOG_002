@@ -114,16 +114,18 @@ typeplayer: any;
         }
         else
         {
-			this._player.playProvider();
+						
+			
+			//this._player.pauseProvider();
+		//	this._player.playProvider();
 			this._player.stream.getCurrentPosition().then((curpos) => {
-				console.log(curpos);
+				console.log('Player A '+curpos);
 				this.positions = curpos;
-
 			});					
 			
 			this.timingseek = setInterval(() => {      
 				this._player.stream.getCurrentPosition().then((curpos) => {
-					console.log(curpos);
+					console.log('Player '+curpos);
 					this.positions = curpos;
 				});					
 			}, 1000);
@@ -137,10 +139,27 @@ typeplayer: any;
 			//$('.songTitle').html(localStorage.podcast_category);
 			$('.songCover').attr('src',localStorage.podcast_cover);
 			$('#coverPlayer').attr('src',localStorage.podcast_cover);
-        }
+			console.log('Nouveau son? '+localStorage.podcast_nouveau);
+			if(localStorage.podcast_nouveau == 'oui'){
+			//	this.startAudio();
+				localStorage.setItem("podcast_nouveau", 'non');
+				this._player.playProvider();
+			}
 
+				if(localStorage.player == 'play'){
+					console.log('Etat PLAY');
+						$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+				}
+				else{
+								console.log('Etat STOP');
+				this._player.playProvider();
+
+						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+				}
+		}
 	  	  	let self = this;
-	  		
+	  		this.durations = this._player.stream.getDuration();  
+		
   }
 
 	startVideo() {
@@ -165,6 +184,9 @@ typeplayer: any;
 	private dismiss() {
 			  if (this.checklive) {
 			clearInterval(this.checklive);
+				  if (this.timingseek) {
+					clearInterval(this.timingseek);
+				}
 		}
 
 		this.viewCtrl.dismiss();
@@ -230,31 +252,31 @@ typeplayer: any;
 
 					this.timingseek = setInterval(() => {      
 						this._player.stream.getCurrentPosition().then((curpos) => {
-							console.log(curpos);
+							console.log('lecture'+curpos);
 							this.positions = curpos;
 						});					
 					}, 1000);
 					this.durations = this._player.stream.getDuration();  
-		}
-			
-		$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-		//$('.btPlayer').html('<ion-spinner name="crescent"></ion-spinner>');
+				}
 
-		this.onplaying = '1';
-		console.log('Play Button clicked');
-		if(localStorage.type_player == 'live'){
-			this._player.playerconfigProvider();
-		}
-		else {
-			//this.durations = this._player.stream.getDuration();  
-		}
-		this._player.playProvider();
+
+				this.onplaying = '1';
+				console.log('Play Button clicked');
+				if(localStorage.type_player == 'live'){
+					this._player.playerconfigProvider();
+				}
+				else {
+					//this.durations = this._player.stream.getDuration();  
+				}
+				this._player.playProvider();
 
 		}
 	}
 	
 	
 	ionViewDidLoad() {
+		
+		console.log('ETAT AU DECLANCHEMENT - '+ localStorage.player);
 		
 		this._player.stream.getCurrentPosition().then((curpos) => {
 					console.log('chargement');
@@ -266,19 +288,28 @@ typeplayer: any;
 							$('.playerEtat_1').show();
 							$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 					}
+			else
+				{
+								$('.btPlayer').hide();
+			$('.loadingPlayer').show();
+			$('.playerEtat_0').hide();
+			$('.playerEtat_1').hide();
+			$('.playerEtat_2').show();
+
+				}
 				});
 		
 		
  if(localStorage.player == 'play'){
 	   // this.buttonIcon = "ios-pause";
-		//$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+		$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 		this.onplaying = '1';
 
 	}
 	else
 	{
 		//this.buttonIcon = "ios-play";
-		//$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+		$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
 		this.onplaying = '0';
 	}
 
