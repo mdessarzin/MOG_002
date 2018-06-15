@@ -333,7 +333,7 @@ typeplayer: any;
 
 	});
 console.log('ionViewDidLoad PlayerPage');
-		  }, 1000);
+		  }, 100);
 }
 
 		goLive() { 
