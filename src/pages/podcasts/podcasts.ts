@@ -139,10 +139,8 @@ update(refresher) {
     	modal.present();   
   }
   
-		
-	
-	
-	
+
+
 ionViewDidLoad() {
 
 		if(localStorage.player == 'play'){

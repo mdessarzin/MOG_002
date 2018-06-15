@@ -63,7 +63,9 @@ typeplayer: any;
 	
 
   ngAfterViewInit() {	  
-	  
+	  setTimeout(() => {
+
+			  
 	  
 	  setTimeout(() => {
 						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
@@ -159,7 +161,7 @@ typeplayer: any;
 		}
 	  	  	let self = this;
 	  		this.durations = this._player.stream.getDuration();  
-		
+		},100);
   }
 
 	startVideo() {
@@ -276,8 +278,11 @@ typeplayer: any;
 	
 	ionViewDidLoad() {
 		
+		
 		console.log('ETAT AU DECLANCHEMENT - '+ localStorage.player);
 		
+	  setTimeout(() => {
+
 		this._player.stream.getCurrentPosition().then((curpos) => {
 					console.log('chargement');
 					if(curpos>0){
@@ -328,6 +333,7 @@ typeplayer: any;
 
 	});
 console.log('ionViewDidLoad PlayerPage');
+		  }, 1000);
 }
 
 		goLive() { 
