@@ -161,6 +161,7 @@ typeplayer: any;
 		}
 	  	  	let self = this;
 	  		this.durations = this._player.stream.getDuration();  
+		  $('.playerinfos').fadeIn();
 		},400);
   }
 
