@@ -134,10 +134,9 @@ update(refresher) {
 			localStorage.setItem("player", 'stop');
 		  //localStorage.setItem("player", "play");
 	  }
-
 		
-	  
-  		this.openPlayer();
+       let modal = this.modalCtrl.create(PlayerPage);
+    	modal.present();   
   }
   
 		

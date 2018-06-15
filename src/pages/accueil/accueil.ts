@@ -10,7 +10,6 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
-import { CordovaAudioPlayerService } from '../../providers/streaming/streaming';
 
 
 //import {Http, Response} from "@angular/http";
