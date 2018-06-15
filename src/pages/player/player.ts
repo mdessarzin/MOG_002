@@ -161,7 +161,7 @@ typeplayer: any;
 		}
 	  	  	let self = this;
 	  		this.durations = this._player.stream.getDuration();  
-		},500);
+		},200);
   }
 
 	startVideo() {
