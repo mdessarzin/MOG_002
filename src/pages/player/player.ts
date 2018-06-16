@@ -82,7 +82,7 @@ typeplayer: any;
 							  }
 
 							});
-						}, 0);
+						}, 5000);
 	  
 			this.checklive = setInterval(() => {      
 				  
