@@ -211,7 +211,9 @@ private showDetails(id,title,link){
         });
 }
 	
-	
+private tt(){
+	alert('t');
+}	
 private openPlayer(){
         //console.log(this.login);
        let modal = this.modalCtrl.create(PlayerPage); //PlayerPage
