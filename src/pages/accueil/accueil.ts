@@ -95,7 +95,7 @@ update(refresher) {
 								}
 			});
 		  
-									$.get( "https://www.lfm.ch/cache/728x90.html", function( data ) {
+									$.get( "https://www.lfm.ch/cache/728x90_.html", function( data ) {
   $( ".result" ).html( data );
 });
 
