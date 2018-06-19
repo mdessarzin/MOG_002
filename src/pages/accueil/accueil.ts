@@ -113,6 +113,14 @@ update(refresher) {
   }	
 	
 
+	
+	ngAfterViewInit() {
+  var s = document.createElement("script");
+  s.type = "text/javascript";
+  s.src = "http://www3.smartadserver.com/ac?out=js&nwid=1099&siteid=59283&pgname=standard&fmtid=26073&tgt=[sas_target]&visit=m&tmstp=[timestamp]&clcturl=[countgo]";
+  this.elementRef.nativeElement.appendChild(s);
+}
+	
 ionViewDidLoad() {
 
 
