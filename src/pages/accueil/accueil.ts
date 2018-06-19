@@ -92,8 +92,15 @@ update(refresher) {
 									infiniteScroll.complete();
 								}
 			});
+		  
+
 
 	  }	
+
+	test(){
+		alert('i');
+	}
+	
 	
  loadMore(infiniteScroll) {
     this.pagination += 1;
