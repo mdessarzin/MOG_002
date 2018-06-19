@@ -97,9 +97,6 @@ update(refresher) {
 
 	  }	
 
-	test(){
-		alert('i');
-	}
 	
 	
  loadMore(infiniteScroll) {
@@ -214,7 +211,7 @@ private showDetails(id,title,link){
         });
 }
 	
-
+	
 private openPlayer(){
         //console.log(this.login);
        let modal = this.modalCtrl.create(PlayerPage); //PlayerPage
