@@ -86,10 +86,7 @@ update(refresher) {
 								for(let i of data){
 									this.posts.push(i);
 
-									$.get( "https://www.lfm.ch/cache/728x90.html", function( data ) {
-  $( ".result" ).html( data );
-  alert( "Load was performed." );
-});
+
 
 								}				  
 							  this.postsLoading = '1';
@@ -98,7 +95,9 @@ update(refresher) {
 								}
 			});
 		  
-
+									$.get( "https://www.lfm.ch/cache/728x90.html", function( data ) {
+  $( ".result" ).html( data );
+});
 
 	  }	
 
