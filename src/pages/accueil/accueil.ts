@@ -57,7 +57,7 @@ export class AccueilPage {
 		 public plt: Platform,
 		//private ga: GoogleAnalytics
 	){
-		this.loadData();			
+		this.loadData();	
   }
 
 	
@@ -85,6 +85,7 @@ update(refresher) {
 
 								for(let i of data){
 									this.posts.push(i);
+
 
 								}				  
 							  this.postsLoading = '1';
@@ -211,9 +212,7 @@ private showDetails(id,title,link){
         });
 }
 	
-private tt(){
-	alert('t');
-}	
+
 private openPlayer(){
         //console.log(this.login);
        let modal = this.modalCtrl.create(PlayerPage); //PlayerPage
