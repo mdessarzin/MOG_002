@@ -162,7 +162,7 @@ ionViewDidLoad() {
 	
 private openAds(url){
 	alert('ok');
-	//const browser = this.iab.create(url);
+	this.iab.create(url);
 
 }	
 
