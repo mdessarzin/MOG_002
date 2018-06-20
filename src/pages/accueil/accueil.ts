@@ -10,7 +10,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
-import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 //import {Http, Response} from "@angular/http";
 //import {Observable} from 'rxjs/Rx';
@@ -44,23 +44,7 @@ export class AccueilPage {
 	pagination: number = 1;
 	maximumPages = 10;
 	posts: Array<any> = [];
-options : InAppBrowserOptions = {
-    location : 'yes',//Or 'no' 
-    hidden : 'no', //Or  'yes'
-    clearcache : 'yes',
-    clearsessioncache : 'yes',
-    zoom : 'yes',//Android only ,shows browser zoom controls 
-    hardwareback : 'yes',
-    mediaPlaybackRequiresUserAction : 'no',
-    shouldPauseOnSuspend : 'no', //Android only 
-    closebuttoncaption : 'Close', //iOS only
-    disallowoverscroll : 'no', //iOS only 
-    toolbar : 'yes', //iOS only 
-    enableViewportScale : 'no', //iOS only 
-    allowInlineMediaPlayback : 'no',//iOS only 
-    presentationstyle : 'pagesheet',//iOS only 
-    fullscreen : 'yes',//Windows only    
-};
+
   constructor(
 		public navCtrl: NavController,
 		public _player: AudioStreamProvider,
@@ -70,7 +54,7 @@ options : InAppBrowserOptions = {
 		 public modalCtrl: ModalController,
 		 public viewCtrl: ViewController,
 		 public plt: Platform,
-		 private theInAppBrowser: InAppBrowser
+		 private iab: InAppBrowser
 		//private ga: GoogleAnalytics
 	){
 		this.loadData();	
@@ -177,7 +161,8 @@ ionViewDidLoad() {
 	
 	
 openAds(url){
-	window.open(url, '_system');
+	const browser = this.iab.create(url);
+
 }	
 
 
