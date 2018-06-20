@@ -86,9 +86,6 @@ update(refresher) {
 								for(let i of data){
 									this.posts.push(i);
 
-									$.get( "https://www.lfm.ch/cache/728x90_.html", function( data ) {
-  $( ".result" ).html( data );
-});
 
 								}				  
 							  this.postsLoading = '1';
@@ -119,11 +116,7 @@ update(refresher) {
 }
 	
 ionViewDidLoad() {
-	
-	  var s = document.createElement("script");
-  s.type = "text/javascript";
-  s.src = "https://www3.smartadserver.com/ac?out=js&nwid=1099&siteid=59283&pgname=standard&fmtid=26073&tgt=[sas_target]&visit=m&tmstp=[timestamp]&clcturl=[countgo]";
-		document.body.appendChild(s);
+
 	
 	  if(localStorage.type_player == 'live'){
         }
