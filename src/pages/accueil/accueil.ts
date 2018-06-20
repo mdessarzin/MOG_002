@@ -160,8 +160,9 @@ ionViewDidLoad() {
 	
 	
 	
-openAds(url){
-	const browser = this.iab.create(url);
+private openAds(url){
+	alert('ok');
+	//const browser = this.iab.create(url);
 
 }	
 
