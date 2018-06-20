@@ -15,7 +15,6 @@ import { ContactezNousPage } from '../pages/contactez-nous/contactez-nous';
 import { BlogPage } from '../pages/blog/blog';
 import { PlayerpopupPage } from '../pages/playerpopup/playerpopup';
 import { ContenupagePage } from '../pages/contenupage/contenupage';
-import { ThemeableBrowser } from '@ionic-native/themeable-browser';
 
 import { ScrollHideDirective } from '../directives/scroll-hide/scroll-hide';
 import { IframeAutoHeightDirective } from '../directives/iframeautoheight/iframeautoheight';
@@ -25,12 +24,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { MusicControls } from '@ionic-native/music-controls';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { OneSignal } from '@ionic-native/onesignal';
 import { Observable } from 'rxjs/Rx';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { Media, MediaObject } from '@ionic-native/media';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 localStorage.setItem("player", "stop");
@@ -119,8 +118,8 @@ PlayerPlaylistPage,
 	  MusicControls,
 	  OneSignal,
 	      Media,
-	      ThemeableBrowser,
-    {provide: ErrorHandler, useClass: MyErrorHandler}
+InAppBrowser,
+	  {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
 export class AppModule {}

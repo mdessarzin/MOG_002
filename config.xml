@@ -3,7 +3,7 @@
     <name>Radio Lac</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.1.164:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
@@ -56,7 +56,6 @@
         <allow-navigation href="http://*/*" />
         <allow-navigation href="https://*/*" />
         <allow-navigation href="data:*" />
-		<allow-navigation href="*" />
         <config-file parent="UIBackgroundModes" target="*-Info.plist">
             <array>
                 <string>audio</string>
@@ -126,4 +125,5 @@
     <engine name="browser" spec="5.0.3" />
     <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
 </widget>

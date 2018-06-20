@@ -10,6 +10,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 //import {Http, Response} from "@angular/http";
@@ -55,6 +56,7 @@ export class AccueilPage {
 		 public modalCtrl: ModalController,
 		 public viewCtrl: ViewController,
 		 public plt: Platform,
+		 private theInAppBrowser: InAppBrowser
 		//private ga: GoogleAnalytics
 	){
 		this.loadData();	
@@ -219,6 +221,21 @@ private showDetails(id,title,link){
            
         });
 }
+	
+	
+public openWithSystemBrowser(url : string){
+    let target = "_system";
+    this.theInAppBrowser.create(url,target,this.options);
+}
+public openWithInAppBrowser(url : string){
+    let target = "_blank";
+    this.theInAppBrowser.create(url,target,this.options);
+}
+public openWithCordovaBrowser(url : string){
+    let target = "_self";
+    this.theInAppBrowser.create(url,target,this.options);
+}  
+
 	
 
 private openPlayer(){
