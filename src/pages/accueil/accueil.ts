@@ -160,7 +160,9 @@ ionViewDidLoad() {
 	
 	
 	
-	
+openAds(url){
+	window.open(url, '_system');
+}	
 
 
 	
