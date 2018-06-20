@@ -12,12 +12,10 @@ import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
-
 //import {Http, Response} from "@angular/http";
 //import {Observable} from 'rxjs/Rx';
 //import 'rxjs/add/operator/catch';
 //import 'rxjs/Rx';
-
 @Component({
   selector: 'page-accueil',
   templateUrl: 'accueil.html'
