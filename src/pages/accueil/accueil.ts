@@ -11,6 +11,8 @@ import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
 import { BrowserTab } from '@ionic-native/browser-tab';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 //import {Http, Response} from "@angular/http";
 //import {Observable} from 'rxjs/Rx';
@@ -54,7 +56,8 @@ export class AccueilPage {
 		 public modalCtrl: ModalController,
 		 public viewCtrl: ViewController,
 		 public plt: Platform,
-		 private browserTab: BrowserTab
+		 private browserTab: BrowserTab,
+		 private iab: InAppBrowser
 		//private ga: GoogleAnalytics
 	){
 		this.loadData();	
