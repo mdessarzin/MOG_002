@@ -41,6 +41,7 @@
     "cd": "0.3.3",
     "cordova-android": "7.0.0",
     "cordova-browser": "5.0.3",
+    "cordova-ios": "4.5.4",
     "cordova-plugin-advanced-http": "^1.11.1",
     "cordova-plugin-browsertab": "^0.2.0",
     "cordova-plugin-compat": "^1.2.0",
@@ -105,7 +106,8 @@
     },
     "platforms": [
       "browser",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
