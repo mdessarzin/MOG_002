@@ -46,7 +46,7 @@ export class AccueilPage {
 	pagination: number = 1;
 	maximumPages = 10;
 	posts: Array<any> = [];
-
+test:any;
   constructor(
 		public navCtrl: NavController,
 		public _player: AudioStreamProvider,
@@ -61,6 +61,7 @@ export class AccueilPage {
 		//private ga: GoogleAnalytics
 	){
 		this.loadData();	
+			this.test = 2;
   }
 
 	
