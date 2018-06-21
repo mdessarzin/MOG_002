@@ -21,6 +21,7 @@
     "@angular/http": "5.0.3",
     "@angular/platform-browser": "5.0.3",
     "@angular/platform-browser-dynamic": "5.0.3",
+    "@ionic-native/browser-tab": "^4.7.0",
     "@ionic-native/core": "4.4.0",
     "@ionic-native/file": "^4.7.0",
     "@ionic-native/file-transfer": "^4.7.0",
@@ -40,8 +41,9 @@
     "cd": "0.3.3",
     "cordova-android": "7.0.0",
     "cordova-browser": "5.0.3",
-    "cordova-ios": "4.5.4",
     "cordova-plugin-advanced-http": "^1.11.1",
+    "cordova-plugin-browsertab": "^0.2.0",
+    "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^1.1.7",
     "cordova-plugin-file": "^6.0.1",
     "cordova-plugin-file-transfer": "^1.7.1",
@@ -87,7 +89,7 @@
       "cordova-plugin-ionic": {
         "APP_ID": "813edd26",
         "CHANNEL_NAME": "Release",
-        "UPDATE_METHOD": "none",
+        "UPDATE_METHOD": "auto",
         "WARN_DEBUG": "false",
         "UPDATE_API": "https://api.ionicjs.com",
         "MAX_STORE": "1"
@@ -98,11 +100,11 @@
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-advanced-http": {},
       "onesignal-cordova-plugin": {},
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-browsertab": {}
     },
     "platforms": [
       "browser",
-      "ios",
       "android"
     ]
   }

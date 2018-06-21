@@ -10,7 +10,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
-import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { BrowserTab } from '@ionic-native/browser-tab';
 
 //import {Http, Response} from "@angular/http";
 //import {Observable} from 'rxjs/Rx';
@@ -54,7 +54,7 @@ export class AccueilPage {
 		 public modalCtrl: ModalController,
 		 public viewCtrl: ViewController,
 		 public plt: Platform,
-		 private iab: InAppBrowser
+		 private browserTab: BrowserTab
 		//private ga: GoogleAnalytics
 	){
 		this.loadData();	
@@ -161,8 +161,20 @@ ionViewDidLoad() {
 	
 	
 private openAds(url){
-	alert('ok');
-	this.iab.create(url);
+this.browserTab.isAvailable()
+        .then((isAvailable: boolean) => {
+
+        if(isAvailable) {
+
+            this.browserTab.openUrl(url);
+
+        } else {
+
+            // if custom tabs are not available you may  use InAppBrowser
+alert('erreur');
+        }
+
+        });        
 
 }	
 
