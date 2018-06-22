@@ -126,11 +126,7 @@ ionViewDidLoad() {
 	  //			interstitial: '947330/29216'
 
 	
-	
-		(<any>window).SmartAdServer.prepareInterstitial( {
-			adId: '947330/29216', 
-			autoShow: true
-		});
+
 	
 	
 	  if(localStorage.type_player == 'live'){

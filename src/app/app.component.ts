@@ -109,11 +109,17 @@ export class MyApp {
       });
 			
 			
-					 (<any>window).SmartAdServer.createBanner( {
+	(<any>window).SmartAdServer.createBanner( {
 		adId: '947330/33546', 
 		autoShow: true
 	  });
 			
+			
+				
+		(<any>window).SmartAdServer.prepareInterstitial( {
+			adId: '947330/29216', 
+			autoShow: true
+		});
 			
 			
 		});
