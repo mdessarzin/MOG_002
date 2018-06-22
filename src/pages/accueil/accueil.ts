@@ -166,6 +166,12 @@ ionViewDidLoad() {
 					}
 
 		});
+	
+		(<any>window).SmartAdServer.createBanner( {
+		adId: '947330/33546', 
+		autoShow: true
+	  });
+			
 
 	}
 	

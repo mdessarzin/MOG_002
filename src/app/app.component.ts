@@ -86,8 +86,8 @@ export class MyApp {
 
 	initializeApp() {
 		this.platform.ready().then(() => {
-			
-			
+						
+
 			this.statusBar.styleLightContent();
 			this.splashScreen.hide();
 
@@ -108,11 +108,7 @@ export class MyApp {
           autoShow: true // auto show interstitial ad when loaded, set to false if prepare/show
       });
 			
-			
-	(<any>window).SmartAdServer.createBanner( {
-		adId: '947330/33546', 
-		autoShow: true
-	  });
+
 			
 			
 				
