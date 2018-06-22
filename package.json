@@ -46,6 +46,7 @@
     "cordova-plugin-browsertab": "^0.2.0",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-extension": "^1.5.4",
     "cordova-plugin-file": "^6.0.1",
     "cordova-plugin-file-transfer": "^1.7.1",
     "cordova-plugin-google-analytics": "^1.8.3",
@@ -54,6 +55,7 @@
     "cordova-plugin-ionic-keyboard": "^2.1.2",
     "cordova-plugin-media": "^5.0.2",
     "cordova-plugin-music-controls": "^2.1.4",
+    "cordova-plugin-smart-adserver": "git+https://github.com/mondosports/cordova-smart-adserver.git",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
@@ -102,7 +104,8 @@
       "cordova-plugin-advanced-http": {},
       "onesignal-cordova-plugin": {},
       "cordova-plugin-inappbrowser": {},
-      "cordova-plugin-browsertab": {}
+      "cordova-plugin-browsertab": {},
+      "cordova-plugin-smart-adserver": {}
     },
     "platforms": [
       "browser",

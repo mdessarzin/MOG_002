@@ -126,6 +126,7 @@
     </plugin>
     <allow-navigation href="http://192.168.1.133:8100" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <plugin name="cordova-plugin-smart-adserver" spec="https://github.com/mondosports/cordova-smart-adserver.git" />
     <engine name="browser" spec="5.0.3" />
     <engine name="android" spec="7.0.0" />
     <engine name="ios" spec="4.5.4" />

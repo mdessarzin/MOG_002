@@ -113,11 +113,33 @@ update(refresher) {
 
 	
 	ngAfterViewInit() {
+		
+
 
 }
 	
 ionViewDidLoad() {
 
+	
+		(<any>window).SmartAdServer.setOptions({
+          siteId: 241727,
+          baseUrl: 'http://mobile.smartadserver.com',
+          position: (<any>window).SmartAdServer.AD_POSITION.BOTTOM_CENTER,
+                // offsetTopBar: false, // avoid overlapped by status bar, for iOS7+
+          bgColor: 'black', // color name, or '#RRGGBB'
+          isTesting: false, // set to true, to receiving test ad for testing purpose
+          autoShow: true // auto show interstitial ad when loaded, set to false if prepare/show
+      });
+	  
+	  //			interstitial: '947330/29216'
+
+	
+	
+	(<any>window).SmartAdServer.prepareInterstitial( {
+	adId: '947330/29216', 
+	autoShow: true
+} );
+	
 	
 	  if(localStorage.type_player == 'live'){
         }
@@ -160,26 +182,6 @@ ionViewDidLoad() {
 	}
 	
 	
-	
-private openAds(url){
-this.browserTab.isAvailable()
-        .then((isAvailable: boolean) => {
-
-        if(isAvailable) {
-
-            this.browserTab.openUrl(url);
-
-        } else {
-
-            // if custom tabs are not available you may  use InAppBrowser
-alert('erreur');
-        }
-
-        });        
-
-}	
-
-
 	
 startAudio() {      
   // if (this.plt.is('cordova')) {
