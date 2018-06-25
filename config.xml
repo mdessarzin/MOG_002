@@ -28,6 +28,11 @@
     <allow-navigation href="http://localhost:8080/*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <hook src="hooks/patch-android-studio-check.js" type="before_plugin_install" />
+        <hook src="hooks/patch-android-studio-check.js" type="before_plugin_add" />
+        <hook src="hooks/patch-android-studio-check.js" type="before_build" />
+        <hook src="hooks/patch-android-studio-check.js" type="before_run" />
+        <hook src="hooks/patch-android-studio-check.js" type="before_plugin_rm" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
@@ -109,13 +114,11 @@
     </plugin>
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.4.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.1.2" />
-    <plugin name="cordova-sqlite-storage" spec="^2.3.2" />
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <plugin name="cordova-plugin-advanced-http" spec="^1.11.1" />
     <plugin name="onesignal-cordova-plugin" spec="^2.4.1" />
     <allow-navigation href="http://192.168.43.97:8100" />
-    <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
     <plugin name="cordova-plugin-ionic" spec="^3.1.3">
         <variable name="APP_ID" value="813edd26" />
         <variable name="CHANNEL_NAME" value="Release" />
@@ -125,8 +128,7 @@
         <variable name="MAX_STORE" value="1" />
     </plugin>
     <allow-navigation href="http://192.168.1.133:8100" />
-    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
-    <plugin name="cordova-plugin-smart-adserver" spec="https://github.com/mondosports/cordova-smart-adserver.git" />
     <engine name="browser" spec="5.0.3" />
     <engine name="ios" spec="4.5.4" />
+    <engine name="android" spec="7.0.0" />
 </widget>
