@@ -59,13 +59,7 @@ test:any;
 	){
 		this.loadData();	
 			this.test = 2;
-			
-		/*
-			(<any>window).SmartAdServer.createBanner( {
-			adId: '947330/33546', 
-			autoShow: true
-		});
-		*/
+	
   }
 
 	
