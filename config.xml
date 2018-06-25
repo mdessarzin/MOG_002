@@ -128,6 +128,8 @@
         <variable name="MAX_STORE" value="1" />
     </plugin>
     <allow-navigation href="http://192.168.1.133:8100" />
+    <plugin name="cordova-plugin-admob-free" spec="^0.17.2" />
     <engine name="browser" spec="5.0.3" />
     <engine name="ios" spec="4.5.4" />
+    <engine name="android" spec="7.0.0" />
 </widget>

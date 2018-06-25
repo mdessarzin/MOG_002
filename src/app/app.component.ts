@@ -33,6 +33,7 @@ import { ImageLoaderConfig } from 'ionic-image-loader';
 import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
 import { ContenupagePage } from '../pages/contenupage/contenupage';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 
 @Component({
 	templateUrl: 'app.html'
@@ -69,7 +70,8 @@ export class MyApp {
 				private menuCtrl: MenuController,
 				private oneSignal: OneSignal,
 				public _player: AudioStreamProvider,
-				private socialSharing: SocialSharing
+				private socialSharing: SocialSharing,
+				private admobFree : AdMobFree
 				) {
 		this._player.playerconfigProvider();
 		//this._player.playProvider();
@@ -80,9 +82,25 @@ export class MyApp {
 		localStorage.setItem("podcast_url", '');
 		localStorage.setItem("player", "stop");
 
-		
+		this.showAdmobBannerAds();
 		
 	}
+	
+	showAdmobBannerAds(){
+    const bannerConfig: AdMobFreeBannerConfig = {
+        isTesting: true,
+        autoShow: true
+    };
+    this.admobFree.banner.config(bannerConfig);
+
+    this.admobFree.banner.prepare()
+    .then(() => {
+        // banner Ad is ready
+        // if we set autoShow to false, then we will need to call the show method here
+    })
+    .catch(e => console.log(e));    
+    }      
+
 
 	initializeApp() {
 		this.platform.ready().then(() => {

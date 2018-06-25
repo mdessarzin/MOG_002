@@ -29,6 +29,8 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { Observable } from 'rxjs/Rx';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { Media, MediaObject } from '@ionic-native/media';
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
+
 
 localStorage.setItem("player", "stop");
 localStorage.setItem("firstclickonplayer", "oui");
@@ -116,6 +118,7 @@ PlayerPlaylistPage,
 	  MusicControls,
 	  OneSignal,
 	      Media,
+	   AdMobFree,
 	  {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
