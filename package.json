@@ -65,8 +65,7 @@
     "onesignal-cordova-plugin": "^2.4.1",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.18",
-    "com.rjfun.cordova.smartadserver": "./plugins/com.rjfun.cordova.smartadserver"
+    "zone.js": "0.8.18"
   },
   "devDependencies": {
     "@ionic/app-scripts": "^3.1.10",
@@ -97,8 +96,7 @@
       "cordova-plugin-file": {},
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-advanced-http": {},
-      "onesignal-cordova-plugin": {},
-      "com.rjfun.cordova.smartadserver": {}
+      "onesignal-cordova-plugin": {}
     },
     "platforms": [
       "browser",
