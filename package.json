@@ -98,7 +98,8 @@
       "cordova-plugin-file": {},
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-advanced-http": {},
-      "onesignal-cordova-plugin": {}
+      "onesignal-cordova-plugin": {},
+      "cordova-plugin-smart-adserver": {}
     },
     "platforms": [
       "browser",
