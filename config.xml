@@ -128,8 +128,7 @@
         <variable name="MAX_STORE" value="1" />
     </plugin>
     <allow-navigation href="http://192.168.1.133:8100" />
-    <plugin name="cordova-plugin-smart-adserver" spec="https://github.com/mondosports/cordova-smart-adserver.git" />
+    <plugin name="com.rjfun.cordova.smartadserver" spec="./plugins/com.rjfun.cordova.smartadserver" />
     <engine name="browser" spec="5.0.3" />
     <engine name="ios" spec="4.5.4" />
-    <engine name="android" spec="7.0.0" />
 </widget>

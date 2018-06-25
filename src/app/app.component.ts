@@ -97,8 +97,8 @@ export class MyApp {
 				this.handlerNotifications();
 			}
 			
-			
-					(<any>window).SmartAdServer.setOptions({
+	/*		
+	(<any>window).SmartAdServer.setOptions({
           siteId: 241727,
           baseUrl: 'http://mobile.smartadserver.com',
           position: (<any>window).SmartAdServer.AD_POSITION.BOTTOM_CENTER,
@@ -117,7 +117,7 @@ export class MyApp {
 			autoShow: true
 		});
 			
-			
+	*/		
 		});
 		
 

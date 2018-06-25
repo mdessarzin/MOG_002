@@ -52,8 +52,6 @@
     "cordova-plugin-ionic-keyboard": "^2.1.2",
     "cordova-plugin-media": "^5.0.2",
     "cordova-plugin-music-controls": "^2.1.4",
-    "cordova-plugin-smart-adserver": "git+https://github.com/mondosports/cordova-smart-adserver.git",
-    "cordova-plugin-smartadserver": "git+https://github.com/mediaonegroup/smartadserver.git",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
@@ -67,7 +65,8 @@
     "onesignal-cordova-plugin": "^2.4.1",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.18"
+    "zone.js": "0.8.18",
+    "com.rjfun.cordova.smartadserver": "./plugins/com.rjfun.cordova.smartadserver"
   },
   "devDependencies": {
     "@ionic/app-scripts": "^3.1.10",
@@ -99,12 +98,11 @@
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-advanced-http": {},
       "onesignal-cordova-plugin": {},
-      "cordova-plugin-smart-adserver": {}
+      "com.rjfun.cordova.smartadserver": {}
     },
     "platforms": [
       "browser",
-      "ios",
-      "android"
+      "ios"
     ]
   }
 }
