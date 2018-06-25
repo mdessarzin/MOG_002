@@ -88,7 +88,7 @@ export class MyApp {
 	
 	showAdmobBannerAds(){
     const bannerConfig: AdMobFreeBannerConfig = {
-        isTesting: false,
+        isTesting: true,
         autoShow: true,
 		id: 'ca-app-pub-1323783359562530/4316484204'
     };
