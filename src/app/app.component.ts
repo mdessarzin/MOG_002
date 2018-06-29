@@ -100,36 +100,7 @@ export class MyApp {
 				  autoShow: true // auto show interstitial ad when loaded, set to false if prepare/show
 			  });
 
-			  //Leaderboard
-			 (<any>window).SmartAdServer.createBanner( {
-				adId: '947330/33546', 
-				autoShow: true,
-				 adSize: 'FULL_BANNER'
-			  });	
 
-			//Interstitial
-			(<any>window).SmartAdServer.prepareInterstitial( {
-				adId: '947330/29216', 
-				autoShow: true
-			});
-		
-		
-		/*
-    const bannerConfig: AdMobFreeBannerConfig = {
-        isTesting: true,
-        autoShow: true,
-		id: 'ca-app-pub-1323783359562530/4316484204'
-    };
-    this.admobFree.banner.config(bannerConfig);
-
-    this.admobFree.banner.prepare()
-    .then(() => {
-        // banner Ad is ready
-        // if we set autoShow to false, then we will need to call the show method here
-    })
-    .catch(e => console.log(e));    
-
-*/
 }
 
 
