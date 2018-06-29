@@ -87,6 +87,32 @@ export class MyApp {
 	}
 	
 	showAdmobBannerAds(){
+		
+		
+		 (<any>window).SmartAdServer.setOptions({
+				  siteId: 241727,
+				  baseUrl: 'http://mobile.smartadserver.com',
+				  position: (<any>window).SmartAdServer.AD_POSITION.BOTTOM_CENTER,
+						// offsetTopBar: false, // avoid overlapped by status bar, for iOS7+
+				  bgColor: 'black', // color name, or '#RRGGBB'
+				  isTesting: false, // set to true, to receiving test ad for testing purpose
+				  autoShow: true // auto show interstitial ad when loaded, set to false if prepare/show
+			  });
+
+			  //Leaderboard
+			 (<any>window).SmartAdServer.createBanner( {
+				adId: '947330/33546', 
+				autoShow: true
+			  });	
+
+			//Interstitial
+			(<any>window).SmartAdServer.prepareInterstitial( {
+				adId: '947330/29216', 
+				autoShow: true
+			});
+		
+		
+		/*
     const bannerConfig: AdMobFreeBannerConfig = {
         isTesting: true,
         autoShow: true,
@@ -100,7 +126,10 @@ export class MyApp {
         // if we set autoShow to false, then we will need to call the show method here
     })
     .catch(e => console.log(e));    
-    }      
+
+*/
+}
+
 
 
 	initializeApp() {
