@@ -119,11 +119,6 @@ update(refresher) {
      			height: (this.platform.width()*0.15625)*ratio
 			  });	
 
-					//Interstitial
-			(<any>window).SmartAdServer.prepareInterstitial( {
-				adId: '947330/29216', 
-				autoShow: true
-			});
 
 	  }	
 

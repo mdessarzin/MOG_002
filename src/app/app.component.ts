@@ -89,17 +89,25 @@ export class MyApp {
 	
 	showAdmobBannerAds(){
 		
-		
-		 (<any>window).SmartAdServer.setOptions({
+					  //Leaderboard
+		  	let ratio = Math.max(window.devicePixelRatio || 1, 1);
+
+			  (<any>window).SmartAdServer.setOptions({
 				  siteId: 241727,
 				  baseUrl: 'http://mobile.smartadserver.com',
 				  position: (<any>window).SmartAdServer.AD_POSITION.BOTTOM_CENTER,
 						// offsetTopBar: false, // avoid overlapped by status bar, for iOS7+
 				  bgColor: 'black', // color name, or '#RRGGBB'
 				  isTesting: false, // set to true, to receiving test ad for testing purpose
-				  autoShow: true // auto show interstitial ad when loaded, set to false if prepare/show
+				  autoShow: true, // auto show interstitial ad when loaded, set to false if prepare/show
 			  });
 
+			
+					//Interstitial
+			(<any>window).SmartAdServer.prepareInterstitial( {
+				adId: '947330/29216', 
+				autoShow: true
+			});
 
 }
 
