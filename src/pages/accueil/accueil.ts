@@ -102,7 +102,9 @@ update(refresher) {
 			 (<any>window).SmartAdServer.createBanner( {
 				adId: '947330/33546', 
 				autoShow: true,
-				 adSize: 'SMART_BANNER'
+				 adSize: 'CUSTOM',
+  width: 640,	// banner width, if set adSize to 'CUSTOM'
+    height: 100	// banner height, if set adSize to 'CUSTOM'
 			  });
 
 	  }	
