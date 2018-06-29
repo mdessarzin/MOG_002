@@ -78,6 +78,7 @@ export class MyApp {
         //this._player.pauseProvider();
 		this.statusBar.backgroundColorByHexString("#29b7c2");
 		this.initializeApp();	
+		let ratio = Math.max(window.devicePixelRatio || 1, 1);
 		localStorage.setItem("type_player", "live");
 		localStorage.setItem("podcast_url", '');
 		localStorage.setItem("player", "stop");
