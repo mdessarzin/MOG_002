@@ -103,7 +103,7 @@ export class MyApp {
 			 (<any>window).SmartAdServer.createBanner( {
 				adId: '947330/33546', 
 				autoShow: true,
-				 adSize: 'LEADERBOARD'
+				 adSize: 'FULL_BANNER'
 			  });	
 
 			//Interstitial
