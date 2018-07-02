@@ -175,8 +175,8 @@ ionViewDidLoad() {
 				(<any>window).SmartAdServer.createBanner( {
 					adId: '947330/33546', 
 					autoShow: true,
-					width: this.platform.width()*ratio,
-					height: (this.platform.width()*0.15625)*ratio
+					width: this.plt.width()*ratio,
+					height: (this.plt.width()*0.15625)*ratio
 				});	
 				console.log('Platform is ready');
 			});	 
