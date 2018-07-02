@@ -10,7 +10,6 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
-import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 
 
 //import {Http, Response} from "@angular/http";
@@ -55,7 +54,6 @@ test:any;
 		 public modalCtrl: ModalController,
 		 public viewCtrl: ViewController,
 		 public plt: Platform,
-		 private admobFree: AdMobFree,
 public platform: Platform
 		//private ga: GoogleAnalytics
 	){
