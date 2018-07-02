@@ -122,7 +122,7 @@ update(refresher) {
 					width: this.platform.width()*ratio,
 					height: (this.platform.width()*0.15625)*ratio
 				});	
-				console.log(“Platform is ready”);
+				console.log('Platform is ready');
 			});	 
 		  
 
