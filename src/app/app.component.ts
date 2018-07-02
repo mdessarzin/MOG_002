@@ -33,7 +33,6 @@ import { ImageLoaderConfig } from 'ionic-image-loader';
 import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
 import { ContenupagePage } from '../pages/contenupage/contenupage';
 import { SocialSharing } from '@ionic-native/social-sharing';
-import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 
 @Component({
 	templateUrl: 'app.html'
@@ -71,7 +70,6 @@ export class MyApp {
 				private oneSignal: OneSignal,
 				public _player: AudioStreamProvider,
 				private socialSharing: SocialSharing,
-				private admobFree : AdMobFree
 				) {
 		this._player.playerconfigProvider();
 		//this._player.playProvider();
