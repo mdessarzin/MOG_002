@@ -135,13 +135,6 @@ ionViewDidLoad() {
 		});
 
 		
-		
-		 
-	
-	//Chargement du flux JSON
-    
-	this.platform.ready().then(() => {
-				
 				//Leaderboard
 				let ratio = Math.max(window.devicePixelRatio || 1, 1);
 
@@ -161,9 +154,9 @@ ionViewDidLoad() {
 					autoShow: true,
 					width: this.platform.width()*ratio,
 					height: (this.platform.width()*0.15625)*ratio
-				});	
-				console.log('Platform is ready');
-			});	 
+				});			 
+				
+
 	
 		
 	}
