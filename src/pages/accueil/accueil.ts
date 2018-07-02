@@ -202,7 +202,12 @@ ionViewDidLoad() {
 
 	}
 	
-
+	
+ ionViewWillLeave() {
+    console.log("Looks like I'm about to leave :(");
+ 
+// 	(<any>window).SmartAdServer.hideBanner();
+ }
 	
 	
 startAudio() {      
