@@ -87,7 +87,12 @@
 						 
 					 </ion-card>
 
-	<div *ngIf="post.ads != 0" [innerHTML]="post.ads"></div>
+	<div *ngIf="post.ads != 0">				
+<a href="#" (tap)="window.open('http://www.telerik.com/', '_system');">                
+	<img src="{{post.ads_i}}" border="0" alt="" />
+</a>				 
+					 
+					 </div>
 					
 					</ion-col>
 
