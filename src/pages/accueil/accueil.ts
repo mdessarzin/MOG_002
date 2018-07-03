@@ -211,7 +211,7 @@ ionViewDidLoad() {
 	
 	opentest(){
 //		const browser = this.iab.create('https://ionicframework.com/');
-		            window.open("http://www.telerik.com/", "_blank");
+		            window.open("http://www.telerik.com/", "_system");
 
 	}
 	
