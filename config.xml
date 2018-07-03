@@ -5,8 +5,6 @@
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
-    <allow-navigation href="http://*/*" />
-    <allow-navigation href="https://*/*" />
     <allow-intent href="http://*/*" launch-external="yes" />
     <allow-intent href="https://*/*" launch-external="yes" />
     <allow-navigation href="data:*" />
@@ -61,8 +59,6 @@
         <allow-intent href="itms-apps:*" />
         <allow-intent href="http://*/*" launch-external="yes" />
         <allow-intent href="https://*/*" launch-external="yes" />
-        <allow-navigation href="http://*/*" />
-        <allow-navigation href="https://*/*" />
         <allow-navigation href="data:*" />
         <config-file parent="UIBackgroundModes" target="*-Info.plist">
             <array>
