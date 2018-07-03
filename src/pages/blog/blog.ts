@@ -100,7 +100,7 @@ update(refresher) {
 				(<any>window).SmartAdServer.setOptions({
 					siteId: 241727,
 					baseUrl: 'http://mobile.smartadserver.com',
-					position: (<any>window).SmartAdServer.AD_POSITION.TOP_CENTER,
+					position: (<any>window).SmartAdServer.AD_POSITION.BOTTOM_CENTER,
 						// offsetTopBar: false, // avoid overlapped by status bar, for iOS7+
 					bgColor: 'black', // color name, or '#RRGGBB'
 					isTesting: false, // set to true, to receiving test ad for testing purpose
