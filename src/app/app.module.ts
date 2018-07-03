@@ -29,6 +29,7 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { Observable } from 'rxjs/Rx';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { Media, MediaObject } from '@ionic-native/media';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 localStorage.setItem("player", "stop");
@@ -117,6 +118,7 @@ PlayerPlaylistPage,
 	  MusicControls,
 	  OneSignal,
 	      Media,
+	  InAppBrowser,
 	  {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })

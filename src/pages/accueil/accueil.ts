@@ -10,6 +10,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 //import {Http, Response} from "@angular/http";
@@ -54,7 +55,8 @@ test:any;
 		 public modalCtrl: ModalController,
 		 public viewCtrl: ViewController,
 		 public plt: Platform,
-public platform: Platform
+public platform: Platform,
+		 private iab: InAppBrowser
 		//private ga: GoogleAnalytics
 	){
 		this.loadData();	
@@ -206,6 +208,17 @@ ionViewDidLoad() {
  
 // 	(<any>window).SmartAdServer.hideBanner();
  }
+	
+	opentest(){
+		const browser = this.iab.create('https://ionicframework.com/');
+
+browser.executeScript(...);
+
+browser.insertCSS(...);
+browser.on('loadstop').subscribe(event => {
+   browser.insertCSS({ code: "body{color: red;" });
+});
+	}
 	
 	
 startAudio() {      
