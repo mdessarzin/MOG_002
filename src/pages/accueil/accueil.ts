@@ -208,9 +208,9 @@ ionViewDidLoad() {
 // 	(<any>window).SmartAdServer.hideBanner();
  }
 	
-	opentest(){
+	openads(link){
 //		const browser = this.iab.create('https://ionicframework.com/');
-		            window.open("http://www.telerik.com/", "_system");
+		            window.open(link, "_system");
 
 	}
 	
