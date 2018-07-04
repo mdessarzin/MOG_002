@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-blog',
@@ -54,7 +55,8 @@ header: string;
 		 public viewCtrl: ViewController,
 		 public plt: Platform,
 		 public navParams: NavParams,
-		 public platform: Platform
+		 public platform: Platform,
+		 private iab: InAppBrowser
 
 		//private ga: GoogleAnalytics
 	){
