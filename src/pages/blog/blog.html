@@ -89,11 +89,19 @@
 					  </ion-col>
 					 </ion-row>
 				  </ion-card>
+					 
+					 	<div *ngIf="post.ads != 0">				
+<a href="#" (tap)="this.iab.create(post.ads_l, '_blank','location=no,clearsessioncache=yes');">                
+	<img src="http://1x1px.me/FFFFFF-1.png" data-src="{{post.ads_i}}" border="0" alt="" />
+</a>				 
+					 </div>	
+					 
 						</ion-col>
 			</ion-row>
+	 
 		</ion-grid>  
 		  
-		<ion-infinite-scroll (ionInfinite)="loadMore($event)" threshold="50%" loadingSpinner="bubbles" loadingText="Chargement...">
+		<ion-infinite-scroll (ionInfinite)="loadMore($event)" threshold="30%" loadingSpinner="bubbles" loadingText="Chargement...">
     		<ion-infinite-scroll-content></ion-infinite-scroll-content>
   		</ion-infinite-scroll>
 	
