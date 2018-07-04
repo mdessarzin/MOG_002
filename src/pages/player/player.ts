@@ -65,7 +65,7 @@ typeplayer: any;
   ngAfterViewInit() {	  
 	//  setTimeout(() => {
 
-			  
+			 
 	  
 	  setTimeout(() => {
 						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
@@ -112,7 +112,7 @@ typeplayer: any;
 	  if(localStorage.type_player == 'live'){
 			this.titreplayer = 'Direct';
 		  	this._player.loadtitlelive();
-		 	this._player.playProvider();
+		 	//this._player.playProvider();
         }
         else
         {
