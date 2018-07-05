@@ -1,4 +1,4 @@
-import { Component, ViewChild, Injectable, trigger, state, style, animate, transition } from '@angular/core';
+import { Component, ViewChild, Injectable } from '@angular/core';
 
 import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController, ViewController} from 'ionic-angular';
 import { ScrollHideConfig } from '../../directives/scroll-hide/scroll-hide';
@@ -20,14 +20,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 //import 'rxjs/Rx';
 @Component({
   selector: 'page-accueil',
-  templateUrl: 'accueil.html',
-	animations: [
-    trigger('fadeInOut', [
-      state('void', style({ opacity: '0' })),
-      state('*', style({ opacity: '1' })),
-      transition('void <=> *', animate('500ms ease-in'))
-    ])
-  ]
+  templateUrl: 'accueil.html'
 })
 
 export class AccueilPage {
@@ -94,21 +87,19 @@ update(refresher) {
 								  this.posts = [];
 									refresher.complete();
 								}
-								this.postsLoading = '1';
 								for(let i of data){
 
 									  
 
 									
-									 setTimeout(() => {
 
 	this.posts.push(i);
-			  },500);
 
 
 								}
 				
-				
+												this.postsLoading = '1';
+
 							  
 								if (infiniteScroll) {
 									infiniteScroll.complete();
