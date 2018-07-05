@@ -56,11 +56,11 @@
 	</ion-refresher>
  <ion-grid *ngIf='posts' no-padding>
 				<ion-row no-padding> 
-				 <ion-col [@fadeInOut] col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 no-padding *ngFor="let post of posts" >
-					 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;">
+				 <ion-col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 no-padding *ngFor="let post of posts" class="animated fadeInLeft" >
+					 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;" >
 
 							<button no-padding ion-item (click)="showDetails(post.id,post.title,post.link)">
-								<ion-card-content no-padding class="" >
+								<ion-card-content no-padding class="fadeintransition" >
 									<div style="background-color: #f1f1f1; position: relative;">	
 										<span class="card_categorie">{{post.chronique[0]}}</span>				
 										<img data-src="{{post.card}}" style="background-color: #BCBBBB;" />
