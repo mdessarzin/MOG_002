@@ -30,7 +30,7 @@ import { Observable } from 'rxjs/Rx';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { Media, MediaObject } from '@ionic-native/media';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-
+import { ExtendMenuProvider } from '../providers/extend-menu/extend-menu';
 
 localStorage.setItem("player", "stop");
 localStorage.setItem("firstclickonplayer", "oui");
@@ -119,6 +119,7 @@ PlayerPlaylistPage,
 	  OneSignal,
 	      Media,
 	  InAppBrowser,
+	  ExtendMenuProvider,
 	  {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
