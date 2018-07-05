@@ -35,7 +35,7 @@ link: string;
 ) {
 	  
 	   this.title = navParams.get('title');
-
+/*
 	  
 	  setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?clean=true&post_id='+navParams.get('key'))
@@ -55,9 +55,9 @@ link: string;
 
 				});
 			},20);
-	  
+	*/  
 	this.link = navParams.get('link');
-	//this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
+	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 
   }
 	 
