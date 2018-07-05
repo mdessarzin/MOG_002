@@ -13,6 +13,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="whatsapp:*" />
+	<allow-navigation href="https://www.radiolac.ch/*" />
+
     <preference name="ScrollEnabled" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="19" />
@@ -54,6 +56,7 @@
         </config-file>
     </platform>
     <platform name="ios">
+			<allow-navigation href="https://www.radiolac.ch/*" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <allow-intent href="http://*/*" launch-external="yes" />
