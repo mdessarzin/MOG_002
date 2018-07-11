@@ -32,19 +32,28 @@ link: string;
 	posts: Array<any> = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController, public modalCtrl: ModalController, private ga: GoogleAnalytics
-) {
+  constructor(
+		public navCtrl: NavController, 
+		public navParams: NavParams, 
+		private sanitizer: DomSanitizer, 
+		private socialSharing: SocialSharing,
+		public loadingCtrl: LoadingController,
+		public modalCtrl: ModalController,
+		private ga: GoogleAnalytics
+		){
 	  
 	   this.title = navParams.get('title');
 
 	this.link = navParams.get('key');
 	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 	  
-	  		this.ga.startTrackerWithId('UA-104904297-2')
-			  .then(() => {
-				console.log('Google analytics is ready now');
-				this.ga.trackView(this.title);
-				this.ga.trackEvent('Navigation', this.title);
+	this.ga.startTrackerWithId('UA-104904297-2')
+      .then(() => {
+        console.log('Google analytics is ready now');
+        this.ga.trackView(this.title);
+        this.ga.trackEvent('Navigation', this.title);
+      })
+      .catch(e => console.log('Error starting GoogleAnalytics', e));
 
 	  /*
 	  setTimeout(() => {

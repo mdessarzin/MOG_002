@@ -65,7 +65,14 @@ pagination: number = 1;
 			
 		this.title = navParams.get('title');
 			
-
+	this.ga.startTrackerWithId('UA-104904297-2')
+      .then(() => {
+        console.log('Google analytics is ready now');
+        this.ga.trackView(this.title);
+        this.ga.trackEvent('Navigation', this.title);
+      })
+      .catch(e => console.log('Error starting GoogleAnalytics', e));
+			
 			this.loadData();
 
 			

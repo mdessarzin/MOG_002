@@ -60,10 +60,12 @@ typeplayer: any;
 			
 	 this.typeplayer = 'audio';
 	this.ga.startTrackerWithId('UA-104904297-2')
-			  .then(() => {
-				console.log('Google analytics is ready now');
-				this.ga.trackView('Player');
-				this.ga.trackEvent('Navigation', 'Player');
+      .then(() => {
+        console.log('Google analytics is ready now');
+        this.ga.trackView('Player');
+        this.ga.trackEvent('Navigation', 'Player');
+      })
+      .catch(e => console.log('Error starting GoogleAnalytics', e));
 
 			
   }
