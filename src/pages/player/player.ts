@@ -71,7 +71,13 @@ typeplayer: any;
   }
 	
 
-  ngAfterViewInit() {	  
+  ngAfterViewInit() {	
+	  
+	  if(localStorage.type_player == 'live')
+		this.titreplayer = 'Direct';
+	  else
+		this.titreplayer = 'Podcast';
+	  
 	  setTimeout(() => {
 
 			 
@@ -112,7 +118,7 @@ typeplayer: any;
 							});
 						}, 0);
 
-			},40000);
+				},40000);
 	  
 	  
 				$.ajaxSetup({ cache: false });
@@ -131,7 +137,6 @@ typeplayer: any;
 	  
 
 			  if(localStorage.type_player == 'live'){
-					this.titreplayer = 'Direct';
 					this._player.loadtitlelive();
 					//this._player.playProvider();
 				}
@@ -153,7 +158,6 @@ typeplayer: any;
 						});					
 					}, 1000);
 
-					this.titreplayer = 'Podcast';
 					this.soustitre = localStorage.podcast_title;
 					this.titre = '';
 					this.detail = localStorage.podcast_category;
@@ -182,7 +186,7 @@ typeplayer: any;
 				}
 			let self = this;
 			this.durations = this._player.stream.getDuration();  
-		},1000);
+		},200);
   }
 
 	startVideo() {
