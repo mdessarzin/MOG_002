@@ -202,7 +202,7 @@ export class AudioStreamProvider {
 			this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
 			console.log('play');
 			localStorage.setItem("player", "play");
-
+			
 			
 			this.timingloading = setInterval(() => {      
 				this.stream.getCurrentPosition().then((curpos) => {

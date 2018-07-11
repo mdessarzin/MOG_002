@@ -291,61 +291,7 @@ typeplayer: any;
 	ionViewDidLoad() {
 		
 		
-		console.log('ETAT AU DECLANCHEMENT - '+ localStorage.player);
 		
-	  setTimeout(() => {
-
-		this._player.stream.getCurrentPosition().then((curpos) => {
-					console.log('chargement');
-					if(curpos>0){
-							$('.loadingPlayer').hide();
-							$('.btPlayer').show();
-							$('.playerEtat_2').hide();
-							$('.playerEtat_0').hide();
-							$('.playerEtat_1').show();
-							$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-					}
-			else
-				{
-								$('.btPlayer').hide();
-			$('.loadingPlayer').show();
-			$('.playerEtat_0').hide();
-			$('.playerEtat_1').hide();
-			$('.playerEtat_2').show();
-
-				}
-				});
-		
-		
- if(localStorage.player == 'play'){
-	   // this.buttonIcon = "ios-pause";
-		$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-		this.onplaying = '1';
-
-	}
-	else
-	{
-		//this.buttonIcon = "ios-play";
-		$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-		this.onplaying = '0';
-	}
-
-	$.ajaxSetup({ cache: false });
-	$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
-
-			  if(localStorage.type_player == 'live'){
-					$('.songArtist').html(data.live[0].interpret);
-					$('.songTitle').html(data.live[0].title);
-					$('.songCover').attr('src',data.live[0].imageURL);
-				}
-				else
-				{
-					//
-				}
-
-	});
-console.log('ionViewDidLoad PlayerPage');
-		  }, 100);
 }
 
 		goLive() { 
