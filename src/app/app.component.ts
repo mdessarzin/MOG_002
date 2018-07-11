@@ -33,6 +33,7 @@ import { ImageLoaderConfig } from 'ionic-image-loader';
 import { AudioStreamProvider } from '../providers/audio-stream/audio-stream';
 import { ContenupagePage } from '../pages/contenupage/contenupage';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import * as $ from "jquery";
 
 @Component({
 	templateUrl: 'app.html'
@@ -127,6 +128,12 @@ export class MyApp {
 			
 				console.log('Platform is ready');
 			
+				$.ajaxSetup({ cache: false });
+				$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
+						localStorage.setItem("songArtist",data.live[0].interpret);
+						localStorage.setItem("songTitle",data.live[0].title);
+						localStorage.setItem("songCover",data.live[0].imageURL);
+				});
 			
 		});
 		

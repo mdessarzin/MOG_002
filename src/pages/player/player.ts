@@ -73,56 +73,17 @@ typeplayer: any;
 
   ngAfterViewInit() {	
 	  
-	  if(localStorage.type_player == 'live')
+	  if(localStorage.type_player == 'live'){
+		  						$('.songArtist').html(localStorage.songArtist);
+						$('.songTitle').html(localStorage.songTitle);
+						$('.songCover').attr('src',localStorage.songCover);
 		this.titreplayer = 'Direct';
+	  }
 	  else
 		this.titreplayer = 'Podcast';
 	  
 	  setTimeout(() => {
 
-			 
-	  
-	  		setTimeout(() => {
-						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
-							.then(response => response.json())
-							.then(data => {
-							  console.log('Live:'+data);
-							  	if(data=='0'){
-									$('.rond').css('display','none');
-									this.checklivestate = 0;
-								}
-							  else {
-									$('.rond').css('display','block');
-								    this.checklivestate = 1;
-							  }
-
-							});
-			}, 5000);
-	  
-			this.checklive = setInterval(() => {      
-				  
-					  setTimeout(() => {
-						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
-							.then(response => response.json())
-							.then(data => {
-							  console.log('Live:'+data);
-							  	if(data=='0'){
-									$('.rond').css('display','none');
-									this.checklivestate = 0;
-								}
-							  else {
-									$('.rond').css('display','block');
-								    this.checklivestate = 1;
-							  }
-
-							});
-						}, 0);
-
-				},40000);
-	  
-	  
-
-	  
 
 			  if(localStorage.type_player == 'live'){
 					this._player.loadtitlelive();
@@ -175,6 +136,47 @@ typeplayer: any;
 				}
 			let self = this;
 			this.durations = this._player.stream.getDuration();  
+		  
+		  
+		  	  		setTimeout(() => {
+						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
+							.then(response => response.json())
+							.then(data => {
+							  console.log('Live:'+data);
+							  	if(data=='0'){
+									$('.rond').css('display','none');
+									this.checklivestate = 0;
+								}
+							  else {
+									$('.rond').css('display','block');
+								    this.checklivestate = 1;
+							  }
+
+							});
+					}, 5000);
+
+					this.checklive = setInterval(() => {      
+				  
+					  setTimeout(() => {
+						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
+							.then(response => response.json())
+							.then(data => {
+							  console.log('Live:'+data);
+							  	if(data=='0'){
+									$('.rond').css('display','none');
+									this.checklivestate = 0;
+								}
+							  else {
+									$('.rond').css('display','block');
+								    this.checklivestate = 1;
+							  }
+
+							});
+						}, 0);
+
+					},40000);
+		  
+		  
 		},600);
   }
 
