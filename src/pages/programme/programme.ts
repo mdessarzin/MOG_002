@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NavController, NavParams, IonicPage, LoadingController, ModalController} from 'ionic-angular';
 import * as $ from "jquery";
 import { PlayerPage } from '../player/player';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @Component({
   selector: 'page-programme',
@@ -10,7 +11,7 @@ import { PlayerPage } from '../player/player';
 export class ProgrammePage {
   rootNavCtrl: NavController;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController,private ga: GoogleAnalytics) {
 	  
 
 	  

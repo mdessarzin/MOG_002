@@ -7,6 +7,7 @@ import { Http } from '@angular/http';
 import { Media, MediaObject } from '@ionic-native/media';
 import { map } from 'rxjs/operators';
 import { PlayerpopupPage } from '../playerpopup/playerpopup';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 /**
  * Generated class for the PlayerPage page.
@@ -52,12 +53,18 @@ typeplayer: any;
 		public loadingCtrl: LoadingController,
 		public plt: Platform,
 		public modalCtrl: ModalController,
-	public alertCtrl: AlertController
+	public alertCtrl: AlertController,
+		 private ga: GoogleAnalytics
 		){
    		
 			
 	 this.typeplayer = 'audio';
-			
+	this.ga.startTrackerWithId('UA-104904297-2')
+			  .then(() => {
+				console.log('Google analytics is ready now');
+				this.ga.trackView('Player');
+				this.ga.trackEvent('Navigation', 'Player');
+
 			
   }
 	

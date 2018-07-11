@@ -12,6 +12,7 @@ import { PlayerPage } from '../player/player';
 import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
 import { PlayerpopupPage } from '../playerpopup/playerpopup';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @Component({
   selector: 'page-podcasts',
@@ -53,7 +54,8 @@ pagination: number = 1;
 		public modalCtrl: ModalController,
 		public _player: AudioStreamProvider,
 		public musicControls: MusicControls,
-		private iab: InAppBrowser
+		private iab: InAppBrowser,
+		 private ga: GoogleAnalytics
 	){
 			
 			

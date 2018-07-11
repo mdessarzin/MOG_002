@@ -4,6 +4,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
 import { SocialSharing } from '@ionic-native/social-sharing';
 import * as $ from "jquery";
 import { Http } from '@angular/http';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 /**
  * Generated class for the DetailsPage page.
@@ -31,7 +32,12 @@ link: string;
 	posts: Array<any> = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController
+  constructor( public navCtrl: NavController, 
+			   public navParams: NavParams, 
+			 	private sanitizer: DomSanitizer,
+				private socialSharing: SocialSharing,
+				public loadingCtrl: LoadingController,
+				private ga: GoogleAnalytics
 ) {
 	  
 	   this.title = navParams.get('title');

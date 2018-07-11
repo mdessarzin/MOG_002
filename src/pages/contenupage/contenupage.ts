@@ -5,6 +5,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import * as $ from "jquery";
 import { Http } from '@angular/http';
 import { PlayerPage } from '../player/player';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
+
 /**
  * Generated class for the ContenupagePage page.
  *
@@ -30,12 +32,20 @@ link: string;
 	posts: Array<any> = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private socialSharing: SocialSharing,public loadingCtrl: LoadingController, public modalCtrl: ModalController, private ga: GoogleAnalytics
+) {
 	  
 	   this.title = navParams.get('title');
 
 	this.link = navParams.get('key');
 	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
+	  
+	  		this.ga.startTrackerWithId('UA-104904297-2')
+			  .then(() => {
+				console.log('Google analytics is ready now');
+				this.ga.trackView(this.title);
+				this.ga.trackEvent('Navigation', this.title);
+
 	  /*
 	  setTimeout(() => {
 			  fetch('https://www.radiolac.ch/wp-json/mog/v1/get_data?clean=true&page_id='+navParams.get('key'))
