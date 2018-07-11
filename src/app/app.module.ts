@@ -31,6 +31,7 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
 import { Media, MediaObject } from '@ionic-native/media';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { ExtendMenuProvider } from '../providers/extend-menu/extend-menu';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 localStorage.setItem("player", "stop");
 localStorage.setItem("firstclickonplayer", "oui");
@@ -120,6 +121,7 @@ PlayerPlaylistPage,
 	      Media,
 	  InAppBrowser,
 	  ExtendMenuProvider,
+	        GoogleAnalytics,
 	  {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })

@@ -12,6 +12,7 @@ import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 
 //import {Http, Response} from "@angular/http";
@@ -57,12 +58,22 @@ test:any;
 		 public viewCtrl: ViewController,
 		 public plt: Platform,
 public platform: Platform,
-		 private iab: InAppBrowser
-		//private ga: GoogleAnalytics
+		 private iab: InAppBrowser,
+		private ga: GoogleAnalytics
 	){
 		this.loadData();	
 			this.test = 2;
 	
+			
+	this.ga.startTrackerWithId('UA-104904297-2')
+      .then(() => {
+        console.log('Google analytics is ready now');
+        this.ga.trackView('home');
+        this.ga.trackEvent('Navigation', 'Home');
+
+      })
+      .catch(e => console.log('Error starting GoogleAnalytics', e));
+			
   }
 
 	
