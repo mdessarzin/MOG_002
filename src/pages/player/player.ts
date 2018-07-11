@@ -115,7 +115,19 @@ typeplayer: any;
 			},40000);
 	  
 	  
-	   alert('etat'+localStorage.player);
+				$.ajaxSetup({ cache: false });
+				$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
+					  if(localStorage.type_player == 'live'){
+							$('.songArtist').html(data.live[0].interpret);
+							$('.songTitle').html(data.live[0].title);
+							$('.songCover').attr('src',data.live[0].imageURL);
+						}
+						else
+						{
+							//
+						}
+
+				});
 	  
 	  
 	  
@@ -324,21 +336,8 @@ typeplayer: any;
 
 						
 				}
-				$.ajaxSetup({ cache: false });
-				$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
-					  if(localStorage.type_player == 'live'){
-							$('.songArtist').html(data.live[0].interpret);
-							$('.songTitle').html(data.live[0].title);
-							$('.songCover').attr('src',data.live[0].imageURL);
-						}
-						else
-						{
-							//
-						}
-
-				});
 				console.log('ionViewDidLoad PlayerPage');
-	  }, 100);
+	  }, 10);
 }
 
 		goLive() { 
