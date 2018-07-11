@@ -304,6 +304,9 @@ ngOnDestroy() {
 									$('.songArtist').html(data.live[0].interpret);
 									$('.songTitle').html(data.live[0].title);
 									$('.songCover').attr('src',data.live[0].imageURL);
+									localStorage.setItem("songArtist",data.live[0].interpret);
+									localStorage.setItem("songTitle",data.live[0].title);
+									localStorage.setItem("songCover",data.live[0].imageURL);
 								}
 								else
 								{
@@ -320,7 +323,11 @@ ngOnDestroy() {
 				.then(data => {
 	
 								this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
-									$('.detail').html(data.start+'-'+data.end);
+									localStorage.setItem("playerDetail",data.start+'-'+data.end);
+									localStorage.setItem("playerTitre",data.title);
+									localStorage.setItem("playerSoustitre",data.with);
+									localStorage.setItem("playerCover",data.cover);
+				  					$('.detail').html(data.start+'-'+data.end);
 									$('.titre').html(data.title);
 									$('.soustitre').html(data.with);
 									$('#coverPlayer').attr('src',data.cover);
