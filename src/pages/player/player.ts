@@ -74,19 +74,25 @@ typeplayer: any;
   ngAfterViewInit() {	
 	  
 	  if(localStorage.type_player == 'live'){
-		  						$('.songArtist').html(localStorage.songArtist);
-						$('.songTitle').html(localStorage.songTitle);
-						$('.songCover').attr('src',localStorage.songCover);
-		this.titreplayer = 'Direct';
+			$('.songArtist').html(localStorage.songArtist);
+			$('.songTitle').html(localStorage.songTitle);
+			$('.songCover').attr('src',localStorage.songCover);
+			this.titreplayer = 'Direct';		  
+			$('.detail').html(localStorage.playerDetail);
+			$('.titre').html(localStorage.playerTitre);
+			$('.soustitre').html(localStorage.playerSoustitre);
+			$('#coverPlayer').attr('src',localStorage.playerCover);
+
+	  
 	  }
-	  else
+	  else{
 		this.titreplayer = 'Podcast';
 	  
 	  setTimeout(() => {
 
 
 			  if(localStorage.type_player == 'live'){
-					this._player.loadtitlelive();
+					//this._player.loadtitlelive();
 					//this._player.playProvider();
 				}
 				else
@@ -178,6 +184,8 @@ typeplayer: any;
 		  
 		  
 		},600);
+		  
+		  }
   }
 
 	startVideo() {

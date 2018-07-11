@@ -134,7 +134,13 @@ export class MyApp {
 						localStorage.setItem("songTitle",data.live[0].title);
 						localStorage.setItem("songCover",data.live[0].imageURL);
 				});
-			
+				$.getJSON('https://www.mediaone-digital.ch/cache/radiolac_live.json', function(data){
+						localStorage.setItem("playerDetail",data.start+'-'+data.end);
+						localStorage.setItem("playerTitre",data.title);
+						localStorage.setItem("playerSoustitre",data.with);
+						localStorage.setItem("playerCover",data.cover);
+
+				});
 		});
 		
 
