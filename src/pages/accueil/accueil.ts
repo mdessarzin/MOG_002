@@ -63,6 +63,8 @@ public platform: Platform,
 	){
 		this.loadData();	
 			this.test = 2;
+			
+			alert(localStorage.player);
 	
 			
 	this.ga.startTrackerWithId('UA-104904297-2')
