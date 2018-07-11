@@ -115,6 +115,19 @@ typeplayer: any;
 			},40000);
 	  
 	  
+	   if(localStorage.player == 'play'){
+	   // this.buttonIcon = "ios-pause";
+		$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+		this.onplaying = '1';
+
+	}
+	else
+	{
+		//this.buttonIcon = "ios-play";
+		$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+		this.onplaying = '0';
+	}
+	  
 	  
 	  
 	  
