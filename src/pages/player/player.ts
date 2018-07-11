@@ -121,7 +121,20 @@ typeplayer: any;
 				},40000);
 	  
 	  
-				
+				$.ajaxSetup({ cache: false });
+				$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
+					  if(localStorage.type_player == 'live'){
+							$('.songArtist').html(data.live[0].interpret);
+							$('.songTitle').html(data.live[0].title);
+							$('.songCover').attr('src',data.live[0].imageURL);
+						}
+						else
+						{
+							//
+						}
+
+				});
+	  
 
 			  if(localStorage.type_player == 'live'){
 					this._player.loadtitlelive();
@@ -145,6 +158,7 @@ typeplayer: any;
 						});					
 					}, 1000);
 
+					this.titreplayer = 'Podcast';
 					this.soustitre = localStorage.podcast_title;
 					this.titre = '';
 					this.detail = localStorage.podcast_category;
@@ -173,7 +187,7 @@ typeplayer: any;
 				}
 			let self = this;
 			this.durations = this._player.stream.getDuration();  
-		},200);
+		},600);
   }
 
 	startVideo() {
