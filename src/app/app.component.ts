@@ -77,9 +77,7 @@ export class MyApp {
 		this.statusBar.backgroundColorByHexString("#29b7c2");
 		this.initializeApp();	
 		let ratio = Math.max(window.devicePixelRatio || 1, 1);
-		localStorage.setItem("type_player", "live");
-		localStorage.setItem("podcast_url", '');
-		localStorage.setItem("player", "stop");
+		
 
 		this.showAdmobBannerAds();
 		
@@ -98,6 +96,9 @@ export class MyApp {
 
 			this.statusBar.styleLightContent();
 			this.splashScreen.hide();
+		localStorage.setItem("type_player", "live");
+		localStorage.setItem("podcast_url", '');
+		localStorage.setItem("player", "stop");
 
 			// Initialize some options
 			this.initializeOptions();

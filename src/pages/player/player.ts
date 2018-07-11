@@ -58,7 +58,7 @@ typeplayer: any;
 		){
    		
 			
-	 this.typeplayer = 'audio';
+	this.typeplayer = 'audio';
 	this.ga.startTrackerWithId('UA-104904297-2')
       .then(() => {
         console.log('Google analytics is ready now');
@@ -76,7 +76,7 @@ typeplayer: any;
 
 			 
 	  
-	  setTimeout(() => {
+	  		setTimeout(() => {
 						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
 							.then(response => response.json())
 							.then(data => {
@@ -91,7 +91,7 @@ typeplayer: any;
 							  }
 
 							});
-						}, 5000);
+			}, 5000);
 	  
 			this.checklive = setInterval(() => {      
 				  
