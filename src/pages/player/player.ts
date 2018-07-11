@@ -72,7 +72,7 @@ typeplayer: any;
 	
 
   ngAfterViewInit() {	  
-	//  setTimeout(() => {
+	  setTimeout(() => {
 
 			 
 	  
@@ -129,63 +129,60 @@ typeplayer: any;
 
 				});
 	  
-	  
-	  
-	  
-	  
-	  if(localStorage.type_player == 'live'){
-			this.titreplayer = 'Direct';
-		  	this._player.loadtitlelive();
-		 	//this._player.playProvider();
-        }
-        else
-        {
-						
-			
-			//this._player.pauseProvider();
-		//	this._player.playProvider();
-			this._player.stream.getCurrentPosition().then((curpos) => {
-				console.log('Player A '+curpos);
-				this.positions = curpos;
-			});					
-			
-			this.timingseek = setInterval(() => {      
-				this._player.stream.getCurrentPosition().then((curpos) => {
-					console.log('Player '+curpos);
-					this.positions = curpos;
-				});					
-			}, 1000);
 
-			this.titreplayer = 'Podcast';
-			this.soustitre = localStorage.podcast_title;
-			this.titre = '';
-			this.detail = localStorage.podcast_category;
-
-			//$('.songArtist').html(localStorage.podcast_title);
-			//$('.songTitle').html(localStorage.podcast_category);
-			$('.songCover').attr('src',localStorage.podcast_cover);
-			$('#coverPlayer').attr('src',localStorage.podcast_cover);
-			console.log('Nouveau son? '+localStorage.podcast_nouveau);
-			if(localStorage.podcast_nouveau == 'oui'){
-			//	this.startAudio();
-				localStorage.setItem("podcast_nouveau", 'non');
-				this._player.playProvider();
-			}
-
-				if(localStorage.player == 'play'){
-					console.log('Etat PLAY');
-						$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			  if(localStorage.type_player == 'live'){
+					this.titreplayer = 'Direct';
+					this._player.loadtitlelive();
+					//this._player.playProvider();
 				}
-				else{
-								console.log('Etat STOP');
-				this._player.playProvider();
+				else
+				{
 
-						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+
+					//this._player.pauseProvider();
+				//	this._player.playProvider();
+					this._player.stream.getCurrentPosition().then((curpos) => {
+						console.log('Player A '+curpos);
+						this.positions = curpos;
+					});					
+
+					this.timingseek = setInterval(() => {      
+						this._player.stream.getCurrentPosition().then((curpos) => {
+							console.log('Player '+curpos);
+							this.positions = curpos;
+						});					
+					}, 1000);
+
+					this.titreplayer = 'Podcast';
+					this.soustitre = localStorage.podcast_title;
+					this.titre = '';
+					this.detail = localStorage.podcast_category;
+
+					//$('.songArtist').html(localStorage.podcast_title);
+					//$('.songTitle').html(localStorage.podcast_category);
+					$('.songCover').attr('src',localStorage.podcast_cover);
+					$('#coverPlayer').attr('src',localStorage.podcast_cover);
+					console.log('Nouveau son? '+localStorage.podcast_nouveau);
+					if(localStorage.podcast_nouveau == 'oui'){
+					//	this.startAudio();
+						localStorage.setItem("podcast_nouveau", 'non');
+						this._player.playProvider();
+					}
+
+						if(localStorage.player == 'play'){
+							console.log('Etat PLAY');
+								$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+						}
+						else{
+										console.log('Etat STOP');
+						this._player.playProvider();
+
+								$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+						}
 				}
-		}
-	  	  	let self = this;
-	  		this.durations = this._player.stream.getDuration();  
-		//},0);
+			let self = this;
+			this.durations = this._player.stream.getDuration();  
+		},1000);
   }
 
 	startVideo() {
@@ -303,6 +300,41 @@ typeplayer: any;
 	ionViewDidLoad() {
 		
 			
+//	  setTimeout(() => {
+		  
+				if(localStorage.player == 'stop'){
+								$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+								this.onplaying = '0';
+				}
+		  		else
+				{
+						this._player.stream.getCurrentPosition().then((curpos) => {
+									console.log('chargement');
+									if(curpos>0){
+										$('.loadingPlayer').hide();
+										$('.btPlayer').show();
+										$('.playerEtat_2').hide();
+										$('.playerEtat_0').hide();
+										$('.playerEtat_1').show();
+										$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+									}
+									else
+									{
+										$('.btPlayer').hide();
+										$('.loadingPlayer').show();
+										$('.playerEtat_0').hide();
+										$('.playerEtat_1').hide();
+										$('.playerEtat_2').show();
+									}
+						});		
+
+						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+						this.onplaying = '1';
+
+						
+				}
+				console.log('ionViewDidLoad PlayerPage');
+//	  }, 10);
 }
 
 		goLive() { 
