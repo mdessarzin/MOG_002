@@ -121,20 +121,7 @@ typeplayer: any;
 				},40000);
 	  
 	  
-				$.ajaxSetup({ cache: false });
-				$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
-					  if(localStorage.type_player == 'live'){
-							$('.songArtist').html(data.live[0].interpret);
-							$('.songTitle').html(data.live[0].title);
-							$('.songCover').attr('src',data.live[0].imageURL);
-						}
-						else
-						{
-							//
-						}
-
-				});
-	  
+				
 
 			  if(localStorage.type_player == 'live'){
 					this._player.loadtitlelive();
