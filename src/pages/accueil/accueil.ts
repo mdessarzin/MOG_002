@@ -48,6 +48,8 @@ export class AccueilPage {
 	maximumPages = 10;
 	posts: Array<any> = [];
 test:any;
+	liveTitre: string;
+	liveHeures: string;
   constructor(
 		public navCtrl: NavController,
 		public _player: AudioStreamProvider,
@@ -63,7 +65,8 @@ public platform: Platform,
 	){
 		this.loadData();	
 			this.test = 2;
-			
+			this.liveTitre = localStorage.playerTitre;
+			this.liveHeures = localStorage.playerSoustitre;
 	
 			
 	this.ga.startTrackerWithId('UA-104904297-2')
