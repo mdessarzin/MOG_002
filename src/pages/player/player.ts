@@ -343,14 +343,21 @@ typeplayer: any;
 		goLive() { 
 			localStorage.setItem("type_player", "live");
 			this.titreplayer = 'Direct';
+			
+			$('.songArtist').html(localStorage.songArtist);
+			$('.songTitle').html(localStorage.songTitle);
+			$('.songCover').attr('src',localStorage.songCover);
+			$('.detail').html(localStorage.playerDetail);
+			$('.titre').html(localStorage.playerTitre);
+			$('.soustitre').html(localStorage.playerSoustitre);
+			$('#coverPlayer').attr('src',localStorage.playerCover);
+			
 			$('.playerinfos').hide();
 			$('.player .scroll-content').css('margin-bottom','80px');
 			$('.btPlayer').hide();
 			$('.loadingPlayer').show();
 			this._player.pauseProvider();
 			this._player.playerconfigProvider();
-			//this.onplaying = '1';
-			this._player.loadtitlelive();
 			this._player.playProvider();
 				
 		}
