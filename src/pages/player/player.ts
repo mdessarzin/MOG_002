@@ -303,41 +303,6 @@ typeplayer: any;
 	ionViewDidLoad() {
 		
 			
-	  setTimeout(() => {
-		  
-				if(localStorage.player == 'stop'){
-								$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-								this.onplaying = '0';
-				}
-		  		else
-				{
-						this._player.stream.getCurrentPosition().then((curpos) => {
-									console.log('chargement');
-									if(curpos>0){
-										$('.loadingPlayer').hide();
-										$('.btPlayer').show();
-										$('.playerEtat_2').hide();
-										$('.playerEtat_0').hide();
-										$('.playerEtat_1').show();
-										$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-									}
-									else
-									{
-										$('.btPlayer').hide();
-										$('.loadingPlayer').show();
-										$('.playerEtat_0').hide();
-										$('.playerEtat_1').hide();
-										$('.playerEtat_2').show();
-									}
-						});		
-
-						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-						this.onplaying = '1';
-
-						
-				}
-				console.log('ionViewDidLoad PlayerPage');
-	  }, 10);
 }
 
 		goLive() { 
