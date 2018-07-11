@@ -11,6 +11,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { DetailsPage } from '../details/details';
 import { PlayerPage } from '../player/player';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @Component({
   selector: 'page-blog',
@@ -56,12 +57,21 @@ header: string;
 		 public plt: Platform,
 		 public navParams: NavParams,
 		 public platform: Platform,
-		 private iab: InAppBrowser
-
-		//private ga: GoogleAnalytics
+		 private iab: InAppBrowser,
+		 private ga: GoogleAnalytics
 	){
 		this.title = navParams.get('title');
-		this.loadData();			
+		this.loadData();
+
+		this.ga.startTrackerWithId('UA-104904297-2')
+			  .then(() => {
+				console.log('Google analytics is ready now');
+				this.ga.trackView(this.title);
+				this.ga.trackEvent('Navigation', this.title);
+
+      })
+      .catch(e => console.log('Error starting GoogleAnalytics', e));
+			
   }
 
 	
