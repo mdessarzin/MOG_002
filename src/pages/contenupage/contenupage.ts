@@ -105,13 +105,13 @@ private resize(){
  }
 
 	
-	private loadclose(){
-		this.postsLoading = '1';
-
+private loadclose(){
+		setTimeout( () => {
+			this.postsLoading = '1';
+		}, 1000 );
+}	
 	
-	}
-	
-	private share(){
+private share(){
     this.socialSharing.share(this.navParams.get('text'), this.navParams.get('title'), null, this.navParams.get('link'))
       .then(()=>{
        //
