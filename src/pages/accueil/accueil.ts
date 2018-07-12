@@ -65,8 +65,8 @@ public platform: Platform,
 	){
 		this.loadData();	
 			this.test = 2;
-			this.liveTitre = localStorage.playerTitre;
-			this.liveHeures = localStorage.playerSoustitre;
+			this.liveTitre = 'Radio Lac Matin';
+			this.liveHeures = '06H-09H';
 	
 			
 	this.ga.startTrackerWithId('UA-104904297-2')

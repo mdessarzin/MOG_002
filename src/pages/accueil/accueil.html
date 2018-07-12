@@ -37,7 +37,7 @@
 		 	</button>
 	</ion-buttons>
   </ion-navbar>
-		<div class="subtitle">
+	<div class="subtitle">
 		Direct
 	</div>
 </ion-header>
@@ -57,34 +57,7 @@
  <ion-grid *ngIf='posts' no-padding>
 				<ion-row no-padding> 
 					
-				 <ion-col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 no-padding class="animated fadeIn" >
-								 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;">
-						<ion-card-content no-padding class="fadeintransition">
-							<div style="background-color: #f1f1f1; position: relative;">	
-								<span class="card_live">{{liveTitre}} {{liveHeures}}</span>
-								<span class="card_icon"><i class="fas fa-play-circle fa-3x"></i></span>
-								<img src="https://www.radiolac.ch/radiolac.jpg" />
-							</div>
-							<ion-card-title [innerHTML]="">{{liveTitre}}</ion-card-title>
-						</ion-card-content>
-
-						<ion-row>
-
-						   <ion-col align-self-start>
-							   <p class="date"><i class="fas fa-dot-circle point"></i> {{liveHeures}}</p>
-						   </ion-col>
-						   <ion-col text-right align-self-start>
-
-							   <button ion-button clear icon-only mode="md" style="border-left:1px solid #f1f1f1;" (tap)="whatsappShare('','','' )">
-									<ion-icon name="logo-whatsapp" style="color:#A9A9A9;"></ion-icon>
-								</button>					
-						  </ion-col>
-						 </ion-row>
-			 </ion-card>
-			</ion-col>
-					
-					
-				 <ion-col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 no-padding *ngFor="let post of posts" class="animated fadeIn" >
+							 <ion-col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 no-padding *ngFor="let post of posts" class="animated fadeIn" >
 					 <ion-card no-padding style="margin-bottom:0px; border-bottom: 6px solid #f1f1f1;" >
 
 							<button no-padding ion-item (click)="showDetails(post.id,post.title,post.link)">
@@ -117,7 +90,7 @@
 
 	<div *ngIf="post.ads != 0">				
 <a href="#" (tap)="this.iab.create(post.ads_l, '_blank','location=no,clearsessioncache=yes');">                
-	<img src="http://1x1px.me/FFFFFF-1.png" data-src="{{post.ads_i}}" border="0" alt="" />
+	<img src="{{post.ads_i}}" border="0" alt="" />
 </a>				 
 					 </div>					
 					</ion-col>
