@@ -66,8 +66,12 @@ link: string;
 	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 
   }
-
 	
+private loadclose(){
+			setTimeout( () => {
+				this.postsLoading = '1';
+			}, 1000 );
+}	
 	
 private resize(){
 	var iframe = $('#remotedata');
@@ -82,11 +86,7 @@ private resize(){
 
   }
 	
-	private loadclose(){
-		this.postsLoading = '1';
 
-	
-	}
 	
 	private share(){
     this.socialSharing.share(this.navParams.get('text'), this.navParams.get('title'), null, this.navParams.get('link'))
