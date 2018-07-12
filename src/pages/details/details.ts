@@ -66,7 +66,13 @@ link: string;
 	this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.link+'?clean=true');
 
   }
-	 
+	
+private loadclose(){
+			setTimeout( () => {
+				this.postsLoading = '1';
+			}, 1000 );
+}	
+	
 private resize(){
 	var iframe = $('#remotedata');
 	$('#remotedata').height(iframe[0].contentWindow.document.body.scrollHeight + 40);
