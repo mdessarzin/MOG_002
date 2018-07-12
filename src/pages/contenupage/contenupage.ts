@@ -79,7 +79,12 @@ link: string;
 private resize(){
 	var iframe = $('#remotedata');
 	$('#remotedata').height(iframe[0].contentWindow.document.body.scrollHeight + 40);
-	//alert('ok');
+	
+	setTimeout( () => {
+		this.postsLoading = '1';
+	}, 1000 );
+
+	
 }	
 
  ionViewDidLoad() {
@@ -104,12 +109,6 @@ private resize(){
  
  }
 
-	
-private loadclose(){
-		setTimeout( () => {
-			this.postsLoading = '1';
-		}, 1000 );
-}	
 	
 private share(){
     this.socialSharing.share(this.navParams.get('text'), this.navParams.get('title'), null, this.navParams.get('link'))
