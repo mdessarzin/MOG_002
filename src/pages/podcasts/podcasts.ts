@@ -42,6 +42,7 @@ header: string;
    posts: Array<any> = [];
 postsLoading: any;
 pagination: number = 1;
+	nbPost: number = 0;
   maximumPages = 10;
 
   constructor(
@@ -104,10 +105,10 @@ update(refresher) {
 
 								for(let i of data){
 									this.posts.push(i);
-
+									this.nbPost = 1;
 								}
-				else {
-					let alert = this.alertCtrl.create({
+			if(this.nbPost == 0){
+			let alert = this.alertCtrl.create({
 			  title: 'Aucun podcast',
 			  subTitle: "Aucun podcast n'a été trouvé pour cette chronique.",
 			  buttons: ['Fermer']
