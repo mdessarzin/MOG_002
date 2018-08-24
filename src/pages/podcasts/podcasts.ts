@@ -1,5 +1,5 @@
 import { Component, ViewChild, Injectable } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController, AlertController} from 'ionic-angular';
 import { ScrollHideConfig } from '../../directives/scroll-hide/scroll-hide';
 import * as $ from "jquery";
 import { MusicControls } from '@ionic-native/music-controls';
@@ -55,7 +55,8 @@ pagination: number = 1;
 		public _player: AudioStreamProvider,
 		public musicControls: MusicControls,
 		private iab: InAppBrowser,
-		 private ga: GoogleAnalytics
+		 private ga: GoogleAnalytics,
+		 	public alertCtrl: AlertController,
 	){
 			
 			
@@ -105,9 +106,15 @@ update(refresher) {
 									this.posts.push(i);
 
 								}
-								else {
-									alert('Pas de fichiers');
-								}
+				else {
+					let alert = this.alertCtrl.create({
+			  title: 'Aucun podcast',
+			  subTitle: "Aucun podcast n'a été trouvé pour cette chronique.",
+			  buttons: ['Fermer']
+			});
+			alert.present();
+				}
+								
 							  this.postsLoading = '1';
 								if (infiniteScroll) {
 									infiniteScroll.complete();
