@@ -223,16 +223,51 @@ export class MyApp {
 				},
 				{
 					iconName: '',
-					displayName: 'Les après-midi Radio Lac',
+					displayName: 'Mieux Vivre',
 					component: PodcastsPage,
-					key: '293',
+					key: '388',
 					header: true
 				},
 				{
 					iconName: '',
-					displayName: 'Radio Lac Soir',
+					displayName: 'Le Portrait',
 					component: PodcastsPage,
-					key: '54',
+					key: '399',
+					header: true
+				},
+				{
+					iconName: '',
+					displayName: 'Radio Lac Midi',
+					component: PodcastsPage,
+					key: '402',
+					header: true
+				},
+				{
+					iconName: '',
+					displayName: 'Pop Collection',
+					component: PodcastsPage,
+					key: '411',
+					header: true
+				},
+				{
+					iconName: '',
+					displayName: 'La Messe est dites',
+					component: PodcastsPage,
+					key: '412',
+					header: true
+				},
+				{
+					iconName: '',
+					displayName: "La C'lac",
+					component: PodcastsPage,
+					key: '413',
+					header: true
+				},
+				{
+					iconName: '',
+					displayName: "Les Têtes à Claques",
+					component: PodcastsPage,
+					key: '414',
 					header: true
 				},
 				{
