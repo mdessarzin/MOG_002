@@ -104,7 +104,10 @@ update(refresher) {
 								for(let i of data){
 									this.posts.push(i);
 
-								}				  
+								}
+								else {
+									alert('Pas de fichiers');
+								}
 							  this.postsLoading = '1';
 								if (infiniteScroll) {
 									infiniteScroll.complete();
