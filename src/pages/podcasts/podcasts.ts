@@ -107,14 +107,15 @@ update(refresher) {
 									this.posts.push(i);
 									this.nbPost = 1;
 								}
-			if(this.nbPost == 0){
-			let alert = this.alertCtrl.create({
-			  title: 'Aucun podcast',
-			  subTitle: "Aucun podcast n'a été trouvé pour cette chronique.",
-			  buttons: ['Fermer']
-			});
-			alert.present();
-				}
+				
+								if(this.nbPost == 0){
+									let alert = this.alertCtrl.create({
+									  title: 'Aucun podcast',
+									  subTitle: "Aucun podcast n'a été trouvé pour cette chronique.",
+									  buttons: ['Fermer']
+									});
+									alert.present();
+								}
 								
 							  this.postsLoading = '1';
 								if (infiniteScroll) {
