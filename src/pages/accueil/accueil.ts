@@ -163,6 +163,8 @@ ionViewDidLoad() {
         else
         {
 			
+			
+			
 			$('.songArtist').html(localStorage.playerDetail);
 			$('.songTitle').html(localStorage.data.title);
 			$('.songCover').attr('src',localStorage.playerCover);
@@ -186,9 +188,9 @@ ionViewDidLoad() {
 		$.getJSON('https://www.mediaone-digital.ch/cache/radiolac.json', function(data){
 			
 				   	if(localStorage.type_player == 'live'){
-						$('.songArtist').html(data.live[0].interpret);
-						$('.songTitle').html(data.live[0].title);
-						$('.songCover').attr('src',data.live[0].imageURL);
+						$('.songArtist').html(localStorage.playerDetail);
+						$('.songTitle').html(localStorage.data.title);
+						$('.songCover').attr('src',localStorage.playerCover);
 					}
 					else
 					{
