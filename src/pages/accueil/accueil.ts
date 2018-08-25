@@ -166,7 +166,7 @@ ionViewDidLoad() {
 			
 			
 			$('.songArtist').html(localStorage.playerDetail);
-			$('.songTitle').html(localStorage.data.title);
+			$('.songTitle').html(localStorage.playerTitre);
 			$('.songCover').attr('src',localStorage.playerCover);
         }
 	
@@ -189,7 +189,7 @@ ionViewDidLoad() {
 			
 				   	if(localStorage.type_player == 'live'){
 						$('.songArtist').html(localStorage.playerDetail);
-						$('.songTitle').html(localStorage.data.title);
+						$('.songTitle').html(localStorage.playerTitre);
 						$('.songCover').attr('src',localStorage.playerCover);
 					}
 					else
