@@ -174,8 +174,7 @@ export class MyApp {
 			header: true
 		});
 
-
-		
+	
 		this.options.push({
 			iconName: 'ios-contacts',
 			displayName: 'Politique',
@@ -194,12 +193,40 @@ export class MyApp {
 		});
 		this.options.push({
 			iconName: 'ios-people',
-			displayName: 'Culture et Société',
+			displayName: 'Culture',
 			//badge: ArrayObservable.of('NEW'),
 			component: BlogPage,
 			key: '23',
 			header: true
 		});
+
+		this.options.push({
+			iconName: 'ios-paper',
+			displayName: 'Justice',
+			//badge: ArrayObservable.of('NEW'),
+			component: BlogPage,
+			key: '422',
+			header: true
+		});
+		
+		this.options.push({
+			iconName: 'ios-quote',
+			displayName: 'Faits divers',
+			//badge: ArrayObservable.of('NEW'),
+			component: BlogPage,
+			key: '420',
+			header: true
+		});
+
+		this.options.push({
+			iconName: 'ios-pulse',
+			displayName: 'Santé',
+			//badge: ArrayObservable.of('NEW'),
+			component: BlogPage,
+			key: '421',
+			header: true
+		});
+		
 		this.options.push({
 			iconName: 'ios-bicycle',
 			displayName: 'Sport',
