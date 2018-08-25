@@ -173,7 +173,14 @@ export class MyApp {
 			key: '',
 			header: true
 		});
-
+this.options.push({
+iconName: 'ios-radio',
+displayName: 'Emissions',
+//badge: ArrayObservable.of('NEW'),
+component: BlogPage,
+key: '34',
+header: true
+});
 	
 		this.options.push({
 			iconName: 'ios-contacts',
