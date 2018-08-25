@@ -74,9 +74,9 @@ typeplayer: any;
   ngAfterViewInit() {	
 	  
 	  if(localStorage.type_player == 'live'){
-			$('.songArtist').html(localStorage.songArtist);
-			$('.songTitle').html(localStorage.songTitle);
-			$('.songCover').attr('src',localStorage.songCover);
+			$('.songArtist_').html(localStorage.songArtist);
+			$('.songTitle_').html(localStorage.songTitle);
+			$('.songCover_').attr('src',localStorage.songCover);
 			this.titreplayer = 'Direct';		  
 			$('.detail').html(localStorage.playerDetail);
 			$('.titre').html(localStorage.playerTitre);
@@ -120,7 +120,7 @@ typeplayer: any;
 
 					//$('.songArtist').html(localStorage.podcast_title);
 					//$('.songTitle').html(localStorage.podcast_category);
-					$('.songCover').attr('src',localStorage.podcast_cover);
+					$('.songCover_').attr('src',localStorage.podcast_cover);
 					$('#coverPlayer').attr('src',localStorage.podcast_cover);
 					console.log('Nouveau son? '+localStorage.podcast_nouveau);
 					if(localStorage.podcast_nouveau == 'oui'){
@@ -344,9 +344,9 @@ typeplayer: any;
 			localStorage.setItem("type_player", "live");
 			this.titreplayer = 'Direct';
 			
-			$('.songArtist').html(localStorage.songArtist);
-			$('.songTitle').html(localStorage.songTitle);
-			$('.songCover').attr('src',localStorage.songCover);
+			$('.songArtist_').html(localStorage.songArtist);
+			$('.songTitle_').html(localStorage.songTitle);
+			$('.songCover_').attr('src',localStorage.songCover);
 			$('.detail').html(localStorage.playerDetail);
 			$('.titre').html(localStorage.playerTitre);
 			$('.soustitre').html(localStorage.playerSoustitre);

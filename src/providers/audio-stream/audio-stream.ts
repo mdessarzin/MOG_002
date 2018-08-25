@@ -172,12 +172,12 @@ export class AudioStreamProvider {
 											//
 										}
 										else{
-											this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+											this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
 											this.live = data.live[0].interpret;
 											if(localStorage.type_player == 'live'){
-												$('.songArtist').html(data.live[0].interpret);
-												$('.songTitle').html(data.live[0].title);
-												$('.songCover').attr('src',data.live[0].imageURL);
+												$('.songArtist_').html(data.live[0].interpret);
+												$('.songTitle_').html(data.live[0].title);
+												$('.songCover_').attr('src',data.live[0].imageURL);
 											}
 											else
 											{
@@ -199,7 +199,7 @@ export class AudioStreamProvider {
 			$('.playerEtat_2').show();
 
 			this.stream.play();
-			this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+			this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
 			console.log('play');
 			localStorage.setItem("player", "play");
 			
@@ -298,12 +298,12 @@ ngOnDestroy() {
 								//
 							}
 							else{
-								this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+								this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
 								this.live = data.live[0].interpret;
 								if(localStorage.type_player == 'live'){
-									$('.songArtist').html(data.live[0].interpret);
-									$('.songTitle').html(data.live[0].title);
-									$('.songCover').attr('src',data.live[0].imageURL);
+									$('.songArtist_').html(data.live[0].interpret);
+									$('.songTitle_').html(data.live[0].title);
+									$('.songCover_').attr('src',data.live[0].imageURL);
 									localStorage.setItem("songArtist",data.live[0].interpret);
 									localStorage.setItem("songTitle",data.live[0].title);
 									localStorage.setItem("songCover",data.live[0].imageURL);
