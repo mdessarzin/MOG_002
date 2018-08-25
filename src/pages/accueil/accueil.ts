@@ -162,9 +162,10 @@ ionViewDidLoad() {
         }
         else
         {
-			$('.songArtist').html(localStorage.podcast_title);
-			$('.songTitle').html(localStorage.podcast_category);
-			$('.songCover').attr('src',localStorage.podcast_cover);
+			
+			$('.songArtist').html(localStorage.playerDetail);
+			$('.songTitle').html(localStorage.data.title);
+			$('.songCover').attr('src',localStorage.playerCover);
         }
 	
 		if(localStorage.player == 'play'){

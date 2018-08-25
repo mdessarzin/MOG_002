@@ -318,19 +318,19 @@ ngOnDestroy() {
 			}, 0);
 		  
 		setTimeout(() => {
-			  fetch('https://www.mediaone-digital.ch/cache/radiolac_live.json')
+			  fetch('https://www.mediaone-digital.ch/cache/live/radiolac_live.json')
 				.then(response => response.json())
 				.then(data => {
-	
+
 								this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
-									localStorage.setItem("playerDetail",data.start+'-'+data.end);
-									localStorage.setItem("playerTitre",data.title);
-									localStorage.setItem("playerSoustitre",data.with);
-									localStorage.setItem("playerCover",data.cover);
-				  					$('.detail').html(data.start+'-'+data.end);
+								localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
+								localStorage.setItem("playerTitre",data.title);
+								localStorage.setItem("playerSoustitre",data.animators);
+								localStorage.setItem("playerCover",'https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg'); //data.picture				  
+				  					$('.detail').html(data.start_short+'-'+data.end_short);
 									$('.titre').html(data.title);
-									$('.soustitre').html(data.with);
-									$('#coverPlayer').attr('src',data.cover);
+									$('.soustitre').html(data.animators);
+									$('#coverPlayer').attr('src','https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg');
 									$('.playerinfos').fadeIn();
 				});
 			}, 0);
