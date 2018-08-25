@@ -140,7 +140,7 @@ export class MyApp {
 								localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
 								localStorage.setItem("playerTitre",data.title);
 								localStorage.setItem("playerSoustitre",data.animators);
-								localStorage.setItem("playerCover",data.picture);
+								localStorage.setItem("playerCover",'https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg'); //data.picture
 						});					
 			}, 60000);
 			
