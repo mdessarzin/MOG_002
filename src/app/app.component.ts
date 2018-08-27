@@ -256,14 +256,14 @@ header: true
 				},
 				{
 					iconName: '',
-					displayName: 'Mieux Vivre',
+					displayName: 'Vivre mieux',
 					component: PodcastsPage,
 					key: '388',
 					header: true
 				},
 				{
 					iconName: '',
-					displayName: 'Le Portrait',
+					displayName: 'En toute vérité',
 					component: PodcastsPage,
 					key: '399',
 					header: true
@@ -284,7 +284,7 @@ header: true
 				},
 				{
 					iconName: '',
-					displayName: 'La Messe est dites',
+					displayName: 'La Messe est dite',
 					component: PodcastsPage,
 					key: '412',
 					header: true
@@ -298,14 +298,14 @@ header: true
 				},
 				{
 					iconName: '',
-					displayName: "Les Têtes à Claques",
+					displayName: "Les Têtes à claques",
 					component: PodcastsPage,
 					key: '414',
 					header: true
 				},
 				{
 					iconName: '',
-					displayName: "L'actu en continue",
+					displayName: "L'actu en continu",
 					component: PodcastsPage,
 					key: '81',
 					header: true
