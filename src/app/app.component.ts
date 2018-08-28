@@ -291,6 +291,13 @@ header: true
 				},
 				{
 					iconName: '',
+					displayName: "Le Club Radio Lac",
+					component: PodcastsPage,
+					key: '230',
+					header: true
+				},
+				{
+					iconName: '',
 					displayName: "La C'lac",
 					component: PodcastsPage,
 					key: '413',
