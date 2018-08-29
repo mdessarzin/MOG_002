@@ -145,7 +145,7 @@ typeplayer: any;
 		  
 		  
 		  	  		setTimeout(() => {
-						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
+						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json?hash_id='+Math.random())
 							.then(response => response.json())
 							.then(data => {
 							  console.log('Live:'+data);
@@ -164,7 +164,7 @@ typeplayer: any;
 					this.checklive = setInterval(() => {      
 				  
 					  setTimeout(() => {
-						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json')
+						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json?hash_id='+Math.random())
 							.then(response => response.json())
 							.then(data => {
 							  console.log('Live:'+data);
