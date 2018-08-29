@@ -101,6 +101,14 @@ export class MyApp {
 		localStorage.setItem("podcast_url", '');
 		localStorage.setItem("player", "stop");
 
+			$.getJSON('https://www.mediaone-digital.ch/cache/live/radiolac_live.json', function(data){
+				localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
+				localStorage.setItem("playerTitre",data.title);
+				localStorage.setItem("playerSoustitre",data.animators);
+				localStorage.setItem("playerCover",'https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg'); //data.picture
+			});					
+
+			
 			// Initialize some options
 			this.initializeOptions();
 			if (this.platform.is('cordova')) {
