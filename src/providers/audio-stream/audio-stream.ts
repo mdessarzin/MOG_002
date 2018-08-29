@@ -164,7 +164,7 @@ export class AudioStreamProvider {
 			setInterval(() => {      
 				  
 					  setTimeout(() => {
-						  fetch('https://www.mediaone-digital.ch/cache/radiolac.json')
+						  fetch('https://www.mediaone-digital.ch/cache/radiolac.json?hash_id='+Math.random())
 							.then(response => response.json())
 							.then(data => {
 							  console.log('playlist:'+data);
@@ -290,7 +290,7 @@ ngOnDestroy() {
 	
 	public loadtitlelive(){
 		  setTimeout(() => {
-			  fetch('https://www.mediaone-digital.ch/cache/radiolac.json')
+			  fetch('https://www.mediaone-digital.ch/cache/radiolac.json?hash_id='+Math.random())
 				.then(response => response.json())
 				.then(data => {
 				  console.log('playlist:'+data);
@@ -318,7 +318,7 @@ ngOnDestroy() {
 			}, 0);
 		  
 		setTimeout(() => {
-			  fetch('https://www.mediaone-digital.ch/cache/live/radiolac_live.json')
+			  fetch('https://www.mediaone-digital.ch/cache/live/radiolac_live.json?hash_id='+Math.random())
 				.then(response => response.json())
 				.then(data => {
 
