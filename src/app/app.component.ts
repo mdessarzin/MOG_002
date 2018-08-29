@@ -144,13 +144,20 @@ export class MyApp {
 								localStorage.setItem("songTitle",data.live[0].title);
 								localStorage.setItem("songCover",data.live[0].imageURL);
 						});
-						$.getJSON('https://www.mediaone-digital.ch/cache/live/radiolac_live.json', function(data){
+
+						if(localStorage.type_player == 'live'){
+							$.getJSON('https://www.mediaone-digital.ch/cache/live/radiolac_live.json', function(data){
 								localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
 								localStorage.setItem("playerTitre",data.title);
 								localStorage.setItem("playerSoustitre",data.animators);
 								localStorage.setItem("playerCover",'https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg'); //data.picture
-						});					
-			}, 60000);
+								$('.songArtist').html(data.start_short+'-'+data.end_short);
+								$('.songTitle').html(data.title);
+								$('.songCover').attr('src','https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg');
+							});				
+						}
+
+			}, 30000);
 			
 			
 
