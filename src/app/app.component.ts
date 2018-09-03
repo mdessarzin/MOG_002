@@ -301,13 +301,6 @@ header: true
 				},
 				{
 					iconName: '',
-					displayName: 'La Messe est dite',
-					component: PodcastsPage,
-					key: '412',
-					header: true
-				},
-				{
-					iconName: '',
 					displayName: "Le Club Radio Lac",
 					component: PodcastsPage,
 					key: '230',
@@ -318,13 +311,6 @@ header: true
 					displayName: "La C'lac",
 					component: PodcastsPage,
 					key: '413',
-					header: true
-				},
-				{
-					iconName: '',
-					displayName: "Les Têtes à claques",
-					component: PodcastsPage,
-					key: '414',
 					header: true
 				},
 				{
