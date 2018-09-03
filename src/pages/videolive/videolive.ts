@@ -19,8 +19,12 @@ export class VideolivePage {
 	poster: string;
 	trustedPostUrl: SafeResourceUrl;
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private sanitizer: DomSanitizer) {
-		this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+	  	this.url = navParams.get('url');
+	  	this.poster = navParams.get('poster');
+	  this.trustedPostUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+
   }
 
   ionViewDidLoad() {
