@@ -82,6 +82,23 @@ typeplayer: any;
 			$('.soustitre').html(localStorage.playerSoustitre);
 			$('#coverPlayer').attr('src',localStorage.playerCover);
 
+		  		  	  		setTimeout(() => {
+						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json?hash_id='+Math.random())
+							.then(response => response.json())
+							.then(data => {
+							  console.log('Live:'+data);
+							  	if(data=='0'){
+									$('.rond').css('display','none');
+									this.checklivestate = 0;
+								}
+							  else {
+									$('.rond').css('display','block');
+								    this.checklivestate = 1;
+							  }
+
+							});
+					}, 2000);
+
 	  
 	  }
 	  else{
