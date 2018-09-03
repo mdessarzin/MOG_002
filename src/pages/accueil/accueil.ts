@@ -1,7 +1,6 @@
 import { Component, ViewChild, Injectable } from '@angular/core';
 
 import { IonicPage, NavController, NavParams, Platform, Content, PopoverController, LoadingController, ModalController, ViewController} from 'ionic-angular';
-import { ScrollHideConfig } from '../../directives/scroll-hide/scroll-hide';
 import * as $ from "jquery";
 import { AudioStreamProvider } from '../../providers/audio-stream/audio-stream';
 import { Http } from '@angular/http';
@@ -38,8 +37,6 @@ export class AccueilPage {
     pushPage: any;
     buttonIcon: string = 'ios-play';
   	fakeUsers: Array<any> = new Array(3);
-	footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
-  	headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
 	link: string;
     title: string;
     image: string;

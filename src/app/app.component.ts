@@ -187,6 +187,8 @@ export class MyApp {
 			key: '',
 			header: true
 		});
+
+/*		
 this.options.push({
 iconName: 'ios-radio',
 displayName: 'Emissions',
@@ -195,7 +197,7 @@ component: BlogPage,
 key: '34',
 header: true
 });
-	
+
 		this.options.push({
 			iconName: 'ios-contacts',
 			displayName: 'Politique',
@@ -256,7 +258,7 @@ header: true
 			key: '19',
 			header: true
 		});
-		
+*/	
 		// Load options with nested items (with icons)
 		// -----------------------------------------------
 		this.options.push({
