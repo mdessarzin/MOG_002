@@ -273,7 +273,7 @@ header: true
 				},
 				{
 					iconName: '',
-					displayName: 'Vivre mieux',
+					displayName: 'Mieux Vivre',
 					component: PodcastsPage,
 					key: '388',
 					header: true
