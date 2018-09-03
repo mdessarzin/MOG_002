@@ -188,6 +188,7 @@ typeplayer: any;
   }
 
 	startVideo() {
+		this.checklivestate='1';
 		if(this.checklivestate==1){
 			this._player.pauseProvider();
 			this.onplaying = '0';
