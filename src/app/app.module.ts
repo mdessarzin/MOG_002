@@ -16,6 +16,9 @@ import { BlogPage } from '../pages/blog/blog';
 import { PlayerpopupPage } from '../pages/playerpopup/playerpopup';
 import { ContenupagePage } from '../pages/contenupage/contenupage';
 
+import { VideolivePage } from '../pages/videolive/videolive';
+
+
 import { ScrollHideDirective } from '../directives/scroll-hide/scroll-hide';
 import { IframeAutoHeightDirective } from '../directives/iframeautoheight/iframeautoheight';
 
@@ -72,6 +75,7 @@ export class MyErrorHandler implements ErrorHandler {
     BlogPage,
 	DetailsPage,
 	  PlayerPage,
+	  VideolivePage,
 PlayerPlaylistPage,
 	  ContenupagePage,
 	  PlayerpopupPage,
@@ -104,6 +108,7 @@ PlayerPlaylistPage,
     PodcastsPage,
     ContactezNousPage,
     BlogPage,
+	  VideolivePage,
 	DetailsPage,
 	  PlayerPage,
 	  PlayerpopupPage,

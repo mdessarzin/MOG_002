@@ -8,6 +8,7 @@ import { Media, MediaObject } from '@ionic-native/media';
 import { map } from 'rxjs/operators';
 import { PlayerpopupPage } from '../playerpopup/playerpopup';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { VideolivePage } from '../videolive/videolive';
 
 /**
  * Generated class for the PlayerPage page.
@@ -15,8 +16,6 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
-
 
 @IonicPage()
 @Component({
@@ -194,7 +193,7 @@ typeplayer: any;
 			this.onplaying = '0';
 			localStorage.setItem("player", "stop");
 			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-			let modal = this.modalCtrl.create(PlayerpopupPage,{url:'https://livevideo.infomaniak.com/streaming/livecast/radiolacmd/playlist.m3u8', poster:''});
+			let modal = this.modalCtrl.create(VideolivePage,{url:'https://www.dailymotion.com/embed/video/k1NlPYwmFe7FL7rGZlX?autoPlay=1&queue-enable=false', poster:''});
 			modal.present();  
 		}
 		else {
