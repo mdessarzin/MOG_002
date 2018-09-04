@@ -266,6 +266,7 @@ header: true
 			
 		this.options.push({
 			displayName: 'Podcasts',
+			iconName: 'ios-musical-notes',
 			subItems: [
 				{
 					iconName: '',
