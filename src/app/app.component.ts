@@ -266,15 +266,13 @@ header: true
 			
 		this.options.push({
 			displayName: 'Podcasts',
-			
 			subItems: [
 				{
 					iconName: '',
 					displayName: 'Radio Lac Matin',
 					component: PodcastsPage,
 					key: '51',
-					header: true,
-					expanded: true
+					header: true
 				},
 				{
 					iconName: '',
