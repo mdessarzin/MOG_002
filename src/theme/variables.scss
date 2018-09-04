@@ -41,6 +41,7 @@ $colors: (
   dark:       #000000,
   menulight:  #333333,
   menudark:   #252525,
+menudarkcontent:   #181818
 );
 
 $toolbar-ios-background: #29b7c2;
@@ -68,7 +69,7 @@ $active-color: map-get($colors, primary);
 $font-color: #fff;
 $background-light-color: map-get($colors, menulight);
 $background-dark-color: map-get($colors, menudark);
-
+$background-dark-content-color: map-get($colors, menudarkcontent);
 
 // App Material Design Variables
 // --------------------------------------------------

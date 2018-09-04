@@ -55,9 +55,9 @@ export class MyApp {
 		showSelectedOption: true,
 		selectedOptionClass: 'active-side-menu-option',
 		subOptionIndentation: {
-			md: '56px',
-			ios: '64px',
-			wp: '56px'
+			md: '25px',
+			ios: '25px',
+			wp: '25px'
 		}
 	};
 
@@ -178,7 +178,7 @@ export class MyApp {
 		// Load simple menu options
 		// ------------------------------------------
 		this.options.push({
-			iconName: 'ios-apps',
+			iconName: 'ios-radio',
 			displayName: 'Accueil',
 			component: AccueilPage,
 

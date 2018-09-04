@@ -80,7 +80,7 @@ ion-item.item-wp {
     // Header
     // ------------------
     ion-item.item.item-block.header {
-        background-color: $background-dark-color;
+background-color: $background-light-color;
         color: $font-color;
 
         &.active-side-menu-option {
@@ -91,7 +91,7 @@ ion-item.item-wp {
     // Sub option
     // ------------------
     ion-item.item.item-block.sub-option {
-        background-color: $background-light-color;
+        background-color: $background-dark-color;
         color: $font-color;
 
         &.active-side-menu-option {
