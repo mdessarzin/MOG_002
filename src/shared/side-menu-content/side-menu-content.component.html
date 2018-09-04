@@ -23,15 +23,14 @@
                 <!-- Sub items -->
 <!--                <div [style.height]="option.expanded ? ((itemHeight + 1) * option.subItemsCount) + 'px' : '0px'" class="options">-->
 
-				<div class="options">
                     <ng-template ngFor let-item [ngForOf]="option.subOptions">
                         <ion-item class="sub-option" [style.padding-left]="subOptionIndentation" [class.no-icon]="menuSettings?.indentSubOptionsWithoutIcons && !item.iconName" [ngClass]="menuSettings?.showSelectedOption && item.selected ? menuSettings.selectedOptionClass : null" tappable (tap)="select(item)">
                             <ion-icon *ngIf="item.iconName" [name]="item.iconName" item-left></ion-icon>
                             {{ item.displayName }}  <ion-badge item-right *ngIf="item.badge | async as badgeNo">{{ badgeNo }}</ion-badge>
                         </ion-item>
                     </ng-template>
-                </div>
-            </ion-list>
+
+			</ion-list>
 
         </ng-template>
 
