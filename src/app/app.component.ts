@@ -266,14 +266,15 @@ header: true
 			
 		this.options.push({
 			displayName: 'Podcasts',
-			expanded: true,
+			
 			subItems: [
 				{
 					iconName: '',
 					displayName: 'Radio Lac Matin',
 					component: PodcastsPage,
 					key: '51',
-					header: true
+					header: true,
+					expanded: true
 				},
 				{
 					iconName: '',
@@ -333,6 +334,7 @@ header: true
 				}
 			]
 		});
+		
 		this.options.push({
 			iconName: 'ios-time-outline',
 			displayName: 'Programme',
