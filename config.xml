@@ -16,7 +16,7 @@
     <allow-navigation href="https://www.radiolac.ch/*" />
     <allow-navigation href="https://applications.mediaonegroup.ch/*" />
     <preference name="ScrollEnabled" value="false" />
-	<preference name="orientation" value="portrait" />
+    <preference name="orientation" value="portrait" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
@@ -135,4 +135,5 @@
         <variable name="UPDATE_API" value="https://api.ionicjs.com" />
         <variable name="MAX_STORE" value="1" />
     </plugin>
+    <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
 </widget>

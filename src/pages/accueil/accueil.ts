@@ -12,6 +12,7 @@ import { PlayerPage } from '../player/player';
 import { PlayerPlaylistPage } from '../player-playlist/player-playlist'
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 
 //import {Http, Response} from "@angular/http";
@@ -49,6 +50,7 @@ test:any;
 	liveHeures: string;
   constructor(
 		public navCtrl: NavController,
+		 private screenOrientation: ScreenOrientation,
 		public _player: AudioStreamProvider,
 		public http: Http, 
 		public loadingCtrl: LoadingController,
@@ -65,7 +67,8 @@ public platform: Platform,
 			this.liveTitre = 'Radio Lac Matin';
 			this.liveHeures = '06H-09H';
 	
-			
+	this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.portrait);
+	
 	this.ga.startTrackerWithId('UA-104904297-2')
       .then(() => {
         console.log('Google analytics is ready now');
