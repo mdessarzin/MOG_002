@@ -53,123 +53,73 @@ test:any;
 		public _player: AudioStreamProvider,
 		public http: Http, 
 		public loadingCtrl: LoadingController,
-		 private socialSharing: SocialSharing,
-		 public modalCtrl: ModalController,
-		 public viewCtrl: ViewController,
-		 public plt: Platform,
-public platform: Platform,
-		 private iab: InAppBrowser,
+		private socialSharing: SocialSharing,
+		public modalCtrl: ModalController,
+		public viewCtrl: ViewController,
+		public plt: Platform,
+		public platform: Platform,
+		private iab: InAppBrowser,
 		private ga: GoogleAnalytics
 	){
 		this.loadData();	
-			this.test = 2;
-			this.liveTitre = 'Radio Lac Matin';
-			this.liveHeures = '06H-09H';
+		this.test = 2;
 	
-	
-	this.ga.startTrackerWithId('UA-104904297-2')
-      .then(() => {
-        console.log('Google analytics is ready now');
-        this.ga.trackView('home');
-        this.ga.trackEvent('Navigation', 'Home');
+		this.ga.startTrackerWithId('UA-104904297-2')
+		  .then(() => {
+			console.log('Google analytics is ready now');
+			this.ga.trackView('home');
+			this.ga.trackEvent('Navigation', 'Home');
 
-      })
-      .catch(e => console.log('Error starting GoogleAnalytics', e));
+		  })
+		  .catch(e => console.log('Error starting GoogleAnalytics', e));
 			
   }
 
 	
 update(refresher) {
     console.log('Begin async operation', refresher);
-		  setTimeout(() => {
-
-	this.loadData(false,refresher);	
-			  },200);
-  }
+   	setTimeout(() => {
+		this.loadData(false,refresher);	
+	},200);
+}
 	
-	  loadData(infiniteScroll?,refresher?) {
+loadData(infiniteScroll?,refresher?) {
 
-			if (refresher) {
-				this.pagination = 1;
+	if (refresher) {
+		this.pagination = 1;
+	}
+
+	this.http.get('https://www.radiolac.ch/wp-json/mog/v1/get_data?type=post&taxonomy=category&per_page=20&page='+this.pagination+'&hash_id=' + Math.random()).map(res => res.json()).subscribe(data => {
+	  //  this.posts = data;
+		console.log(this.posts);
+		if (refresher){
+			  this.posts = [];
+				refresher.complete();
 			}
+			for(let i of data){
+				this.posts.push(i);
+			}
+			this.postsLoading = '1';
+			if (infiniteScroll) {
+				infiniteScroll.complete();
+			}
+	});
+  
+}	
 
-			this.http.get('https://www.radiolac.ch/wp-json/mog/v1/get_data?type=post&taxonomy=category&per_page=20&page='+this.pagination+'&hash_id=' + Math.random()).map(res => res.json()).subscribe(data => {
-			  //  this.posts = data;
-				console.log(this.posts);
-				if (refresher) {
-								  this.posts = [];
-									refresher.complete();
-								}
-								for(let i of data){
-
-									  
-
-									
-
-	this.posts.push(i);
-
-
-								}
-				
-												this.postsLoading = '1';
-
-							  
-								if (infiniteScroll) {
-									infiniteScroll.complete();
-								}
-			});
-		  
-
-			  //Leaderboard
-			
-
-
-	  }	
-
-	
-	
- loadMore(infiniteScroll) {
+loadMore(infiniteScroll) {
     this.pagination += 1;
     this.loadData(infiniteScroll);
  
     if (this.pagination === this.maximumPages) {
       infiniteScroll.enable(false);
     }
-  }	
+}	
 	
-
-	
-	ngAfterViewInit() {
-		
-
+ngAfterViewInit() {
 }
 	
 ionViewDidLoad() {
-
-	
-
-	  
-	  //			interstitial: '947330/29216'
-
-	
-
-
-	
-	
-	  if(localStorage.type_player == 'live'){
-
-
-		  
-        }
-        else
-        {
-			
-			
-			
-			$('.songArtist').html(localStorage.playerDetail);
-			$('.songTitle').html(localStorage.playerTitre);
-			$('.songCover').attr('src',localStorage.playerCover);
-        }
 	
 		if(localStorage.player == 'play'){
 			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
@@ -184,24 +134,7 @@ ionViewDidLoad() {
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();
         }
-      
-		$.ajaxSetup({ cache: false });
-		$.getJSON('https://www.mediaone-digital.ch/cache/live/radiolac_live.json?hash_id='+Math.random(), function(data){
-			
-			if(localStorage.type_player == 'live'){
-		  	
-				localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
-				localStorage.setItem("playerTitre",data.title);
-				localStorage.setItem("playerSoustitre",data.animators);
-				localStorage.setItem("playerCover",'https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg'); //data.picture
-				$('.songArtist').html(data.start_short+'-'+data.end_short);
-				$('.songTitle').html(data.title);
-				$('.songCover').attr('src','https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg');
-								
-			}
-
-		});
-	
+      	
 /*
 		this.platform.ready().then(() => {
 
@@ -237,34 +170,12 @@ ionViewDidLoad() {
 // 	(<any>window).SmartAdServer.hideBanner();
  }
 	
-	openads(link){
-//		const browser = this.iab.create('https://ionicframework.com/');
-		            window.open(link, "_system");
-
-	}
-	
-	
-startAudio() {      
-  // if (this.plt.is('cordova')) {
-     
-        if(localStorage.player == 'play'){
-                this._player.pauseProvider();
-			  //  this.musicControls.listen();
-				//this.musicControls.updateIsPlaying(false);
-				//this.onplaying = '0';
-                
-                //$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-        }
-        else
-        {
-			
-			this._player.playerconfigProvider();
-			this._player.playProvider();
-		}
-
+openads(link){
+	window.open(link, "_system");
 }
+	
 
-	private whatsappShare(title, image, link){
+private whatsappShare(title, image, link){
     this.socialSharing.shareViaWhatsApp(title, image, link)
       .then(()=>{
 //
@@ -272,8 +183,7 @@ startAudio() {
       ()=>{
          //
       })
-  }
-
+}
 
 
 private share(message, title, image, link){
@@ -293,19 +203,13 @@ private showDetails(id,title,link){
     this.navCtrl.push(DetailsPage,{
             title: title,
             key: id,
-		link:link
-           
-        });
+			link:link       
+    });
 }
-	
 
 private openPlayer(){
         //console.log(this.login);
-       let modal = this.modalCtrl.create(PlayerPage); //PlayerPage
-    modal.present();
-    
-    
+       	let modal = this.modalCtrl.create(PlayerPage); //PlayerPage
+		modal.present();
     }
-	
 }
-	
