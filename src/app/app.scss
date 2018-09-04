@@ -19,6 +19,24 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather');
 @import '../assets/animate.min.css';
 
+#header {
+   position: fixed;
+   top: 1.25rem; // iOs 10 or lower
+   top: constant(safe-area-inset-top); // iOs 11
+   top: env(safe-area-inset-top); // iOs 11+ (feature)
+
+   // or use calc()
+   top: calc(constant(safe-area-inset-top) + 1rem);
+   top: env(constant(safe-area-inset-top) + 1rem);
+
+   // or SCSS calc()
+   $nav-height: 1.25rem;
+   top: calc(constant(safe-area-inset-top) + #{$nav-height});
+   top: calc(env(safe-area-inset-top) + #{$nav-height});
+}
+
+
+
 h1 {
 	font-family: 'Merriweather', serif;
 }

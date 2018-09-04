@@ -17,9 +17,6 @@ import { PlayerpopupPage } from '../pages/playerpopup/playerpopup';
 import { ContenupagePage } from '../pages/contenupage/contenupage';
 
 import { VideolivePage } from '../pages/videolive/videolive';
-
-import { ScreenOrientation } from '@ionic-native/screen-orientation';
-
 import { ScrollHideDirective } from '../directives/scroll-hide/scroll-hide';
 import { IframeAutoHeightDirective } from '../directives/iframeautoheight/iframeautoheight';
 
@@ -119,7 +116,6 @@ PlayerPlaylistPage,
   providers: [
     StatusBar,
     SplashScreen,
-	  ScreenOrientation,
 	   IonicErrorHandler,
 	  AudioStreamProvider,
 	  SocialSharing,

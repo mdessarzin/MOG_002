@@ -135,5 +135,4 @@
         <variable name="UPDATE_API" value="https://api.ionicjs.com" />
         <variable name="MAX_STORE" value="1" />
     </plugin>
-    <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
 </widget>
