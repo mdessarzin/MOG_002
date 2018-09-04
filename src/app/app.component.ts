@@ -262,8 +262,6 @@ header: true
 		// Load options with nested items (with icons)
 		// -----------------------------------------------
 		
-		
-			
 		this.options.push({
 			displayName: 'Podcasts',
 			iconName: 'ios-musical-notes',

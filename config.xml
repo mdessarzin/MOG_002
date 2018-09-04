@@ -16,6 +16,7 @@
     <allow-navigation href="https://www.radiolac.ch/*" />
     <allow-navigation href="https://applications.mediaonegroup.ch/*" />
     <preference name="ScrollEnabled" value="false" />
+	<preference name="orientation" value="portrait" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
