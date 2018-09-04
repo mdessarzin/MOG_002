@@ -326,11 +326,11 @@ ngOnDestroy() {
 								localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
 								localStorage.setItem("playerTitre",data.title);
 								localStorage.setItem("playerSoustitre",data.animators);
-								localStorage.setItem("playerCover",'https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg'); //data.picture				  
+								localStorage.setItem("playerCover",data.picture); //data.picture				  
 				  					$('.detail').html(data.start_short+'-'+data.end_short);
 									$('.titre').html(data.title);
 									$('.soustitre').html(data.animators);
-									$('#coverPlayer').attr('src','https://www.radiolac.ch/wp-content/uploads/2018/08/logo_app.jpg');
+									$('#coverPlayer').attr('src',data.picture);
 									$('.playerinfos').fadeIn();
 				});
 			}, 0);
