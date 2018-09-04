@@ -266,6 +266,7 @@ header: true
 			
 		this.options.push({
 			displayName: 'Podcasts',
+			expanded: true,
 			subItems: [
 				{
 					iconName: '',
