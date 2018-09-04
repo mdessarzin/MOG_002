@@ -41,7 +41,9 @@ ion-list.accordion-menu div.options {
   overflow-y: hidden;
   height: 0; }
 ion-list.accordion-menu ion-item.item.item-block.item-ios.no-icon .item-inner {
-  margin-left: 48px; }
+  margin-left: 20px;
+  /* 48 */ }
 ion-list.accordion-menu ion-item.item.item-block.item-md.no-icon .item-inner,
 ion-list.accordion-menu ion-item.item.item-block.item-wp.no-icon .item-inner {
-  margin-left: 40px; }
+  margin-left: 20px;
+  /* 40 */ }

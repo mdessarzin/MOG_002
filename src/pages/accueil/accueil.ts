@@ -67,7 +67,7 @@ public platform: Platform,
 			this.liveTitre = 'Radio Lac Matin';
 			this.liveHeures = '06H-09H';
 	
-	this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.portrait);
+	this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 	
 	this.ga.startTrackerWithId('UA-104904297-2')
       .then(() => {
