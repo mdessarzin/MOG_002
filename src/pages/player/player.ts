@@ -328,6 +328,7 @@ typeplayer: any;
 			 if(localStorage.player == 'stop'){
 				 this._player.playerconfigProvider();
 				 this._player.playProvider();
+				 alert('ok');
 			 }
 		
 		}
