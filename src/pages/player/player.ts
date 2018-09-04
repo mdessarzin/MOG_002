@@ -143,11 +143,10 @@ typeplayer: any;
 							//	this.startAudio();
 								localStorage.setItem("podcast_nouveau", 'non');
 								this._player.playProvider();
-							}
-							else {
-								$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+								localStorage.setItem("player", "play");
 
 							}
+							
 
 								if(localStorage.player == 'play'){
 									console.log('Etat PLAY');
