@@ -101,105 +101,106 @@ typeplayer: any;
 
 	  
 	  }
-	  else{
-		this.titreplayer = 'Podcast';
-	  
-	  setTimeout(() => {
+	  else
+	  {
+				this.titreplayer = 'Podcast';
 
+		  		setTimeout(() => {
 
-			  if(localStorage.type_player == 'live'){
-					//this._player.loadtitlelive();
-					//this._player.playProvider();
-				}
-				else
-				{
-
-
-					//this._player.pauseProvider();
-				//	this._player.playProvider();
-					this._player.stream.getCurrentPosition().then((curpos) => {
-						console.log('Player A '+curpos);
-						this.positions = curpos;
-					});					
-
-					this.timingseek = setInterval(() => {      
-						this._player.stream.getCurrentPosition().then((curpos) => {
-							console.log('Player '+curpos);
-							this.positions = curpos;
-						});					
-					}, 1000);
-
-					this.titreplayer = 'Podcast';
-					this.soustitre = localStorage.podcast_title;
-					this.titre = '';
-					this.detail = localStorage.podcast_category;
-
-					//$('.songArtist').html(localStorage.podcast_title);
-					//$('.songTitle').html(localStorage.podcast_category);
-					$('.songCover_').attr('src',localStorage.podcast_cover);
-					$('#coverPlayer').attr('src',localStorage.podcast_cover);
-					console.log('Nouveau son? '+localStorage.podcast_nouveau);
-					if(localStorage.podcast_nouveau == 'oui'){
-					//	this.startAudio();
-						localStorage.setItem("podcast_nouveau", 'non');
-						this._player.playProvider();
-					}
-
-						if(localStorage.player == 'play'){
-							console.log('Etat PLAY');
-								$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+					  if(localStorage.type_player == 'live'){
+							//this._player.loadtitlelive();
+							//this._player.playProvider();
 						}
-						else{
-										console.log('Etat STOP');
-						this._player.playProvider();
+						else
+						{
 
-								$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+							localStorage.setItem("player", "play");
+							
+							//this._player.pauseProvider();
+						//	this._player.playProvider();
+							this._player.stream.getCurrentPosition().then((curpos) => {
+								console.log('Player A '+curpos);
+								this.positions = curpos;
+							});					
+
+							this.timingseek = setInterval(() => {      
+								this._player.stream.getCurrentPosition().then((curpos) => {
+									console.log('Player '+curpos);
+									this.positions = curpos;
+								});					
+							}, 1000);
+
+							this.titreplayer = 'Podcast';
+							this.soustitre = localStorage.podcast_title;
+							this.titre = '';
+							this.detail = localStorage.podcast_category;
+
+							//$('.songArtist').html(localStorage.podcast_title);
+							//$('.songTitle').html(localStorage.podcast_category);
+							$('.songCover_').attr('src',localStorage.podcast_cover);
+							$('#coverPlayer').attr('src',localStorage.podcast_cover);
+							console.log('Nouveau son? '+localStorage.podcast_nouveau);
+							if(localStorage.podcast_nouveau == 'oui'){
+							//	this.startAudio();
+								localStorage.setItem("podcast_nouveau", 'non');
+								this._player.playProvider();
+							}
+
+								if(localStorage.player == 'play'){
+									console.log('Etat PLAY');
+										$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+								}
+								else{
+												console.log('Etat STOP');
+								this._player.playProvider();
+
+										$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+								}
 						}
-				}
-			let self = this;
-			this.durations = this._player.stream.getDuration();  
-		  
-		  
-		  	  		setTimeout(() => {
-						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json?hash_id='+Math.random())
-							.then(response => response.json())
-							.then(data => {
-							  console.log('Live:'+data);
-							  	if(data=='0'){
-									$('.rond').css('display','none');
-									this.checklivestate = 0;
-								}
-							  else {
-									$('.rond').css('display','block');
-								    this.checklivestate = 1;
-							  }
+					let self = this;
+					this.durations = this._player.stream.getDuration();  
 
-							});
-					}, 5000);
 
-					this.checklive = setInterval(() => {      
-				  
-					  setTimeout(() => {
-						  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json?hash_id='+Math.random())
-							.then(response => response.json())
-							.then(data => {
-							  console.log('Live:'+data);
-							  	if(data=='0'){
-									$('.rond').css('display','none');
-									this.checklivestate = 0;
-								}
-							  else {
-									$('.rond').css('display','block');
-								    this.checklivestate = 1;
-							  }
+							setTimeout(() => {
+								  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json?hash_id='+Math.random())
+									.then(response => response.json())
+									.then(data => {
+									  console.log('Live:'+data);
+										if(data=='0'){
+											$('.rond').css('display','none');
+											this.checklivestate = 0;
+										}
+									  else {
+											$('.rond').css('display','block');
+											this.checklivestate = 1;
+									  }
 
-							});
-						}, 0);
+									});
+							}, 5000);
 
-					},40000);
-		  
-		  
-		},600);
+							this.checklive = setInterval(() => {      
+
+							  setTimeout(() => {
+								  fetch('https://www.mediaone-digital.ch/cache/live/www_radiolac_ch.json?hash_id='+Math.random())
+									.then(response => response.json())
+									.then(data => {
+									  console.log('Live:'+data);
+										if(data=='0'){
+											$('.rond').css('display','none');
+											this.checklivestate = 0;
+										}
+									  else {
+											$('.rond').css('display','block');
+											this.checklivestate = 1;
+									  }
+
+									});
+								}, 0);
+
+							},40000);
+
+
+				},600);
 		  
 		  }
   }
