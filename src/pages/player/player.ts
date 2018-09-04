@@ -120,6 +120,7 @@ typeplayer: any;
 							this._player.stream.getCurrentPosition().then((curpos) => {
 								console.log('Player A '+curpos);
 								this.positions = curpos;
+								
 							});					
 
 							this.timingseek = setInterval(() => {      
@@ -128,7 +129,7 @@ typeplayer: any;
 									this.positions = curpos;
 								});					
 							}, 1000);
-
+							$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 							this.titreplayer = 'Podcast';
 							this.soustitre = localStorage.podcast_title;
 							this.titre = '';
@@ -143,7 +144,6 @@ typeplayer: any;
 							//	this.startAudio();
 								localStorage.setItem("podcast_nouveau", 'non');
 								this._player.playProvider();
-								localStorage.setItem("player", "play");
 
 							}
 							
