@@ -325,15 +325,13 @@ typeplayer: any;
 		/* Démarrage automatique du flux à l'ouverture du player */
 		if(localStorage.type_player == 'live'){
 				
-			 if(localStorage.player == 'stop'){
+			 if(localStorage.player == 'stop'){//
 				 this._player.playerconfigProvider();
 				 this._player.playProvider();
-				 alert('ok');
 			 }
 		
+			
 		}
-		
-		
 		
 				if(localStorage.player == 'stop'){
 								$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
