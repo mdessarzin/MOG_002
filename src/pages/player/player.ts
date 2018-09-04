@@ -114,7 +114,6 @@ typeplayer: any;
 						else
 						{
 
-							localStorage.setItem("player", "play");
 							
 							//this._player.pauseProvider();
 						//	this._player.playProvider();
@@ -144,6 +143,10 @@ typeplayer: any;
 							//	this.startAudio();
 								localStorage.setItem("podcast_nouveau", 'non');
 								this._player.playProvider();
+							}
+							else {
+								$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+
 							}
 
 								if(localStorage.player == 'play'){
