@@ -129,7 +129,7 @@ typeplayer: any;
 									this.positions = curpos;
 								});					
 							}, 1000);
-							$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+							
 							this.titreplayer = 'Podcast';
 							this.soustitre = localStorage.podcast_title;
 							this.titre = '';
@@ -150,14 +150,16 @@ typeplayer: any;
 
 								if(localStorage.player == 'play'){
 									console.log('Etat PLAY');
-										$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+									$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+
 								}
 								else{
-												console.log('Etat STOP');
-								this._player.playProvider();
-
+										console.log('Etat STOP');
+										this._player.playProvider();
 										$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
 								}
+							
+							
 						}
 					let self = this;
 					this.durations = this._player.stream.getDuration();  
