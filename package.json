@@ -79,7 +79,6 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-google-analytics": {},
-      "cordova-plugin-statusbar": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
@@ -101,7 +100,8 @@
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-advanced-http": {},
       "onesignal-cordova-plugin": {},
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-statusbar": {}
     },
     "platforms": [
       "browser",
