@@ -380,7 +380,7 @@ typeplayer: any;
 			$('.soustitre').html(localStorage.playerSoustitre);
 			$('#coverPlayer').attr('src',localStorage.playerCover);
 			
-			$('.playerinfos').hide();
+			//$('.playerinfos').hide();
 			$('.player .scroll-content').css('margin-bottom','80px');
 			$('.btPlayer').hide();
 			$('.loadingPlayer').show();
