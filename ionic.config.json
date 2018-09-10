@@ -1,14 +1,14 @@
 {
   "name": "MOG002_RadioLac",
-  "app_id": "813edd26",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
   },
-	"proxies": [
+  "type": "ionic-angular",
+  "proxies": [
     {
-        "path": "/remotedata",
-        "proxyUrl": "https://www.radiolac.ch"
+      "path": "/remotedata",
+      "proxyUrl": "https://www.radiolac.ch"
     }
-  ]
+  ],
+  "pro_id": "813edd26"
 }
