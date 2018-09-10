@@ -155,6 +155,7 @@ export class AudioStreamProvider {
 		public playProvider(): Observable<boolean> {
 
 
+			this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
 
 			
 			
