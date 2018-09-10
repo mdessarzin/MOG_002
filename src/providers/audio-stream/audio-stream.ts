@@ -49,6 +49,8 @@ export class AudioStreamProvider {
 			  //Android
 			  ticker    : ''
 			 });
+						this.musicControls.listen(); // activates the observable above
+
 			 this.musicControls.subscribe().subscribe((action) => {
 			  console.log('action', action);
 				  const message = JSON.parse(action).message;
@@ -119,7 +121,6 @@ export class AudioStreamProvider {
 						break;
 				  }
 			});
-			this.musicControls.listen(); // activates the observable above
 			this.musicControls.updateIsPlaying(true);
 		  }
 
