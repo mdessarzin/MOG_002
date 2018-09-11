@@ -156,12 +156,8 @@ export class AudioStreamProvider {
 		public playProvider(): Observable<boolean> {
 
 
-			this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
+			this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
 
-			
-			
-
-			
 
 			setInterval(() => {      
 				  
@@ -174,7 +170,7 @@ export class AudioStreamProvider {
 											//
 										}
 										else{
-											this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
+											this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
 											this.live = data.live[0].interpret;
 											if(localStorage.type_player == 'live'){
 												$('.songArtist_').html(data.live[0].interpret);
@@ -201,7 +197,7 @@ export class AudioStreamProvider {
 			$('.playerEtat_2').show();
 
 			this.stream.play();
-			this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
+			this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
 			console.log('play');
 			localStorage.setItem("player", "play");
 			
@@ -300,7 +296,7 @@ ngOnDestroy() {
 								//
 							}
 							else{
-								this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
+								this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
 								this.live = data.live[0].interpret;
 								if(localStorage.type_player == 'live'){
 									$('.songArtist_').html(data.live[0].interpret);
@@ -324,7 +320,7 @@ ngOnDestroy() {
 				.then(response => response.json())
 				.then(data => {
 
-								this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+								this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
 								localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
 								localStorage.setItem("playerTitre",data.title);
 								localStorage.setItem("playerSoustitre",data.animators);
