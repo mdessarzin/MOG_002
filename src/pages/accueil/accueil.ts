@@ -228,9 +228,9 @@ private startAudio() {
 			this._player.playProvider();
 			$('.btPlayerhome').html('<i class="fas fa-pause"></i>');
 			$('.fab-md-danger').removeClass("pulseplay");
-			$('.playerEtat_2').hide();
 			$('.playerEtat_0').hide();
-			$('.playerEtat_1').show();
+			$('.playerEtat_1').hide();
+			$('.playerEtat_2').show();
 		}
 }
 
