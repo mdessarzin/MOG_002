@@ -75,6 +75,7 @@ export class MyApp {
 		this._player.playerconfigProvider();
 		//this._player.playProvider();
         //this._player.pauseProvider();
+		localStorage.setItem("build", "1.0.3");
 		this.statusBar.backgroundColorByHexString("#29b7c2");
 		this.initializeApp();	
 		let ratio = Math.max(window.devicePixelRatio || 1, 1);

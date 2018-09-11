@@ -208,7 +208,7 @@ private showDetails(id,title,link){
 }
 
 private infos(){
-        console.log(this.login);
+        alert('Media One Group - '+localStorage.build);
        	//let modal = this.modalCtrl.create(PlayerPage); //PlayerPage
 		//modal.present();
     }
