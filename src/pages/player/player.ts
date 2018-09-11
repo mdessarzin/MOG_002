@@ -312,6 +312,7 @@ typeplayer: any;
 				console.log('Play Button clicked');
 				if(localStorage.type_player == 'live'){
 					this._player.playerconfigProvider();
+					this._player.settingMusicControl(localStorage.playerTitre, localStorage.playerSoustitre, localStorage.playerCover);
 				}
 				else {
 					//this.durations = this._player.stream.getDuration();  
@@ -332,6 +333,7 @@ typeplayer: any;
 				
 			 if(localStorage.player == 'stop'){//
 				 this._player.playerconfigProvider();
+				 					this._player.settingMusicControl(localStorage.playerTitre, localStorage.playerSoustitre, localStorage.playerCover);
 				 this._player.playProvider();
 			 }
 		

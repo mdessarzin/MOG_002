@@ -156,7 +156,6 @@ export class AudioStreamProvider {
 		public playProvider(): Observable<boolean> {
 
 
-			this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
 
 
 			setInterval(() => {      
@@ -170,12 +169,13 @@ export class AudioStreamProvider {
 											//
 										}
 										else{
-											this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
 											this.live = data.live[0].interpret;
 											if(localStorage.type_player == 'live'){
 												$('.songArtist_').html(data.live[0].interpret);
 												$('.songTitle_').html(data.live[0].title);
 												$('.songCover_').attr('src',data.live[0].imageURL);
+												this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+
 											}
 											else
 											{
@@ -197,7 +197,7 @@ export class AudioStreamProvider {
 			$('.playerEtat_2').show();
 
 			this.stream.play();
-			this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
+			this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
 			console.log('play');
 			localStorage.setItem("player", "play");
 			
@@ -296,7 +296,7 @@ ngOnDestroy() {
 								//
 							}
 							else{
-								this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
+								this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
 								this.live = data.live[0].interpret;
 								if(localStorage.type_player == 'live'){
 									$('.songArtist_').html(data.live[0].interpret);
@@ -320,16 +320,15 @@ ngOnDestroy() {
 				.then(response => response.json())
 				.then(data => {
 
-								this.settingMusicControl(localStorage.songArtist,localStorage.songTitle, localStorage.songCover);
 								localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
 								localStorage.setItem("playerTitre",data.title);
 								localStorage.setItem("playerSoustitre",data.animators);
 								localStorage.setItem("playerCover",data.picture); //data.picture				  
-				  					$('.detail').html(data.start_short+'-'+data.end_short);
-									$('.titre').html(data.title);
-									$('.soustitre').html(data.animators);
-									$('#coverPlayer').attr('src',data.picture);
-									$('.playerinfos').fadeIn();
+								$('.detail').html(data.start_short+'-'+data.end_short);
+								$('.titre').html(data.title);
+								$('.soustitre').html(data.animators);
+								$('#coverPlayer').attr('src',data.picture);
+								$('.playerinfos').fadeIn();
 				});
 			}, 0);
 
