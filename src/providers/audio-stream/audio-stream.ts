@@ -73,6 +73,7 @@ export class AudioStreamProvider {
 						$('.playerEtat_1').hide();
 						$('.playerEtat_0').show();
 						$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+						$('.btPlayerhome').html('<i class="fas fa-play"></i>');
 
 				   break;
 					case 'music-controls-play':
@@ -88,6 +89,8 @@ export class AudioStreamProvider {
 						$('.playerEtat_0').hide();
 						$('.playerEtat_1').show();
 						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+						$('.btPlayerhome').html('<i class="fas fa-pause"></i>');
+
 					break;
 					case 'music-controls-destroy':
 					   // Do something
@@ -212,6 +215,7 @@ export class AudioStreamProvider {
 							$('.playerEtat_0').hide();
 							$('.playerEtat_1').show();
 							$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+							$('.btPlayerhome').html('<i class="fas fa-pause"></i>');
 							clearInterval(this.timingloading);
 					}
 				});					
@@ -234,6 +238,7 @@ export class AudioStreamProvider {
 								$('.playerEtat_1').hide();
 								$('.playerEtat_0').show();
 								$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+								$('.btPlayerhome').html('<i class="fas fa-play"></i>');
 					if (this.mediaTimer !=null) {
 						//clearInterval(this.mediaTimer);    // (*) don t do clearInterval here, or your ionic will not work, see below
 						//TODO here : handle html, remove "playing" message
@@ -250,10 +255,11 @@ export class AudioStreamProvider {
     this.stream.onError.subscribe(error => 
         {
         console.log(" > onError="+error); 
-						$('.playerEtat_2').hide();
-						$('.playerEtat_1').hide();
-						$('.playerEtat_0').show();
-						$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			$('.playerEtat_2').hide();
+			$('.playerEtat_1').hide();
+			$('.playerEtat_0').show();
+			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			$('.btPlayerhome').html('<i class="fas fa-play"></i>');
         //clearInterval(this.mediaTimer);  (*) don t do clearInterval here, or your ionic will not work, see below
     });
 			
@@ -282,6 +288,7 @@ ngOnDestroy() {
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();
 			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			$('.btPlayerhome').html('<i class="fas fa-play"></i>');
 			return Observable.of(false);
 		}
 	
@@ -319,16 +326,15 @@ ngOnDestroy() {
 			  fetch('https://www.mediaone-digital.ch/cache/live/radiolac_live.json?hash_id='+Math.random())
 				.then(response => response.json())
 				.then(data => {
-
-								localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
-								localStorage.setItem("playerTitre",data.title);
-								localStorage.setItem("playerSoustitre",data.animators);
-								localStorage.setItem("playerCover",data.picture); //data.picture				  
-								$('.detail').html(data.start_short+'-'+data.end_short);
-								$('.titre').html(data.title);
-								$('.soustitre').html(data.animators);
-								$('#coverPlayer').attr('src',data.picture);
-								$('.playerinfos').fadeIn();
+					localStorage.setItem("playerDetail",data.start_short+'-'+data.end_short);
+					localStorage.setItem("playerTitre",data.title);
+					localStorage.setItem("playerSoustitre",data.animators);
+					localStorage.setItem("playerCover",data.picture); //data.picture				  
+					$('.detail').html(data.start_short+'-'+data.end_short);
+					$('.titre').html(data.title);
+					$('.soustitre').html(data.animators);
+					$('#coverPlayer').attr('src',data.picture);
+					$('.playerinfos').fadeIn();
 				});
 			}, 0);
 
