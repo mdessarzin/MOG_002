@@ -286,12 +286,10 @@ typeplayer: any;
 				if (this.timingseek) {
 					clearInterval(this.timingseek);
 				}
-
-			   // this.musicControls.listen();
-				//this.musicControls.updateIsPlaying(false);
 				this.onplaying = '0';
                 localStorage.setItem("player", "stop");
                 $('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+
         }
         else
         {
@@ -305,14 +303,19 @@ typeplayer: any;
 						});					
 					}, 1000);
 					this.durations = this._player.stream.getDuration();  
+					this._player.settingMusicControl(localStorage.podcast_title, localStorage.podcast_category, localStorage.podcast_cover);
+
 				}
+			else {
+				this._player.settingMusicControl(localStorage.playerTitre, localStorage.playerSoustitre, localStorage.playerCover);
+
+			}
 
 
 				this.onplaying = '1';
 				console.log('Play Button clicked');
 				if(localStorage.type_player == 'live'){
 					this._player.playerconfigProvider();
-					this._player.settingMusicControl(localStorage.playerTitre, localStorage.playerSoustitre, localStorage.playerCover);
 				}
 				else {
 					//this.durations = this._player.stream.getDuration();  
@@ -333,11 +336,14 @@ typeplayer: any;
 				
 			 if(localStorage.player == 'stop'){//
 				 this._player.playerconfigProvider();
-				 					this._player.settingMusicControl(localStorage.playerTitre, localStorage.playerSoustitre, localStorage.playerCover);
+				this._player.settingMusicControl(localStorage.playerTitre, localStorage.playerSoustitre, localStorage.playerCover);
 				 this._player.playProvider();
 			 }
 		
 			
+		}
+		else {
+				this._player.settingMusicControl(localStorage.playerTitre, localStorage.playerSoustitre, localStorage.playerCover);
 		}
 		
 				if(localStorage.player == 'stop'){
@@ -394,7 +400,7 @@ typeplayer: any;
 			this._player.pauseProvider();
 			this._player.playerconfigProvider();
 			this._player.playProvider();
-				
+			this._player.settingMusicControl(localStorage.playerTitre, localStorage.playerSoustitre, localStorage.playerCover);
 		}
 
 }
