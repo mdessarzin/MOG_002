@@ -174,7 +174,7 @@ export class AudioStreamProvider {
 												$('.songArtist_').html(data.live[0].interpret);
 												$('.songTitle_').html(data.live[0].title);
 												$('.songCover_').attr('src',data.live[0].imageURL);
-												this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+												//this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
 
 											}
 											else
@@ -197,7 +197,7 @@ export class AudioStreamProvider {
 			$('.playerEtat_2').show();
 
 			this.stream.play();
-			this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
+			//this.settingMusicControl($('.songTitle_').html(), $('.songArtist_').html(), $('.songCover_').attr('src'));
 			console.log('play');
 			localStorage.setItem("player", "play");
 			
@@ -296,7 +296,7 @@ ngOnDestroy() {
 								//
 							}
 							else{
-								this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
+								//this.settingMusicControl($('.songTitle').html(), $('.songArtist').html(), $('.songCover').attr('src'));
 								this.live = data.live[0].interpret;
 								if(localStorage.type_player == 'live'){
 									$('.songArtist_').html(data.live[0].interpret);
