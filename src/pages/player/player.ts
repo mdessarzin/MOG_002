@@ -343,7 +343,7 @@ typeplayer: any;
 			
 		}
 		else {
-				this._player.settingMusicControl(localStorage.playerTitre, localStorage.playerSoustitre, localStorage.playerCover);
+					this._player.settingMusicControl(localStorage.podcast_title, localStorage.podcast_category, localStorage.podcast_cover);
 		}
 		
 				if(localStorage.player == 'stop'){
