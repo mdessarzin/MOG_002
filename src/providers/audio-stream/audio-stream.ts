@@ -73,7 +73,7 @@ export class AudioStreamProvider {
 						$('.playerEtat_1').hide();
 						$('.playerEtat_0').show();
 						$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-						$('.btPlayerhome').html('<i class="fas fa-play"></i>');
+						$('.btPlayerhome').html('<i class="fas fa-play"></i>').addClass("pulseplay");
 
 				   break;
 					case 'music-controls-play':
@@ -89,7 +89,7 @@ export class AudioStreamProvider {
 						$('.playerEtat_0').hide();
 						$('.playerEtat_1').show();
 						$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-						$('.btPlayerhome').html('<i class="fas fa-pause"></i>');
+						$('.btPlayerhome').html('<i class="fas fa-pause"></i>').removeClass("pulseplay");
 
 					break;
 					case 'music-controls-destroy':
@@ -215,7 +215,7 @@ export class AudioStreamProvider {
 							$('.playerEtat_0').hide();
 							$('.playerEtat_1').show();
 							$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
-							$('.btPlayerhome').html('<i class="fas fa-pause"></i>');
+							$('.btPlayerhome').html('<i class="fas fa-pause"></i>').removeClass("pulseplay");
 							clearInterval(this.timingloading);
 					}
 				});					
@@ -238,7 +238,7 @@ export class AudioStreamProvider {
 								$('.playerEtat_1').hide();
 								$('.playerEtat_0').show();
 								$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-								$('.btPlayerhome').html('<i class="fas fa-play"></i>');
+								$('.btPlayerhome').html('<i class="fas fa-play"></i>').addClass("pulseplay");
 					if (this.mediaTimer !=null) {
 						//clearInterval(this.mediaTimer);    // (*) don t do clearInterval here, or your ionic will not work, see below
 						//TODO here : handle html, remove "playing" message
@@ -259,7 +259,7 @@ export class AudioStreamProvider {
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();
 			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-			$('.btPlayerhome').html('<i class="fas fa-play"></i>');
+			$('.btPlayerhome').html('<i class="fas fa-play"></i>').addClass("pulseplay");
         //clearInterval(this.mediaTimer);  (*) don t do clearInterval here, or your ionic will not work, see below
     });
 			
@@ -288,7 +288,7 @@ ngOnDestroy() {
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();
 			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
-			$('.btPlayerhome').html('<i class="fas fa-play"></i>');
+			$('.btPlayerhome').html('<i class="fas fa-play"></i>').addClass("pulseplay");
 			return Observable.of(false);
 		}
 	

@@ -123,7 +123,7 @@ ionViewDidLoad() {
 	
 		if(localStorage.player == 'play'){
 			this.buttonIcon = 'ios-stop';
-			$('.btPlayerhome').html('<i class="fas fa-pause"></i>');
+			$('.btPlayerhome').html('<i class="fas fa-pause"></i>').removeClass("pulseplay");
 			$('.playerEtat_2').hide();
 			$('.playerEtat_0').hide();
 			$('.playerEtat_1').show();
@@ -131,7 +131,7 @@ ionViewDidLoad() {
         else
         {
 			this.buttonIcon = 'ios-play';
-			$('.btPlayerhome').html('<i class="fas fa-play"></i>');
+			$('.btPlayerhome').html('<i class="fas fa-play"></i>').addClass("pulseplay");
 			$('.playerEtat_2').hide();
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();
@@ -213,15 +213,17 @@ private showDetails(id,title,link){
 private startAudio() {      
         if(localStorage.player == 'play'){
 				this._player.pauseProvider();
-				$('.btPlayerhome').html('<i class="fas fa-play"></i>');
+				$('.btPlayerhome').html('<i class="fas fa-play"></i>').removeClass("pulseplay");
 				$('.playerEtat_2').hide();
 				$('.playerEtat_1').hide();
-				$('.playerEtat_0').show();        }
+				$('.playerEtat_0').show();
+				
+		}
         else
         {
 			this.buttonIcon = 'ios-stop';
 			this._player.playProvider();
-			$('.btPlayerhome').html('<i class="fas fa-pause"></i>');
+			$('.btPlayerhome').html('<i class="fas fa-pause"></i>').addClass("pulseplay");
 			$('.playerEtat_2').hide();
 			$('.playerEtat_0').hide();
 			$('.playerEtat_1').show();
