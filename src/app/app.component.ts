@@ -386,6 +386,16 @@ header: true
 		alert.present();
 	}
 	
+	private infos(){
+       let alert = this.alertCtrl.create({
+			title: 'Informations',
+			message: 'Media One Group - Build v'+localStorage.build,
+			buttons: ['Ok']
+		});
+		alert.present();
+    }
+
+	
 	public whatsapp(){
 		
 		

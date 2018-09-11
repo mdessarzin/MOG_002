@@ -207,11 +207,6 @@ private showDetails(id,title,link){
     });
 }
 
-private infos(){
-        alert('Media One Group - '+localStorage.build);
-       	//let modal = this.modalCtrl.create(PlayerPage); //PlayerPage
-		//modal.present();
-    }
 
 private openPlayer(){
         //console.log(this.login);
