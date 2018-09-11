@@ -7,8 +7,8 @@
       <img alt="logo" height="35" src="./assets/imgs/logo_radio.png" >
     </ion-title>
 	  
-	  <ion-buttons end >
-		  	 <button ion-button icon-only (tap)='openPlayer()' class="playerEtat_0">
+	  <ion-buttons end>
+		  	 <button ion-button icon-only (tap)='openPlayer()' class="playerEtat_0 test">
       				<ion-icon name="md-radio"></ion-icon>
     		</button>
 		  <button ion-button icon-only (tap)='openPlayer()' class="playerEtat_1"  style="display:none;">
@@ -101,5 +101,9 @@
 		<ion-infinite-scroll (ionInfinite)="loadMore($event)" threshold="50%" loadingSpinner="bubbles" loadingText="Chargement...">
     		<ion-infinite-scroll-content></ion-infinite-scroll-content>
   		</ion-infinite-scroll>
-	
+	<ion-fab right bottom>
+  <button ion-fab color="danger" (tap)='startAudio()'>
+    <span class="btPlayer"></span>
+  </button>
+</ion-fab>
 		</ion-content>

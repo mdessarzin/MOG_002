@@ -122,14 +122,16 @@ ngAfterViewInit() {
 ionViewDidLoad() {
 	
 		if(localStorage.player == 'play'){
-			$('.btPlayer').html('<i class="fas fa-pause-circle fa-3x"></i>');
+			this.buttonIcon = 'ios-stop';
+			$('.btPlayer').html('<i class="fas fa-pause"></i>');
 			$('.playerEtat_2').hide();
 			$('.playerEtat_0').hide();
 			$('.playerEtat_1').show();
         }
         else
         {
-			$('.btPlayer').html('<i class="fas fa-play-circle fa-3x"></i>');
+			this.buttonIcon = 'ios-play';
+			$('.btPlayer').html('<i class="fas fa-play"></i>');
 			$('.playerEtat_2').hide();
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();
@@ -207,6 +209,24 @@ private showDetails(id,title,link){
     });
 }
 
+	
+private startAudio() {      
+        if(localStorage.player == 'play'){
+				this._player.pauseProvider();
+				$('.btPlayer').html('<i class="fas fa-play"></i>');
+				$('.playerEtat_2').hide();
+				$('.playerEtat_1').hide();
+				$('.playerEtat_0').show();        }
+        else
+        {
+			this.buttonIcon = 'ios-stop';
+			this._player.playProvider();
+			$('.btPlayer').html('<i class="fas fa-pause"></i>');
+			$('.playerEtat_2').hide();
+			$('.playerEtat_0').hide();
+			$('.playerEtat_1').show();
+		}
+}
 
 private openPlayer(){
         //console.log(this.login);
