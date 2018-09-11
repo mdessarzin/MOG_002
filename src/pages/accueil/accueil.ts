@@ -123,7 +123,8 @@ ionViewDidLoad() {
 	
 		if(localStorage.player == 'play'){
 			this.buttonIcon = 'ios-stop';
-			$('.btPlayerhome').html('<i class="fas fa-pause"></i>').removeClass("pulseplay");
+			$('.btPlayerhome').html('<i class="fas fa-pause"></i>');
+			$('.fab-md-danger').removeClass("pulseplay");
 			$('.playerEtat_2').hide();
 			$('.playerEtat_0').hide();
 			$('.playerEtat_1').show();
@@ -131,7 +132,8 @@ ionViewDidLoad() {
         else
         {
 			this.buttonIcon = 'ios-play';
-			$('.btPlayerhome').html('<i class="fas fa-play"></i>').addClass("pulseplay");
+			$('.btPlayerhome').html('<i class="fas fa-play"></i>');
+			$('.fab-md-danger').addClass("pulseplay");
 			$('.playerEtat_2').hide();
 			$('.playerEtat_1').hide();
 			$('.playerEtat_0').show();
@@ -213,7 +215,8 @@ private showDetails(id,title,link){
 private startAudio() {      
         if(localStorage.player == 'play'){
 				this._player.pauseProvider();
-				$('.btPlayerhome').html('<i class="fas fa-play"></i>').removeClass("pulseplay");
+				$('.btPlayerhome').html('<i class="fas fa-play"></i>');
+			$('.fab-md-danger').addClass("pulseplay");
 				$('.playerEtat_2').hide();
 				$('.playerEtat_1').hide();
 				$('.playerEtat_0').show();
@@ -223,7 +226,8 @@ private startAudio() {
         {
 			this.buttonIcon = 'ios-stop';
 			this._player.playProvider();
-			$('.btPlayerhome').html('<i class="fas fa-pause"></i>').addClass("pulseplay");
+			$('.btPlayerhome').html('<i class="fas fa-pause"></i>');
+			$('.fab-md-danger').removeClass("pulseplay");
 			$('.playerEtat_2').hide();
 			$('.playerEtat_0').hide();
 			$('.playerEtat_1').show();
