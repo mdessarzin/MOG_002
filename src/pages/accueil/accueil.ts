@@ -208,10 +208,10 @@ private showDetails(id,title,link){
 }
 
 private infos(){
-        //console.log(this.login);
-       alert('Media One Group | Build 1.0.3');
+        console.log(this.login);
+       	//let modal = this.modalCtrl.create(PlayerPage); //PlayerPage
+		//modal.present();
     }
-}
 
 private openPlayer(){
         //console.log(this.login);
