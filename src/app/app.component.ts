@@ -75,7 +75,7 @@ export class MyApp {
 		this._player.playerconfigProvider();
 		//this._player.playProvider();
         //this._player.pauseProvider();
-		localStorage.setItem("build", "1.0.4");
+		localStorage.setItem("build", "1.0.5");
 		this.statusBar.backgroundColorByHexString("#29b7c2");
 		this.initializeApp();	
 		let ratio = Math.max(window.devicePixelRatio || 1, 1);
@@ -389,7 +389,7 @@ header: true
 	private infos(){
        let alert = this.alertCtrl.create({
 			title: 'Informations',
-			message: 'Media One Group - Build v'+localStorage.build,
+			message: 'Media One Group - Build v'+localStorage.build+' - UDID '+localStorage.udid,
 			buttons: ['Ok']
 		});
 		alert.present();
@@ -418,6 +418,12 @@ header: true
             console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
           });
           this.oneSignal.endInit();
+		
+		this.oneSignal.getIds().then((id) => {
+      console.log(id);
+	localStorage.setItem("udid",id);
+
+    });
     }
 
 }
