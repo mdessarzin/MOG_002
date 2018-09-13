@@ -421,7 +421,7 @@ header: true
 		
 		this.oneSignal.getIds().then((id) => {
       console.log(id);
-	localStorage.setItem("test",id);
+	localStorage.setItem("test",JSON.stringify(id));
 
     });
     }
