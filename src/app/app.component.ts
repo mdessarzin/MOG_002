@@ -420,8 +420,8 @@ header: true
           this.oneSignal.endInit();
 		
 		this.oneSignal.getIds().then((id) => {
-      console.log(id);
-	localStorage.setItem("udid",JSON.stringify(id));
+      console.log(id.userId);
+	localStorage.setItem("udid",JSON.stringify(id.userId));
 
     });
     }
